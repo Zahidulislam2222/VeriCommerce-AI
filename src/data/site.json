@@ -1,0 +1,289 @@
+{
+  "brand": "VeriCommerce",
+  "brandSuffix": "AI",
+  "tagline": "Every claim, connected.",
+  "navigation": [
+    {
+      "label": "The platform",
+      "target": "platform"
+    },
+    {
+      "label": "How it works",
+      "target": "process"
+    },
+    {
+      "label": "The research lab",
+      "target": "lab"
+    }
+  ],
+  "hero": {
+    "eyebrow": "A NEW STANDARD FOR PRODUCT INTELLIGENCE",
+    "lines": [
+      "Good products.",
+      "Great stories.",
+      "Real evidence."
+    ],
+    "description": "Turn what you know about your products into something your customers can believe in.",
+    "primary": "Explore the workspace",
+    "secondary": "Meet the platform",
+    "caption": "THE OBJECT / 001",
+    "product": "Forma One",
+    "category": "Considered design. Documented details.",
+    "claim": "40 hours. One source of truth.",
+    "source": "Product manual · Page 04",
+    "sourceLabel": "CONNECTED TO THE SOURCE",
+    "footnote": "Versioned evidence, local retrieval and deliberate human review."
+  },
+  "principles": [
+    "Evidence before eloquence",
+    "A human at the helm",
+    "Intelligence, with intention"
+  ],
+  "intro": {
+    "eyebrow": "01 / THE PLATFORM",
+    "title": "There's a better story",
+    "emphasis": "inside every product.",
+    "description": "It's in the manuals, the materials, the little details that make it different. Bring them together. Give every description, comparison, and answer a foundation it can stand on.",
+    "link": "Follow the evidence"
+  },
+  "features": [
+    {
+      "number": "01",
+      "label": "KNOW YOUR CATALOG",
+      "title": "The details make\nthe difference.",
+      "description": "A connected view of products, documented details and the sources behind them.",
+      "icon": "scan"
+    },
+    {
+      "number": "02",
+      "label": "CREATE WITH CONFIDENCE",
+      "title": "Good words.\nSolid ground.",
+      "description": "Find the support for every claim, before it finds its way into your store.",
+      "icon": "sparkles"
+    },
+    {
+      "number": "03",
+      "label": "STAY IN CONTROL",
+      "title": "Your judgment.\nThe final word.",
+      "description": "Review the evidence. Refine the draft. Keep every consequential change in human hands.",
+      "icon": "check"
+    }
+  ],
+  "studio": {
+    "eyebrow": "02 / A CLOSER LOOK",
+    "title": "One workspace.",
+    "emphasis": "A clearer picture.",
+    "description": "From scattered product information to a considered next step. Explore a little of what that feels like.",
+    "tabs": [
+      {
+        "id": "catalog",
+        "label": "Understand"
+      },
+      {
+        "id": "evidence",
+        "label": "Connect"
+      },
+      {
+        "id": "drafts",
+        "label": "Create"
+      }
+    ],
+    "caption": "Explore the collection. Browser changes stay on this device; the evidence engine stores its work on the server.",
+    "open": "Take a look inside"
+  },
+  "process": {
+    "eyebrow": "03 / THE METHOD",
+    "title": "From a product detail",
+    "emphasis": "to a story worth telling.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Bring it together.",
+        "description": "Catalogs, images, manuals. One place for the information that matters.",
+        "label": "COLLECT"
+      },
+      {
+        "number": "02",
+        "title": "Make the connection.",
+        "description": "Trace each claim to its source. Surface what's missing or out of date.",
+        "label": "UNDERSTAND"
+      },
+      {
+        "number": "03",
+        "title": "Find the right words.",
+        "description": "Create thoughtful product content, with evidence close at hand.",
+        "label": "CREATE"
+      },
+      {
+        "number": "04",
+        "title": "Make it yours.",
+        "description": "A deliberate review before anything reaches your customers.",
+        "label": "APPROVE"
+      }
+    ]
+  },
+  "lab": {
+    "eyebrow": "04 / THE RESEARCH LAB",
+    "title": "Curiosity,",
+    "emphasis": "with a control group.",
+    "description": "Our roadmap brings retrieval, model training and agent experiments into a separate research environment, where improvement has to be measured.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Retrieval that earns its place.",
+        "detail": "Keyword, semantic, hybrid. Compare the approaches on the same questions."
+      },
+      {
+        "number": "02",
+        "title": "Smaller models. Real experiments.",
+        "detail": "Fine-tuning, held-out evaluation, and a clear view of what changed."
+      },
+      {
+        "number": "03",
+        "title": "Nothing promoted on a hunch.",
+        "detail": "Every candidate meets a baseline. Every regression stays in the record."
+      }
+    ],
+    "caption": "Training and expanded benchmarks are roadmap work. The evidence engine already provides local retrieval and ten curated regression checks.",
+    "button": "Explore the research roadmap"
+  },
+  "faq": {
+    "eyebrow": "A FEW GOOD QUESTIONS",
+    "items": [
+      {
+        "question": "What can I do with VeriCommerce AI?",
+        "answer": "Import a permitted JSON catalog, retrieve current source passages, create evidence-backed drafts, review and approve them, and export approved content. The evidence engine records work on the server; the collection workspace stores its approval choices in this browser."
+      },
+      {
+        "question": "What makes the platform evidence-led?",
+        "answer": "Product claims connect to a named source, passage and revision. The current backend preserves this lineage and marks dependent drafts stale when their supporting sources change. Retrieved quotations still require human judgment about relevance and completeness."
+      },
+      {
+        "question": "Will this work with Shopify?",
+        "answer": "Shopify is the first planned merchant integration. Read-only catalog synchronization, approved publishing, verification and conflict-aware rollback have explicit implementation gates in the roadmap. No Shopify store is connected in the current release."
+      },
+      {
+        "question": "What is running in the research layer?",
+        "answer": "The evidence engine supports a pinned local CPU embedding model and keyword retrieval. Ten curated regression questions provide repeatable checks. Fine-tuning, larger independent benchmarks and agent-training experiments remain planned work."
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "A LITTLE MORE CLARITY. A LOT MORE POSSIBILITY.",
+    "title": "Make every product",
+    "emphasis": "mean something.",
+    "description": "See the story. See the source. See what's possible.",
+    "button": "Step into the workspace"
+  },
+  "footer": {
+    "note": "Made for a more thoughtful kind of commerce.",
+    "preview": "Evidence intelligence · Human approval · Current release",
+    "copyright": "© 2026 VeriCommerce AI"
+  },
+  "ui": {
+    "workspace": "Open workspace",
+    "back": "Back to the platform",
+    "close": "Close dialog",
+    "menu": "Open navigation",
+    "pause": "Pause hero motion",
+    "play": "Play hero motion",
+    "source": "View source",
+    "verified": "Source connected",
+    "preview": "PRODUCT EVIDENCE",
+    "reset": "Reset workspace",
+    "export": "Export draft",
+    "approve": "Approve draft",
+    "review": "Review draft",
+    "search": "Search products",
+    "searchPlaceholder": "Search the collection…",
+    "empty": "No products match that search.",
+    "clear": "Clear search",
+    "all": "All products",
+    "ready": "Ready for review",
+    "approved": "Approved in this browser",
+    "about": "About this workspace",
+    "sourceNotice": "Generated product record · source passage",
+    "approvalNotice": "Approved in this browser. Nothing was published.",
+    "exportNotice": "Draft exported with its source references. No store changes were made.",
+    "resetNotice": "Browser workspace approvals have been reset.",
+    "workspaceDescription": "Your collection, with the context it deserves.",
+    "demoNotice": "Collection workspace · approvals stay in this browser · use the evidence engine for server-persisted work.",
+    "aboutText": "VeriCommerce AI connects product information to versioned evidence and human-reviewed content. This collection workspace stores approvals in your browser. The evidence engine provides server persistence and retrieval. Shopify synchronization, merchant accounts and model training are roadmap capabilities."
+  },
+  "labels": {
+    "app01": "Skip to content",
+    "app02": "Product study / 2026",
+    "app03": "THE OBJECT / 002",
+    "app04": "THE BEAUTY IS IN THE DETAILS.",
+    "app05": "A beautiful image",
+    "app06": "tells half ",
+    "app07": "the story.",
+    "app08": "The other half is what you can stand behind. Materials. Care. The exact detail from the right revision. A product's story becomes more useful when you can see where it came from.",
+    "app09": "See the connection",
+    "app10": "A DETAIL, IN CONTEXT",
+    "app11": "Connected to the product sheet, revision 1.2.",
+    "app12": "A planned space for deliberate experiments.",
+    "app13": "A little more",
+    "app14": "About this workspace",
+    "app15": "Back to top",
+    "app16": "COLLECTION WORKSPACE",
+    "app17": "Content studio",
+    "app18": "THOUGHTFULLY CONNECTED.",
+    "app19": "THE SUPPORTING PASSAGE",
+    "app20": "PRODUCT DESCRIPTION / DRAFT 01",
+    "app21": "A human has",
+    "app22": "the final word.",
+    "app23": "Inspect the sources and review the draft in the collection workspace.",
+    "workspace24": "Skip to workspace",
+    "workspace25": "Product collection",
+    "workspace26": "YOUR WORKSPACE",
+    "workspace27": "A little more context.",
+    "workspace28": "A lot more confidence.",
+    "workspace29": "CURRENT COLLECTION",
+    "workspace30": "Visit the content studio",
+    "workspace31": "View collection",
+    "workspace32": "THE EVIDENCE TRAIL",
+    "workspace33": "Every product detail has a little history.",
+    "workspace34": "Here is the collection's evidence structure.",
+    "workspace35": "THE CONSIDERED COLLECTION",
+    "workspace36": "Every object, understood.",
+    "workspace37": "THE SOURCE OF THE STORY",
+    "workspace38": "A clear paper trail.",
+    "workspace39": "Named sources. Specific passages. The right revision.",
+    "workspace40": "Good evidence keeps its context.",
+    "workspace41": "The evidence engine preserves source revisions, retrieves current passages and invalidates stale drafts. This collection view keeps its own approval choices in the browser.",
+    "workspace42": "THE CONTENT STUDIO",
+    "workspace43": "A considered first draft.",
+    "workspace44": "The words are ready. Your judgment comes next.",
+    "workspace45": "Product description",
+    "workspace46": "Product collection / Browser workspace",
+    "workspace47": "THE SUPPORTING PASSAGE",
+    "workspace48": "THE RESEARCH LAB / PLANNED CAPABILITY",
+    "workspace49": "PLANNED RESEARCH",
+    "workspace50": "RESEARCH ENGINEERING ROADMAP",
+    "workspace51": "Improvement needs evidence.",
+    "workspace52": "IN THE ROADMAP",
+    "researchExperiment": "EXPERIMENT",
+    "productCount": "products",
+    "sourceCount": "source documents",
+    "browserApprovalCount": "approved in this browser",
+    "claimCount": "details connected to source evidence"
+  },
+  "workspaceUI": {
+    "returnReview": "Return to the draft"
+  },
+  "previewUI": {
+    "detail": "30 mL. Green glass.",
+    "headings": {
+      "catalog": "A little context. A lot of clarity.",
+      "evidence": "See what stands behind the story.",
+      "drafts": "A better first draft starts here."
+    },
+    "eyebrows": {
+      "catalog": "YOUR COLLECTION",
+      "evidence": "A CLEAR PAPER TRAIL",
+      "drafts": "THE CONTENT STUDIO"
+    },
+    "connectedDetails": "details connected to evidence"
+  }
+}

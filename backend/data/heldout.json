@@ -1,0 +1,15 @@
+{
+  "version": "fictional-evidence-v1",
+  "cases": [
+    {"id":"battery","query":"What is the battery life?","product_id":"forma-one","expected_source_id":"forma-manual","expected_abstain":false},
+    {"id":"wireless","query":"Which Bluetooth version is documented?","product_id":"forma-one","expected_source_id":"forma-manual","expected_abstain":false},
+    {"id":"finish","query":"What material are the exterior yokes?","product_id":"forma-one","expected_source_id":"forma-spec","expected_abstain":false},
+    {"id":"volume","query":"What is the bottle volume?","product_id":"verdant-serum","expected_source_id":"verdant-spec","expected_abstain":false},
+    {"id":"care","query":"What patch test instructions apply?","product_id":"verdant-serum","expected_source_id":"verdant-guide","expected_abstain":false},
+    {"id":"power","query":"What power input does the lamp require?","product_id":"arc-light","expected_source_id":"arc-manual","expected_abstain":false},
+    {"id":"dimensions","query":"What are the dimensions?","product_id":"arc-light","expected_source_id":"arc-spec","expected_abstain":false},
+    {"id":"waterproof","query":"What waterproof certification does it have?","product_id":"forma-one","expected_source_id":null,"expected_abstain":true},
+    {"id":"medical","query":"Does it cure eczema?","product_id":"verdant-serum","expected_source_id":null,"expected_abstain":true},
+    {"id":"shipping","query":"Can it ship to Dhaka tomorrow?","product_id":"arc-light","expected_source_id":null,"expected_abstain":true}
+  ]
+}

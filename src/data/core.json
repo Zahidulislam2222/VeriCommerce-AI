@@ -1,0 +1,140 @@
+{
+  "eyebrow": "THE WORKING PLATFORM",
+  "title": "The evidence, connected.",
+  "subtitle": "Your product knowledge, with traceable answers and recorded approvals.",
+  "banner": "Temporary isolated workspace · current sources · server-persisted changes · store publishing disabled",
+  "navigation": [
+    {
+      "id": "overview",
+      "label": "Overview"
+    },
+    {
+      "id": "ask",
+      "label": "Ask the evidence"
+    },
+    {
+      "id": "evidence",
+      "label": "Evidence library"
+    },
+    {
+      "id": "drafts",
+      "label": "Content studio"
+    },
+    {
+      "id": "import",
+      "label": "Import catalog"
+    },
+    {
+      "id": "lab",
+      "label": "Evaluation lab"
+    },
+    {
+      "id": "activity",
+      "label": "Activity"
+    }
+  ],
+  "titles": {
+    "overview": "The evidence, connected.",
+    "ask": "A better answer starts here.",
+    "evidence": "Follow every detail to its source.",
+    "drafts": "Good content. Clear provenance.",
+    "import": "Bring your product knowledge.",
+    "lab": "Measure before you trust.",
+    "activity": "A record of what happened."
+  },
+  "descriptions": {
+    "overview": "Your collection, sources and review queue in one considered view.",
+    "ask": "Search your current sources. Answers quote retrieved evidence and cite the exact version. If no relevant evidence is found, the workspace abstains. A quoted passage may not answer every part of a question.",
+    "evidence": "Current source revisions connect product facts to their original passages. Importing a new revision marks dependent drafts stale.",
+    "drafts": "Prepare source-backed copy, inspect its citations, then explicitly approve it. Exports retain provenance; nothing is published to a store.",
+    "import": "Import a bounded JSON catalog containing products and source passages. Use material you own or have permission to process. Identical imports do not create duplicate source revisions.",
+    "lab": "Run ten curated regression questions against the current retrieval engine. Results describe this fixed test set; broader model quality requires independent evaluation.",
+    "activity": "Server-recorded ingestion, draft creation and approval events for this workspace."
+  },
+  "stats": [
+    "Products",
+    "Current sources",
+    "Evidence passages",
+    "Content drafts"
+  ],
+  "loading": "Connecting your workspace…",
+  "connecting": "Preparing your isolated product evidence workspace.",
+  "engineTitle": "A small, deliberate intelligence layer.",
+  "engineDescription": "CPU embeddings and keyword matching retrieve evidence locally. Answers are extractive: selected source passages, not an unconstrained language model. The engine never needs a paid API.",
+  "lexicalDescription": "Keyword matching retrieves current evidence locally. The optional CPU embedding model is unavailable in this runtime, so semantic ranking is not active. Answers quote source passages and use no paid API.",
+  "sessionNote": "This browser holds the access cookie for this temporary workspace. Access currently expires after 12 hours. Keep personal records and confidential merchant data out of this public service.",
+  "questionLabel": "What would you like to know?",
+  "questionPlaceholder": "What is Forma One's battery life?",
+  "examples": [
+    "What is Forma One's battery life?",
+    "What powers the Arc Table Light?",
+    "Does Verdant Daily cure eczema?"
+  ],
+  "scopeLabel": "Product scope",
+  "allProducts": "All products",
+  "askButton": "Find a grounded answer",
+  "answerTitle": "What the sources establish",
+  "abstentionTitle": "The evidence does not establish that.",
+  "citations": "Supporting passages",
+  "draftButton": "Prepare draft",
+  "approveButton": "Approve this draft",
+  "approvalTitle": "A considered final check.",
+  "approvalDescription": "Read the complete draft and the source passages below. Approval is recorded on the server and tied to these source revisions. This action authorizes a JSON export, not store publication.",
+  "exportButton": "Export approved JSON",
+  "approved": "Approval recorded. Your source-bound draft can now be exported.",
+  "generated": "Draft prepared from current evidence. Review before approving.",
+  "importButton": "Validate and ingest",
+  "sampleButton": "Load catalog structure",
+  "importLabel": "Catalog JSON",
+  "importHint": "Use the example to see the accepted shape. Source identifiers are stable: update a source version and its passages to test change-impact analysis.",
+  "imported": "Ingestion completed. Current evidence and affected draft states have been refreshed.",
+  "evaluateButton": "Run measured checks",
+  "evaluating": "Running the fixed evaluation questions…",
+  "evaluationEmpty": "No evaluation has been run in this browser session. Run the checks to see actual outcomes.",
+  "emptyDrafts": "Your collection is ready. Choose a product above to prepare the first evidence-backed draft.",
+  "emptySources": "No current sources. Import a permitted catalog to begin.",
+  "emptyActivity": "No recorded activity yet.",
+  "stale": "Stale · source changed",
+  "jobLabel": "Durable job",
+  "working": "Working…",
+  "liveLink": "Open the working platform",
+  "previewLink": "Explore the collection workspace",
+  "labels": {
+    "skip": "Skip to workspace",
+    "store": "STUDIO NORTH / PRODUCT EVIDENCE",
+    "back": "Back to platform",
+    "header": "Evidence workspace",
+    "refresh": "Refresh data",
+    "retry": "Retry connection",
+    "collection": "A collection worth knowing.",
+    "details": "source-connected details",
+    "revision": "Revision",
+    "page": "p.",
+    "passages": "passages",
+    "graphEyebrow": "VERSIONED RELATIONSHIPS",
+    "graphTitle": "The product behind the passage.",
+    "nodes": "nodes",
+    "relationships": "typed relationships",
+    "staleDrafts": "stale drafts",
+    "prepare": "Prepare from current evidence",
+    "draftEyebrow": "EVIDENCE-ONLY DRAFT",
+    "staleInstruction": "Prepare a new draft from current sources.",
+    "measuredTitle": "Measured checks passed",
+    "recall": "Retrieval recall",
+    "abstention": "Abstention accuracy",
+    "abstained": "Abstained",
+    "retrieved": "Retrieved",
+    "footer": "Local evidence. Explicit approval.",
+    "footerBrand": "VeriCommerce AI / Evidence engine",
+    "passage": "Passage"
+  },
+  "errors": {
+    "request": "The server could not complete this request. Check your input and try again.",
+    "connection": "The evidence service is unavailable. Your last saved server data is preserved. Retry the connection.",
+    "timeout": "The request timed out. The server may still be processing it. Refresh before repeating a write.",
+    "job": "The job failed. Check the input and try again.",
+    "jobTimeout": "This job is still pending. Its work is stored on the server; refresh to inspect the result before retrying.",
+    "json": "Enter valid JSON before importing.",
+    "importSize": "This catalog exceeds the client upload limit. Split it into smaller permitted catalogs."
+  }
+}

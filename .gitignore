@@ -1,0 +1,54 @@
+# Private recovery, narrative, and agent memory
+/CREDENTIALS.md
+/.credential-update-*
+/PROJECT-DOSSIER.md
+/memory/
+/my-project-view/.doc-id
+/AGENTS.md
+/CLAUDE.md
+/.claude/
+/.codex/
+/.agents/
+/.aws/
+
+# Local secrets and credentials; examples stay eligible for scanning and Git
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+credentials/
+.credentials/
+secrets/
+*.license
+
+# Personal manual tests; future CI tests belong in a separate tracked folder
+/local-tests/
+
+# Local tooling, environments, artifacts, and deployment references
+/.tools/
+/.venv/
+/venv/
+__pycache__/
+*.py[cod]
+node_modules/
+/dist/
+/build/
+/coverage/
+/.pytest_cache/
+/.mypy_cache/
+/.ruff_cache/
+/.cache/
+/_live_server/
+/artifacts/
+/test-results/
+/playwright-report/
+/.playwright-mcp/
+*.tsbuildinfo
+*.log
+.DS_Store
+Thumbs.db

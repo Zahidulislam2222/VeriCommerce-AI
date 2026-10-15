@@ -1,0 +1,111 @@
+name: quality
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: quality-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  application:
+    # Standard runners are free for public repositories; never run on private forks.
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    services:
+      postgres:
+        image: postgres@sha256:3645570cccdfa447589da9f57dd740faa29b30938e861289a5574b6ca6b03826
+        env:
+          POSTGRES_PASSWORD: test-key
+          POSTGRES_DB: vericommerce_test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 20
+    env:
+      CI: "true"
+      VC_TEST_ADMIN_DATABASE_URL: postgresql://postgres:test-key@127.0.0.1:5432/vericommerce_test
+      VC_TEST_DATABASE_URL: postgresql://core_app:test-key@127.0.0.1:5432/vericommerce_test
+      VC_DATABASE_URL: postgresql://core_app:test-key@127.0.0.1:5432/vericommerce_test
+      VC_MIGRATION_DATABASE_URL: postgresql://postgres:test-key@127.0.0.1:5432/vericommerce_test
+      VC_SETTINGS_FILE: ${{ github.workspace }}/.cache/ci-runtime.env
+      VC_ALLOWED_ORIGINS: '["http://127.0.0.1:5178"]'
+      VC_REQUESTS_PER_MINUTE: "1000"
+      VC_SESSION_CREATIONS_PER_HOUR: "100"
+      VC_MAX_ACTIVE_SESSIONS: "100"
+      VC_EMBEDDING_ENABLED: "true"
+      VC_EMBEDDING_DOWNLOAD_ALLOWED: "false"
+      VC_EMBEDDING_CACHE_DIR: ${{ github.workspace }}/.cache/ci-models
+      VC_TEST_EMBEDDING_CACHE_DIR: ${{ github.workspace }}/.cache/ci-models
+      VC_SEED_PATH: ${{ github.workspace }}/backend/data/demo.json
+      VC_POLICY_PATH: ${{ github.workspace }}/backend/data/policy.json
+      VC_EVALUATION_PATH: ${{ github.workspace }}/backend/data/heldout.json
+      VC_MIGRATIONS_PATH: ${{ github.workspace }}/backend/migrations
+      VC_WORKER_HEARTBEAT_PATH: ${{ github.workspace }}/.cache/ci-worker.ready
+      VC_API_HOST: 127.0.0.1
+      VC_API_PORT: "8081"
+      DEV_API_TARGET: http://127.0.0.1:8081
+      TEST_BASE_URL: http://127.0.0.1:5178
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "24"
+          package-manager-cache: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+      - name: Install locked dependencies
+        run: |
+          npm ci
+          python -m pip install --require-hashes -r backend/requirements.lock
+          python -m pip install -r backend/requirements-dev.txt
+          python -m pip install -r .github/ci-requirements.txt
+      - name: Type, lint, domain and build checks
+        run: |
+          npm run typecheck
+          npm run lint -- --max-warnings 0
+          npm test
+          npm run build
+          python -m ruff check --config backend/pyproject.toml backend tests/backend infra/ci tests/infra
+          python -m mypy --config-file backend/pyproject.toml backend/vericommerce_core infra/ci
+          python infra/ci/checks.py locks
+      - name: Prepare explicit free CPU model cache
+        run: |
+          python infra/ci/checks.py runtime-config
+          cd backend
+          VC_EMBEDDING_DOWNLOAD_ALLOWED=true python -m vericommerce_core.warmup
+      - name: Execute actual PostgreSQL, RLS and CPU tests without skips
+        run: |
+          python -m pytest -q tests/backend tests/infra --junitxml=.cache/backend-junit.xml
+          python infra/ci/checks.py no-skips
+      - name: Install free Chrome browser
+        run: npx playwright install --with-deps chrome
+      - name: Exercise all browser flows against real API and worker
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p memory/verification memory/screenshots
+          cd backend
+          python -m vericommerce_core.migrate
+          env -u VC_MIGRATION_DATABASE_URL -u VC_TEST_ADMIN_DATABASE_URL -u VC_TEST_DATABASE_URL VC_COOKIE_SECURE=false python -m uvicorn vericommerce_core.main:app --host "$VC_API_HOST" --port "$VC_API_PORT" > ../.cache/api.log 2>&1 &
+          API_PID=$!
+          env -u VC_MIGRATION_DATABASE_URL -u VC_TEST_ADMIN_DATABASE_URL -u VC_TEST_DATABASE_URL python -m vericommerce_core.worker > ../.cache/worker.log 2>&1 &
+          WORKER_PID=$!
+          cd ..
+          npm run dev -- --host 127.0.0.1 --port 5178 --strictPort > .cache/frontend.log 2>&1 &
+          FRONTEND_PID=$!
+          trap 'kill "$FRONTEND_PID" "$WORKER_PID" "$API_PID" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 90); do
+            if curl --fail --silent "$DEV_API_TARGET/api/readyz" > /dev/null && curl --fail --silent "$TEST_BASE_URL" > /dev/null; then break; fi
+            sleep 1
+          done
+          curl --fail --silent "$DEV_API_TARGET/api/readyz" > /dev/null
+          npm run test:browser

@@ -1,0 +1,44 @@
+# Adapted from the owner's existing security-ci.yml template.
+# No paid API reviewer, third-party hosted scan account, cache or artifact uploads.
+name: security
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: security-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  secret-and-code:
+    if: github.event.repository.private == false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      GITLEAKS_VERSION: 8.30.1
+      GITLEAKS_SHA256: 551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+      - name: Install pinned open-source scanners
+        run: |
+          mkdir -p .cache/security
+          python infra/ci/checks.py bandit-requirement > .cache/security/bandit.txt
+          python -m pip install -r .github/security-requirements.txt -r .cache/security/bandit.txt
+          curl --fail --silent --show-error --location "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz" -o .cache/security/gitleaks.tar.gz
+          echo "$GITLEAKS_SHA256  .cache/security/gitleaks.tar.gz" | sha256sum --check
+          tar -xzf .cache/security/gitleaks.tar.gz -C .cache/security gitleaks
+      - name: Scan full Git history for secrets
+        run: .cache/security/gitleaks git --redact --no-banner --verbose .
+      - name: Scan Python code
+        run: python -m bandit -q -ll -r backend infra/ci
+      - name: Scan official security-audit rules
+        run: semgrep scan --error --config p/security-audit --metrics=off --disable-version-check src backend infra .github
+      # Optional contextual AI review remains disabled: it requires a paid model API.

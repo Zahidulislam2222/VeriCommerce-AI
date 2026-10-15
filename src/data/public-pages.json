@@ -1,0 +1,796 @@
+{
+  "updated": "October 15, 2026",
+  "contact": {
+    "email": "muhammadzahidulislam2222@gmail.com",
+    "operator": "Zahidul Islam",
+    "name": "VeriCommerce AI",
+    "response": "An independent project. Messages are reviewed by the project operator; no guaranteed response time."
+  },
+  "labels": {
+    "back": "Back to home",
+    "explore": "Explore the workspace",
+    "contact": "Start a conversation",
+    "learn": "Read the guide",
+    "contents": "On this page",
+    "updated": "Last updated",
+    "legalNotice": "These notices describe the current public release. Regional guidance is general information; applicability depends on the activity and jurisdiction.",
+    "notFoundTitle": "A little off the path.",
+    "notFoundText": "That page is not part of this collection. Find your way back to the platform or explore the workspace.",
+    "notFoundLabel": "PAGE NOT FOUND / 404",
+    "sourceLabel": "Official reference",
+    "copy": "Copy email address",
+    "copied": "Email address copied.",
+    "copyFallback": "Select and copy the email address above.",
+    "clear": "Clear browser approvals",
+    "cleared": "Browser approvals have been cleared. Server sessions and server records were not deleted.",
+    "requestSubject": "VeriCommerce AI — project enquiry",
+    "privacySubject": "VeriCommerce AI — privacy request",
+    "securitySubject": "VeriCommerce AI — security report",
+    "skip": "Skip to content",
+    "how": "See how it works",
+    "workflow": "Evidence workflow",
+    "accessOptions": "Access options",
+    "available": "AVAILABLE TODAY",
+    "evidenceIndex": "01 / EVIDENCE",
+    "judgmentIndex": "02 / JUDGMENT",
+    "progressIndex": "03 / PROGRESS",
+    "productImageAlt": "Generated Forma One headphones, presented as a product study",
+    "productImageCaption": "THE OBJECT / A GENERATED PRODUCT STUDY",
+    "principle": "THE PRINCIPLE BEHIND THE PLATFORM",
+    "directContact": "DIRECT TO THE PROJECT OPERATOR",
+    "contactOptions": "Contact options",
+    "legalDocuments": "Legal documents",
+    "notice": "NOTICE",
+    "regionalGuidance": "REGIONAL GUIDANCE",
+    "questions": "Questions?",
+    "browserStorage": "Application browser storage",
+    "storage": "Storage",
+    "storagePurpose": "Purpose & lifetime",
+    "sources": "Official sources",
+    "references": "OFFICIAL REFERENCES",
+    "related": "Related resources",
+    "nextStep": "A GOOD NEXT STEP",
+    "closingFirst": "See the evidence.",
+    "closingSecond": "Make your own judgment.",
+    "storageError": "Browser storage is unavailable. Use your browser’s site-data settings to manage browser approvals.",
+    "notFoundMeta": "Page not found",
+    "breadcrumbsHome": "VeriCommerce AI",
+    "aboutSignature": "VeriCommerce AI"
+  },
+  "pages": [
+    {
+      "path": "/platform",
+      "kind": "platform",
+      "eyebrow": "THE PLATFORM",
+      "title": "A clearer connection.",
+      "accent": "From source to story.",
+      "description": "A working evidence system for product information, with a considered space for the people who review it.",
+      "sections": [
+        {
+          "id": "evidence",
+          "title": "Begin with what you can prove.",
+          "body": [
+            "Catalog details, source passages and document revisions stay connected. The working core preserves source versions, so a claim has a trail you can inspect."
+          ],
+          "items": [
+            "Versioned catalog ingestion",
+            "Product-specific source passages",
+            "Citations with source and revision"
+          ]
+        },
+        {
+          "id": "retrieval",
+          "title": "Ask. Inspect. Understand.",
+          "body": [
+            "The current engine retrieves relevant passages using keyword search and a local CPU embedding model when available. Answers are source quotations; a matching passage may not answer every part of a question."
+          ],
+          "items": [
+            "Local keyword and hybrid retrieval",
+            "Explicit evidence citations",
+            "Abstention when relevant evidence is absent"
+          ]
+        },
+        {
+          "id": "review",
+          "title": "Keep a human in the loop.",
+          "body": [
+            "Create an evidence-backed draft, inspect its passages, approve it and export it. Changes to the supporting sources invalidate old drafts. The live current release does not publish to Shopify."
+          ],
+          "items": [
+            "Durable draft jobs",
+            "Approval before export",
+            "Stale-source protection"
+          ]
+        }
+      ],
+      "note": "Current capabilities: versioned evidence, local retrieval, source quotations, drafts, approval and export. Merchant accounts, Shopify connectivity, advanced document intelligence and model training have explicit roadmap gates."
+    },
+    {
+      "path": "/pricing",
+      "kind": "pricing",
+      "eyebrow": "PRICING & ACCESS",
+      "title": "Start with evidence.",
+      "accent": "Without a subscription.",
+      "description": "Explore the current evidence workflow at no charge. Discuss catalog and integration requirements before a commercial deployment.",
+      "plans": [
+        {
+          "name": "Explore",
+          "label": "COMMUNITY ACCESS",
+          "price": "$0",
+          "period": "No payment details",
+          "description": "Source-backed product knowledge and a clear review workflow.",
+          "features": [
+            "Interactive product collection",
+            "Working evidence search and cited quotations",
+            "Draft review, approval and export",
+            "Temporary isolated browser workspace"
+          ],
+          "action": "Open the evidence engine",
+          "href": "/engine",
+          "featured": true
+        },
+        {
+          "name": "Build together",
+          "label": "PROJECT CONVERSATION",
+          "price": "Let’s talk",
+          "period": "Scope agreed in advance",
+          "description": "Discuss your catalog, evidence and integration requirements.",
+          "features": [
+            "Review the problem and permitted data",
+            "Define a focused implementation and acceptance criteria",
+            "Agree hosting and integration boundaries",
+            "Confirm any future costs before work begins"
+          ],
+          "action": "Discuss a project",
+          "href": "/contact",
+          "featured": false
+        }
+      ],
+      "sections": [
+        {
+          "id": "included",
+          "title": "Clear expectations, from the start.",
+          "body": [
+            "There is no checkout, recurring subscription or automatic upgrade on this website. Community access to the current release is free.",
+            "A project conversation is not an offer of a managed service. Commercial terms, any future price, data handling and support would be agreed separately before a real merchant deployment."
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "A small space to explore.",
+          "body": [
+            "Current workspaces are temporary and subject to storage, request and job limits. Access expires after the configured period, currently 12 hours. Export useful drafts and keep confidential or personal information out of this public service."
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/about",
+      "kind": "about",
+      "eyebrow": "WHY VERICOMMERCE",
+      "title": "Good stories deserve",
+      "accent": "solid foundations.",
+      "description": "Product information is more useful when its origin is visible, its limits are clear and someone remains accountable for the final words.",
+      "quote": "Every claim should have somewhere to point.",
+      "sections": [
+        {
+          "id": "purpose",
+          "title": "Built around a practical question.",
+          "body": [
+            "How can a merchant improve product information without losing track of what is actually documented? VeriCommerce AI explores that question through an evidence store, retrieval, careful drafting and human review.",
+            "The included product records were generated for engineering and interface tests. They do not identify a merchant client or establish real product certification."
+          ]
+        },
+        {
+          "id": "principles",
+          "title": "Three principles guide the work.",
+          "items": [
+            "Evidence before eloquence. Keep a factual claim connected to its supporting source.",
+            "People retain authority. A model proposes; a person reviews consequential content.",
+            "Measure the limits. Show what works, what fails and what remains to be built."
+          ]
+        },
+        {
+          "id": "operator",
+          "title": "An independent engineering project.",
+          "body": [
+            "VeriCommerce AI is developed and operated by Zahidul Islam. It combines a working commerce evidence application with a longer-term model-engineering roadmap.",
+            "The current release provides a working evidence workflow. The roadmap defines the additional identity, merchant integration, model engineering and operational capabilities required for broader deployment."
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/contact",
+      "kind": "contact",
+      "eyebrow": "LET’S CONNECT",
+      "title": "Bring your questions.",
+      "accent": "We’ll start there.",
+      "description": "A catalog problem, a potential collaboration or a question about your data. Choose the conversation that fits.",
+      "channels": [
+        {
+          "title": "Projects & collaboration",
+          "description": "Tell us what you sell, where your evidence lives and what your team needs to improve.",
+          "subject": "VeriCommerce AI — project enquiry"
+        },
+        {
+          "title": "Privacy & your information",
+          "description": "Ask about access, correction, deletion or the way this current release handles information.",
+          "subject": "VeriCommerce AI — privacy request"
+        },
+        {
+          "title": "Security & accessibility",
+          "description": "Share a reproducible issue, the affected page and the behavior you observed. Keep secrets out of the first message.",
+          "subject": "VeriCommerce AI — issue report"
+        }
+      ],
+      "sections": [
+        {
+          "id": "before",
+          "title": "A useful first message.",
+          "items": [
+            "Describe the outcome you want, rather than sharing private records.",
+            "Include the relevant public page or a generated example.",
+            "For privacy requests, explain the request and relevant dates; do not email passwords or identity documents."
+          ]
+        }
+      ],
+      "note": "Email opens in your own mail application. This page does not submit a form or send a message automatically."
+    },
+    {
+      "path": "/docs",
+      "kind": "docs",
+      "eyebrow": "FIELD GUIDE",
+      "title": "Understand the workflow.",
+      "accent": "One connection at a time.",
+      "description": "A practical introduction to the working workspace, its evidence trail and the decisions that stay with you.",
+      "sections": [
+        {
+          "id": "start",
+          "title": "01 / Open a product evidence workspace.",
+          "body": [
+            "Choose Open workspace to enter the evidence engine. An isolated temporary workspace is created for your browser. The separate collection workspace stores its approvals locally; it is not a merchant administration connection."
+          ]
+        },
+        {
+          "id": "search",
+          "title": "02 / Ask a product question.",
+          "body": [
+            "Select a product and ask about a documented detail. Try asking about Forma One battery life. Open the returned citations to inspect the passage, source name, page and revision.",
+            "Retrieved quotations are evidence to inspect, not a guarantee that every part of the question has been answered. If no relevant passage is found, add evidence instead of inventing the answer."
+          ]
+        },
+        {
+          "id": "draft",
+          "title": "03 / Draft, review and export.",
+          "body": [
+            "Create a draft from current product evidence. Review the passages before approval. An approved current draft can be exported as JSON; no live store is changed.",
+            "If the source changes, the old draft becomes stale and must be generated and reviewed again."
+          ]
+        },
+        {
+          "id": "import",
+          "title": "04 / Explore an evidence update.",
+          "body": [
+            "The working core accepts the documented JSON catalog structure. Keep imported information generated or explicitly permitted and within the displayed limits. Uploads of manuals, images and live-store synchronization are later milestones."
+          ]
+        },
+        {
+          "id": "limits",
+          "title": "Know the boundaries.",
+          "items": [
+            "Temporary workspace access is tied to this browser’s session cookie.",
+            "Do not upload customer records, credentials or confidential business data.",
+            "The research roadmap contains planned work; the evidence engine reports ten curated retrieval regression checks.",
+            "No Shopify publishing, paid model inference or commercial service guarantee is included."
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/changelog",
+      "kind": "changelog",
+      "eyebrow": "PROJECT NOTES",
+      "title": "Progress, with a paper trail.",
+      "accent": "Measured as we go.",
+      "description": "A concise record of what is available, with a clear boundary around what comes next.",
+      "sections": [
+        {
+          "id": "public-site",
+          "title": "October 2026 / A complete public experience",
+          "body": [
+            "Dedicated platform, pricing, about, contact, documentation and trust pages complement the editorial homepage. Regional legal information, privacy notices and storage controls explain the current release."
+          ]
+        },
+        {
+          "id": "core",
+          "title": "October 2026 / The evidence core",
+          "body": [
+            "A persistent generated-data workspace adds versioned JSON ingestion, local CPU hybrid retrieval, source quotations, durable drafting, approval, export and stale-evidence protection.",
+            "The release was exercised through desktop/mobile browser flows, database restore and rollback checks. These tests establish the tested scenarios, not broad AI accuracy or enterprise certification."
+          ]
+        },
+        {
+          "id": "next",
+          "title": "Next / The first five engineering phases",
+          "body": [
+            "Accounts and roles, document ingestion, read-only Shopify integration, richer retrieval evaluation and graph-backed content intelligence are under development. Actual cloud deployments depend on verified free-tier account eligibility. These capabilities are not advertised as available today."
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/security",
+      "kind": "trust",
+      "eyebrow": "TRUST & SECURITY",
+      "title": "Designed for scrutiny.",
+      "accent": "Clear about the limits.",
+      "description": "Practical controls, human review and an honest account of what this current release does—and does not—provide.",
+      "sections": [
+        {
+          "id": "controls",
+          "title": "Controls in the current release",
+          "items": [
+            "HTTPS and same-origin API requests.",
+            "Opaque HttpOnly session cookies, with tenant-scoped access.",
+            "PostgreSQL row-level isolation and a restricted runtime database role.",
+            "Request, storage and job limits; no live-store publishing capability.",
+            "Current-source checks before approval and export."
+          ]
+        },
+        {
+          "id": "operations",
+          "title": "Recovery is part of the workflow.",
+          "body": [
+            "Versioned releases, source and image archives, database restoration exercises and rollback verification are part of development. Backup copies can persist beyond the expiry of an individual workspace.",
+            "This is a small shared-infrastructure implementation. There is no promised uptime, independently audited security certification or enterprise service-level agreement."
+          ]
+        },
+        {
+          "id": "report",
+          "title": "Report an issue responsibly.",
+          "body": [
+            "Contact the operator with the affected URL, a short description and reproduction steps. Do not include passwords, access tokens or other people’s personal data. Do not access another workspace, disrupt the service or continue exploiting an issue.",
+            "No bug-bounty payment or safe-harbor agreement is offered by this notice."
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/legal",
+      "kind": "legal-hub",
+      "eyebrow": "THE DETAILS MATTER",
+      "title": "Clear terms.",
+      "accent": "Considered practices.",
+      "description": "Read how this public current release works, how information is handled and where United States and European Union guidance fits.",
+      "sections": [
+        {
+          "id": "operator",
+          "title": "Who operates this website?",
+          "body": [
+            "VeriCommerce AI is an independent project operated by Zahidul Islam. The contact page provides the public email for general, privacy and security requests.",
+            "The current website is a generated-data current release offered by the named project operator. It does not offer legal consultancy or a certification program. Any commercial arrangement would need separate terms and any legally required business disclosures."
+          ]
+        },
+        {
+          "id": "scope",
+          "title": "Read the notice that fits your question.",
+          "body": [
+            "Privacy explains current information handling. Terms explain permitted workspace use. Cookies describes browser storage. The regional pages provide official legal references and the issues that require assessment before a real merchant service is launched."
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/privacy",
+      "kind": "legal",
+      "eyebrow": "PRIVACY NOTICE",
+      "title": "Your information.",
+      "accent": "Handled with context.",
+      "description": "What the current public release processes, why it needs that information and how to contact the operator.",
+      "sections": [
+        {
+          "id": "operator",
+          "title": "1. Operator and scope",
+          "body": [
+            "Zahidul Islam operates VeriCommerce AI. Contact muhammadzahidulislam2222@gmail.com with privacy questions. This notice covers the public website and current generated evidence workspace; future merchant services will require an updated notice."
+          ]
+        },
+        {
+          "id": "information",
+          "title": "2. Information processed",
+          "items": [
+            "Technical request information, such as IP address, browser/request metadata and security logs, may be processed by hosting and delivery infrastructure.",
+            "The evidence engine processes questions and stores an opaque session identifier, catalog inputs, drafts, approvals and job records needed for the workspace workflow.",
+            "The collection workspace stores catalog approval choices in this browser’s local storage.",
+            "If you email the operator, your email address and message are handled through the email service."
+          ]
+        },
+        {
+          "id": "purpose",
+          "title": "3. Purposes and legal basis",
+          "body": [
+            "Information is used to deliver the requested current release, keep workspaces separate, limit abuse, diagnose faults and answer messages. No advertising or cross-site profiling code is included in the application source.",
+            "Where GDPR applies, the intended basis for necessary service/security processing is legitimate interests, subject to an assessment and your applicable rights. Steps you request toward a project agreement may rely on the pre-contractual basis. Optional processing requiring consent would need separate consent before activation. This site does not use a banner to imply consent to everything."
+          ]
+        },
+        {
+          "id": "recipients",
+          "title": "4. Service providers and international processing",
+          "body": [
+            "Current delivery uses an existing hosting server and Cloudflare delivery/security infrastructure. Emails use the operator’s Gmail service. The workspace uses local CPU retrieval; catalog inputs are not sent to a paid generative model API by the current core.",
+            "Providers may process technical information internationally. This site does not claim EU-only hosting, an adequacy decision for every recipient, or an executed data-transfer agreement. Before accepting real merchant personal data, provider roles, contracts and any required transfer safeguards must be established."
+          ]
+        },
+        {
+          "id": "retention",
+          "title": "5. Retention and deletion",
+          "body": [
+            "Workspace access expires after the configured session period, currently 12 hours. Expired workspace data is eligible for cleanup by the running worker. The expiry period is not a promise that all backup or infrastructure-log copies are erased at the same instant.",
+            "Catalog local approvals remain until you clear them or clear this site’s browser storage. Operational backups and logs have separate retention; this implementation does not publish a fixed maximum for every infrastructure copy. Ask the operator about a specific deletion request, including any available session context without sharing access credentials."
+          ]
+        },
+        {
+          "id": "rights",
+          "title": "6. Your choices and rights",
+          "body": [
+            "You can stop using the workspace, clear browser storage and request information, correction or deletion through the contact email. Where applicable, EU/EEA rights can include access, rectification, erasure, restriction, portability, objection and a complaint to a supervisory authority. US state rights depend on the relevant law and whether it applies to the operator.",
+            "Requests may require proportionate identity/context checks. Do not send passwords or identity documents in the initial message. Statutory response periods and exceptions apply where the relevant law applies."
+          ]
+        },
+        {
+          "id": "children",
+          "title": "7. Children and sensitive information",
+          "body": [
+            "The current release is intended for adults evaluating commerce software, not children. Do not submit children’s information, health records, payment details or customer databases. Contact the operator if such information was submitted accidentally."
+          ]
+        },
+        {
+          "id": "changes",
+          "title": "8. Changes",
+          "body": [
+            "The date at the top identifies this notice’s update. Material changes to information handling should be reflected here before the related feature is offered."
+          ]
+        }
+      ],
+      "references": [
+        {
+          "label": "European Commission: data protection and individual rights",
+          "href": "https://commission.europa.eu/law/law-topic/data-protection/data-protection-explained_en"
+        },
+        {
+          "label": "FTC: privacy and security guidance",
+          "href": "https://www.ftc.gov/business-guidance/privacy-security"
+        }
+      ]
+    },
+    {
+      "path": "/terms",
+      "kind": "legal",
+      "eyebrow": "TERMS OF USE",
+      "title": "A shared understanding.",
+      "accent": "Before you explore.",
+      "description": "The conditions for using the current public website and generated-data current release.",
+      "sections": [
+        {
+          "id": "scope",
+          "title": "1. The current release",
+          "body": [
+            "VeriCommerce AI is operated by Zahidul Islam as an independent engineering project. These terms cover the public website and free workspace. They do not create a paid subscription, merchant publishing agreement or support contract.",
+            "Use the workspace only if you are an adult able to agree to these conditions. If you do not agree, do not use the current release."
+          ]
+        },
+        {
+          "id": "use",
+          "title": "2. Permitted use",
+          "body": [
+            "Use generated or explicitly permitted product information to explore evidence search and drafting. You are responsible for the rights and permissions attached to material you submit.",
+            "Do not submit credentials, customer personal data, confidential documents, unlawful material or content infringing others’ rights. Do not attempt unauthorized access, exploit another workspace, bypass limits, send malicious files or disrupt shared infrastructure."
+          ]
+        },
+        {
+          "id": "outputs",
+          "title": "3. Evidence and output review",
+          "body": [
+            "The current engine retrieves passages and produces extractive drafts. A citation does not guarantee that an answer is complete or suitable for a particular product, claim or jurisdiction.",
+            "Independently review outputs before any external use, especially safety, medical, certification, pricing and legal claims. Workspace approval does not publish to a live store or verify regulatory compliance."
+          ]
+        },
+        {
+          "id": "rights",
+          "title": "4. Content and intellectual property",
+          "body": [
+            "You retain your rights in your submitted material. You permit the processing necessary to operate the current release, including creating drafts, storing revisions and operational backup copies. This permission is limited to those purposes.",
+            "Website branding and original current release content remain subject to their applicable intellectual property rights. Third-party software and fonts retain their own licenses, available in the third-party notices. No affiliation with Shopify or model providers is implied."
+          ]
+        },
+        {
+          "id": "availability",
+          "title": "5. Availability and responsibility",
+          "body": [
+            "The workspace is provided as available, subject to applicable law. Workspaces are temporary; features may change or be suspended. Do not rely on the workspace as your only copy of business information.",
+            "To the extent permitted by applicable law, no warranty of uninterrupted availability, completeness or fitness for a particular purpose is offered. Nothing in these terms excludes rights, duties or liability that cannot lawfully be excluded."
+          ]
+        },
+        {
+          "id": "law",
+          "title": "6. Applicable law and contact",
+          "body": [
+            "Mandatory laws and consumer protections that apply to you remain unaffected. These workspace terms do not impose an exclusive foreign court, mandatory arbitration or a waiver of statutory rights. A commercial deployment would require a separate agreement appropriate to its parties and jurisdictions.",
+            "For questions or concerns, contact the operator through the contact page. Updated terms will carry a revised date."
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/cookies",
+      "kind": "cookies",
+      "eyebrow": "COOKIES & LOCAL STORAGE",
+      "title": "Small pieces of state.",
+      "accent": "A clear purpose.",
+      "description": "What the current release stores in your browser and how to manage it.",
+      "storage": [
+        {
+          "name": "vc_demo",
+          "type": "First-party HttpOnly cookie",
+          "purpose": "Connects this browser to its isolated evidence workspace.",
+          "duration": "Configured session lifetime; currently 12 hours."
+        },
+        {
+          "name": "vericommerce.demo.approvals.v1",
+          "type": "First-party local storage",
+          "purpose": "Remembers catalog approvals in the collection workspace.",
+          "duration": "Until you clear catalog approvals or browser site storage."
+        }
+      ],
+      "sections": [
+        {
+          "id": "scope",
+          "title": "Necessary state, without an advertising layer.",
+          "body": [
+            "The application source includes no advertising, analytics or third-party embedded tracking scripts. Hosting and delivery services can process technical data and may set security-related state depending on their configuration. This list describes application-owned storage, not every possible provider-managed cookie."
+          ]
+        },
+        {
+          "id": "controls",
+          "title": "Your browser, your controls.",
+          "body": [
+            "The button below clears only the collection workspace’s catalog approvals from this browser. It does not delete server-side catalog records, backups or an HttpOnly session cookie.",
+            "To remove the session cookie, use your browser’s site-data controls. Clearing site data can remove your ability to access the current workspace. For server-side requests, contact the operator."
+          ]
+        },
+        {
+          "id": "future",
+          "title": "If optional tracking is added.",
+          "body": [
+            "Any future optional analytics or advertising storage requiring consent must stay disabled until valid consent is given. Choices must be as easy to withdraw as to provide. Optional tracking is not part of this release."
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/accessibility",
+      "kind": "legal",
+      "eyebrow": "ACCESSIBILITY",
+      "title": "Designed to be usable.",
+      "accent": "Open to improvement.",
+      "description": "Our accessibility approach, current checks and a way to report barriers.",
+      "sections": [
+        {
+          "id": "approach",
+          "title": "A practical design commitment.",
+          "body": [
+            "The interface uses semantic landmarks, visible keyboard focus, text alternatives, responsive layouts and reduced-motion behavior. Navigation and dialogs are designed to work without a mouse.",
+            "WCAG 2.2 Level AA is a design target, not a claimed conformance certification. Automated checks cannot identify every barrier; assistive-technology and user testing remain important."
+          ]
+        },
+        {
+          "id": "motion",
+          "title": "Control the movement.",
+          "body": [
+            "The homepage has a pause control for its silent decorative film. The site respects your device’s reduced-motion preference, including suppressing the film and smooth-scrolling effects where implemented."
+          ]
+        },
+        {
+          "id": "report",
+          "title": "Tell us where something gets in the way.",
+          "body": [
+            "Email the operator with the affected page, what you were trying to do and your browser or assistive technology if comfortable sharing. Screenshots are optional; avoid including private data.",
+            "We will use the report to investigate and prioritize improvements. This implementation does not promise a fixed response or repair deadline."
+          ]
+        }
+      ],
+      "references": [
+        {
+          "label": "W3C Web Content Accessibility Guidelines 2.2",
+          "href": "https://www.w3.org/TR/WCAG22/"
+        }
+      ]
+    },
+    {
+      "path": "/legal/us",
+      "kind": "regional",
+      "eyebrow": "REGIONAL INFORMATION / UNITED STATES",
+      "title": "US privacy & commerce.",
+      "accent": "Know the boundaries.",
+      "description": "Official references and the issues a real merchant deployment needs to assess. This page is general information, not personalized legal advice.",
+      "sections": [
+        {
+          "id": "privacy",
+          "title": "Privacy promises must match the product.",
+          "body": [
+            "The FTC provides guidance on privacy representations and appropriate security practices. The website’s privacy notice therefore describes current processing and avoids claiming certifications or protections that have not been established."
+          ]
+        },
+        {
+          "id": "state",
+          "title": "State privacy laws depend on applicability.",
+          "body": [
+            "California’s CCPA, as amended by the CPRA, gives covered consumers rights including knowing, deleting and correcting information, and opting out of sale or sharing. Coverage, exceptions and duties depend on the business and processing involved.",
+            "Other states have their own rules. This workspace does not claim that one California notice satisfies every US state requirement. Contact the operator with a privacy request; the applicable legal scope must be assessed."
+          ]
+        },
+        {
+          "id": "children",
+          "title": "Children’s information requires a separate assessment.",
+          "body": [
+            "COPPA addresses covered services directed to children under 13 and services with actual knowledge of collecting their personal information. This current release is intended for adults and does not invite children’s data."
+          ]
+        },
+        {
+          "id": "claims",
+          "title": "Product and advertising claims need evidence.",
+          "body": [
+            "A merchant must review the substantiation, labeling and sector-specific requirements for its claims before publishing. A generated description, source citation or structured-data field does not establish compliance, especially for health, safety or regulated products."
+          ]
+        }
+      ],
+      "references": [
+        {
+          "label": "FTC privacy and security resources",
+          "href": "https://www.ftc.gov/business-guidance/privacy-security"
+        },
+        {
+          "label": "California Attorney General: CCPA",
+          "href": "https://oag.ca.gov/privacy/ccpa"
+        },
+        {
+          "label": "FTC: Children’s Online Privacy Protection Rule",
+          "href": "https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa"
+        }
+      ]
+    },
+    {
+      "path": "/legal/eu",
+      "kind": "regional",
+      "eyebrow": "REGIONAL INFORMATION / EUROPEAN UNION",
+      "title": "EU data & digital trust.",
+      "accent": "Responsibilities stay human.",
+      "description": "How European privacy principles inform this project, and what must be assessed before handling real merchant personal data.",
+      "sections": [
+        {
+          "id": "scope",
+          "title": "GDPR can apply beyond the EU.",
+          "body": [
+            "GDPR applicability can extend to organizations outside the EU when they offer goods or services to individuals in the EU or monitor their behavior there. A free service is not automatically exempt. Applicability must be assessed for the actual activity."
+          ]
+        },
+        {
+          "id": "principles",
+          "title": "Purpose, minimization and accountability.",
+          "body": [
+            "The Commission describes principles including lawful and transparent processing, purpose limitation, data minimization, accuracy, storage limitation, security and accountability. The current release uses generated catalogs and asks visitors to avoid customer or sensitive personal data.",
+            "Before a real merchant deployment, controller/processor roles, lawful bases, retention, contracts, breach procedures and any international-transfer safeguards need to be established. No blanket GDPR-compliance certification is claimed here."
+          ]
+        },
+        {
+          "id": "rights",
+          "title": "Rights need an actual request path.",
+          "body": [
+            "Where GDPR applies, individuals can have rights to information, access, correction, erasure, restriction, portability and objection, as well as protections concerning certain automated decisions. The public contact email provides a way to raise a request, subject to lawful identity checks, exceptions and deadlines."
+          ]
+        },
+        {
+          "id": "cookies",
+          "title": "Consent and browser storage.",
+          "body": [
+            "Cookie and similar-storage rules also require assessment under applicable national ePrivacy implementation. Optional tracking must not be treated as necessary simply because a banner is present. The current application uses session access and browser approval storage; see the cookie page for controls."
+          ]
+        },
+        {
+          "id": "ai",
+          "title": "AI obligations depend on the system and its role.",
+          "body": [
+            "European AI, consumer and product rules can add obligations depending on the provider, deployer, purpose and product. Human review of content is useful, but is not a substitute for assessing which legal requirements actually apply to a commercial deployment."
+          ]
+        }
+      ],
+      "references": [
+        {
+          "label": "European Commission: data protection explained",
+          "href": "https://commission.europa.eu/law/law-topic/data-protection/data-protection-explained_en"
+        },
+        {
+          "label": "European Commission: EU data-protection legal framework",
+          "href": "https://commission.europa.eu/law/law-topic/data-protection/legal-framework-eu-data-protection_en"
+        }
+      ]
+    }
+  ],
+  "legalLinks": [
+    {
+      "label": "Privacy notice",
+      "href": "/privacy",
+      "description": "Information, purposes and your choices."
+    },
+    {
+      "label": "Terms of use",
+      "href": "/terms",
+      "description": "A clear agreement for exploring the workspace."
+    },
+    {
+      "label": "Cookies & storage",
+      "href": "/cookies",
+      "description": "What stays in your browser, and why."
+    },
+    {
+      "label": "United States",
+      "href": "/legal/us",
+      "description": "FTC, state privacy and commerce references."
+    },
+    {
+      "label": "European Union",
+      "href": "/legal/eu",
+      "description": "GDPR principles, rights and responsibilities."
+    },
+    {
+      "label": "Accessibility",
+      "href": "/accessibility",
+      "description": "Design approach and reporting barriers."
+    }
+  ],
+  "platformSteps": [
+    {
+      "number": "01",
+      "title": "Collect",
+      "detail": "Products and their source passages."
+    },
+    {
+      "number": "02",
+      "title": "Connect",
+      "detail": "Claims to the right revision."
+    },
+    {
+      "number": "03",
+      "title": "Consider",
+      "detail": "A draft with its evidence in view."
+    },
+    {
+      "number": "04",
+      "title": "Approve",
+      "detail": "A person decides what leaves."
+    }
+  ],
+  "docsLinks": [
+    {
+      "label": "Working evidence engine",
+      "href": "/engine"
+    },
+    {
+      "label": "Collection workspace",
+      "href": "/workspace"
+    },
+    {
+      "label": "Current capability notes",
+      "href": "/changelog"
+    },
+    {
+      "label": "Security and limitations",
+      "href": "/security"
+    },
+    {
+      "label": "Source and engineering documentation",
+      "href": "https://github.com/Zahidulislam2222/VeriCommerce-AI"
+    }
+  ]
+}

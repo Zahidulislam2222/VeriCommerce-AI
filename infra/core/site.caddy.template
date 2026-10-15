@@ -1,0 +1,5 @@
+{hostname} {
+    reverse_proxy 127.0.0.1:{loopback_port} {
+        header_up X-VeriCommerce-Edge-IP {remote_host}
+    }
+}

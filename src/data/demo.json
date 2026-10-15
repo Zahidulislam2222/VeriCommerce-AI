@@ -1,0 +1,219 @@
+{
+  "collection": "The considered collection",
+  "store": "Studio North",
+  "products": [
+    {
+      "id": "forma-one",
+      "name": "Forma One",
+      "category": "Audio",
+      "subtitle": "Over-ear headphones · Chalk",
+      "image": "/images/hero-headphones.webp",
+      "alt": "Ivory over-ear headphones on an oxblood studio background",
+      "sku": "FN-001-CH",
+      "status": "Ready for review",
+      "color": "wine",
+      "description": "Quiet by design. The Forma One brings an understated silhouette to everyday listening, with up to 40 hours of battery life documented in its product manual.",
+      "claims": [
+        {
+          "label": "Battery life",
+          "value": "Up to 40 hours",
+          "sourceId": "forma-manual",
+          "passage": "Battery life: up to 40 hours of playback with active noise cancellation disabled. Actual playback time varies by volume, codec, and usage.",
+          "page": "04"
+        },
+        {
+          "label": "Connectivity",
+          "value": "Bluetooth 5.3",
+          "sourceId": "forma-manual",
+          "passage": "Wireless connectivity: Bluetooth 5.3. A wired connection is supported using the included audio cable.",
+          "page": "06"
+        },
+        {
+          "label": "Finish",
+          "value": "Chalk / anodized aluminum",
+          "sourceId": "forma-spec",
+          "passage": "Chalk edition. Exterior yokes: anodized aluminum. Earpad covering: synthetic leather. Do not describe the full product as plastic-free.",
+          "page": "01"
+        }
+      ],
+      "draft": "A quieter kind of everyday. Meet Forma One: considered over-ear headphones in Chalk, with Bluetooth 5.3 and up to 40 hours of playback with noise cancellation off. Made for the details you hear — and the ones you notice."
+    },
+    {
+      "id": "verdant-serum",
+      "name": "Verdant Daily",
+      "category": "Skincare",
+      "subtitle": "Face serum · 30 mL",
+      "image": "/images/serum-olive.webp",
+      "alt": "Green glass skincare bottle on pale stone against an olive backdrop",
+      "sku": "VD-030-OL",
+      "status": "Evidence connected",
+      "color": "olive",
+      "description": "A considered addition to a daily routine. A 30 mL face serum presented in a green glass bottle. Formulation and care details remain connected to the source sheet.",
+      "claims": [
+        {
+          "label": "Volume",
+          "value": "30 mL",
+          "sourceId": "verdant-spec",
+          "passage": "Net contents: 30 mL. Packaging: green glass bottle with a dropper dispenser. Recyclability depends on local collection and component separation.",
+          "page": "01"
+        },
+        {
+          "label": "Use",
+          "value": "External use only",
+          "sourceId": "verdant-guide",
+          "passage": "For external use only. Patch test before first use. Discontinue if irritation occurs. No treatment or medical efficacy claim is supported by this source.",
+          "page": "02"
+        }
+      ],
+      "draft": "A small, considered daily ritual. Verdant Daily is a 30 mL face serum in green glass. Explore the product's documented care instructions before making it part of your routine."
+    },
+    {
+      "id": "arc-light",
+      "name": "Arc Table Light",
+      "category": "Objects",
+      "subtitle": "Table lamp · Brushed silver",
+      "image": "/images/lamp-silver.webp",
+      "alt": "Sculptural brushed-silver table lamp casting a soft architectural shadow",
+      "sku": "AR-001-SV",
+      "status": "Ready for review",
+      "color": "stone",
+      "description": "An architectural accent for a quieter corner. Brushed aluminum, a diffused light source, and a form that gives the everyday a little more intention.",
+      "claims": [
+        {
+          "label": "Material",
+          "value": "Brushed aluminum",
+          "sourceId": "arc-spec",
+          "passage": "Exterior shade and base: brushed aluminum. Product photographs depict the silver finish. Dimensions: 32 cm high, 24 cm shade diameter.",
+          "page": "01"
+        },
+        {
+          "label": "Power",
+          "value": "USB-C, 5 V",
+          "sourceId": "arc-manual",
+          "passage": "Power input: USB-C, 5 V. Use a compatible regulated power supply. Designed for indoor, dry-location use only.",
+          "page": "03"
+        }
+      ],
+      "draft": "An object, and a little atmosphere. Arc Table Light pairs brushed aluminum with a sculptural silhouette, bringing a considered accent to your indoor space. Powered by USB-C, 5 V."
+    }
+  ],
+  "sources": [
+    {
+      "id": "forma-manual",
+      "name": "Forma One — product manual",
+      "version": "2.1",
+      "type": "Product manual",
+      "date": "2026-10-01"
+    },
+    {
+      "id": "forma-spec",
+      "name": "Forma One — materials sheet",
+      "version": "1.0",
+      "type": "Specification",
+      "date": "2026-09-18"
+    },
+    {
+      "id": "verdant-spec",
+      "name": "Verdant Daily — product sheet",
+      "version": "1.2",
+      "type": "Specification",
+      "date": "2026-09-24"
+    },
+    {
+      "id": "verdant-guide",
+      "name": "Verdant Daily — care guide",
+      "version": "1.0",
+      "type": "Care guide",
+      "date": "2026-09-24"
+    },
+    {
+      "id": "arc-spec",
+      "name": "Arc Table Light — specification",
+      "version": "1.3",
+      "type": "Specification",
+      "date": "2026-10-02"
+    },
+    {
+      "id": "arc-manual",
+      "name": "Arc Table Light — user guide",
+      "version": "1.0",
+      "type": "Product manual",
+      "date": "2026-10-02"
+    }
+  ],
+  "workspaceNavigation": [
+    {
+      "id": "overview",
+      "label": "Overview",
+      "icon": "overview"
+    },
+    {
+      "id": "catalog",
+      "label": "Collection",
+      "icon": "catalog"
+    },
+    {
+      "id": "evidence",
+      "label": "Evidence library",
+      "icon": "evidence"
+    },
+    {
+      "id": "drafts",
+      "label": "Content studio",
+      "icon": "drafts"
+    },
+    {
+      "id": "lab",
+      "label": "Research lab",
+      "icon": "lab"
+    }
+  ],
+  "overview": {
+    "eyebrow": "A CLEARER VIEW",
+    "title": "Good morning, Studio North.",
+    "description": "A little context for every product in your collection.",
+    "stats": [
+      "Products in collection",
+      "Connected sources",
+      "Content drafts"
+    ],
+    "section": "A collection worth knowing.",
+    "activityTitle": "Follow the paper trail.",
+    "activity": [
+      {
+        "title": "Forma One manual connected",
+        "detail": "Revision 2.1 · 3 source-backed details",
+        "time": "Collection record 01"
+      },
+      {
+        "title": "Arc Table Light draft prepared",
+        "detail": "Ready for a considered review",
+        "time": "Collection record 02"
+      },
+      {
+        "title": "Verdant care guide connected",
+        "detail": "Use instructions preserved in context",
+        "time": "Collection record 03"
+      }
+    ]
+  },
+  "lab": {
+    "title": "A place to question the answer.",
+    "description": "Research milestones are defined before new models are promoted. Open the evidence engine for measured current retrieval checks.",
+    "milestones": [
+      {
+        "label": "Retrieval evaluation",
+        "detail": "Expand beyond the ten curated regression questions with independent product-family splits."
+      },
+      {
+        "label": "Model adaptation",
+        "detail": "Compare a base model with an adapter using held-out quality, regressions, latency and cost."
+      },
+      {
+        "label": "Agent reliability",
+        "detail": "Test bounded tools, interruption recovery and approval boundaries before enabling merchant writes."
+      }
+    ],
+    "caption": "No comparative model-quality percentages are claimed here. Future experiments require reproducible datasets, configurations and results."
+  }
+}

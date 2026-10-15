@@ -1,0 +1,18 @@
+{
+  "hostname": "commerce.example.test",
+  "slug": "example-frontend",
+  "loopback_port": 18180,
+  "container_port": 8080,
+  "static_image": "nginx@sha256:dc5069ad14f19660b141b21236140b91656bf89bbc3e2417c70ae650cd66104c",
+  "caddy_site": "example-commerce.caddy",
+  "remote_apps_root": "/srv/apps",
+  "remote_caddy_root": "/etc/caddy/sites.d",
+  "remote_caddy_main_config": "/etc/caddy/Caddyfile",
+  "network_subnet": "172.30.240.0/28",
+  "cloudflare_api_base": "https://api.cloudflare.com/client/v4",
+  "cloudflare_token_file": "memory/private-access/dns-token",
+  "host_keys_file": "memory/private-access/known_hosts",
+  "infrastructure_document": "memory/private-access/INFRASTRUCTURE.md",
+  "ssh_dependency_dir": ".tools/deployment",
+  "timeouts": {"connect": 15, "command": 120, "http": 30, "compose_wait": 180}
+}

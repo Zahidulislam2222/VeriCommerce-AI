@@ -1,0 +1,2 @@
+# Registry verified 2026-10-15; no hosted/paid Semgrep service is invoked.
+semgrep==1.181.0

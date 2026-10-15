@@ -1,0 +1,24 @@
+{
+  "api_title": "VeriCommerce AI Evidence API",
+  "api_service_name": "evidence-workspace",
+  "store": "Studio North",
+  "answer_method": "extractive_source_quotes",
+  "draft_method": "extractive_evidence_template",
+  "abstention": "The current evidence does not support an answer to that question. Add an approved source before making this claim.",
+  "draft_heading": "Documented product details",
+  "stop_words": ["a","an","the","is","are","was","were","what","which","how","does","do","can","could","would","will","should","it","its","i","my","we","our","you","your","this","that","these","those","and","or","of","for","to","in","on","with","about","please","tell","me","be","have","has","get","need"],
+  "query_expansions": {
+    "last": ["battery","playback"],
+    "listen": ["battery","playback"],
+    "listening": ["battery","playback"],
+    "long": ["battery","hours"],
+    "wireless": ["bluetooth","connectivity"],
+    "made": ["material","aluminum"],
+    "material": ["aluminum","glass","leather"],
+    "size": ["dimensions","height","diameter","contents"],
+    "volume": ["contents","ml"],
+    "charging": ["power","usb"],
+    "outdoor": ["indoor","location"],
+    "instructions": ["use","patch","power"]
+  }
+}

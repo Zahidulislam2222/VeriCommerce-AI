@@ -1,0 +1,23 @@
+# Adapted from the owner's existing security template for native WSL execution.
+# Install: .tools/security/bin/pre-commit install
+# Verify: .tools/security/bin/pre-commit run --all-files
+repos:
+  - repo: local
+    hooks:
+      - id: gitleaks-staged
+        name: gitleaks (secrets in staged diff)
+        entry: gitleaks git --pre-commit --staged --redact --no-banner --verbose
+        language: system
+        pass_filenames: false
+
+      - id: bandit
+        name: bandit (Python SAST, medium+ severity)
+        entry: .tools/security/bin/python -m bandit -q -ll
+        language: system
+        types: [python]
+
+      - id: semgrep-wsl
+        name: semgrep p/security-audit (native WSL)
+        entry: semgrep scan --quiet --error --config p/security-audit --metrics=off
+        language: system
+        types: [text]

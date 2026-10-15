@@ -1,0 +1,2 @@
+# Dedicated CI helper dependency; excluded from application/runtime images.
+defusedxml==0.7.1

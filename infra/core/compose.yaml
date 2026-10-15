@@ -1,0 +1,151 @@
+name: ${COMPOSE_PROJECT_NAME:?Set core project name}
+x-app: &app
+  image: ${APP_IMAGE:?Set immutable release image}
+  user: "10001:10001"
+  read_only: true
+  cap_drop: [ALL]
+  security_opt: ["no-new-privileges:true"]
+  restart: unless-stopped
+  mem_limit: ${APP_MEMORY:?Set app memory limit}
+  cpus: ${APP_CPUS:?Set app CPU limit}
+  pids_limit: 96
+  environment: &app-env
+    VC_SETTINGS_FILE: /run/secrets/core.env
+    VC_API_VERSION: ${API_VERSION:?Set application API version}
+    VC_ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:?Set allowed origins}
+    VC_COOKIE_SECURE: "true"
+    VC_EMBEDDING_ENABLED: ${EMBEDDING_ENABLED:?Set embedding mode}
+    VC_EMBEDDING_DOWNLOAD_ALLOWED: "false"
+    VC_EMBEDDING_CACHE_DIR: /var/cache/vericommerce
+    VC_EMBEDDING_MODEL: ${EMBEDDING_MODEL:?Set pinned embedding model}
+    VC_EMBEDDING_REPOSITORY: ${EMBEDDING_REPOSITORY:?Set embedding repository}
+    VC_EMBEDDING_MODEL_FILE: ${EMBEDDING_MODEL_FILE:?Set model file}
+    VC_EMBEDDING_REVISION: ${EMBEDDING_REVISION:?Set pinned embedding revision}
+    VC_SEED_PATH: /app/data/demo.json
+    VC_WORKER_HEARTBEAT_PATH: /tmp/worker.ready
+    VC_WORKER_HEARTBEAT_TIMEOUT_SECONDS: ${HEARTBEAT_TIMEOUT_SECONDS:?Set heartbeat timeout}
+    VC_SESSION_CREATIONS_PER_HOUR: ${SESSION_CREATIONS_PER_HOUR:?Set session rate limit}
+    FORWARDED_ALLOW_IPS: ${TRUSTED_WEB_IP:?Set trusted web IP}
+  volumes:
+    - model_cache:/var/cache/vericommerce
+  tmpfs:
+    - /tmp:size=64m,noexec,nosuid,mode=1777
+  secrets:
+    - source: runtime_env
+      target: core.env
+services:
+  __POSTGRES_SERVICE__:
+    image: ${POSTGRES_IMAGE:?Set pinned PostgreSQL image}
+    user: "999:999"
+    restart: unless-stopped
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: ${DB_MEMORY:?Set database memory limit}
+    cpus: ${DB_CPUS:?Set database CPU limit}
+    pids_limit: 128
+    command: [postgres, -p, "${POSTGRES_PORT:?Set database port}"]
+    environment:
+      POSTGRES_USER: ${DB_ADMIN_USER:?Set database administrator}
+      POSTGRES_DB: ${DB_NAME:?Set database name}
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+      PGDATA: /var/lib/postgresql/data/pgdata
+      PGPORT: ${POSTGRES_PORT:?Set database port}
+    secrets: [postgres_password]
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./row_counts.sql:/opt/checks/row_counts.sql:ro
+      - ./payload_hashes.sql:/opt/checks/payload_hashes.sql:ro
+    tmpfs:
+      - /tmp:size=128m,noexec,nosuid,mode=1777
+      - /var/run/postgresql:size=8m,noexec,nosuid,mode=3775,uid=999,gid=999
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"']
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 15s
+  migrate:
+    <<: *app
+    restart: "no"
+    profiles: [operations]
+    command: [python, -m, vericommerce_core.migrate]
+    secrets:
+      - source: migration_env
+        target: core.env
+    depends_on:
+      __POSTGRES_SERVICE__: {condition: service_healthy}
+  warmup:
+    <<: *app
+    restart: "no"
+    profiles: [operations]
+    command: [python, -m, vericommerce_core.warmup]
+    environment:
+      <<: *app-env
+      VC_EMBEDDING_DOWNLOAD_ALLOWED: "true"
+    depends_on:
+      __POSTGRES_SERVICE__: {condition: service_healthy}
+  api:
+    <<: *app
+    command: [python, -m, uvicorn, "vericommerce_core.main:app", --host, "0.0.0.0", --port, "${API_PORT:?Set API port}", --proxy-headers]
+    depends_on:
+      __POSTGRES_SERVICE__: {condition: service_healthy}
+    healthcheck:
+      test: [CMD, python, -c, "import http.client; c=http.client.HTTPConnection('127.0.0.1',${API_PORT:?Set API port},timeout=3); c.request('GET','/api/readyz'); r=c.getresponse(); raise SystemExit(0 if r.status==200 else 1)"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+  worker:
+    <<: *app
+    command: [python, -m, vericommerce_core.worker]
+    healthcheck:
+      test: [CMD, python, -c, "import os,time; from pathlib import Path; p=Path(os.environ['VC_WORKER_HEARTBEAT_PATH']); raise SystemExit(0 if p.exists() and time.time()-p.stat().st_mtime<float(os.environ['VC_WORKER_HEARTBEAT_TIMEOUT_SECONDS']) else 1)"]
+      interval: 15s
+      timeout: 5s
+      retries: 6
+      start_period: 30s
+    depends_on:
+      api: {condition: service_healthy}
+  web:
+    image: ${NGINX_IMAGE:?Set pinned nginx image}
+    entrypoint: [nginx]
+    command: [-g, "daemon off;"]
+    user: "101:101"
+    restart: unless-stopped
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 128m
+    cpus: 0.5
+    pids_limit: 64
+    ports:
+      - "127.0.0.1:${LOOPBACK_PORT:?Set core loopback port}:${WEB_PORT:?Set web port}"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./dist:/usr/share/nginx/html:ro
+    tmpfs:
+      - /tmp:size=16m,noexec,nosuid,mode=1777
+    healthcheck:
+      test: [CMD, wget, -q, -O, /dev/null, "http://127.0.0.1:${WEB_PORT:?Set web port}/healthz"]
+      interval: 10s
+      timeout: 3s
+      retries: 6
+    depends_on:
+      api: {condition: service_healthy}
+    networks:
+      default:
+        ipv4_address: ${TRUSTED_WEB_IP:?Set trusted web IP}
+secrets:
+  runtime_env: {file: "${SHARED_ROOT:?Set protected shared root}/runtime.env"}
+  migration_env: {file: "${SHARED_ROOT:?Set protected shared root}/migration.env"}
+  postgres_password: {file: "${SHARED_ROOT:?Set protected shared root}/postgres_password"}
+volumes:
+  postgres_data:
+  model_cache:
+networks:
+  default:
+    ipam:
+      config:
+        - subnet: ${NETWORK_SUBNET:?Set dedicated nonoverlapping subnet}
+          ip_range: ${NETWORK_IP_RANGE:?Set dynamic allocation pool excluding static web and gateway}

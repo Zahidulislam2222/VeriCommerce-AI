@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Static deployment operator configuration (no credentials)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["hostname", "slug", "loopback_port", "container_port", "static_image", "caddy_site", "remote_apps_root", "remote_caddy_root", "remote_caddy_main_config", "network_subnet", "cloudflare_api_base", "cloudflare_token_file", "host_keys_file", "infrastructure_document", "ssh_dependency_dir", "timeouts"],
+  "properties": {
+    "hostname": {"type": "string"},
+    "slug": {"type": "string"},
+    "loopback_port": {"type": "integer", "minimum": 1024, "maximum": 65535},
+    "container_port": {"type": "integer", "minimum": 1024, "maximum": 65535},
+    "static_image": {"type": "string", "pattern": "@sha256:[a-f0-9]{64}$"},
+    "caddy_site": {"type": "string"},
+    "remote_apps_root": {"type": "string"},
+    "remote_caddy_root": {"type": "string"},
+    "remote_caddy_main_config": {"type": "string"},
+    "network_subnet": {"type": "string"},
+    "cloudflare_api_base": {"type": "string", "format": "uri"},
+    "cloudflare_token_file": {"type": "string"},
+    "host_keys_file": {"type": "string"},
+    "infrastructure_document": {"type": "string"},
+    "ssh_dependency_dir": {"type": "string"},
+    "timeouts": {"type": "object", "additionalProperties": false, "required": ["connect", "command", "http", "compose_wait"], "properties": {"connect": {"type": "integer", "minimum": 1}, "command": {"type": "integer", "minimum": 1}, "http": {"type": "integer", "minimum": 1}, "compose_wait": {"type": "integer", "minimum": 1}}}
+  }
+}

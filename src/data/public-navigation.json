@@ -1,0 +1,122 @@
+{
+  "homeLabel": "VeriCommerce AI home",
+  "mainLabel": "Main navigation",
+  "mobileLabel": "Mobile navigation",
+  "openMenu": "Open navigation",
+  "closeMenu": "Close navigation",
+  "workspaceLabel": "Open workspace",
+  "workspaceShortLabel": "Workspace",
+  "workspacePath": "/engine",
+  "primary": [
+    {
+      "label": "Platform",
+      "href": "/platform"
+    },
+    {
+      "label": "Pricing",
+      "href": "/pricing"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Docs",
+      "href": "/docs"
+    }
+  ],
+  "footerLabel": "Footer navigation",
+  "footerDescription": "A clearer connection between products, evidence and the stories we tell.",
+  "operator": "An independent project by Zahidul Islam.",
+  "status": "Evidence intelligence · Human review · Current release",
+  "groups": [
+    {
+      "label": "Product",
+      "links": [
+        {
+          "label": "The platform",
+          "href": "/platform"
+        },
+        {
+          "label": "Pricing",
+          "href": "/pricing"
+        },
+        {
+          "label": "Evidence engine",
+          "href": "/engine"
+        },
+        {
+          "label": "Collection workspace",
+          "href": "/workspace"
+        }
+      ]
+    },
+    {
+      "label": "Company",
+      "links": [
+        {
+          "label": "About",
+          "href": "/about"
+        },
+        {
+          "label": "Contact",
+          "href": "/contact"
+        },
+        {
+          "label": "Changelog",
+          "href": "/changelog"
+        }
+      ]
+    },
+    {
+      "label": "Resources",
+      "links": [
+        {
+          "label": "Documentation",
+          "href": "/docs"
+        },
+        {
+          "label": "Security",
+          "href": "/security"
+        },
+        {
+          "label": "Accessibility",
+          "href": "/accessibility"
+        },
+        {
+          "label": "Third-party notices",
+          "href": "/THIRD-PARTY-NOTICES.txt"
+        }
+      ]
+    },
+    {
+      "label": "Legal",
+      "links": [
+        {
+          "label": "Legal overview",
+          "href": "/legal"
+        },
+        {
+          "label": "Privacy",
+          "href": "/privacy"
+        },
+        {
+          "label": "Terms of use",
+          "href": "/terms"
+        },
+        {
+          "label": "Cookies",
+          "href": "/cookies"
+        },
+        {
+          "label": "United States",
+          "href": "/legal/us"
+        },
+        {
+          "label": "European Union",
+          "href": "/legal/eu"
+        }
+      ]
+    }
+  ]
+}
