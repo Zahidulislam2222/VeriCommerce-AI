@@ -41,4 +41,4 @@ The [ten-phase roadmap](docs/BUILD-PLAN.md) expands this foundation. A future 99
 
 Contact: [muhammadzahidulislam2222@gmail.com](mailto:muhammadzahidulislam2222@gmail.com).
 
-License: [all rights reserved](LICENSE). Public source inspection is available; no general reuse/relicensing grant is implied.
+License: [MIT](LICENSE), copyright 2026 Zahidul Islam. Preserve the license/copyright notice when reusing the author’s code. Third-party software, fonts, models and media retain their own terms.

@@ -42,4 +42,4 @@ Cormorant Garamond and DM Sans are self-hosted with SIL Open Font License notice
 
 ## Repository rights
 
-The author’s [repository license](../LICENSE) reserves rights and permits source inspection without a general open-source reuse grant. GitHub platform viewing/forking rights and applicable-law exceptions remain unaffected. Request written permission for other uses that require it. This does not relicense independently licensed software, fonts or model weights.
+The author’s code and associated documentation use the [MIT License](../LICENSE), copyright 2026 Zahidul Islam. MIT permits reuse, modification and redistribution subject to preserving its copyright/permission notice and disclaimer. This does not relicense independently licensed software, fonts, model weights or media; preserve their respective terms and provenance.

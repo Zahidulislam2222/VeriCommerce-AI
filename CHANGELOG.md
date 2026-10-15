@@ -7,7 +7,7 @@ Dates describe recorded engineering work. Deployment and publication claims requ
 - Public engineering documentation: setup, configuration, API, architecture, security/threat model, privacy/US/EU applicability, accessibility, data/model/evaluation licenses, release/CI, incidents/recovery and future scaling/cost.
 - Current-release language, explicit temporary-workspace constraints and removal of unsupported quantitative interface comparisons.
 - Validated maintained API/policy metadata and configurable API version.
-- Repository license reserves rights; third-party notices remain independent.
+- MIT License selected explicitly by the owner; third-party notices remain independent.
 - Hosted CI configuration is distinguished from an observed hosted run.
 
 Final candidate test/deployment evidence is recorded separately when those gates complete. This entry does not assert a new feature such as accounts, Shopify, uploads or training.

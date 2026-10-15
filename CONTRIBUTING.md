@@ -1,6 +1,6 @@
 # Contributing
 
-VeriCommerce AI is maintained by Zahidul Islam. Source publication supports inspection and review. The repository's [license](LICENSE) reserves rights; public visibility is not a general permission to reuse, redistribute or relicense the code. Obtain the maintainer's agreement for uses outside the stated license. Third-party components retain their own licenses.
+VeriCommerce AI is maintained by Zahidul Islam and released under the [MIT License](LICENSE). You may use, modify and redistribute the author’s code under that license, including its notice-preservation and warranty terms. Third-party components retain their own licenses. Contributions intended for inclusion must be compatible with MIT and you must have the right to provide them.
 
 Use [the repository](https://github.com/Zahidulislam2222/VeriCommerce-AI) for non-sensitive defects and proposed improvements. Vulnerabilities follow [private security reporting](SECURITY.md); conduct issues use the contact in [the code of conduct](CODE_OF_CONDUCT.md). Discuss substantial changes and rights to contributed material before submitting them.
 
