@@ -1,4 +1,35 @@
 # VeriCommerce AI
+
+Engineering release record · 15 October 2026
+Author: Zahidul Islam
+
+## Latest verified release
+
+The frontend and evidence backend are deployed together as version 0.2.0. The application and public engineering documentation are published under the MIT license in Zahidul Islam’s GitHub repository.
+
+Website: https://vericommerce.zahidul-islam.com/
+Evidence workspace: https://vericommerce.zahidul-islam.com/engine
+Repository: https://github.com/Zahidulislam2222/VeriCommerce-AI
+
+## Observed engineering evidence
+
+- Application/CI source: commit 4d206d4c6de8d6fd3d9c0a53b8c90ffd071cb44e.
+- Hosted quality and security workflows passed. Quality executed 49 PostgreSQL/CPU/infrastructure checks, 11 frontend checks and 44 browser journeys, with no skipped cases.
+- Independent source, infrastructure, documentation and recovery reviews: ACCEPT. Types, lint, build, secret scanning and applicable static-security checks passed.
+- Production dependency advisory checks reported zero known vulnerabilities across the frontend production dependencies and all 41 pinned Python runtime packages on the verification date.
+- Immutable deployment: 20261015-release-01; 84 local/archive/live artifact hashes matched, with four healthy constrained services and verified HTTPS.
+- Populated database restoration, actual application rollback and forward recovery passed. The existing approved draft retained its exact content hash. All 16 observed gateway files remained unchanged.
+- Final public desktop/mobile browser run: 44 passed, zero skipped, flaky or failed cases.
+
+## Current scope and next gates
+
+Current capabilities include JSON catalog ingestion, immutable source revisions, keyword/local CPU hybrid retrieval, cited quotations, durable draft jobs, explicit approval, provenance and JSON export. Access remains a temporary cookie-bound workspace. Accounts, Shopify publishing, document/image ingestion, model training and actual three-cloud deployments remain separately gated roadmap work.
+
+The 1M+ active-user architecture and 99% rolling-30-day availability objective are future targets. They are supported by a staged capacity model, operational definitions and validation gates; they are not current load or uptime measurements. The following technical overview preserves the project’s architecture, public legal/security information, operational limits and ten-phase roadmap.
+
+---
+
+# VeriCommerce AI
 ## Evidence-grounded commerce intelligence
 ### Engineering narrative — Zahidul Islam
 
