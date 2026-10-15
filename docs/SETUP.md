@@ -54,6 +54,8 @@ Disable download allowance afterward. Normal startup uses the exact cached revis
 
 ## Verification
 
+Full media and reduced-motion browser checks require the existing hero MP4 and `VITE_HERO_VIDEO=true` in the frontend test environment before Vite starts. The copied safe example defaults to false; enable the flag for the full suite. Do not assume a private local `.env` exists in clean CI.
+
 From repository root:
 
 ```sh

@@ -35,7 +35,9 @@ Read [contributing](CONTRIBUTING.md), [security reporting](SECURITY.md) and [con
 
 ## Evidence and future targets
 
-The verified public-page release passed 44 live desktop/mobile browser checks, 8 domain checks, type/lint/build/security gates and independent review. Its 84 artifact hashes matched; the existing backend remained unchanged. The release report states recovery scope and limitations.
+Version 0.2.0 frontend/backend release `20261015-release-01` is deployed with 84 matching artifacts. Hosted quality/security at application/CI commit `4d206d4` passed 49 backend/infrastructure, 11 frontend and 44 browser checks. A populated 29-workspace restoration, actual rollback/forward recovery and the saved draft's identical hash passed. Final post-recovery route/TLS/parity/gateway checks passed. The actual public desktop/mobile rerun also passed 44/44, with zero skipped, flaky or failed cases. [Release evidence](docs/RELEASE-VERIFICATION.md) separates these results and their scope.
+
+The earlier verified public-page release passed 44 live desktop/mobile browser checks, 8 domain checks, type/lint/build/security gates and independent review. Its 84 artifact hashes matched; the existing backend remained unchanged. The release report states recovery scope and limitations.
 
 The [ten-phase roadmap](docs/BUILD-PLAN.md) expands this foundation. A future 99% availability objective and architecture for 1M+ active users are engineering targets, not current uptime or capacity measurements. Assumptions, validation and cost boundaries are in [operations](docs/OPERATIONS.md) and [scalability](docs/SCALABILITY-AND-COST.md).
 

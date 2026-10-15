@@ -1,9 +1,11 @@
 # Engineering documentation
 
-VeriCommerce AI is developed and operated by **Zahidul Islam**. These documents describe implemented behavior, observed release evidence and clearly marked future targets. generated product records are not customers, orders or measured business outcomes.
+VeriCommerce AI is developed and operated by **Zahidul Islam**. These documents describe implemented behavior, observed release evidence and clearly marked future targets. Generated product records are not customers, orders or measured business outcomes.
 
 | Document | Purpose |
 |---|---|
+| [Technical overview](../my-project-view/technical-overview.md) | Comprehensive project narrative |
+| [PDF overview](../my-project-view/VeriCommerce%20AI%20%E2%80%94%20Comprehensive%20Technical%20Overview.pdf) | Native Google Docs export |
 | [Architecture](CORE-ARCHITECTURE.md) | Components, trust boundaries, evidence lifecycle and constraints |
 | [Setup](SETUP.md) | Frontend, PostgreSQL, API, worker and checks |
 | [API](CORE-API.md) | Current session, ingestion, search, approval and evaluation contract |

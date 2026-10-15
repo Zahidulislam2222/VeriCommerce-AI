@@ -4,6 +4,12 @@ This document separates existing recovery evidence from proposed operating targe
 
 ## Observed operational evidence
 
+Latest release `20261015-release-01` (version 0.2.0) passed populated restoration into a separate database: 29 generated test workspaces, 206 source revisions and 13 drafts. All 11 table payload counts/hashes matched; restricted-role, absent-context and cross-tenant RLS probes passed. Actual application rollback exposed API 0.1.0, then forward recovery restored API 0.2.0 and the original approved draft's exact hash; persistent volumes were preserved.
+
+The initial forward file-set gate failed. Exact read-only replay found the complete 84-hash file set plus its manifest and no extras/missing/symlinks. An unchanged operator retry passed; the initial cause is unverified. Final route/TLS/four-service health/parity and 16 unchanged gateway hashes passed. Final actual public desktop/mobile browser revalidation passed 44/44, with zero skipped, flaky or failed cases.
+
+Earlier recovery history follows; these snapshot rehearsals do not prove continuous backup scheduling or measured recovery targets.
+
 The evidence-core release was restored into a separate database with exact table payload hashes and restricted-role/tenant-isolation probes: 15 test workspaces, 106 source revisions and 7 drafts. Those counts are test records, not customers. Actual application rollback served the previous frontend and disabled the API; forward recovery restored it and preserved a previously approved draft's exact content hash.
 
 The subsequent public-page release preserved the existing API/worker/database identities and backend image. Its new frontend rollback path passed 15 safety regressions, but no additional actual database restoration or runtime rollback was performed for that frontend-only change. A successful rehearsal proves recoverability for the tested state; it does not establish scheduled recovery-point or recovery-time performance.
@@ -29,7 +35,7 @@ Proposed actions: record budget consumption daily; pause nonessential releases w
 
 ## Proposed backup and restoration policy
 
-Future targets are **RPO≤24 hours** and **RTO≤4 hours**. RPO is maximum acceptable data loss relative to the incident; RTO runs from incident declaration through validated service recovery. Neither target is established by the current one-time restore evidence.
+Future targets are **RPO≤24 hours** and **RTO≤4 hours**. RPO is maximum acceptable data loss relative to the incident; RTO runs from incident declaration through validated service recovery. Neither target is established by these point-in-time restore rehearsals.
 
 Before valuable durable data is accepted, assign an operator and confirm the backup destination is available. Schedule consistent PostgreSQL dumps, model/release manifests and required protected configuration; separately handle future evidence objects. Encrypt off-server copies with independently recoverable keys, define retention/deletion/legal-hold rules, restrict access and alert on missed/unrestorable copies. These are required additions, not verified present controls.
 
