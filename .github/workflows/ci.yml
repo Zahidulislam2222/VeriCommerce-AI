@@ -101,7 +101,7 @@ jobs:
           env -u VC_MIGRATION_DATABASE_URL -u VC_TEST_ADMIN_DATABASE_URL -u VC_TEST_DATABASE_URL python -m vericommerce_core.worker > ../.cache/worker.log 2>&1 &
           WORKER_PID=$!
           cd ..
-          npm run dev -- --host 127.0.0.1 --port 5178 --strictPort > .cache/frontend.log 2>&1 &
+          npm run preview -- --host 127.0.0.1 --port 5178 --strictPort > .cache/frontend.log 2>&1 &
           FRONTEND_PID=$!
           trap 'kill "$FRONTEND_PID" "$WORKER_PID" "$API_PID" 2>/dev/null || true' EXIT
           for attempt in $(seq 1 90); do
