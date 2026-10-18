@@ -17,6 +17,7 @@ from typing import Any
 import httpx
 import pytest
 
+import infra.cloud.package as packages
 from infra.cloud.benchmark import Benchmark, app
 from infra.cloud.package import LAMBDA_FILES, package_lambda, package_static
 from infra.cloud.settings import CloudSettings
@@ -174,6 +175,53 @@ def test_real_lambda_zip_invocation_outside_checkout(tmp_path: Path) -> None:
     )
     verdict = json.loads(result.stdout)
     assert verdict["valid"] and verdict["evidence_count"] == 1
+
+
+def test_container_context_is_bounded_allowlisted_and_includes_shared_build_lock(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """Do not send repository credentials or merchant records to a Docker builder."""
+    original = Path(packages.__file__).parent
+    repository = tmp_path / "source"
+    cloud = repository / "infra/cloud"
+    cloud.mkdir(parents=True)
+    public_files = {"Dockerfile", "__init__.py", "settings.py", "validator.py", "benchmark.py",
+                    "runtime-requirements.lock", "snapshot.json", "snapshot.sha256"}
+    for name in public_files:
+        (cloud / name).write_bytes((original / name).read_bytes())
+    (cloud.parent / "__init__.py").write_bytes((original.parent / "__init__.py").read_bytes())
+    backend = repository / "backend"
+    backend.mkdir()
+    build_lock = Path(__file__).resolve().parents[2] / "backend/build-requirements.lock"
+    for name in packages.CONTAINER_BUILD_INPUTS:
+        (backend / name).write_bytes((build_lock.parent / name).read_bytes())
+    for name in (".env", "CREDENTIALS.md", "backend/merchant.json", "infra/cloud/private-key.pem"):
+        (repository / name).write_text("test-key-private-only")
+    monkeypatch.setattr(packages, "__file__", str(cloud / "package.py"))
+    settings = CloudSettings.load()
+    destination = tmp_path / "context"
+    result = packages.package_container(destination, settings)
+    expected = {*("infra/cloud/" + name for name in public_files),
+                "infra/cloud/config.json", "infra/__init__.py",
+                *("backend/" + name for name in packages.CONTAINER_BUILD_INPUTS)}
+    files = {str(path.relative_to(destination)): path.read_bytes()
+             for path in destination.rglob("*") if path.is_file()}
+    assert set(files) == set(result["manifest"]) == expected
+    assert all(sha256(content) == result["manifest"][name] for name, content in files.items())
+    for name in packages.CONTAINER_BUILD_INPUTS:
+        assert files["backend/" + name] == (build_lock.parent / name).read_bytes()
+    assert b"test-key-private-only" not in b"".join(files.values())
+    assert not result["cloud_deployed"]
+    with pytest.raises(ValueError):
+        packages.package_container(destination, settings)
+    link = tmp_path / "symlink-context"
+    link.symlink_to(destination, target_is_directory=True)
+    with pytest.raises(ValueError):
+        packages.package_container(link, settings)
+    bounded = tmp_path / "over-budget"
+    with pytest.raises(ValueError):
+        packages.package_container(bounded, replace(settings, max_members=1))
+    assert not bounded.exists()
 
 
 @pytest.mark.parametrize("health_path", ["/healthz", "/readyz", "/_ah/health", "/health?x=1"])

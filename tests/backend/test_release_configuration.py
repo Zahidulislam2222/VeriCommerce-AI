@@ -35,6 +35,8 @@ def boundary_violations(source: str) -> set[str]:
                 findings.add("literal_provider_url")
             if re.search(r"postgres(?:ql)?://[^\s:'\"]+:[^\s@'\"]+@", node.value):
                 findings.add("literal_credential_dsn")
+            if re.search(r"\bLIMIT\s+(?:[2-9]|\d{2,})\b", node.value, re.IGNORECASE):
+                findings.add("literal_operational_page_limit")
     return findings
 
 
@@ -52,6 +54,7 @@ def test_boundary_guard_rejects_reintroduced_settings_and_fake_credentials() -> 
         "connect(connect_timeout=5)",
         "endpoint='https://provider.example.test/v1'",
         "dsn='postgresql://test-user:test-key@localhost/test_db'",
+        "query='SELECT id FROM audit_events LIMIT 50'",
     ]
     assert all(boundary_violations(source) for source in examples)
     assert not boundary_violations("provider(model_name=settings.embedding_model)")
@@ -153,3 +156,89 @@ def test_invalid_maintained_policy_fails_before_serving_requests(settings: Any, 
     path.write_text(json.dumps(policy))
     with pytest.raises(ValidationError):
         RetrievalEngine(settings.model_copy(update={"policy_path": path}))
+
+
+def test_audit_response_obeys_typed_page_limit_on_real_database(settings: Any) -> None:
+    from vericommerce_core.database import transaction
+    from vericommerce_core.main import create_app
+    from vericommerce_core.repository import audit
+
+    configured = settings.model_copy(update={"audit_page_size": 3})
+    with TestClient(
+        create_app(configured), base_url="https://testserver", headers={"Origin": "https://testserver"}
+    ) as client:
+        session = client.post("/api/session", json={})
+        assert session.status_code == 200, session.text
+        tenant_id = session.json()["tenant_id"]
+        with transaction(configured, tenant_id) as db:
+            for index in range(6):
+                audit(db, tenant_id, "configured.limit", str(index), configured)
+        response = client.get("/api/audit")
+        assert response.status_code == 200, response.text
+        assert len(response.json()["events"]) == 3
+
+
+def test_document_chunk_limit_controls_persisted_passages(settings: Any, monkeypatch: Any) -> None:
+    import base64
+
+    from vericommerce_core import uploads
+    from vericommerce_core.database import transaction
+    from vericommerce_core.jobs import process_one
+    from vericommerce_core.main import create_app
+
+    # Isolate chunking from parser behavior: real HTTP admission, job and DB effects;
+    # separate parser tests exercise actual PDF extraction/isolation.
+    text = "Evidence document content." * 50
+    monkeypatch.setattr(
+        uploads, "isolated_parse", lambda *_: {"kind": "document", "pages": [{"page": "1", "text": text}]}
+    )
+    configured = settings.model_copy(update={"document_chunk_chars": 256})
+    with TestClient(
+        create_app(configured), base_url="https://testserver", headers={"Origin": "https://testserver"}
+    ) as client:
+        session = client.post("/api/session", json={})
+        assert session.status_code == 200, session.text
+        tenant_id = session.json()["tenant_id"]
+        received = client.post(
+            "/api/uploads",
+            json={
+                "product_id": "forma-one", "source_id": "configured-chunk-source",
+                "filename": "configured.pdf", "media_type": "application/pdf", "version": "1",
+                "content_base64": base64.b64encode(b"%PDF-1.7\nfixture").decode(),
+            },
+        )
+        assert received.status_code == 202, received.text
+        job_id = received.json()["job"]["id"]
+        for _ in range(10):
+            process_one(configured)
+            job = client.get("/api/jobs/" + job_id).json()["job"]
+            if job["status"] in {"succeeded", "failed"}:
+                break
+        assert job["status"] == "succeeded", job
+        with transaction(configured, tenant_id) as db:
+            passages = db.execute(
+                "SELECT p.text,p.value FROM passages p JOIN source_revisions r "
+                "ON p.tenant_id=r.tenant_id AND p.revision_id=r.id "
+                "WHERE p.tenant_id=%s AND r.source_id=%s ORDER BY p.position",
+                (tenant_id, "configured-chunk-source"),
+            ).fetchall()
+        assert len(passages) == (len(text) + 255) // 256
+        # Evidence ingestion canonically sorts claims and trims schema whitespace;
+        # this patch preserves that existing contract, rather than inventing a
+        # document-order guarantee from the persisted position field.
+        expected = sorted(text[start : start + 256].strip() for start in range(0, len(text), 256))
+        assert [row["text"] for row in passages] == expected
+        assert all(len(row["text"]) <= 256 and len(row["value"]) <= 500 for row in passages)
+
+
+def test_operational_page_and_chunk_settings_reject_schema_excess(settings: Any) -> None:
+    from pydantic import ValidationError
+
+    cls = type(settings)
+    defaults = cls.model_fields
+    assert defaults["audit_page_size"].default == 50
+    assert defaults["document_chunk_chars"].default == 4000
+    values = settings.model_dump()
+    for invalid in ({"audit_page_size": 0}, {"document_chunk_chars": 0}, {"document_chunk_chars": 4001}):
+        with pytest.raises(ValidationError):
+            cls(**{**values, **invalid})

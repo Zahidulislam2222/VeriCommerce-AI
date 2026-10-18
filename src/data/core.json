@@ -73,7 +73,7 @@
   "scopeLabel": "Product scope",
   "allProducts": "All products",
   "askButton": "Find a grounded answer",
-  "answerTitle": "What the sources establish",
+  "answerTitle": "Retrieved source passages",
   "abstentionTitle": "The evidence does not establish that.",
   "citations": "Supporting passages",
   "draftButton": "Prepare draft",
@@ -136,5 +136,52 @@
     "jobTimeout": "This job is still pending. Its work is stored on the server; refresh to inspect the result before retrying.",
     "json": "Enter valid JSON before importing.",
     "importSize": "This catalog exceeds the client upload limit. Split it into smaller permitted catalogs."
+  },
+  "assistant": {
+    "title": "AI assistance for product evidence",
+    "identity": "This AI assistance uses local retrieval to quote your current product sources. It is not a human support agent.",
+    "limits": "Quotations can be incomplete, incorrect or in conflict. Check the source and revision; source text never authorizes an action. This assistant does not publish to a store or manage accounts.",
+    "privacy": "Each search sends your question to this project’s server. The recent-question list and visible product scopes are kept only in this page’s memory, without stored answer history or persistent chat memory. Restart, refresh, leaving the workspace or changing identity clears these questions. Keep sensitive information out.",
+    "guide": "Read the workflow guide",
+    "contact": "Contact the project operator",
+    "contactNote": "Messages go to the project operator; no response time is guaranteed.",
+    "guidanceTitle": "Choose your next step",
+    "guidance": [
+      {
+        "view": "import",
+        "label": "Add permitted evidence"
+      },
+      {
+        "view": "evidence",
+        "label": "Inspect source versions"
+      },
+      {
+        "view": "drafts",
+        "label": "Review drafts and exports"
+      },
+      {
+        "view": "account",
+        "label": "Understand account access"
+      },
+      {
+        "view": "connections",
+        "label": "Inspect read-only connections"
+      }
+    ],
+    "stop": "Stop waiting",
+    "restart": "Restart questions",
+    "stopped": "Stopped waiting for this search. The server may finish its read.",
+    "restarted": "Questions cleared. Start a new search.",
+    "history": "Recent questions in this tab",
+    "reuse": "Edit or ask again",
+    "followup": "Follow up about {product}",
+    "followupNotice": "The visible product scope is now {product}. Enter a new question; previous answers are not used as evidence.",
+    "scopeMissing": "That product is no longer available in this workspace. Choose a current product before searching again.",
+    "answerFor": "Question:",
+    "quoteNotice": "These are retrieved quotations, not a decision that one claim is true. If sources disagree, inspect their versions in content review.",
+    "review": "Inspect source consistency",
+    "unknownNext": "Try a documented detail, choose the intended product, inspect or add permitted evidence, or contact the operator.",
+    "historyScopeMissing": "Product no longer available",
+    "historyHint": "Choose a question to edit, then search current evidence again."
   }
 }

@@ -1,4 +1,4 @@
-import { Fragment, useCallback, useEffect, useState } from 'react';
+import { Fragment, useCallback, useEffect, useRef, useState } from 'react';
 import { ArrowLeft, ArrowUpRight, BookOpen, Check, Clock3, Download, FileText, FlaskConical, History, Layers3, LayoutDashboard, LoaderCircle, MessageSquare, RefreshCw, Search, ShieldCheck, Sparkles, Upload, Users, Link, GitCompareArrows, ScanEye } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { Brand, Modal } from './components';
@@ -6,7 +6,7 @@ import { appConfig } from './config';
 import copy from './data/core.json';
 import phaseCopy from './data/phase-workspace.json';
 import fixture from './data/demo.json';
-import { CoreError, WorkspaceScopeError, ensureSession, getWorkspaceScope, post, request, setWorkspaceScope, waitForJob } from './core/api';
+import { CoreError, CoreRequestStopped, WorkspaceScopeError, ensureSession, getWorkspaceScope, post, request, setWorkspaceScope, waitForJob } from './core/api';
 import type { Answer, AuditEvent, CoreDraft, CoreProduct, CoreSource, CoreView, Evaluation, Evidence, Job, Overview } from './core/types';
 import type { AccountState, PlatformCapabilities } from './core/phase-types';
 import { AccountPanel, StorePanel } from './core/AccountPanel';
@@ -22,58 +22,76 @@ const titles: Record<CoreView, string> = { ...copy.titles, ...phaseCopy.titles }
 const descriptions: Record<CoreView, string> = { ...copy.descriptions, ...phaseCopy.descriptions };
 type Graph = { nodes: { id: string; type: string; label: string }[]; edges: { source: string; target: string; relation: string }[]; impact: { stale_drafts: number; current_source_revisions: number } };
 type Snapshot = { scopeKey: string; workspaceError?: string; overview: Overview; products: CoreProduct[]; sources: CoreSource[]; drafts: CoreDraft[]; events: AuditEvent[]; evaluations: Evaluation[]; graph: Graph; account: AccountState; capabilities: PlatformCapabilities };
+type RecentQuestion = { query: string; scope: string };
+type SnapshotContext = { isCurrent: () => boolean; expected?: Snapshot };
+function checkSnapshot(context?: SnapshotContext) { if (context && !context.isCurrent()) throw new CoreRequestStopped(); }
+function snapshotOwner(data: Snapshot) { return JSON.stringify([data.scopeKey, data.account.authenticated, data.account.user?.id]); }
 function currentView(): CoreView { const hash = window.location.hash.slice(1); return menu.some((item) => item.id === hash) ? hash as CoreView : 'overview'; }
 function safeImage(path?: string): string | undefined { return path && /^\/images\/[a-z0-9-]+\.webp$/.test(path) ? path : undefined; }
 function when(value: string) { return new Date(value).toLocaleString(); }
-function accountShell(account: AccountState, capabilities: PlatformCapabilities, reason: string): Snapshot {
-  setWorkspaceScope();
+function accountShell(account: AccountState, capabilities: PlatformCapabilities, reason: string, context?: SnapshotContext): Snapshot {
+  checkSnapshot(context); setWorkspaceScope();
   return { scopeKey: account.user?.id || '', workspaceError: reason, account, capabilities, products: [], sources: [], drafts: [], events: [], evaluations: [],
     graph: { nodes: [], edges: [], impact: { stale_drafts: 0, current_source_revisions: 0 } },
     overview: { products: 0, sources: 0, passages: 0, drafts: 0, approved_drafts: 0, queued_jobs: 0,
       retrieval: { status: 'no_workspace', method: '', model: null, revision: null, reason } } };
 }
 
-async function fetchSnapshot(attempt = 0): Promise<Snapshot> {
-  try { return await fetchScopedSnapshot(); }
+async function fetchSnapshot(attempt = 0, context?: SnapshotContext): Promise<Snapshot> {
+  checkSnapshot(context);
+  try { return await fetchScopedSnapshot(context); }
   catch (caught) {
-    if (!(caught instanceof WorkspaceScopeError) || attempt > 0) throw caught;
+    checkSnapshot(context);
+    if (!(caught instanceof WorkspaceScopeError) || attempt > 0 || context?.expected) throw caught;
     setWorkspaceScope();
-    return fetchSnapshot(attempt + 1);
+    return fetchSnapshot(attempt + 1, context);
   }
 }
-async function fetchScopedSnapshot(): Promise<Snapshot> {
+async function fetchScopedSnapshot(context?: SnapshotContext): Promise<Snapshot> {
   const paths = appConfig.core.paths;
   const accountRequest = async () => {
-    try { return await request<AccountState>(`${appConfig.core.phasePaths.auth}/me`); }
+    checkSnapshot(context);
+    try { const account = await request<AccountState>(`${appConfig.core.phasePaths.auth}/me`); checkSnapshot(context); return account; }
     catch (caught) {
+      checkSnapshot(context);
       if (!(caught instanceof CoreError) || caught.status !== 401) throw caught;
+      // Access loss must invalidate private Ask state before recoverable cookie work.
+      if (context?.expected) throw new WorkspaceScopeError();
       setWorkspaceScope();
       await post(`${appConfig.core.phasePaths.auth}/logout`, {});
-      return request<AccountState>(`${appConfig.core.phasePaths.auth}/me`);
+      checkSnapshot(context);
+      const account = await request<AccountState>(`${appConfig.core.phasePaths.auth}/me`);
+      checkSnapshot(context); return account;
     }
   };
   const [receivedAccount, capabilities] = await Promise.all([
     accountRequest(), request<PlatformCapabilities>(appConfig.core.phasePaths.capabilities),
   ]);
+  checkSnapshot(context);
   const account = receivedAccount.authenticated && !receivedAccount.memberships.some((member) => member.tenant_id === receivedAccount.active_tenant_id)
     ? { ...receivedAccount, active_tenant_id: undefined, capabilities: [] } : receivedAccount;
-  if (account.authenticated && !account.active_tenant_id) return accountShell(account, capabilities, phaseCopy.account.noWorkspace);
+  if (context?.expected && (account.authenticated !== context.expected.account.authenticated || account.user?.id !== context.expected.account.user?.id || account.active_tenant_id !== context.expected.account.active_tenant_id)) throw new WorkspaceScopeError();
+  if (account.authenticated && !account.active_tenant_id) return accountShell(account, capabilities, phaseCopy.account.noWorkspace, context);
   let session: { tenant_id: string };
-  try { session = await ensureSession() as { tenant_id: string }; }
+  try { session = await ensureSession(context ? () => checkSnapshot(context) : undefined) as { tenant_id: string }; }
   catch (caught) {
-    if (!account.authenticated && caught instanceof CoreError && caught.status === 429) return accountShell({ ...account, capabilities: [] }, capabilities, caught.message);
+    checkSnapshot(context);
+    if (!account.authenticated && caught instanceof CoreError && caught.status === 429) return accountShell({ ...account, capabilities: [] }, capabilities, caught.message, context);
     throw caught;
   }
-  if (account.authenticated && session.tenant_id !== account.active_tenant_id) throw new WorkspaceScopeError();
+  checkSnapshot(context);
+  if ((account.authenticated && session.tenant_id !== account.active_tenant_id) || (context?.expected && session.tenant_id !== context.expected.scopeKey)) throw new WorkspaceScopeError();
   setWorkspaceScope(session.tenant_id);
   const [overview, productData, sourceData, draftData, auditData, evaluationData, graph] = await Promise.all([
     request<Overview>(paths.overview), request<{ products: CoreProduct[] }>(paths.products),
     request<{ sources: CoreSource[] }>(paths.sources), request<{ drafts: CoreDraft[] }>(paths.drafts),
     request<{ events: AuditEvent[] }>(paths.audit), request<{ evaluations: Evaluation[] }>(paths.evaluations), request<Graph>(paths.graph),
   ]);
+  checkSnapshot(context);
   const [verifiedSession, verifiedAccount] = await Promise.all([
     request<{ tenant_id: string }>(paths.session), accountRequest(),
   ]);
+  checkSnapshot(context);
   if (verifiedSession.tenant_id !== session.tenant_id || verifiedAccount.authenticated !== account.authenticated ||
       verifiedAccount.user?.id !== account.user?.id || verifiedAccount.active_tenant_id !== account.active_tenant_id) throw new WorkspaceScopeError();
   return { scopeKey: session.tenant_id, overview, products: productData.products, sources: sourceData.sources, drafts: draftData.drafts,
@@ -90,36 +108,62 @@ export default function CoreWorkspace({ onBack }: { onBack: () => void }) {
   const [query, setQuery] = useState('');
   const [scope, setScope] = useState('');
   const [answer, setAnswer] = useState<Answer | null>(null);
+  const [answeredQuery, setAnsweredQuery] = useState('');
+  const [recentQuestions, setRecentQuestions] = useState<RecentQuestion[]>([]);
+  const [asking, setAsking] = useState(false);
+  const answerRequest = useRef<AbortController | null>(null);
+  const answerGeneration = useRef(0);
+  const operationGeneration = useRef(0);
+  const identityGeneration = useRef(0);
+  const identityOwner = useRef('');
+  const mounted = useRef(true);
   const [catalog, setCatalog] = useState('');
   const [job, setJob] = useState<Job | null>(null);
   const [draftKind, setDraftKind] = useState(phaseCopy.draft.formats[0].id);
   const [dialog, setDialog] = useState<{ type: 'citation'; evidence: Evidence } | { type: 'approval'; draft: CoreDraft } | null>(null);
   const paths = appConfig.core.paths;
 
-  const refresh = useCallback(async () => {
-    setAnswer(null);
-    setSnapshot(await fetchSnapshot());
+  const clearQuestions = useCallback(() => {
+    identityGeneration.current += 1; answerGeneration.current += 1;
+    if (answerRequest.current) { answerRequest.current.abort(); answerRequest.current = null; operationGeneration.current += 1; setBusy(''); }
+    setAsking(false); setRecentQuestions([]); setAnsweredQuery(''); setAnswer(null); setQuery(''); setScope(''); setNotice('');
   }, []);
+  const installSnapshot = useCallback((data: Snapshot) => {
+    const nextOwner = snapshotOwner(data);
+    if (identityOwner.current && identityOwner.current !== nextOwner) clearQuestions();
+    identityOwner.current = nextOwner;
+    setSnapshot(data);
+  }, [clearQuestions]);
+  const refresh = useCallback(async (isCurrent: () => boolean = () => mounted.current, expected?: Snapshot) => {
+    if (!isCurrent()) return;
+    setAnswer(null);
+    const data = await fetchSnapshot(0, { isCurrent, expected });
+    if (isCurrent()) installSnapshot(data);
+  }, [installSnapshot]);
   const connect = useCallback(async () => {
+    clearQuestions(); identityOwner.current = '';
     setLoading(true); setError(''); setAnswer(null); setSnapshot(null); setDialog(null); setCatalog(''); setQuery(''); setScope(''); setJob(null);
     try { await refresh(); } catch (caught) { setError(caught instanceof Error ? caught.message : copy.errors.connection); }
     finally { setLoading(false); }
-  }, [refresh]);
+  }, [refresh, clearQuestions]);
   useEffect(() => {
-    let active = true;
-    void fetchSnapshot().then((data) => { if (active) setSnapshot(data); })
+    let active = true; mounted.current = true;
+    void fetchSnapshot(0, { isCurrent: () => active }).then((data) => { if (active) installSnapshot(data); })
       .catch((caught: unknown) => { if (active) setError(caught instanceof Error ? caught.message : copy.errors.connection); })
       .finally(() => { if (active) setLoading(false); });
-    return () => { active = false; setWorkspaceScope(); };
-  }, []);
-  useEffect(() => { const listener = () => setView(currentView()); window.addEventListener('hashchange', listener); return () => window.removeEventListener('hashchange', listener); }, []);
+    return () => { active = false; mounted.current = false; answerGeneration.current += 1; operationGeneration.current += 1; answerRequest.current?.abort(); answerRequest.current = null; identityOwner.current = ''; setWorkspaceScope(); };
+  }, [installSnapshot]);
+  useEffect(() => { const listener = () => { const next = currentView(); if (next !== 'ask') clearQuestions(); setView(next); }; window.addEventListener('hashchange', listener); return () => window.removeEventListener('hashchange', listener); }, [clearQuestions]);
   useEffect(() => { document.querySelector<HTMLElement>('#core-main h1')?.focus({ preventScroll: true }); }, [view]);
 
-  function navigate(next: CoreView) { setView(next); window.history.replaceState({}, '', `${appConfig.route.core}#${next}`); window.scrollTo({ top: 0, behavior: 'instant' }); }
+  function navigate(next: CoreView) { if (view === 'ask' && next !== 'ask') clearQuestions(); setView(next); window.history.replaceState({}, '', `${appConfig.route.core}#${next}`); window.scrollTo({ top: 0, behavior: 'instant' }); }
   async function perform(label: string, action: () => Promise<void>) {
+    const operation = ++operationGeneration.current;
     setBusy(label); setError(''); setNotice('');
     try { await action(); } catch (caught) {
+      if (operation !== operationGeneration.current) return;
       if (caught instanceof WorkspaceScopeError || (caught instanceof CoreError && (caught.status === 401 || caught.status === 403))) {
+        clearQuestions(); identityOwner.current = '';
         setWorkspaceScope();
         setSnapshot(null); setAnswer(null); setDialog(null); setCatalog(''); setQuery(''); setScope(''); setJob(null); setLoading(true);
         try { await refresh(); } catch { /* The original authorization failure remains visible. */ }
@@ -127,14 +171,51 @@ export default function CoreWorkspace({ onBack }: { onBack: () => void }) {
       }
       setError(caught instanceof Error ? caught.message : copy.errors.request);
     }
-    finally { setBusy(''); }
+    finally { if (operation === operationGeneration.current) setBusy(''); }
   }
   async function changeIdentity(action: () => Promise<unknown>) {
+    clearQuestions(); identityOwner.current = '';
     setWorkspaceScope();
     setSnapshot(null); setAnswer(null); setDialog(null); setCatalog(''); setQuery(''); setScope(''); setJob(null); setNotice(''); setLoading(true);
     try { await action(); await refresh(); }
     catch (caught) { await refresh().catch(() => undefined); throw caught; }
     finally { setLoading(false); }
+  }
+  function focusQuestion() { window.requestAnimationFrame(() => document.getElementById('core-question')?.focus()); }
+  function stopWaiting(restart = false) {
+    answerGeneration.current += 1;
+    if (answerRequest.current) { operationGeneration.current += 1; answerRequest.current.abort(); answerRequest.current = null; setBusy(''); }
+    setAsking(false); setAnswer(null); setAnsweredQuery(''); setError('');
+    if (restart) { clearQuestions(); setNotice(copy.assistant.restarted); }
+    else setNotice(copy.assistant.stopped);
+    focusQuestion();
+  }
+  function reuseQuestion(question: RecentQuestion) {
+    const validScope = !question.scope || snapshot?.products.some((product) => product.id === question.scope);
+    setAnswer(null); setAnsweredQuery(''); setQuery(question.query); setScope(validScope ? question.scope : '');
+    setNotice(validScope ? '' : copy.assistant.scopeMissing); focusQuestion();
+  }
+  function askQuestion() {
+    if (!snapshot || !query.trim()) return;
+    if (scope && !snapshot.products.some((product) => product.id === scope)) { setScope(''); setNotice(copy.assistant.scopeMissing); return; }
+    const question = { query: query.trim(), scope };
+    const generation = ++answerGeneration.current;
+    const owner = identityOwner.current;
+    const identity = identityGeneration.current;
+    const controller = new AbortController(); answerRequest.current = controller; setAsking(true);
+    const isCurrent = () => generation === answerGeneration.current && identity === identityGeneration.current && owner === identityOwner.current && mounted.current && !controller.signal.aborted;
+    void perform(copy.working, async () => {
+      setAnswer(null); setAnsweredQuery('');
+      try {
+        const nextAnswer = await request<Answer>(paths.answers, { method: 'POST', body: JSON.stringify({ query: question.query, ...(question.scope ? { product_id: question.scope } : {}) }), signal: controller.signal });
+        if (!isCurrent()) return;
+        await refresh(isCurrent, snapshot);
+        if (!isCurrent()) return;
+        setAnswer(nextAnswer); setAnsweredQuery(question.query);
+        setRecentQuestions((questions) => [question, ...questions.filter((item) => item.query !== question.query || item.scope !== question.scope)].slice(0, appConfig.core.assistant.historyMaxQuestions));
+      } catch (caught) { if (!(caught instanceof CoreRequestStopped)) throw caught; }
+      finally { if (generation === answerGeneration.current) { answerRequest.current = null; setAsking(false); } }
+    });
   }
   async function runJob(path: string, input: unknown) {
     const initialScope = getWorkspaceScope();
@@ -161,6 +242,8 @@ export default function CoreWorkspace({ onBack }: { onBack: () => void }) {
   const canEdit = snapshot?.account.capabilities.includes('edit') ?? false;
   const canApprove = snapshot?.account.capabilities.includes('approve') ?? false;
   const activeMembership = snapshot?.account.memberships.find((member) => member.tenant_id === snapshot.account.active_tenant_id);
+  const citationProducts = [...new Set(answer?.citations.map((citation) => citation.product_id) || [])];
+  const followupProduct = !answer?.abstained && citationProducts.length === 1 ? snapshot?.products.find((product) => product.id === citationProducts[0]) : undefined;
   const phaseRun = (action: () => Promise<void>) => { void perform(copy.working, action); };
 
   return <div className="core-shell">
@@ -176,6 +259,7 @@ export default function CoreWorkspace({ onBack }: { onBack: () => void }) {
         {notice && <p className="core-notice" role="status"><Check size={17} aria-hidden="true" />{notice}</p>}
         {busy && <p className="core-busy" role="status"><LoaderCircle className="core-spinner" size={18} aria-hidden="true" />{busy}{job && <span>{copy.jobLabel}: {job.status}</span>}</p>}
         {loading && !snapshot && <div className="core-loading" role="status"><LoaderCircle size={28} aria-hidden="true" /><h2>{copy.loading}</h2><p>{copy.connecting}</p></div>}
+        {view === 'ask' && <section className="core-assistant-intro"><h2>{copy.assistant.title}</h2><p>{copy.assistant.identity}</p><p>{copy.assistant.limits}</p><p>{copy.assistant.privacy}</p><div className="core-assistant-links"><a href={appConfig.core.assistant.helpRoutes.guide}>{copy.assistant.guide}</a><a href={appConfig.core.assistant.helpRoutes.contact}>{copy.assistant.contact}</a></div><small>{copy.assistant.contactNote}</small><h3>{copy.assistant.guidanceTitle}</h3><div className="core-assistant-actions">{copy.assistant.guidance.filter((item) => (appConfig.core.assistant.guideViews as readonly string[]).includes(item.view)).map((item) => <button key={item.view} className="text-link" disabled={!!busy || loading || !snapshot} onClick={() => navigate(item.view as CoreView)}>{item.label}<ArrowUpRight size={14} aria-hidden="true" /></button>)}</div></section>}
         {snapshot && <Fragment key={snapshot.scopeKey}>
           {snapshot.workspaceError && view !== 'account' && <p className="core-alert" role="status">{snapshot.workspaceError}<button className="text-link" onClick={() => navigate('account')}>{phaseCopy.account.open}</button></p>}
           {!snapshot.workspaceError && <>
@@ -186,11 +270,13 @@ export default function CoreWorkspace({ onBack }: { onBack: () => void }) {
             <section className="core-engine-note"><div className="core-engine-mark">v.</div><div><p className="eyebrow">{snapshot.overview.retrieval.status.replaceAll('_', ' ')}</p><h2>{copy.engineTitle}</h2><p>{snapshot.overview.retrieval.method === 'hybrid_rrf' ? copy.engineDescription : copy.lexicalDescription}</p><small>{snapshot.overview.retrieval.model || snapshot.overview.retrieval.reason}{snapshot.overview.retrieval.revision && <> · revision {snapshot.overview.retrieval.revision.slice(0, 12)}</>}</small></div></section>
           </>}
           {view === 'ask' && <>
-            <form className="core-question-form" onSubmit={(event) => { event.preventDefault(); void perform(copy.working, async () => { setAnswer(null); const answerScope = getWorkspaceScope(); const nextAnswer = await post<Answer>(paths.answers, { query, ...(scope ? { product_id: scope } : {}) }); await refresh(); if (getWorkspaceScope() !== answerScope) throw new WorkspaceScopeError(); setAnswer(nextAnswer); }); }}>
+            <form className="core-question-form" onSubmit={(event) => { event.preventDefault(); askQuestion(); }}>
               <label htmlFor="core-question">{copy.questionLabel}</label><textarea id="core-question" disabled={!!busy} required maxLength={appConfig.core.queryMaxLength} value={query} onChange={(event) => setQuery(event.target.value)} placeholder={copy.questionPlaceholder} rows={3} />
               <div className="core-form-bottom"><label htmlFor="core-scope">{copy.scopeLabel}<select id="core-scope" disabled={!!busy} value={scope} onChange={(event) => setScope(event.target.value)}><option value="">{copy.allProducts}</option>{snapshot.products.map((product) => <option key={product.id} value={product.id}>{product.name}</option>)}</select></label><button className="button" disabled={!!busy || !query.trim()}><Search size={16} aria-hidden="true" />{copy.askButton}</button></div>
+              <div className="core-assistant-actions">{asking && <button type="button" className="button button-outline" onClick={() => stopWaiting()}>{copy.assistant.stop}</button>}<button type="button" className="text-link" disabled={!!busy && !asking} onClick={() => stopWaiting(true)}>{copy.assistant.restart}</button></div>
             </form><div className="core-example-questions">{copy.examples.map((example) => <button key={example} disabled={!!busy} onClick={() => { setQuery(example); setScope(''); document.getElementById('core-question')?.focus(); }}>{example}<ArrowUpRight size={14} /></button>)}</div>
-            {answer && <section className={`core-answer ${answer.abstained ? 'abstained' : ''}`} aria-live="polite"><p className="eyebrow">{answer.method.replaceAll('_', ' ')}</p><h2>{answer.abstained ? copy.abstentionTitle : copy.answerTitle}</h2><p className="core-answer-text">{answer.answer}</p>{answer.citations.length > 0 && <><h3>{copy.citations}</h3><div className="core-citations">{answer.citations.map(evidenceButton)}</div></>}</section>}
+            {recentQuestions.length > 0 && <section className="core-question-history"><h2>{copy.assistant.history}</h2><p>{copy.assistant.historyHint}</p><ol>{recentQuestions.map((question) => <li key={`${question.scope}:${question.query}`}><button disabled={!!busy} onClick={() => reuseQuestion(question)} aria-label={`${copy.assistant.reuse}: ${question.query}`}><span>{question.query}</span><small>{question.scope ? snapshot.products.find((product) => product.id === question.scope)?.name || copy.assistant.historyScopeMissing : copy.allProducts}</small></button></li>)}</ol></section>}
+            {answer && <section className={`core-answer ${answer.abstained ? 'abstained' : ''}`} aria-live="polite"><p className="eyebrow">{answer.method.replaceAll('_', ' ')}</p><h2>{answer.abstained ? copy.abstentionTitle : copy.answerTitle}</h2><p className="core-answer-question">{copy.assistant.answerFor} {answeredQuery}</p><p className="core-answer-text">{answer.answer}</p><p className="core-assistant-answer-note">{answer.abstained ? copy.assistant.unknownNext : copy.assistant.quoteNotice}</p>{followupProduct && <button className="button button-outline" disabled={!!busy} onClick={() => { setScope(followupProduct.id); setQuery(''); setNotice(copy.assistant.followupNotice.replace('{product}', followupProduct.name)); focusQuestion(); }}>{copy.assistant.followup.replace('{product}', followupProduct.name)}</button>}<div className="core-assistant-actions"><button className="text-link" disabled={!!busy} onClick={() => navigate('review')}>{copy.assistant.review}</button><a href={appConfig.core.assistant.helpRoutes.contact}>{copy.assistant.contact}</a></div>{answer.citations.length > 0 && <><h3>{copy.citations}</h3><div className="core-citations">{answer.citations.map(evidenceButton)}</div></>}</section>}
           </>}
           {view === 'evidence' && <>
             <SourceHistory sources={snapshot.sources} canEdit={canEdit} busy={!!busy} run={phaseRun} refresh={refresh} />

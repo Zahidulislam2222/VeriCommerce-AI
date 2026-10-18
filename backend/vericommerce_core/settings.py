@@ -12,6 +12,8 @@ from urllib.parse import urlsplit
 from pydantic import Field, SecretStr, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+from .models import CLAIM_PASSAGE_MAX_CHARS
+
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_prefix="VC_", extra="ignore", case_sensitive=False)
@@ -34,6 +36,7 @@ class Settings(BaseSettings):
     max_drafts: int = Field(default=100, ge=1, le=1000)
     max_jobs: int = Field(default=200, ge=1, le=1000)
     max_audit_events: int = Field(default=1000, ge=10, le=10000)
+    audit_page_size: int = Field(default=50, ge=1, le=1000)
     max_evaluations: int = Field(default=20, ge=1, le=100)
     search_limit: int = Field(default=5, ge=1, le=20)
     max_search_limit: int = Field(default=10, ge=1, le=20)
@@ -88,6 +91,9 @@ class Settings(BaseSettings):
     parser_memory_bytes: int = Field(default=536870912, ge=134217728, le=1073741824)
     parser_max_text_chars: int = Field(default=100000, ge=1024, le=1000000)
     parser_max_result_bytes: int = Field(default=4194304, ge=1024, le=16777216)
+    document_chunk_chars: int = Field(
+        default=CLAIM_PASSAGE_MAX_CHARS, ge=1, le=CLAIM_PASSAGE_MAX_CHARS
+    )
     context_max_chars: int = Field(default=12000, ge=1000, le=50000)
     context_max_passages: int = Field(default=10, ge=1, le=100)
     max_relations: int = Field(default=1000, ge=1, le=10000)

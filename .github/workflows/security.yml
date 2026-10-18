@@ -30,6 +30,7 @@ jobs:
       - name: Install pinned open-source scanners
         run: |
           mkdir -p .cache/security
+          python -m pip install --require-hashes --only-binary=:all: --no-deps -r backend/build-requirements.lock
           python infra/ci/checks.py bandit-requirement > .cache/security/bandit.txt
           python -m pip install -r .github/security-requirements.txt -r .cache/security/bandit.txt
           curl --fail --silent --show-error --location "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz" -o .cache/security/gitleaks.tar.gz

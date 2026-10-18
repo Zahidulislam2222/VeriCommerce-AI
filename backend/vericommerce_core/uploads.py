@@ -16,7 +16,7 @@ from psycopg.types.json import Jsonb
 
 from .database import Connection, tenant_lock
 from .document_parser import parse_document
-from .models import CatalogInput
+from .models import CLAIM_VALUE_MAX_CHARS, CatalogInput
 from .phase_models import IntelligencePolicy, UploadInput
 from .repository import audit, ingest
 from .settings import Settings
@@ -264,12 +264,12 @@ def process_upload(db: Connection, tenant_id: str, upload_id: str, settings: Set
             raise ValueError("Upload product no longer exists")
         chunks = []
         for page in parsed["pages"]:
-            for start in range(0, len(page["text"]), 4000):
-                text = page["text"][start : start + 4000]
+            for start in range(0, len(page["text"]), settings.document_chunk_chars):
+                text = page["text"][start : start + settings.document_chunk_chars]
                 chunks.append(
                     {
                         "label": "Document passage",
-                        "value": text[:500],
+                        "value": text[:CLAIM_VALUE_MAX_CHARS],
                         "sourceId": row["source_id"],
                         "passage": text,
                         "page": page["page"],

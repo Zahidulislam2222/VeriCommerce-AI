@@ -277,8 +277,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         with transaction(config, tenant_id) as db:
             rows = db.execute(
                 "SELECT id,action,entity_id,created_at FROM audit_events "
-                "WHERE tenant_id=%s ORDER BY created_at DESC LIMIT 50",
-                (tenant_id,),
+                "WHERE tenant_id=%s ORDER BY created_at DESC LIMIT %s",
+                (tenant_id, config.audit_page_size),
             ).fetchall()
             return {"events": rows}
 

@@ -7,6 +7,7 @@ export const appConfig = Object.freeze({
     pollSeconds: 1,
     importMaxBytes: 262144,
     queryMaxLength: 500,
+    assistant: { historyMaxQuestions: 6, helpRoutes: { guide: '/docs', contact: '/contact' }, guideViews: ['import', 'evidence', 'drafts', 'account', 'connections'] as const },
     textMaxLength: 200,
     emailMaxLength: 254,
     workspaceNameMaxLength: 100,

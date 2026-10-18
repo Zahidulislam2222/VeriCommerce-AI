@@ -8,7 +8,7 @@ from pathlib import Path
 
 from .backup import decrypt_file, encrypt_file, regular, retention_plan
 from .benchmark import Benchmark
-from .package import package_lambda, package_static
+from .package import package_container, package_lambda, package_static
 from .settings import CloudSettings
 from .validator import load_json, validate_archive
 
@@ -21,7 +21,7 @@ def main() -> None:
     validate.add_argument("archive", type=Path)
     benchmark = commands.add_parser("benchmark")
     benchmark.add_argument("request", type=Path)
-    for name in ("package-lambda", "package-static"):
+    for name in ("package-lambda", "package-static", "package-container"):
         package = commands.add_parser(name)
         package.add_argument("destination", type=Path)
     for name in ("encrypt", "decrypt"):
@@ -42,6 +42,8 @@ def main() -> None:
         result = package_lambda(arguments.destination, settings)
     elif arguments.command == "package-static":
         result = package_static(arguments.destination, settings)
+    elif arguments.command == "package-container":
+        result = package_container(arguments.destination, settings)
     elif arguments.command == "encrypt":
         result = encrypt_file(arguments.source, arguments.destination, arguments.key_file, settings)
     elif arguments.command == "decrypt":

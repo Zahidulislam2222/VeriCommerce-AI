@@ -7,6 +7,10 @@ from typing import Annotated, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, StringConstraints, model_validator
 
+# Existing public input-contract maxima, shared with document extraction.
+CLAIM_VALUE_MAX_CHARS = 500
+CLAIM_PASSAGE_MAX_CHARS = 4000
+
 CatalogId = Annotated[str, StringConstraints(pattern=r"^[a-zA-Z0-9][a-zA-Z0-9_-]{0,79}$")]
 ShortText = Annotated[str, StringConstraints(min_length=1, max_length=200, strip_whitespace=True)]
 
@@ -33,9 +37,9 @@ class EvidencePolicy(StrictModel):
 
 class ClaimInput(StrictModel):
     label: ShortText
-    value: Annotated[str, StringConstraints(min_length=1, max_length=500)]
+    value: Annotated[str, StringConstraints(min_length=1, max_length=CLAIM_VALUE_MAX_CHARS)]
     sourceId: CatalogId
-    passage: Annotated[str, StringConstraints(min_length=1, max_length=4000)]
+    passage: Annotated[str, StringConstraints(min_length=1, max_length=CLAIM_PASSAGE_MAX_CHARS)]
     page: Annotated[str, StringConstraints(min_length=1, max_length=40)]
 
 
