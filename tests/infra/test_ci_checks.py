@@ -10,7 +10,22 @@ from typing import Any
 
 import pytest
 
-from infra.ci.checks import Settings, lock_and_license_check, no_skipped_tests, runtime_config
+from infra.ci.checks import (
+    ROOT,
+    Settings,
+    lock_and_license_check,
+    no_skipped_tests,
+    pinned_requirements,
+    runtime_config,
+)
+
+
+def test_repository_direct_requirements_match_production_hash_lock() -> None:
+    """Catch real repository drift before installing the development requirements."""
+    actual = Settings.load()
+    locked = pinned_requirements(ROOT / actual.python_lock, hashes=True)
+    direct = pinned_requirements(ROOT / actual.python_direct)
+    assert {name: locked.get(name) for name in direct} == direct
 
 
 @pytest.fixture
