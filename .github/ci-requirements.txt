@@ -1,2 +1,3 @@
 # Dedicated CI helper dependency; excluded from application/runtime images.
 defusedxml==0.7.1
+pip-audit==2.10.1

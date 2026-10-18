@@ -7,6 +7,7 @@ Public release refresh, 2026-10-18:
 | Date | What escaped | Gate that should have caught it | Gate added or improved? |
 |---|---|---|---|
 | 2026-10-18 | New account-panel copy used outdated product-positioning language after the public wording policy had been checked. | The maintained-copy check enumerated four older JSON files and omitted the new account-panel content. | The existing check now discovers every maintained JSON file; it reproduced the failure before the copy correction. Exact cookie/storage protocol identifiers retain their compatibility exception. |
+| 2026-10-18 | The runtime cryptography pin remained affected by five published advisories; GitHub reported duplicate alerts across two manifests. | A fail-closed dependency-advisory scan of the complete runtime lock before integration tests and publication. | Publication was held for a dependency update, cross-version encrypted-data compatibility checks and a strict runtime-lock CI audit; final results are recorded in the release report. |
 | 2026-10-18 | Some component READMEs still described accounts, uploads, store integration and cloud deployment as absent after those features were delivered. | Cross-document capability reconciliation against current source, release receipts and every tracked README. | The documentation audit now includes the cloud README and checks all six tracked READMEs against the current capability boundary; release-specific evidence remains dated. |
 
 | Date | What escaped | Gate that should have caught it | Gate added or improved? |

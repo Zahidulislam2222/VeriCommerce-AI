@@ -1,6 +1,8 @@
 """Keep hosted browser feature flags and security fixtures explicit."""
 from __future__ import annotations
 
+import re
+import shlex
 from pathlib import Path
 
 import yaml
@@ -33,3 +35,19 @@ def test_hosted_browser_exercises_the_built_production_artifact() -> None:
     assert 'npm run preview --' in launch
     assert 'npm run dev --' not in launch
     assert any('npm run build' in step.get('run', '') for step in steps[:browser_index])
+
+
+def test_hosted_quality_audits_every_runtime_pin_before_integration_tests() -> None:
+    """Current advisory lookup must fail closed instead of checking a fixed version floor."""
+    workflow = yaml.safe_load((ROOT / '.github/workflows/ci.yml').read_text())
+    steps = workflow['jobs']['application']['steps']
+    audits = [(i, step) for i, step in enumerate(steps) if 'python -m pip_audit' in step.get('run', '')]
+    assert len(audits) == 1
+    index, audit = audits[0]
+    command = shlex.split(audit['run'])
+    assert command[:5] == ['python', '-m', 'pip_audit', '-r', 'backend/requirements.lock']
+    assert command[5:] == ['--require-hashes', '--disable-pip', '--strict', '--progress-spinner', 'off']
+    assert not audit.get('continue-on-error') and 'if' not in audit
+    assert any('python -m pytest' in step.get('run', '') for step in steps[index + 1:])
+    tools = (ROOT / '.github/ci-requirements.txt').read_text()
+    assert re.search(r'^pip-audit==[0-9]+\.[0-9]+\.[0-9]+$', tools, re.MULTILINE)

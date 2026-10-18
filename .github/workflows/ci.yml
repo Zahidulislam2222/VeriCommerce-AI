@@ -69,6 +69,8 @@ jobs:
           python -m pip install --require-hashes -r backend/requirements.lock
           python -m pip install -r backend/requirements-dev.txt
           python -m pip install -r .github/ci-requirements.txt
+      - name: Audit all runtime dependency advisories
+        run: python -m pip_audit -r backend/requirements.lock --require-hashes --disable-pip --strict --progress-spinner off
       - name: Type, lint, domain and build checks
         run: |
           npm run typecheck
