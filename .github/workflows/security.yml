@@ -38,7 +38,7 @@ jobs:
       - name: Scan full Git history for secrets
         run: .cache/security/gitleaks git --redact --no-banner --verbose .
       - name: Scan Python code
-        run: python -m bandit -q -ll -r backend infra/ci
+        run: python -m bandit -q -ll -r backend infra/ci infra/cloud
       - name: Scan official security-audit rules
         run: semgrep scan --error --config p/security-audit --metrics=off --disable-version-check src backend infra .github
       # Optional contextual AI review remains disabled: it requires a paid model API.

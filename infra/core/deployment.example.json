@@ -17,7 +17,7 @@
   "db_cpus": "0.5",
   "command_timeout": 1800,
   "compose_wait_seconds": 180,
-  "max_body_bytes": 1048576,
+  "max_body_bytes": 2097152,
   "proxy_connect_seconds": 5,
   "proxy_read_seconds": 60,
   "expected_static_release": "example-frontend-01",
@@ -30,12 +30,14 @@
     "EMBEDDING_REPOSITORY": "SET_FROM_BACKEND_VERIFIED_REPOSITORY",
     "EMBEDDING_MODEL_FILE": "SET_FROM_BACKEND_VERIFIED_FILE",
     "HEARTBEAT_TIMEOUT_SECONDS": "30",
-    "SESSION_CREATIONS_PER_HOUR": "60"
+    "SESSION_CREATIONS_PER_HOUR": "60",
+    "MAX_PRODUCTS": "50"
   },
   "container_backup_directory": "/tmp",
   "db_runtime_user": "example_runtime",
   "postgres_service": "postgres",
   "postgres_port": 5432,
   "captured_stdout_bytes": 524288,
-  "sftp_prefetch_requests": 16
+  "sftp_prefetch_requests": 16,
+  "shopify_credentials_file": null
 }

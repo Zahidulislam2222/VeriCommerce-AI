@@ -1,0 +1,1 @@
+export function JsonRecord({ label, data, open = false }: { label: string; data: unknown; open?: boolean }) { return <details className="phase-json" open={open}><summary>{label}</summary><pre>{JSON.stringify(data, null, 2)}</pre></details>; }

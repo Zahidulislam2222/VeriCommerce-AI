@@ -3,7 +3,7 @@
   "title": "Core deployment operator configuration (no credentials)",
   "type": "object",
   "additionalProperties": false,
-  "required": ["slug", "loopback_port", "web_port", "api_port", "network_subnet", "network_ip_range", "postgres_image", "nginx_image", "python_image", "db_name", "db_admin_user", "db_runtime_user", "postgres_service", "postgres_port", "expected_static_release", "backend_directory", "environment", "app_memory", "app_cpus", "db_memory", "db_cpus", "command_timeout", "compose_wait_seconds", "max_body_bytes", "proxy_connect_seconds", "proxy_read_seconds", "container_backup_directory", "sftp_prefetch_requests", "captured_stdout_bytes"],
+  "required": ["slug", "loopback_port", "web_port", "api_port", "network_subnet", "network_ip_range", "postgres_image", "nginx_image", "python_image", "db_name", "db_admin_user", "db_runtime_user", "postgres_service", "postgres_port", "expected_static_release", "backend_directory", "environment", "app_memory", "app_cpus", "db_memory", "db_cpus", "command_timeout", "compose_wait_seconds", "max_body_bytes", "proxy_connect_seconds", "proxy_read_seconds", "container_backup_directory", "sftp_prefetch_requests", "captured_stdout_bytes", "shopify_credentials_file"],
   "properties": {
     "slug": {"type": "string", "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{0,47}$"},
     "loopback_port": {"type": "integer", "minimum": 1024, "maximum": 65535},
@@ -21,7 +21,14 @@
     "postgres_port": {"type": "integer", "minimum": 1024, "maximum": 65535},
     "expected_static_release": {"type": "string"},
     "backend_directory": {"type": "string"},
-    "environment": {"type": "object", "additionalProperties": {"type": "string"}},
+    "environment": {
+      "type": "object",
+      "required": ["MAX_PRODUCTS"],
+      "properties": {
+        "MAX_PRODUCTS": {"type": "string", "pattern": "^(?:[3-9]|[1-9][0-9]|[1-4][0-9]{2}|500)$"}
+      },
+      "additionalProperties": {"type": "string"}
+    },
     "app_memory": {"type": "string"},
     "app_cpus": {"type": "string"},
     "db_memory": {"type": "string"},
@@ -33,6 +40,7 @@
     "proxy_read_seconds": {"type": "integer", "minimum": 1},
     "container_backup_directory": {"type": "string"},
     "sftp_prefetch_requests": {"type": "integer", "minimum": 1, "maximum": 64},
-    "captured_stdout_bytes": {"type": "integer", "minimum": 1}
+    "captured_stdout_bytes": {"type": "integer", "minimum": 1},
+    "shopify_credentials_file": {"type": ["string", "null"], "description": "Optional Git-ignored credential input; actual values only enter protected shared settings."}
   }
 }

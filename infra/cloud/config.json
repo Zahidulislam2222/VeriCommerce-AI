@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "max_archive_bytes": 262144,
+  "max_expanded_bytes": 1048576,
+  "max_members": 16,
+  "max_compression_ratio": 50,
+  "max_text_chars": 4000,
+  "max_documents": 100,
+  "max_query_chars": 240,
+  "max_results": 10,
+  "archive_members": [
+    "manifest.json",
+    "draft.json"
+  ],
+  "fixture_label": "synthetic-public",
+  "snapshot_file": "snapshot.json",
+  "snapshot_sha256_file": "snapshot.sha256",
+  "http_host": "127.0.0.1",
+  "http_port": 18183,
+  "http_timeout_seconds": 5,
+  "backup_max_bytes": 268435456,
+  "backup_chunk_bytes": 1048576,
+  "backup_keep_count": 7,
+  "benchmark_health_path": "/health"
+}

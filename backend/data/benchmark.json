@@ -1,0 +1,6009 @@
+{
+  "version": "2026-10-18.1",
+  "license": "CC0-1.0; original fictional products, schematic SVG assets and rule-generated questions. No real merchant records.",
+  "review_status": "pending",
+  "review_notice": "Machine generated labels. An identified human must review the exact frozen items before this corpus is called independently reviewed. Synthetic results do not establish real-world model quality.",
+  "catalog": {
+    "products": [
+      {
+        "id": "atlas-1",
+        "name": "Atlas 1",
+        "sku": "ATLAS-1",
+        "color": "blue",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Atlas 1",
+            "sourceId": "atlas-1-catalog",
+            "passage": "Atlas 1 name: Atlas 1.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "ATLAS-1",
+            "sourceId": "atlas-1-catalog",
+            "passage": "Atlas 1 sku: ATLAS-1.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "12 h",
+            "sourceId": "atlas-1-catalog",
+            "passage": "Atlas 1 battery: 12 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "200 g",
+            "sourceId": "atlas-1-catalog",
+            "passage": "Atlas 1 weight: 200 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "15 cm",
+            "sourceId": "atlas-1-catalog",
+            "passage": "Atlas 1 length: 15 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "49.00",
+            "sourceId": "atlas-1-catalog",
+            "passage": "Atlas 1 price: 49.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "atlas-1-catalog",
+            "passage": "Atlas 1 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "atlas-1-catalog",
+            "passage": "Atlas 1 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "blue",
+            "sourceId": "atlas-1-catalog",
+            "passage": "Atlas 1 color: blue.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "atlas-2",
+        "name": "Atlas 2",
+        "sku": "ATLAS-2",
+        "color": "green",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Atlas 2",
+            "sourceId": "atlas-2-catalog",
+            "passage": "Atlas 2 name: Atlas 2.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "ATLAS-2",
+            "sourceId": "atlas-2-catalog",
+            "passage": "Atlas 2 sku: ATLAS-2.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "13 h",
+            "sourceId": "atlas-2-catalog",
+            "passage": "Atlas 2 battery: 13 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "201 g",
+            "sourceId": "atlas-2-catalog",
+            "passage": "Atlas 2 weight: 201 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "16 cm",
+            "sourceId": "atlas-2-catalog",
+            "passage": "Atlas 2 length: 16 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "50.00",
+            "sourceId": "atlas-2-catalog",
+            "passage": "Atlas 2 price: 50.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "atlas-2-catalog",
+            "passage": "Atlas 2 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "atlas-2-catalog",
+            "passage": "Atlas 2 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "green",
+            "sourceId": "atlas-2-catalog",
+            "passage": "Atlas 2 color: green.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "atlas-3",
+        "name": "Atlas 3",
+        "sku": "ATLAS-3",
+        "color": "red",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Atlas 3",
+            "sourceId": "atlas-3-catalog",
+            "passage": "Atlas 3 name: Atlas 3.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "ATLAS-3",
+            "sourceId": "atlas-3-catalog",
+            "passage": "Atlas 3 sku: ATLAS-3.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "14 h",
+            "sourceId": "atlas-3-catalog",
+            "passage": "Atlas 3 battery: 14 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "202 g",
+            "sourceId": "atlas-3-catalog",
+            "passage": "Atlas 3 weight: 202 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "17 cm",
+            "sourceId": "atlas-3-catalog",
+            "passage": "Atlas 3 length: 17 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "51.00",
+            "sourceId": "atlas-3-catalog",
+            "passage": "Atlas 3 price: 51.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "atlas-3-catalog",
+            "passage": "Atlas 3 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "atlas-3-catalog",
+            "passage": "Atlas 3 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "red",
+            "sourceId": "atlas-3-catalog",
+            "passage": "Atlas 3 color: red.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "atlas-4",
+        "name": "Atlas 4",
+        "sku": "ATLAS-4",
+        "color": "gray",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Atlas 4",
+            "sourceId": "atlas-4-catalog",
+            "passage": "Atlas 4 name: Atlas 4.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "ATLAS-4",
+            "sourceId": "atlas-4-catalog",
+            "passage": "Atlas 4 sku: ATLAS-4.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "15 h",
+            "sourceId": "atlas-4-catalog",
+            "passage": "Atlas 4 battery: 15 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "203 g",
+            "sourceId": "atlas-4-catalog",
+            "passage": "Atlas 4 weight: 203 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "18 cm",
+            "sourceId": "atlas-4-catalog",
+            "passage": "Atlas 4 length: 18 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "52.00",
+            "sourceId": "atlas-4-catalog",
+            "passage": "Atlas 4 price: 52.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "atlas-4-catalog",
+            "passage": "Atlas 4 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "atlas-4-catalog",
+            "passage": "Atlas 4 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "gray",
+            "sourceId": "atlas-4-catalog",
+            "passage": "Atlas 4 color: gray.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "atlas-5",
+        "name": "Atlas 5",
+        "sku": "ATLAS-5",
+        "color": "gold",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Atlas 5",
+            "sourceId": "atlas-5-catalog",
+            "passage": "Atlas 5 name: Atlas 5.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "ATLAS-5",
+            "sourceId": "atlas-5-catalog",
+            "passage": "Atlas 5 sku: ATLAS-5.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "16 h",
+            "sourceId": "atlas-5-catalog",
+            "passage": "Atlas 5 battery: 16 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "204 g",
+            "sourceId": "atlas-5-catalog",
+            "passage": "Atlas 5 weight: 204 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "19 cm",
+            "sourceId": "atlas-5-catalog",
+            "passage": "Atlas 5 length: 19 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "53.00",
+            "sourceId": "atlas-5-catalog",
+            "passage": "Atlas 5 price: 53.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "atlas-5-catalog",
+            "passage": "Atlas 5 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "atlas-5-catalog",
+            "passage": "Atlas 5 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "gold",
+            "sourceId": "atlas-5-catalog",
+            "passage": "Atlas 5 color: gold.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "birch-1",
+        "name": "Birch 1",
+        "sku": "BIRCH-1",
+        "color": "blue",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Birch 1",
+            "sourceId": "birch-1-catalog",
+            "passage": "Birch 1 name: Birch 1.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "BIRCH-1",
+            "sourceId": "birch-1-catalog",
+            "passage": "Birch 1 sku: BIRCH-1.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "13 h",
+            "sourceId": "birch-1-catalog",
+            "passage": "Birch 1 battery: 13 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "210 g",
+            "sourceId": "birch-1-catalog",
+            "passage": "Birch 1 weight: 210 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "15 cm",
+            "sourceId": "birch-1-catalog",
+            "passage": "Birch 1 length: 15 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "54.00",
+            "sourceId": "birch-1-catalog",
+            "passage": "Birch 1 price: 54.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "birch-1-catalog",
+            "passage": "Birch 1 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "birch-1-catalog",
+            "passage": "Birch 1 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "blue",
+            "sourceId": "birch-1-catalog",
+            "passage": "Birch 1 color: blue.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "birch-2",
+        "name": "Birch 2",
+        "sku": "BIRCH-2",
+        "color": "green",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Birch 2",
+            "sourceId": "birch-2-catalog",
+            "passage": "Birch 2 name: Birch 2.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "BIRCH-2",
+            "sourceId": "birch-2-catalog",
+            "passage": "Birch 2 sku: BIRCH-2.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "14 h",
+            "sourceId": "birch-2-catalog",
+            "passage": "Birch 2 battery: 14 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "211 g",
+            "sourceId": "birch-2-catalog",
+            "passage": "Birch 2 weight: 211 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "16 cm",
+            "sourceId": "birch-2-catalog",
+            "passage": "Birch 2 length: 16 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "55.00",
+            "sourceId": "birch-2-catalog",
+            "passage": "Birch 2 price: 55.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "birch-2-catalog",
+            "passage": "Birch 2 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "birch-2-catalog",
+            "passage": "Birch 2 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "green",
+            "sourceId": "birch-2-catalog",
+            "passage": "Birch 2 color: green.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "birch-3",
+        "name": "Birch 3",
+        "sku": "BIRCH-3",
+        "color": "red",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Birch 3",
+            "sourceId": "birch-3-catalog",
+            "passage": "Birch 3 name: Birch 3.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "BIRCH-3",
+            "sourceId": "birch-3-catalog",
+            "passage": "Birch 3 sku: BIRCH-3.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "15 h",
+            "sourceId": "birch-3-catalog",
+            "passage": "Birch 3 battery: 15 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "212 g",
+            "sourceId": "birch-3-catalog",
+            "passage": "Birch 3 weight: 212 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "17 cm",
+            "sourceId": "birch-3-catalog",
+            "passage": "Birch 3 length: 17 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "56.00",
+            "sourceId": "birch-3-catalog",
+            "passage": "Birch 3 price: 56.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "birch-3-catalog",
+            "passage": "Birch 3 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "birch-3-catalog",
+            "passage": "Birch 3 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "red",
+            "sourceId": "birch-3-catalog",
+            "passage": "Birch 3 color: red.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "birch-4",
+        "name": "Birch 4",
+        "sku": "BIRCH-4",
+        "color": "gray",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Birch 4",
+            "sourceId": "birch-4-catalog",
+            "passage": "Birch 4 name: Birch 4.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "BIRCH-4",
+            "sourceId": "birch-4-catalog",
+            "passage": "Birch 4 sku: BIRCH-4.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "16 h",
+            "sourceId": "birch-4-catalog",
+            "passage": "Birch 4 battery: 16 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "213 g",
+            "sourceId": "birch-4-catalog",
+            "passage": "Birch 4 weight: 213 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "18 cm",
+            "sourceId": "birch-4-catalog",
+            "passage": "Birch 4 length: 18 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "57.00",
+            "sourceId": "birch-4-catalog",
+            "passage": "Birch 4 price: 57.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "birch-4-catalog",
+            "passage": "Birch 4 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "birch-4-catalog",
+            "passage": "Birch 4 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "gray",
+            "sourceId": "birch-4-catalog",
+            "passage": "Birch 4 color: gray.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "birch-5",
+        "name": "Birch 5",
+        "sku": "BIRCH-5",
+        "color": "gold",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Birch 5",
+            "sourceId": "birch-5-catalog",
+            "passage": "Birch 5 name: Birch 5.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "BIRCH-5",
+            "sourceId": "birch-5-catalog",
+            "passage": "Birch 5 sku: BIRCH-5.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "17 h",
+            "sourceId": "birch-5-catalog",
+            "passage": "Birch 5 battery: 17 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "214 g",
+            "sourceId": "birch-5-catalog",
+            "passage": "Birch 5 weight: 214 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "19 cm",
+            "sourceId": "birch-5-catalog",
+            "passage": "Birch 5 length: 19 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "58.00",
+            "sourceId": "birch-5-catalog",
+            "passage": "Birch 5 price: 58.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "birch-5-catalog",
+            "passage": "Birch 5 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "birch-5-catalog",
+            "passage": "Birch 5 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "gold",
+            "sourceId": "birch-5-catalog",
+            "passage": "Birch 5 color: gold.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "cobalt-1",
+        "name": "Cobalt 1",
+        "sku": "COBALT-1",
+        "color": "blue",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Cobalt 1",
+            "sourceId": "cobalt-1-catalog",
+            "passage": "Cobalt 1 name: Cobalt 1.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "COBALT-1",
+            "sourceId": "cobalt-1-catalog",
+            "passage": "Cobalt 1 sku: COBALT-1.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "14 h",
+            "sourceId": "cobalt-1-catalog",
+            "passage": "Cobalt 1 battery: 14 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "220 g",
+            "sourceId": "cobalt-1-catalog",
+            "passage": "Cobalt 1 weight: 220 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "15 cm",
+            "sourceId": "cobalt-1-catalog",
+            "passage": "Cobalt 1 length: 15 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "59.00",
+            "sourceId": "cobalt-1-catalog",
+            "passage": "Cobalt 1 price: 59.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "cobalt-1-catalog",
+            "passage": "Cobalt 1 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "cobalt-1-catalog",
+            "passage": "Cobalt 1 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "blue",
+            "sourceId": "cobalt-1-catalog",
+            "passage": "Cobalt 1 color: blue.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "cobalt-2",
+        "name": "Cobalt 2",
+        "sku": "COBALT-2",
+        "color": "green",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Cobalt 2",
+            "sourceId": "cobalt-2-catalog",
+            "passage": "Cobalt 2 name: Cobalt 2.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "COBALT-2",
+            "sourceId": "cobalt-2-catalog",
+            "passage": "Cobalt 2 sku: COBALT-2.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "15 h",
+            "sourceId": "cobalt-2-catalog",
+            "passage": "Cobalt 2 battery: 15 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "221 g",
+            "sourceId": "cobalt-2-catalog",
+            "passage": "Cobalt 2 weight: 221 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "16 cm",
+            "sourceId": "cobalt-2-catalog",
+            "passage": "Cobalt 2 length: 16 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "60.00",
+            "sourceId": "cobalt-2-catalog",
+            "passage": "Cobalt 2 price: 60.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "cobalt-2-catalog",
+            "passage": "Cobalt 2 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "cobalt-2-catalog",
+            "passage": "Cobalt 2 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "green",
+            "sourceId": "cobalt-2-catalog",
+            "passage": "Cobalt 2 color: green.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "cobalt-3",
+        "name": "Cobalt 3",
+        "sku": "COBALT-3",
+        "color": "red",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Cobalt 3",
+            "sourceId": "cobalt-3-catalog",
+            "passage": "Cobalt 3 name: Cobalt 3.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "COBALT-3",
+            "sourceId": "cobalt-3-catalog",
+            "passage": "Cobalt 3 sku: COBALT-3.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "16 h",
+            "sourceId": "cobalt-3-catalog",
+            "passage": "Cobalt 3 battery: 16 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "222 g",
+            "sourceId": "cobalt-3-catalog",
+            "passage": "Cobalt 3 weight: 222 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "17 cm",
+            "sourceId": "cobalt-3-catalog",
+            "passage": "Cobalt 3 length: 17 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "61.00",
+            "sourceId": "cobalt-3-catalog",
+            "passage": "Cobalt 3 price: 61.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "cobalt-3-catalog",
+            "passage": "Cobalt 3 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "cobalt-3-catalog",
+            "passage": "Cobalt 3 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "red",
+            "sourceId": "cobalt-3-catalog",
+            "passage": "Cobalt 3 color: red.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "cobalt-4",
+        "name": "Cobalt 4",
+        "sku": "COBALT-4",
+        "color": "gray",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Cobalt 4",
+            "sourceId": "cobalt-4-catalog",
+            "passage": "Cobalt 4 name: Cobalt 4.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "COBALT-4",
+            "sourceId": "cobalt-4-catalog",
+            "passage": "Cobalt 4 sku: COBALT-4.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "17 h",
+            "sourceId": "cobalt-4-catalog",
+            "passage": "Cobalt 4 battery: 17 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "223 g",
+            "sourceId": "cobalt-4-catalog",
+            "passage": "Cobalt 4 weight: 223 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "18 cm",
+            "sourceId": "cobalt-4-catalog",
+            "passage": "Cobalt 4 length: 18 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "62.00",
+            "sourceId": "cobalt-4-catalog",
+            "passage": "Cobalt 4 price: 62.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "cobalt-4-catalog",
+            "passage": "Cobalt 4 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "cobalt-4-catalog",
+            "passage": "Cobalt 4 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "gray",
+            "sourceId": "cobalt-4-catalog",
+            "passage": "Cobalt 4 color: gray.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "cobalt-5",
+        "name": "Cobalt 5",
+        "sku": "COBALT-5",
+        "color": "gold",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Cobalt 5",
+            "sourceId": "cobalt-5-catalog",
+            "passage": "Cobalt 5 name: Cobalt 5.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "COBALT-5",
+            "sourceId": "cobalt-5-catalog",
+            "passage": "Cobalt 5 sku: COBALT-5.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "18 h",
+            "sourceId": "cobalt-5-catalog",
+            "passage": "Cobalt 5 battery: 18 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "224 g",
+            "sourceId": "cobalt-5-catalog",
+            "passage": "Cobalt 5 weight: 224 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "19 cm",
+            "sourceId": "cobalt-5-catalog",
+            "passage": "Cobalt 5 length: 19 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "63.00",
+            "sourceId": "cobalt-5-catalog",
+            "passage": "Cobalt 5 price: 63.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "cobalt-5-catalog",
+            "passage": "Cobalt 5 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "cobalt-5-catalog",
+            "passage": "Cobalt 5 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "gold",
+            "sourceId": "cobalt-5-catalog",
+            "passage": "Cobalt 5 color: gold.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "delta-1",
+        "name": "Delta 1",
+        "sku": "DELTA-1",
+        "color": "blue",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Delta 1",
+            "sourceId": "delta-1-catalog",
+            "passage": "Delta 1 name: Delta 1.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "DELTA-1",
+            "sourceId": "delta-1-catalog",
+            "passage": "Delta 1 sku: DELTA-1.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "15 h",
+            "sourceId": "delta-1-catalog",
+            "passage": "Delta 1 battery: 15 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "230 g",
+            "sourceId": "delta-1-catalog",
+            "passage": "Delta 1 weight: 230 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "15 cm",
+            "sourceId": "delta-1-catalog",
+            "passage": "Delta 1 length: 15 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "64.00",
+            "sourceId": "delta-1-catalog",
+            "passage": "Delta 1 price: 64.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "delta-1-catalog",
+            "passage": "Delta 1 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "delta-1-catalog",
+            "passage": "Delta 1 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "blue",
+            "sourceId": "delta-1-catalog",
+            "passage": "Delta 1 color: blue.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "delta-2",
+        "name": "Delta 2",
+        "sku": "DELTA-2",
+        "color": "green",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Delta 2",
+            "sourceId": "delta-2-catalog",
+            "passage": "Delta 2 name: Delta 2.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "DELTA-2",
+            "sourceId": "delta-2-catalog",
+            "passage": "Delta 2 sku: DELTA-2.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "16 h",
+            "sourceId": "delta-2-catalog",
+            "passage": "Delta 2 battery: 16 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "231 g",
+            "sourceId": "delta-2-catalog",
+            "passage": "Delta 2 weight: 231 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "16 cm",
+            "sourceId": "delta-2-catalog",
+            "passage": "Delta 2 length: 16 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "65.00",
+            "sourceId": "delta-2-catalog",
+            "passage": "Delta 2 price: 65.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "delta-2-catalog",
+            "passage": "Delta 2 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "delta-2-catalog",
+            "passage": "Delta 2 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "green",
+            "sourceId": "delta-2-catalog",
+            "passage": "Delta 2 color: green.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "delta-3",
+        "name": "Delta 3",
+        "sku": "DELTA-3",
+        "color": "red",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Delta 3",
+            "sourceId": "delta-3-catalog",
+            "passage": "Delta 3 name: Delta 3.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "DELTA-3",
+            "sourceId": "delta-3-catalog",
+            "passage": "Delta 3 sku: DELTA-3.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "17 h",
+            "sourceId": "delta-3-catalog",
+            "passage": "Delta 3 battery: 17 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "232 g",
+            "sourceId": "delta-3-catalog",
+            "passage": "Delta 3 weight: 232 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "17 cm",
+            "sourceId": "delta-3-catalog",
+            "passage": "Delta 3 length: 17 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "66.00",
+            "sourceId": "delta-3-catalog",
+            "passage": "Delta 3 price: 66.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "delta-3-catalog",
+            "passage": "Delta 3 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "delta-3-catalog",
+            "passage": "Delta 3 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "red",
+            "sourceId": "delta-3-catalog",
+            "passage": "Delta 3 color: red.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "delta-4",
+        "name": "Delta 4",
+        "sku": "DELTA-4",
+        "color": "gray",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Delta 4",
+            "sourceId": "delta-4-catalog",
+            "passage": "Delta 4 name: Delta 4.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "DELTA-4",
+            "sourceId": "delta-4-catalog",
+            "passage": "Delta 4 sku: DELTA-4.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "18 h",
+            "sourceId": "delta-4-catalog",
+            "passage": "Delta 4 battery: 18 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "233 g",
+            "sourceId": "delta-4-catalog",
+            "passage": "Delta 4 weight: 233 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "18 cm",
+            "sourceId": "delta-4-catalog",
+            "passage": "Delta 4 length: 18 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "67.00",
+            "sourceId": "delta-4-catalog",
+            "passage": "Delta 4 price: 67.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "delta-4-catalog",
+            "passage": "Delta 4 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "delta-4-catalog",
+            "passage": "Delta 4 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "gray",
+            "sourceId": "delta-4-catalog",
+            "passage": "Delta 4 color: gray.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "delta-5",
+        "name": "Delta 5",
+        "sku": "DELTA-5",
+        "color": "gold",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Delta 5",
+            "sourceId": "delta-5-catalog",
+            "passage": "Delta 5 name: Delta 5.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "DELTA-5",
+            "sourceId": "delta-5-catalog",
+            "passage": "Delta 5 sku: DELTA-5.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "19 h",
+            "sourceId": "delta-5-catalog",
+            "passage": "Delta 5 battery: 19 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "234 g",
+            "sourceId": "delta-5-catalog",
+            "passage": "Delta 5 weight: 234 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "19 cm",
+            "sourceId": "delta-5-catalog",
+            "passage": "Delta 5 length: 19 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "68.00",
+            "sourceId": "delta-5-catalog",
+            "passage": "Delta 5 price: 68.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "delta-5-catalog",
+            "passage": "Delta 5 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "delta-5-catalog",
+            "passage": "Delta 5 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "gold",
+            "sourceId": "delta-5-catalog",
+            "passage": "Delta 5 color: gold.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "ember-1",
+        "name": "Ember 1",
+        "sku": "EMBER-1",
+        "color": "blue",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Ember 1",
+            "sourceId": "ember-1-catalog",
+            "passage": "Ember 1 name: Ember 1.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "EMBER-1",
+            "sourceId": "ember-1-catalog",
+            "passage": "Ember 1 sku: EMBER-1.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "16 h",
+            "sourceId": "ember-1-catalog",
+            "passage": "Ember 1 battery: 16 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "240 g",
+            "sourceId": "ember-1-catalog",
+            "passage": "Ember 1 weight: 240 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "15 cm",
+            "sourceId": "ember-1-catalog",
+            "passage": "Ember 1 length: 15 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "69.00",
+            "sourceId": "ember-1-catalog",
+            "passage": "Ember 1 price: 69.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "ember-1-catalog",
+            "passage": "Ember 1 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "ember-1-catalog",
+            "passage": "Ember 1 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "blue",
+            "sourceId": "ember-1-catalog",
+            "passage": "Ember 1 color: blue.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "ember-2",
+        "name": "Ember 2",
+        "sku": "EMBER-2",
+        "color": "green",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Ember 2",
+            "sourceId": "ember-2-catalog",
+            "passage": "Ember 2 name: Ember 2.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "EMBER-2",
+            "sourceId": "ember-2-catalog",
+            "passage": "Ember 2 sku: EMBER-2.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "17 h",
+            "sourceId": "ember-2-catalog",
+            "passage": "Ember 2 battery: 17 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "241 g",
+            "sourceId": "ember-2-catalog",
+            "passage": "Ember 2 weight: 241 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "16 cm",
+            "sourceId": "ember-2-catalog",
+            "passage": "Ember 2 length: 16 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "70.00",
+            "sourceId": "ember-2-catalog",
+            "passage": "Ember 2 price: 70.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "ember-2-catalog",
+            "passage": "Ember 2 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "ember-2-catalog",
+            "passage": "Ember 2 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "green",
+            "sourceId": "ember-2-catalog",
+            "passage": "Ember 2 color: green.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "ember-3",
+        "name": "Ember 3",
+        "sku": "EMBER-3",
+        "color": "red",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Ember 3",
+            "sourceId": "ember-3-catalog",
+            "passage": "Ember 3 name: Ember 3.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "EMBER-3",
+            "sourceId": "ember-3-catalog",
+            "passage": "Ember 3 sku: EMBER-3.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "18 h",
+            "sourceId": "ember-3-catalog",
+            "passage": "Ember 3 battery: 18 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "242 g",
+            "sourceId": "ember-3-catalog",
+            "passage": "Ember 3 weight: 242 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "17 cm",
+            "sourceId": "ember-3-catalog",
+            "passage": "Ember 3 length: 17 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "71.00",
+            "sourceId": "ember-3-catalog",
+            "passage": "Ember 3 price: 71.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "ember-3-catalog",
+            "passage": "Ember 3 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "ember-3-catalog",
+            "passage": "Ember 3 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "red",
+            "sourceId": "ember-3-catalog",
+            "passage": "Ember 3 color: red.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "ember-4",
+        "name": "Ember 4",
+        "sku": "EMBER-4",
+        "color": "gray",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Ember 4",
+            "sourceId": "ember-4-catalog",
+            "passage": "Ember 4 name: Ember 4.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "EMBER-4",
+            "sourceId": "ember-4-catalog",
+            "passage": "Ember 4 sku: EMBER-4.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "19 h",
+            "sourceId": "ember-4-catalog",
+            "passage": "Ember 4 battery: 19 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "243 g",
+            "sourceId": "ember-4-catalog",
+            "passage": "Ember 4 weight: 243 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "18 cm",
+            "sourceId": "ember-4-catalog",
+            "passage": "Ember 4 length: 18 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "72.00",
+            "sourceId": "ember-4-catalog",
+            "passage": "Ember 4 price: 72.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "ember-4-catalog",
+            "passage": "Ember 4 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "ember-4-catalog",
+            "passage": "Ember 4 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "gray",
+            "sourceId": "ember-4-catalog",
+            "passage": "Ember 4 color: gray.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "ember-5",
+        "name": "Ember 5",
+        "sku": "EMBER-5",
+        "color": "gold",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Ember 5",
+            "sourceId": "ember-5-catalog",
+            "passage": "Ember 5 name: Ember 5.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "EMBER-5",
+            "sourceId": "ember-5-catalog",
+            "passage": "Ember 5 sku: EMBER-5.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "20 h",
+            "sourceId": "ember-5-catalog",
+            "passage": "Ember 5 battery: 20 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "244 g",
+            "sourceId": "ember-5-catalog",
+            "passage": "Ember 5 weight: 244 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "19 cm",
+            "sourceId": "ember-5-catalog",
+            "passage": "Ember 5 length: 19 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "73.00",
+            "sourceId": "ember-5-catalog",
+            "passage": "Ember 5 price: 73.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "ember-5-catalog",
+            "passage": "Ember 5 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "ember-5-catalog",
+            "passage": "Ember 5 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "gold",
+            "sourceId": "ember-5-catalog",
+            "passage": "Ember 5 color: gold.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "flint-1",
+        "name": "Flint 1",
+        "sku": "FLINT-1",
+        "color": "blue",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Flint 1",
+            "sourceId": "flint-1-catalog",
+            "passage": "Flint 1 name: Flint 1.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "FLINT-1",
+            "sourceId": "flint-1-catalog",
+            "passage": "Flint 1 sku: FLINT-1.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "17 h",
+            "sourceId": "flint-1-catalog",
+            "passage": "Flint 1 battery: 17 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "250 g",
+            "sourceId": "flint-1-catalog",
+            "passage": "Flint 1 weight: 250 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "15 cm",
+            "sourceId": "flint-1-catalog",
+            "passage": "Flint 1 length: 15 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "74.00",
+            "sourceId": "flint-1-catalog",
+            "passage": "Flint 1 price: 74.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "flint-1-catalog",
+            "passage": "Flint 1 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "flint-1-catalog",
+            "passage": "Flint 1 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "blue",
+            "sourceId": "flint-1-catalog",
+            "passage": "Flint 1 color: blue.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "flint-2",
+        "name": "Flint 2",
+        "sku": "FLINT-2",
+        "color": "green",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Flint 2",
+            "sourceId": "flint-2-catalog",
+            "passage": "Flint 2 name: Flint 2.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "FLINT-2",
+            "sourceId": "flint-2-catalog",
+            "passage": "Flint 2 sku: FLINT-2.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "18 h",
+            "sourceId": "flint-2-catalog",
+            "passage": "Flint 2 battery: 18 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "251 g",
+            "sourceId": "flint-2-catalog",
+            "passage": "Flint 2 weight: 251 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "16 cm",
+            "sourceId": "flint-2-catalog",
+            "passage": "Flint 2 length: 16 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "75.00",
+            "sourceId": "flint-2-catalog",
+            "passage": "Flint 2 price: 75.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "flint-2-catalog",
+            "passage": "Flint 2 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "flint-2-catalog",
+            "passage": "Flint 2 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "green",
+            "sourceId": "flint-2-catalog",
+            "passage": "Flint 2 color: green.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "flint-3",
+        "name": "Flint 3",
+        "sku": "FLINT-3",
+        "color": "red",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Flint 3",
+            "sourceId": "flint-3-catalog",
+            "passage": "Flint 3 name: Flint 3.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "FLINT-3",
+            "sourceId": "flint-3-catalog",
+            "passage": "Flint 3 sku: FLINT-3.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "19 h",
+            "sourceId": "flint-3-catalog",
+            "passage": "Flint 3 battery: 19 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "252 g",
+            "sourceId": "flint-3-catalog",
+            "passage": "Flint 3 weight: 252 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "17 cm",
+            "sourceId": "flint-3-catalog",
+            "passage": "Flint 3 length: 17 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "76.00",
+            "sourceId": "flint-3-catalog",
+            "passage": "Flint 3 price: 76.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "flint-3-catalog",
+            "passage": "Flint 3 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "flint-3-catalog",
+            "passage": "Flint 3 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "red",
+            "sourceId": "flint-3-catalog",
+            "passage": "Flint 3 color: red.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "flint-4",
+        "name": "Flint 4",
+        "sku": "FLINT-4",
+        "color": "gray",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Flint 4",
+            "sourceId": "flint-4-catalog",
+            "passage": "Flint 4 name: Flint 4.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "FLINT-4",
+            "sourceId": "flint-4-catalog",
+            "passage": "Flint 4 sku: FLINT-4.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "20 h",
+            "sourceId": "flint-4-catalog",
+            "passage": "Flint 4 battery: 20 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "253 g",
+            "sourceId": "flint-4-catalog",
+            "passage": "Flint 4 weight: 253 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "18 cm",
+            "sourceId": "flint-4-catalog",
+            "passage": "Flint 4 length: 18 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "77.00",
+            "sourceId": "flint-4-catalog",
+            "passage": "Flint 4 price: 77.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "flint-4-catalog",
+            "passage": "Flint 4 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "flint-4-catalog",
+            "passage": "Flint 4 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "gray",
+            "sourceId": "flint-4-catalog",
+            "passage": "Flint 4 color: gray.",
+            "page": "1"
+          }
+        ]
+      },
+      {
+        "id": "flint-5",
+        "name": "Flint 5",
+        "sku": "FLINT-5",
+        "color": "gold",
+        "category": "Fictional portable audio",
+        "claims": [
+          {
+            "label": "name",
+            "value": "Flint 5",
+            "sourceId": "flint-5-catalog",
+            "passage": "Flint 5 name: Flint 5.",
+            "page": "1"
+          },
+          {
+            "label": "sku",
+            "value": "FLINT-5",
+            "sourceId": "flint-5-catalog",
+            "passage": "Flint 5 sku: FLINT-5.",
+            "page": "1"
+          },
+          {
+            "label": "battery",
+            "value": "21 h",
+            "sourceId": "flint-5-catalog",
+            "passage": "Flint 5 battery: 21 h.",
+            "page": "1"
+          },
+          {
+            "label": "weight",
+            "value": "254 g",
+            "sourceId": "flint-5-catalog",
+            "passage": "Flint 5 weight: 254 g.",
+            "page": "1"
+          },
+          {
+            "label": "length",
+            "value": "19 cm",
+            "sourceId": "flint-5-catalog",
+            "passage": "Flint 5 length: 19 cm.",
+            "page": "1"
+          },
+          {
+            "label": "price",
+            "value": "78.00",
+            "sourceId": "flint-5-catalog",
+            "passage": "Flint 5 price: 78.00.",
+            "page": "1"
+          },
+          {
+            "label": "currency",
+            "value": "USD",
+            "sourceId": "flint-5-catalog",
+            "passage": "Flint 5 currency: USD.",
+            "page": "1"
+          },
+          {
+            "label": "availability",
+            "value": "InStock",
+            "sourceId": "flint-5-catalog",
+            "passage": "Flint 5 availability: InStock.",
+            "page": "1"
+          },
+          {
+            "label": "color",
+            "value": "gold",
+            "sourceId": "flint-5-catalog",
+            "passage": "Flint 5 color: gold.",
+            "page": "1"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "atlas-1-catalog",
+        "name": "Atlas 1 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "atlas-2-catalog",
+        "name": "Atlas 2 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "atlas-3-catalog",
+        "name": "Atlas 3 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "atlas-4-catalog",
+        "name": "Atlas 4 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "atlas-5-catalog",
+        "name": "Atlas 5 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "birch-1-catalog",
+        "name": "Birch 1 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "birch-2-catalog",
+        "name": "Birch 2 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "birch-3-catalog",
+        "name": "Birch 3 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "birch-4-catalog",
+        "name": "Birch 4 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "birch-5-catalog",
+        "name": "Birch 5 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "cobalt-1-catalog",
+        "name": "Cobalt 1 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "cobalt-2-catalog",
+        "name": "Cobalt 2 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "cobalt-3-catalog",
+        "name": "Cobalt 3 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "cobalt-4-catalog",
+        "name": "Cobalt 4 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "cobalt-5-catalog",
+        "name": "Cobalt 5 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "delta-1-catalog",
+        "name": "Delta 1 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "delta-2-catalog",
+        "name": "Delta 2 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "delta-3-catalog",
+        "name": "Delta 3 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "delta-4-catalog",
+        "name": "Delta 4 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "delta-5-catalog",
+        "name": "Delta 5 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "ember-1-catalog",
+        "name": "Ember 1 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "ember-2-catalog",
+        "name": "Ember 2 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "ember-3-catalog",
+        "name": "Ember 3 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "ember-4-catalog",
+        "name": "Ember 4 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "ember-5-catalog",
+        "name": "Ember 5 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "flint-1-catalog",
+        "name": "Flint 1 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "flint-2-catalog",
+        "name": "Flint 2 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "flint-3-catalog",
+        "name": "Flint 3 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "flint-4-catalog",
+        "name": "Flint 4 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      },
+      {
+        "id": "flint-5-catalog",
+        "name": "Flint 5 original fictional catalog",
+        "version": "2026-10-18.1",
+        "type": "synthetic_catalog",
+        "date": "2026-10-18"
+      }
+    ]
+  },
+  "products": [
+    {
+      "id": "atlas-1",
+      "name": "Atlas 1",
+      "family": "Atlas",
+      "split": "train"
+    },
+    {
+      "id": "atlas-2",
+      "name": "Atlas 2",
+      "family": "Atlas",
+      "split": "train"
+    },
+    {
+      "id": "atlas-3",
+      "name": "Atlas 3",
+      "family": "Atlas",
+      "split": "train"
+    },
+    {
+      "id": "atlas-4",
+      "name": "Atlas 4",
+      "family": "Atlas",
+      "split": "train"
+    },
+    {
+      "id": "atlas-5",
+      "name": "Atlas 5",
+      "family": "Atlas",
+      "split": "train"
+    },
+    {
+      "id": "birch-1",
+      "name": "Birch 1",
+      "family": "Birch",
+      "split": "train"
+    },
+    {
+      "id": "birch-2",
+      "name": "Birch 2",
+      "family": "Birch",
+      "split": "train"
+    },
+    {
+      "id": "birch-3",
+      "name": "Birch 3",
+      "family": "Birch",
+      "split": "train"
+    },
+    {
+      "id": "birch-4",
+      "name": "Birch 4",
+      "family": "Birch",
+      "split": "train"
+    },
+    {
+      "id": "birch-5",
+      "name": "Birch 5",
+      "family": "Birch",
+      "split": "train"
+    },
+    {
+      "id": "cobalt-1",
+      "name": "Cobalt 1",
+      "family": "Cobalt",
+      "split": "train"
+    },
+    {
+      "id": "cobalt-2",
+      "name": "Cobalt 2",
+      "family": "Cobalt",
+      "split": "train"
+    },
+    {
+      "id": "cobalt-3",
+      "name": "Cobalt 3",
+      "family": "Cobalt",
+      "split": "train"
+    },
+    {
+      "id": "cobalt-4",
+      "name": "Cobalt 4",
+      "family": "Cobalt",
+      "split": "train"
+    },
+    {
+      "id": "cobalt-5",
+      "name": "Cobalt 5",
+      "family": "Cobalt",
+      "split": "train"
+    },
+    {
+      "id": "delta-1",
+      "name": "Delta 1",
+      "family": "Delta",
+      "split": "validation"
+    },
+    {
+      "id": "delta-2",
+      "name": "Delta 2",
+      "family": "Delta",
+      "split": "validation"
+    },
+    {
+      "id": "delta-3",
+      "name": "Delta 3",
+      "family": "Delta",
+      "split": "validation"
+    },
+    {
+      "id": "delta-4",
+      "name": "Delta 4",
+      "family": "Delta",
+      "split": "validation"
+    },
+    {
+      "id": "delta-5",
+      "name": "Delta 5",
+      "family": "Delta",
+      "split": "validation"
+    },
+    {
+      "id": "ember-1",
+      "name": "Ember 1",
+      "family": "Ember",
+      "split": "test"
+    },
+    {
+      "id": "ember-2",
+      "name": "Ember 2",
+      "family": "Ember",
+      "split": "test"
+    },
+    {
+      "id": "ember-3",
+      "name": "Ember 3",
+      "family": "Ember",
+      "split": "test"
+    },
+    {
+      "id": "ember-4",
+      "name": "Ember 4",
+      "family": "Ember",
+      "split": "test"
+    },
+    {
+      "id": "ember-5",
+      "name": "Ember 5",
+      "family": "Ember",
+      "split": "test"
+    },
+    {
+      "id": "flint-1",
+      "name": "Flint 1",
+      "family": "Flint",
+      "split": "test"
+    },
+    {
+      "id": "flint-2",
+      "name": "Flint 2",
+      "family": "Flint",
+      "split": "test"
+    },
+    {
+      "id": "flint-3",
+      "name": "Flint 3",
+      "family": "Flint",
+      "split": "test"
+    },
+    {
+      "id": "flint-4",
+      "name": "Flint 4",
+      "family": "Flint",
+      "split": "test"
+    },
+    {
+      "id": "flint-5",
+      "name": "Flint 5",
+      "family": "Flint",
+      "split": "test"
+    }
+  ],
+  "questions": [
+    {
+      "id": "atlas-1-q1",
+      "product_id": "atlas-1",
+      "split": "train",
+      "query": "What is the battery life of Atlas 1?",
+      "expected_source_id": "atlas-1-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-1-q2",
+      "product_id": "atlas-1",
+      "split": "train",
+      "query": "What is the weight of Atlas 1?",
+      "expected_source_id": "atlas-1-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-1-q3",
+      "product_id": "atlas-1",
+      "split": "train",
+      "query": "What is the length of Atlas 1?",
+      "expected_source_id": "atlas-1-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-1-q4",
+      "product_id": "atlas-1",
+      "split": "train",
+      "query": "What is the price of Atlas 1?",
+      "expected_source_id": "atlas-1-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-1-q5",
+      "product_id": "atlas-1",
+      "split": "train",
+      "query": "What color is Atlas 1?",
+      "expected_source_id": "atlas-1-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-1-q6",
+      "product_id": "atlas-1",
+      "split": "train",
+      "query": "What is the SKU of Atlas 1?",
+      "expected_source_id": "atlas-1-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-1-unsupported1",
+      "product_id": "atlas-1",
+      "split": "train",
+      "query": "Does Atlas 1 cure diabetes?",
+      "expected_source_id": null,
+      "expected_label": null,
+      "expected_abstain": true,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-1-unsupported2",
+      "product_id": "atlas-1",
+      "split": "train",
+      "query": "What is the undocumented warranty coverage of Atlas 1?",
+      "expected_source_id": null,
+      "expected_label": null,
+      "expected_abstain": true,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-2-q1",
+      "product_id": "atlas-2",
+      "split": "train",
+      "query": "What is the battery life of Atlas 2?",
+      "expected_source_id": "atlas-2-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-2-q2",
+      "product_id": "atlas-2",
+      "split": "train",
+      "query": "What is the weight of Atlas 2?",
+      "expected_source_id": "atlas-2-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-2-q3",
+      "product_id": "atlas-2",
+      "split": "train",
+      "query": "What is the length of Atlas 2?",
+      "expected_source_id": "atlas-2-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-2-q4",
+      "product_id": "atlas-2",
+      "split": "train",
+      "query": "What is the price of Atlas 2?",
+      "expected_source_id": "atlas-2-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-2-q5",
+      "product_id": "atlas-2",
+      "split": "train",
+      "query": "What color is Atlas 2?",
+      "expected_source_id": "atlas-2-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-2-q6",
+      "product_id": "atlas-2",
+      "split": "train",
+      "query": "What is the SKU of Atlas 2?",
+      "expected_source_id": "atlas-2-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-2-unsupported1",
+      "product_id": "atlas-2",
+      "split": "train",
+      "query": "Does Atlas 2 cure diabetes?",
+      "expected_source_id": null,
+      "expected_label": null,
+      "expected_abstain": true,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-2-unsupported2",
+      "product_id": "atlas-2",
+      "split": "train",
+      "query": "What is the undocumented warranty coverage of Atlas 2?",
+      "expected_source_id": null,
+      "expected_label": null,
+      "expected_abstain": true,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-3-q1",
+      "product_id": "atlas-3",
+      "split": "train",
+      "query": "What is the battery life of Atlas 3?",
+      "expected_source_id": "atlas-3-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-3-q2",
+      "product_id": "atlas-3",
+      "split": "train",
+      "query": "What is the weight of Atlas 3?",
+      "expected_source_id": "atlas-3-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-3-q3",
+      "product_id": "atlas-3",
+      "split": "train",
+      "query": "What is the length of Atlas 3?",
+      "expected_source_id": "atlas-3-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-3-q4",
+      "product_id": "atlas-3",
+      "split": "train",
+      "query": "What is the price of Atlas 3?",
+      "expected_source_id": "atlas-3-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-3-q5",
+      "product_id": "atlas-3",
+      "split": "train",
+      "query": "What color is Atlas 3?",
+      "expected_source_id": "atlas-3-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-3-q6",
+      "product_id": "atlas-3",
+      "split": "train",
+      "query": "What is the SKU of Atlas 3?",
+      "expected_source_id": "atlas-3-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-4-q1",
+      "product_id": "atlas-4",
+      "split": "train",
+      "query": "What is the battery life of Atlas 4?",
+      "expected_source_id": "atlas-4-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-4-q2",
+      "product_id": "atlas-4",
+      "split": "train",
+      "query": "What is the weight of Atlas 4?",
+      "expected_source_id": "atlas-4-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-4-q3",
+      "product_id": "atlas-4",
+      "split": "train",
+      "query": "What is the length of Atlas 4?",
+      "expected_source_id": "atlas-4-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-4-q4",
+      "product_id": "atlas-4",
+      "split": "train",
+      "query": "What is the price of Atlas 4?",
+      "expected_source_id": "atlas-4-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-4-q5",
+      "product_id": "atlas-4",
+      "split": "train",
+      "query": "What color is Atlas 4?",
+      "expected_source_id": "atlas-4-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-4-q6",
+      "product_id": "atlas-4",
+      "split": "train",
+      "query": "What is the SKU of Atlas 4?",
+      "expected_source_id": "atlas-4-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-5-q1",
+      "product_id": "atlas-5",
+      "split": "train",
+      "query": "What is the battery life of Atlas 5?",
+      "expected_source_id": "atlas-5-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-5-q2",
+      "product_id": "atlas-5",
+      "split": "train",
+      "query": "What is the weight of Atlas 5?",
+      "expected_source_id": "atlas-5-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-5-q3",
+      "product_id": "atlas-5",
+      "split": "train",
+      "query": "What is the length of Atlas 5?",
+      "expected_source_id": "atlas-5-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-5-q4",
+      "product_id": "atlas-5",
+      "split": "train",
+      "query": "What is the price of Atlas 5?",
+      "expected_source_id": "atlas-5-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-5-q5",
+      "product_id": "atlas-5",
+      "split": "train",
+      "query": "What color is Atlas 5?",
+      "expected_source_id": "atlas-5-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "atlas-5-q6",
+      "product_id": "atlas-5",
+      "split": "train",
+      "query": "What is the SKU of Atlas 5?",
+      "expected_source_id": "atlas-5-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-1-q1",
+      "product_id": "birch-1",
+      "split": "train",
+      "query": "What is the battery life of Birch 1?",
+      "expected_source_id": "birch-1-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-1-q2",
+      "product_id": "birch-1",
+      "split": "train",
+      "query": "What is the weight of Birch 1?",
+      "expected_source_id": "birch-1-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-1-q3",
+      "product_id": "birch-1",
+      "split": "train",
+      "query": "What is the length of Birch 1?",
+      "expected_source_id": "birch-1-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-1-q4",
+      "product_id": "birch-1",
+      "split": "train",
+      "query": "What is the price of Birch 1?",
+      "expected_source_id": "birch-1-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-1-q5",
+      "product_id": "birch-1",
+      "split": "train",
+      "query": "What color is Birch 1?",
+      "expected_source_id": "birch-1-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-1-q6",
+      "product_id": "birch-1",
+      "split": "train",
+      "query": "What is the SKU of Birch 1?",
+      "expected_source_id": "birch-1-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-1-unsupported1",
+      "product_id": "birch-1",
+      "split": "train",
+      "query": "Does Birch 1 cure diabetes?",
+      "expected_source_id": null,
+      "expected_label": null,
+      "expected_abstain": true,
+      "reviewed": false
+    },
+    {
+      "id": "birch-1-unsupported2",
+      "product_id": "birch-1",
+      "split": "train",
+      "query": "What is the undocumented warranty coverage of Birch 1?",
+      "expected_source_id": null,
+      "expected_label": null,
+      "expected_abstain": true,
+      "reviewed": false
+    },
+    {
+      "id": "birch-2-q1",
+      "product_id": "birch-2",
+      "split": "train",
+      "query": "What is the battery life of Birch 2?",
+      "expected_source_id": "birch-2-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-2-q2",
+      "product_id": "birch-2",
+      "split": "train",
+      "query": "What is the weight of Birch 2?",
+      "expected_source_id": "birch-2-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-2-q3",
+      "product_id": "birch-2",
+      "split": "train",
+      "query": "What is the length of Birch 2?",
+      "expected_source_id": "birch-2-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-2-q4",
+      "product_id": "birch-2",
+      "split": "train",
+      "query": "What is the price of Birch 2?",
+      "expected_source_id": "birch-2-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-2-q5",
+      "product_id": "birch-2",
+      "split": "train",
+      "query": "What color is Birch 2?",
+      "expected_source_id": "birch-2-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-2-q6",
+      "product_id": "birch-2",
+      "split": "train",
+      "query": "What is the SKU of Birch 2?",
+      "expected_source_id": "birch-2-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-2-unsupported1",
+      "product_id": "birch-2",
+      "split": "train",
+      "query": "Does Birch 2 cure diabetes?",
+      "expected_source_id": null,
+      "expected_label": null,
+      "expected_abstain": true,
+      "reviewed": false
+    },
+    {
+      "id": "birch-2-unsupported2",
+      "product_id": "birch-2",
+      "split": "train",
+      "query": "What is the undocumented warranty coverage of Birch 2?",
+      "expected_source_id": null,
+      "expected_label": null,
+      "expected_abstain": true,
+      "reviewed": false
+    },
+    {
+      "id": "birch-3-q1",
+      "product_id": "birch-3",
+      "split": "train",
+      "query": "What is the battery life of Birch 3?",
+      "expected_source_id": "birch-3-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-3-q2",
+      "product_id": "birch-3",
+      "split": "train",
+      "query": "What is the weight of Birch 3?",
+      "expected_source_id": "birch-3-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-3-q3",
+      "product_id": "birch-3",
+      "split": "train",
+      "query": "What is the length of Birch 3?",
+      "expected_source_id": "birch-3-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-3-q4",
+      "product_id": "birch-3",
+      "split": "train",
+      "query": "What is the price of Birch 3?",
+      "expected_source_id": "birch-3-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-3-q5",
+      "product_id": "birch-3",
+      "split": "train",
+      "query": "What color is Birch 3?",
+      "expected_source_id": "birch-3-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-3-q6",
+      "product_id": "birch-3",
+      "split": "train",
+      "query": "What is the SKU of Birch 3?",
+      "expected_source_id": "birch-3-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-4-q1",
+      "product_id": "birch-4",
+      "split": "train",
+      "query": "What is the battery life of Birch 4?",
+      "expected_source_id": "birch-4-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-4-q2",
+      "product_id": "birch-4",
+      "split": "train",
+      "query": "What is the weight of Birch 4?",
+      "expected_source_id": "birch-4-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-4-q3",
+      "product_id": "birch-4",
+      "split": "train",
+      "query": "What is the length of Birch 4?",
+      "expected_source_id": "birch-4-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-4-q4",
+      "product_id": "birch-4",
+      "split": "train",
+      "query": "What is the price of Birch 4?",
+      "expected_source_id": "birch-4-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-4-q5",
+      "product_id": "birch-4",
+      "split": "train",
+      "query": "What color is Birch 4?",
+      "expected_source_id": "birch-4-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-4-q6",
+      "product_id": "birch-4",
+      "split": "train",
+      "query": "What is the SKU of Birch 4?",
+      "expected_source_id": "birch-4-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-5-q1",
+      "product_id": "birch-5",
+      "split": "train",
+      "query": "What is the battery life of Birch 5?",
+      "expected_source_id": "birch-5-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-5-q2",
+      "product_id": "birch-5",
+      "split": "train",
+      "query": "What is the weight of Birch 5?",
+      "expected_source_id": "birch-5-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-5-q3",
+      "product_id": "birch-5",
+      "split": "train",
+      "query": "What is the length of Birch 5?",
+      "expected_source_id": "birch-5-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-5-q4",
+      "product_id": "birch-5",
+      "split": "train",
+      "query": "What is the price of Birch 5?",
+      "expected_source_id": "birch-5-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-5-q5",
+      "product_id": "birch-5",
+      "split": "train",
+      "query": "What color is Birch 5?",
+      "expected_source_id": "birch-5-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "birch-5-q6",
+      "product_id": "birch-5",
+      "split": "train",
+      "query": "What is the SKU of Birch 5?",
+      "expected_source_id": "birch-5-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-1-q1",
+      "product_id": "cobalt-1",
+      "split": "train",
+      "query": "What is the battery life of Cobalt 1?",
+      "expected_source_id": "cobalt-1-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-1-q2",
+      "product_id": "cobalt-1",
+      "split": "train",
+      "query": "What is the weight of Cobalt 1?",
+      "expected_source_id": "cobalt-1-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-1-q3",
+      "product_id": "cobalt-1",
+      "split": "train",
+      "query": "What is the length of Cobalt 1?",
+      "expected_source_id": "cobalt-1-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-1-q4",
+      "product_id": "cobalt-1",
+      "split": "train",
+      "query": "What is the price of Cobalt 1?",
+      "expected_source_id": "cobalt-1-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-1-q5",
+      "product_id": "cobalt-1",
+      "split": "train",
+      "query": "What color is Cobalt 1?",
+      "expected_source_id": "cobalt-1-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-1-q6",
+      "product_id": "cobalt-1",
+      "split": "train",
+      "query": "What is the SKU of Cobalt 1?",
+      "expected_source_id": "cobalt-1-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-1-unsupported1",
+      "product_id": "cobalt-1",
+      "split": "train",
+      "query": "Does Cobalt 1 cure diabetes?",
+      "expected_source_id": null,
+      "expected_label": null,
+      "expected_abstain": true,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-1-unsupported2",
+      "product_id": "cobalt-1",
+      "split": "train",
+      "query": "What is the undocumented warranty coverage of Cobalt 1?",
+      "expected_source_id": null,
+      "expected_label": null,
+      "expected_abstain": true,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-2-q1",
+      "product_id": "cobalt-2",
+      "split": "train",
+      "query": "What is the battery life of Cobalt 2?",
+      "expected_source_id": "cobalt-2-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-2-q2",
+      "product_id": "cobalt-2",
+      "split": "train",
+      "query": "What is the weight of Cobalt 2?",
+      "expected_source_id": "cobalt-2-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-2-q3",
+      "product_id": "cobalt-2",
+      "split": "train",
+      "query": "What is the length of Cobalt 2?",
+      "expected_source_id": "cobalt-2-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-2-q4",
+      "product_id": "cobalt-2",
+      "split": "train",
+      "query": "What is the price of Cobalt 2?",
+      "expected_source_id": "cobalt-2-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-2-q5",
+      "product_id": "cobalt-2",
+      "split": "train",
+      "query": "What color is Cobalt 2?",
+      "expected_source_id": "cobalt-2-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-2-q6",
+      "product_id": "cobalt-2",
+      "split": "train",
+      "query": "What is the SKU of Cobalt 2?",
+      "expected_source_id": "cobalt-2-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-2-unsupported1",
+      "product_id": "cobalt-2",
+      "split": "train",
+      "query": "Does Cobalt 2 cure diabetes?",
+      "expected_source_id": null,
+      "expected_label": null,
+      "expected_abstain": true,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-2-unsupported2",
+      "product_id": "cobalt-2",
+      "split": "train",
+      "query": "What is the undocumented warranty coverage of Cobalt 2?",
+      "expected_source_id": null,
+      "expected_label": null,
+      "expected_abstain": true,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-3-q1",
+      "product_id": "cobalt-3",
+      "split": "train",
+      "query": "What is the battery life of Cobalt 3?",
+      "expected_source_id": "cobalt-3-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-3-q2",
+      "product_id": "cobalt-3",
+      "split": "train",
+      "query": "What is the weight of Cobalt 3?",
+      "expected_source_id": "cobalt-3-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-3-q3",
+      "product_id": "cobalt-3",
+      "split": "train",
+      "query": "What is the length of Cobalt 3?",
+      "expected_source_id": "cobalt-3-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-3-q4",
+      "product_id": "cobalt-3",
+      "split": "train",
+      "query": "What is the price of Cobalt 3?",
+      "expected_source_id": "cobalt-3-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-3-q5",
+      "product_id": "cobalt-3",
+      "split": "train",
+      "query": "What color is Cobalt 3?",
+      "expected_source_id": "cobalt-3-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-3-q6",
+      "product_id": "cobalt-3",
+      "split": "train",
+      "query": "What is the SKU of Cobalt 3?",
+      "expected_source_id": "cobalt-3-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-4-q1",
+      "product_id": "cobalt-4",
+      "split": "train",
+      "query": "What is the battery life of Cobalt 4?",
+      "expected_source_id": "cobalt-4-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-4-q2",
+      "product_id": "cobalt-4",
+      "split": "train",
+      "query": "What is the weight of Cobalt 4?",
+      "expected_source_id": "cobalt-4-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-4-q3",
+      "product_id": "cobalt-4",
+      "split": "train",
+      "query": "What is the length of Cobalt 4?",
+      "expected_source_id": "cobalt-4-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-4-q4",
+      "product_id": "cobalt-4",
+      "split": "train",
+      "query": "What is the price of Cobalt 4?",
+      "expected_source_id": "cobalt-4-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-4-q5",
+      "product_id": "cobalt-4",
+      "split": "train",
+      "query": "What color is Cobalt 4?",
+      "expected_source_id": "cobalt-4-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-4-q6",
+      "product_id": "cobalt-4",
+      "split": "train",
+      "query": "What is the SKU of Cobalt 4?",
+      "expected_source_id": "cobalt-4-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-5-q1",
+      "product_id": "cobalt-5",
+      "split": "train",
+      "query": "What is the battery life of Cobalt 5?",
+      "expected_source_id": "cobalt-5-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-5-q2",
+      "product_id": "cobalt-5",
+      "split": "train",
+      "query": "What is the weight of Cobalt 5?",
+      "expected_source_id": "cobalt-5-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-5-q3",
+      "product_id": "cobalt-5",
+      "split": "train",
+      "query": "What is the length of Cobalt 5?",
+      "expected_source_id": "cobalt-5-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-5-q4",
+      "product_id": "cobalt-5",
+      "split": "train",
+      "query": "What is the price of Cobalt 5?",
+      "expected_source_id": "cobalt-5-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-5-q5",
+      "product_id": "cobalt-5",
+      "split": "train",
+      "query": "What color is Cobalt 5?",
+      "expected_source_id": "cobalt-5-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "cobalt-5-q6",
+      "product_id": "cobalt-5",
+      "split": "train",
+      "query": "What is the SKU of Cobalt 5?",
+      "expected_source_id": "cobalt-5-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-1-q1",
+      "product_id": "delta-1",
+      "split": "validation",
+      "query": "What is the battery life of Delta 1?",
+      "expected_source_id": "delta-1-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-1-q2",
+      "product_id": "delta-1",
+      "split": "validation",
+      "query": "What is the weight of Delta 1?",
+      "expected_source_id": "delta-1-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-1-q3",
+      "product_id": "delta-1",
+      "split": "validation",
+      "query": "What is the length of Delta 1?",
+      "expected_source_id": "delta-1-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-1-q4",
+      "product_id": "delta-1",
+      "split": "validation",
+      "query": "What is the price of Delta 1?",
+      "expected_source_id": "delta-1-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-1-q5",
+      "product_id": "delta-1",
+      "split": "validation",
+      "query": "What color is Delta 1?",
+      "expected_source_id": "delta-1-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-1-q6",
+      "product_id": "delta-1",
+      "split": "validation",
+      "query": "What is the SKU of Delta 1?",
+      "expected_source_id": "delta-1-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-1-unsupported1",
+      "product_id": "delta-1",
+      "split": "validation",
+      "query": "Does Delta 1 cure diabetes?",
+      "expected_source_id": null,
+      "expected_label": null,
+      "expected_abstain": true,
+      "reviewed": false
+    },
+    {
+      "id": "delta-1-unsupported2",
+      "product_id": "delta-1",
+      "split": "validation",
+      "query": "What is the undocumented warranty coverage of Delta 1?",
+      "expected_source_id": null,
+      "expected_label": null,
+      "expected_abstain": true,
+      "reviewed": false
+    },
+    {
+      "id": "delta-2-q1",
+      "product_id": "delta-2",
+      "split": "validation",
+      "query": "What is the battery life of Delta 2?",
+      "expected_source_id": "delta-2-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-2-q2",
+      "product_id": "delta-2",
+      "split": "validation",
+      "query": "What is the weight of Delta 2?",
+      "expected_source_id": "delta-2-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-2-q3",
+      "product_id": "delta-2",
+      "split": "validation",
+      "query": "What is the length of Delta 2?",
+      "expected_source_id": "delta-2-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-2-q4",
+      "product_id": "delta-2",
+      "split": "validation",
+      "query": "What is the price of Delta 2?",
+      "expected_source_id": "delta-2-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-2-q5",
+      "product_id": "delta-2",
+      "split": "validation",
+      "query": "What color is Delta 2?",
+      "expected_source_id": "delta-2-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-2-q6",
+      "product_id": "delta-2",
+      "split": "validation",
+      "query": "What is the SKU of Delta 2?",
+      "expected_source_id": "delta-2-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-2-unsupported1",
+      "product_id": "delta-2",
+      "split": "validation",
+      "query": "Does Delta 2 cure diabetes?",
+      "expected_source_id": null,
+      "expected_label": null,
+      "expected_abstain": true,
+      "reviewed": false
+    },
+    {
+      "id": "delta-2-unsupported2",
+      "product_id": "delta-2",
+      "split": "validation",
+      "query": "What is the undocumented warranty coverage of Delta 2?",
+      "expected_source_id": null,
+      "expected_label": null,
+      "expected_abstain": true,
+      "reviewed": false
+    },
+    {
+      "id": "delta-3-q1",
+      "product_id": "delta-3",
+      "split": "validation",
+      "query": "What is the battery life of Delta 3?",
+      "expected_source_id": "delta-3-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-3-q2",
+      "product_id": "delta-3",
+      "split": "validation",
+      "query": "What is the weight of Delta 3?",
+      "expected_source_id": "delta-3-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-3-q3",
+      "product_id": "delta-3",
+      "split": "validation",
+      "query": "What is the length of Delta 3?",
+      "expected_source_id": "delta-3-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-3-q4",
+      "product_id": "delta-3",
+      "split": "validation",
+      "query": "What is the price of Delta 3?",
+      "expected_source_id": "delta-3-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-3-q5",
+      "product_id": "delta-3",
+      "split": "validation",
+      "query": "What color is Delta 3?",
+      "expected_source_id": "delta-3-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-3-q6",
+      "product_id": "delta-3",
+      "split": "validation",
+      "query": "What is the SKU of Delta 3?",
+      "expected_source_id": "delta-3-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-4-q1",
+      "product_id": "delta-4",
+      "split": "validation",
+      "query": "What is the battery life of Delta 4?",
+      "expected_source_id": "delta-4-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-4-q2",
+      "product_id": "delta-4",
+      "split": "validation",
+      "query": "What is the weight of Delta 4?",
+      "expected_source_id": "delta-4-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-4-q3",
+      "product_id": "delta-4",
+      "split": "validation",
+      "query": "What is the length of Delta 4?",
+      "expected_source_id": "delta-4-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-4-q4",
+      "product_id": "delta-4",
+      "split": "validation",
+      "query": "What is the price of Delta 4?",
+      "expected_source_id": "delta-4-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-4-q5",
+      "product_id": "delta-4",
+      "split": "validation",
+      "query": "What color is Delta 4?",
+      "expected_source_id": "delta-4-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-4-q6",
+      "product_id": "delta-4",
+      "split": "validation",
+      "query": "What is the SKU of Delta 4?",
+      "expected_source_id": "delta-4-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-5-q1",
+      "product_id": "delta-5",
+      "split": "validation",
+      "query": "What is the battery life of Delta 5?",
+      "expected_source_id": "delta-5-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-5-q2",
+      "product_id": "delta-5",
+      "split": "validation",
+      "query": "What is the weight of Delta 5?",
+      "expected_source_id": "delta-5-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-5-q3",
+      "product_id": "delta-5",
+      "split": "validation",
+      "query": "What is the length of Delta 5?",
+      "expected_source_id": "delta-5-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-5-q4",
+      "product_id": "delta-5",
+      "split": "validation",
+      "query": "What is the price of Delta 5?",
+      "expected_source_id": "delta-5-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-5-q5",
+      "product_id": "delta-5",
+      "split": "validation",
+      "query": "What color is Delta 5?",
+      "expected_source_id": "delta-5-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "delta-5-q6",
+      "product_id": "delta-5",
+      "split": "validation",
+      "query": "What is the SKU of Delta 5?",
+      "expected_source_id": "delta-5-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-1-q1",
+      "product_id": "ember-1",
+      "split": "test",
+      "query": "What is the battery life of Ember 1?",
+      "expected_source_id": "ember-1-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-1-q2",
+      "product_id": "ember-1",
+      "split": "test",
+      "query": "What is the weight of Ember 1?",
+      "expected_source_id": "ember-1-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-1-q3",
+      "product_id": "ember-1",
+      "split": "test",
+      "query": "What is the length of Ember 1?",
+      "expected_source_id": "ember-1-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-1-q4",
+      "product_id": "ember-1",
+      "split": "test",
+      "query": "What is the price of Ember 1?",
+      "expected_source_id": "ember-1-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-1-q5",
+      "product_id": "ember-1",
+      "split": "test",
+      "query": "What color is Ember 1?",
+      "expected_source_id": "ember-1-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-1-q6",
+      "product_id": "ember-1",
+      "split": "test",
+      "query": "What is the SKU of Ember 1?",
+      "expected_source_id": "ember-1-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-1-unsupported1",
+      "product_id": "ember-1",
+      "split": "test",
+      "query": "Does Ember 1 cure diabetes?",
+      "expected_source_id": null,
+      "expected_label": null,
+      "expected_abstain": true,
+      "reviewed": false
+    },
+    {
+      "id": "ember-1-unsupported2",
+      "product_id": "ember-1",
+      "split": "test",
+      "query": "What is the undocumented warranty coverage of Ember 1?",
+      "expected_source_id": null,
+      "expected_label": null,
+      "expected_abstain": true,
+      "reviewed": false
+    },
+    {
+      "id": "ember-2-q1",
+      "product_id": "ember-2",
+      "split": "test",
+      "query": "What is the battery life of Ember 2?",
+      "expected_source_id": "ember-2-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-2-q2",
+      "product_id": "ember-2",
+      "split": "test",
+      "query": "What is the weight of Ember 2?",
+      "expected_source_id": "ember-2-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-2-q3",
+      "product_id": "ember-2",
+      "split": "test",
+      "query": "What is the length of Ember 2?",
+      "expected_source_id": "ember-2-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-2-q4",
+      "product_id": "ember-2",
+      "split": "test",
+      "query": "What is the price of Ember 2?",
+      "expected_source_id": "ember-2-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-2-q5",
+      "product_id": "ember-2",
+      "split": "test",
+      "query": "What color is Ember 2?",
+      "expected_source_id": "ember-2-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-2-q6",
+      "product_id": "ember-2",
+      "split": "test",
+      "query": "What is the SKU of Ember 2?",
+      "expected_source_id": "ember-2-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-2-unsupported1",
+      "product_id": "ember-2",
+      "split": "test",
+      "query": "Does Ember 2 cure diabetes?",
+      "expected_source_id": null,
+      "expected_label": null,
+      "expected_abstain": true,
+      "reviewed": false
+    },
+    {
+      "id": "ember-2-unsupported2",
+      "product_id": "ember-2",
+      "split": "test",
+      "query": "What is the undocumented warranty coverage of Ember 2?",
+      "expected_source_id": null,
+      "expected_label": null,
+      "expected_abstain": true,
+      "reviewed": false
+    },
+    {
+      "id": "ember-3-q1",
+      "product_id": "ember-3",
+      "split": "test",
+      "query": "What is the battery life of Ember 3?",
+      "expected_source_id": "ember-3-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-3-q2",
+      "product_id": "ember-3",
+      "split": "test",
+      "query": "What is the weight of Ember 3?",
+      "expected_source_id": "ember-3-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-3-q3",
+      "product_id": "ember-3",
+      "split": "test",
+      "query": "What is the length of Ember 3?",
+      "expected_source_id": "ember-3-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-3-q4",
+      "product_id": "ember-3",
+      "split": "test",
+      "query": "What is the price of Ember 3?",
+      "expected_source_id": "ember-3-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-3-q5",
+      "product_id": "ember-3",
+      "split": "test",
+      "query": "What color is Ember 3?",
+      "expected_source_id": "ember-3-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-3-q6",
+      "product_id": "ember-3",
+      "split": "test",
+      "query": "What is the SKU of Ember 3?",
+      "expected_source_id": "ember-3-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-4-q1",
+      "product_id": "ember-4",
+      "split": "test",
+      "query": "What is the battery life of Ember 4?",
+      "expected_source_id": "ember-4-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-4-q2",
+      "product_id": "ember-4",
+      "split": "test",
+      "query": "What is the weight of Ember 4?",
+      "expected_source_id": "ember-4-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-4-q3",
+      "product_id": "ember-4",
+      "split": "test",
+      "query": "What is the length of Ember 4?",
+      "expected_source_id": "ember-4-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-4-q4",
+      "product_id": "ember-4",
+      "split": "test",
+      "query": "What is the price of Ember 4?",
+      "expected_source_id": "ember-4-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-4-q5",
+      "product_id": "ember-4",
+      "split": "test",
+      "query": "What color is Ember 4?",
+      "expected_source_id": "ember-4-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-4-q6",
+      "product_id": "ember-4",
+      "split": "test",
+      "query": "What is the SKU of Ember 4?",
+      "expected_source_id": "ember-4-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-5-q1",
+      "product_id": "ember-5",
+      "split": "test",
+      "query": "What is the battery life of Ember 5?",
+      "expected_source_id": "ember-5-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-5-q2",
+      "product_id": "ember-5",
+      "split": "test",
+      "query": "What is the weight of Ember 5?",
+      "expected_source_id": "ember-5-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-5-q3",
+      "product_id": "ember-5",
+      "split": "test",
+      "query": "What is the length of Ember 5?",
+      "expected_source_id": "ember-5-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-5-q4",
+      "product_id": "ember-5",
+      "split": "test",
+      "query": "What is the price of Ember 5?",
+      "expected_source_id": "ember-5-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-5-q5",
+      "product_id": "ember-5",
+      "split": "test",
+      "query": "What color is Ember 5?",
+      "expected_source_id": "ember-5-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "ember-5-q6",
+      "product_id": "ember-5",
+      "split": "test",
+      "query": "What is the SKU of Ember 5?",
+      "expected_source_id": "ember-5-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-1-q1",
+      "product_id": "flint-1",
+      "split": "test",
+      "query": "What is the battery life of Flint 1?",
+      "expected_source_id": "flint-1-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-1-q2",
+      "product_id": "flint-1",
+      "split": "test",
+      "query": "What is the weight of Flint 1?",
+      "expected_source_id": "flint-1-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-1-q3",
+      "product_id": "flint-1",
+      "split": "test",
+      "query": "What is the length of Flint 1?",
+      "expected_source_id": "flint-1-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-1-q4",
+      "product_id": "flint-1",
+      "split": "test",
+      "query": "What is the price of Flint 1?",
+      "expected_source_id": "flint-1-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-1-q5",
+      "product_id": "flint-1",
+      "split": "test",
+      "query": "What color is Flint 1?",
+      "expected_source_id": "flint-1-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-1-q6",
+      "product_id": "flint-1",
+      "split": "test",
+      "query": "What is the SKU of Flint 1?",
+      "expected_source_id": "flint-1-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-2-q1",
+      "product_id": "flint-2",
+      "split": "test",
+      "query": "What is the battery life of Flint 2?",
+      "expected_source_id": "flint-2-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-2-q2",
+      "product_id": "flint-2",
+      "split": "test",
+      "query": "What is the weight of Flint 2?",
+      "expected_source_id": "flint-2-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-2-q3",
+      "product_id": "flint-2",
+      "split": "test",
+      "query": "What is the length of Flint 2?",
+      "expected_source_id": "flint-2-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-2-q4",
+      "product_id": "flint-2",
+      "split": "test",
+      "query": "What is the price of Flint 2?",
+      "expected_source_id": "flint-2-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-2-q5",
+      "product_id": "flint-2",
+      "split": "test",
+      "query": "What color is Flint 2?",
+      "expected_source_id": "flint-2-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-2-q6",
+      "product_id": "flint-2",
+      "split": "test",
+      "query": "What is the SKU of Flint 2?",
+      "expected_source_id": "flint-2-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-3-q1",
+      "product_id": "flint-3",
+      "split": "test",
+      "query": "What is the battery life of Flint 3?",
+      "expected_source_id": "flint-3-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-3-q2",
+      "product_id": "flint-3",
+      "split": "test",
+      "query": "What is the weight of Flint 3?",
+      "expected_source_id": "flint-3-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-3-q3",
+      "product_id": "flint-3",
+      "split": "test",
+      "query": "What is the length of Flint 3?",
+      "expected_source_id": "flint-3-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-3-q4",
+      "product_id": "flint-3",
+      "split": "test",
+      "query": "What is the price of Flint 3?",
+      "expected_source_id": "flint-3-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-3-q5",
+      "product_id": "flint-3",
+      "split": "test",
+      "query": "What color is Flint 3?",
+      "expected_source_id": "flint-3-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-3-q6",
+      "product_id": "flint-3",
+      "split": "test",
+      "query": "What is the SKU of Flint 3?",
+      "expected_source_id": "flint-3-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-4-q1",
+      "product_id": "flint-4",
+      "split": "test",
+      "query": "What is the battery life of Flint 4?",
+      "expected_source_id": "flint-4-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-4-q2",
+      "product_id": "flint-4",
+      "split": "test",
+      "query": "What is the weight of Flint 4?",
+      "expected_source_id": "flint-4-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-4-q3",
+      "product_id": "flint-4",
+      "split": "test",
+      "query": "What is the length of Flint 4?",
+      "expected_source_id": "flint-4-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-4-q4",
+      "product_id": "flint-4",
+      "split": "test",
+      "query": "What is the price of Flint 4?",
+      "expected_source_id": "flint-4-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-4-q5",
+      "product_id": "flint-4",
+      "split": "test",
+      "query": "What color is Flint 4?",
+      "expected_source_id": "flint-4-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-4-q6",
+      "product_id": "flint-4",
+      "split": "test",
+      "query": "What is the SKU of Flint 4?",
+      "expected_source_id": "flint-4-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-5-q1",
+      "product_id": "flint-5",
+      "split": "test",
+      "query": "What is the battery life of Flint 5?",
+      "expected_source_id": "flint-5-catalog",
+      "expected_label": "battery",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-5-q2",
+      "product_id": "flint-5",
+      "split": "test",
+      "query": "What is the weight of Flint 5?",
+      "expected_source_id": "flint-5-catalog",
+      "expected_label": "weight",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-5-q3",
+      "product_id": "flint-5",
+      "split": "test",
+      "query": "What is the length of Flint 5?",
+      "expected_source_id": "flint-5-catalog",
+      "expected_label": "length",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-5-q4",
+      "product_id": "flint-5",
+      "split": "test",
+      "query": "What is the price of Flint 5?",
+      "expected_source_id": "flint-5-catalog",
+      "expected_label": "price",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-5-q5",
+      "product_id": "flint-5",
+      "split": "test",
+      "query": "What color is Flint 5?",
+      "expected_source_id": "flint-5-catalog",
+      "expected_label": "color",
+      "expected_abstain": false,
+      "reviewed": false
+    },
+    {
+      "id": "flint-5-q6",
+      "product_id": "flint-5",
+      "split": "test",
+      "query": "What is the SKU of Flint 5?",
+      "expected_source_id": "flint-5-catalog",
+      "expected_label": "sku",
+      "expected_abstain": false,
+      "reviewed": false
+    }
+  ],
+  "images": [
+    {
+      "id": "atlas-1-image1",
+      "product_id": "atlas-1",
+      "path": "/benchmark/images/atlas-1-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Atlas 1 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Atlas 1 headphone schematic in blue",
+      "reviewed": false,
+      "sha256": "8c19c64eb628fefae9b092a7b7d352a46a38a72597ae758997ebb5cf1d67a45c"
+    },
+    {
+      "id": "atlas-1-image2",
+      "product_id": "atlas-1",
+      "path": "/benchmark/images/atlas-1-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Atlas 1; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "b9c2da71acd81863130ed86967a743684b92fba89cd38925e711f2dea5d701e0"
+    },
+    {
+      "id": "atlas-1-image3",
+      "product_id": "atlas-1",
+      "path": "/benchmark/images/atlas-1-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Atlas 1 source facts; the accessible name describes opening those facts.",
+      "function": "Open Atlas 1 source facts",
+      "destination": "#benchmark-product-atlas-1",
+      "expected_alt": "Open Atlas 1 source facts",
+      "reviewed": false,
+      "sha256": "3036edfc182c85f917c5fa393e3113fc113baee13a77d2d214b57c9899cd24c3"
+    },
+    {
+      "id": "atlas-1-image4",
+      "product_id": "atlas-1",
+      "path": "/benchmark/images/atlas-1-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Atlas 1 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Atlas 1 headphone schematic in blue",
+      "reviewed": false,
+      "sha256": "4849bc75285ac013a8945f15a318b22349edeeb77e9b368d5cdf1d4d6cb82440"
+    },
+    {
+      "id": "atlas-2-image1",
+      "product_id": "atlas-2",
+      "path": "/benchmark/images/atlas-2-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Atlas 2 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Atlas 2 headphone schematic in green",
+      "reviewed": false,
+      "sha256": "1bf0487f21467691768f54a78e4394f15f84fdd258a23bcbd4ac9dc9f9b727bb"
+    },
+    {
+      "id": "atlas-2-image2",
+      "product_id": "atlas-2",
+      "path": "/benchmark/images/atlas-2-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Atlas 2; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "993badbe3d8dfd14cc63d8327c116fde9684caae79548634bc2e0d7a9e1e0aca"
+    },
+    {
+      "id": "atlas-2-image3",
+      "product_id": "atlas-2",
+      "path": "/benchmark/images/atlas-2-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Atlas 2 source facts; the accessible name describes opening those facts.",
+      "function": "Open Atlas 2 source facts",
+      "destination": "#benchmark-product-atlas-2",
+      "expected_alt": "Open Atlas 2 source facts",
+      "reviewed": false,
+      "sha256": "d0ae6d8352fad278c10d9ff233bd9d092326744696123e7d232644d35ae77fc7"
+    },
+    {
+      "id": "atlas-2-image4",
+      "product_id": "atlas-2",
+      "path": "/benchmark/images/atlas-2-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Atlas 2 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Atlas 2 headphone schematic in green",
+      "reviewed": false,
+      "sha256": "64827e47ee71258102263c5c68349c53eac9fcbc781285060861c64d63b7a482"
+    },
+    {
+      "id": "atlas-3-image1",
+      "product_id": "atlas-3",
+      "path": "/benchmark/images/atlas-3-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Atlas 3 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Atlas 3 headphone schematic in red",
+      "reviewed": false,
+      "sha256": "b44ad0f13d96b044f5dd2428d90f26013a1575ccc0938b90e8321d1094007943"
+    },
+    {
+      "id": "atlas-3-image2",
+      "product_id": "atlas-3",
+      "path": "/benchmark/images/atlas-3-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Atlas 3; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "c20631ba0842cb47623bcc0031e2df53217c78556e42926b8320b460668c1478"
+    },
+    {
+      "id": "atlas-3-image3",
+      "product_id": "atlas-3",
+      "path": "/benchmark/images/atlas-3-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Atlas 3 source facts; the accessible name describes opening those facts.",
+      "function": "Open Atlas 3 source facts",
+      "destination": "#benchmark-product-atlas-3",
+      "expected_alt": "Open Atlas 3 source facts",
+      "reviewed": false,
+      "sha256": "b5fe9dd1868d61d4747896fbfa74bb4ae474d83d4d85a768f81ddacde4af7f80"
+    },
+    {
+      "id": "atlas-3-image4",
+      "product_id": "atlas-3",
+      "path": "/benchmark/images/atlas-3-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Atlas 3 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Atlas 3 headphone schematic in red",
+      "reviewed": false,
+      "sha256": "9b1fd3737d648500509460bf2e98e272bb524a09aec63fbd9583f7f463589f95"
+    },
+    {
+      "id": "atlas-4-image1",
+      "product_id": "atlas-4",
+      "path": "/benchmark/images/atlas-4-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Atlas 4 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Atlas 4 headphone schematic in gray",
+      "reviewed": false,
+      "sha256": "4237a621f3d5a3fa3e21d0397b70de839406d039503d39cf8f502dae20eada81"
+    },
+    {
+      "id": "atlas-4-image2",
+      "product_id": "atlas-4",
+      "path": "/benchmark/images/atlas-4-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Atlas 4; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "66fabcca78989965908dd901e23e2357ec34fe7755aed95f9993921e5cbc43c6"
+    },
+    {
+      "id": "atlas-4-image3",
+      "product_id": "atlas-4",
+      "path": "/benchmark/images/atlas-4-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Atlas 4 source facts; the accessible name describes opening those facts.",
+      "function": "Open Atlas 4 source facts",
+      "destination": "#benchmark-product-atlas-4",
+      "expected_alt": "Open Atlas 4 source facts",
+      "reviewed": false,
+      "sha256": "3ca15ddbfbe0259282b90994484052e7098c0c98bae8f4365052cbffee50d468"
+    },
+    {
+      "id": "atlas-4-image4",
+      "product_id": "atlas-4",
+      "path": "/benchmark/images/atlas-4-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Atlas 4 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Atlas 4 headphone schematic in gray",
+      "reviewed": false,
+      "sha256": "80765cccc26fb9d0ecff8bb6b5cd1367532290dae76310e9f10c55e7459b3374"
+    },
+    {
+      "id": "atlas-5-image1",
+      "product_id": "atlas-5",
+      "path": "/benchmark/images/atlas-5-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Atlas 5 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Atlas 5 headphone schematic in gold",
+      "reviewed": false,
+      "sha256": "19316cd188cc0f787700efd97cf48d9d2c53f106caecea575fbddf5753ed3078"
+    },
+    {
+      "id": "atlas-5-image2",
+      "product_id": "atlas-5",
+      "path": "/benchmark/images/atlas-5-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Atlas 5; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "a55c24ceab02bfdf5fce1b5878c2dba1e50979576e66c11e0fd17ca1d2aad607"
+    },
+    {
+      "id": "atlas-5-image3",
+      "product_id": "atlas-5",
+      "path": "/benchmark/images/atlas-5-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Atlas 5 source facts; the accessible name describes opening those facts.",
+      "function": "Open Atlas 5 source facts",
+      "destination": "#benchmark-product-atlas-5",
+      "expected_alt": "Open Atlas 5 source facts",
+      "reviewed": false,
+      "sha256": "6f9d3bd749769c2f5a290a6079a4500f3a60b2b0ed96cf6d973c1bb8b4d9c201"
+    },
+    {
+      "id": "atlas-5-image4",
+      "product_id": "atlas-5",
+      "path": "/benchmark/images/atlas-5-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Atlas 5 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Atlas 5 headphone schematic in gold",
+      "reviewed": false,
+      "sha256": "7e840b005952918db2b8a3dba7bc331fd2c64fc0c3e7e68863862b686aa91ba5"
+    },
+    {
+      "id": "birch-1-image1",
+      "product_id": "birch-1",
+      "path": "/benchmark/images/birch-1-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Birch 1 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Birch 1 headphone schematic in blue",
+      "reviewed": false,
+      "sha256": "401603f098335616ce5809769d56d4b49cba6d3428ecd28b2d4908f0fdbd40cd"
+    },
+    {
+      "id": "birch-1-image2",
+      "product_id": "birch-1",
+      "path": "/benchmark/images/birch-1-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Birch 1; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "ee9fc8794ba953bd1e2ad7effa6f468dc8729b1dfcd1bfcca4642a7add2a8578"
+    },
+    {
+      "id": "birch-1-image3",
+      "product_id": "birch-1",
+      "path": "/benchmark/images/birch-1-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Birch 1 source facts; the accessible name describes opening those facts.",
+      "function": "Open Birch 1 source facts",
+      "destination": "#benchmark-product-birch-1",
+      "expected_alt": "Open Birch 1 source facts",
+      "reviewed": false,
+      "sha256": "0a0b65b7a7dcb9e0546034f726146e6516addf3db0b8e09a3f49d69bf7275db7"
+    },
+    {
+      "id": "birch-1-image4",
+      "product_id": "birch-1",
+      "path": "/benchmark/images/birch-1-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Birch 1 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Birch 1 headphone schematic in blue",
+      "reviewed": false,
+      "sha256": "ebfd12cc1851329006276f645e5f56c9a7617d4c762ddbc395f32400f2a95750"
+    },
+    {
+      "id": "birch-2-image1",
+      "product_id": "birch-2",
+      "path": "/benchmark/images/birch-2-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Birch 2 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Birch 2 headphone schematic in green",
+      "reviewed": false,
+      "sha256": "4471a7008d07ced1688695a217e529cbf732814673939ba0122f13fd7cc46805"
+    },
+    {
+      "id": "birch-2-image2",
+      "product_id": "birch-2",
+      "path": "/benchmark/images/birch-2-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Birch 2; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "380f9b13d73a96e599b873bfcce2b08b2ff07c584166093434600d2c9d6ff443"
+    },
+    {
+      "id": "birch-2-image3",
+      "product_id": "birch-2",
+      "path": "/benchmark/images/birch-2-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Birch 2 source facts; the accessible name describes opening those facts.",
+      "function": "Open Birch 2 source facts",
+      "destination": "#benchmark-product-birch-2",
+      "expected_alt": "Open Birch 2 source facts",
+      "reviewed": false,
+      "sha256": "4e876cf9eccb4feb8f3a10404e87108070c565b02a325a67f7f15618103e89f9"
+    },
+    {
+      "id": "birch-2-image4",
+      "product_id": "birch-2",
+      "path": "/benchmark/images/birch-2-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Birch 2 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Birch 2 headphone schematic in green",
+      "reviewed": false,
+      "sha256": "86d9ab0187113a1aaec8a581c4eb572881301ec02408ea7f7a0c074268556176"
+    },
+    {
+      "id": "birch-3-image1",
+      "product_id": "birch-3",
+      "path": "/benchmark/images/birch-3-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Birch 3 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Birch 3 headphone schematic in red",
+      "reviewed": false,
+      "sha256": "5b9dd427a885c8f46d600081d409dabc4b03667d9720b86fa3476ba88f08a382"
+    },
+    {
+      "id": "birch-3-image2",
+      "product_id": "birch-3",
+      "path": "/benchmark/images/birch-3-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Birch 3; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "8a3cf54465d39cfed0ce2b0f417923732c02190b4b3fd51aad53bbfccac78f90"
+    },
+    {
+      "id": "birch-3-image3",
+      "product_id": "birch-3",
+      "path": "/benchmark/images/birch-3-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Birch 3 source facts; the accessible name describes opening those facts.",
+      "function": "Open Birch 3 source facts",
+      "destination": "#benchmark-product-birch-3",
+      "expected_alt": "Open Birch 3 source facts",
+      "reviewed": false,
+      "sha256": "eb48ae514d756b1f977fd25ed07a0766275d3756278e7babd5118cb8acc02037"
+    },
+    {
+      "id": "birch-3-image4",
+      "product_id": "birch-3",
+      "path": "/benchmark/images/birch-3-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Birch 3 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Birch 3 headphone schematic in red",
+      "reviewed": false,
+      "sha256": "28c0f99fc7f9982f9e42e40837bc03b68eb0ef67714c29be5f919cfa1cb822be"
+    },
+    {
+      "id": "birch-4-image1",
+      "product_id": "birch-4",
+      "path": "/benchmark/images/birch-4-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Birch 4 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Birch 4 headphone schematic in gray",
+      "reviewed": false,
+      "sha256": "18319a961d372002f4cc089234cb5a9566932ced7827d77ad94fd730c259d295"
+    },
+    {
+      "id": "birch-4-image2",
+      "product_id": "birch-4",
+      "path": "/benchmark/images/birch-4-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Birch 4; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "e776cb36d74352ec92319ad2e43168388037b7099e06c4e373be914fd76cf06a"
+    },
+    {
+      "id": "birch-4-image3",
+      "product_id": "birch-4",
+      "path": "/benchmark/images/birch-4-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Birch 4 source facts; the accessible name describes opening those facts.",
+      "function": "Open Birch 4 source facts",
+      "destination": "#benchmark-product-birch-4",
+      "expected_alt": "Open Birch 4 source facts",
+      "reviewed": false,
+      "sha256": "a8031a259c4ddeecec1f9c719cf2f0290f08aded8f258490086ccdde86ee6731"
+    },
+    {
+      "id": "birch-4-image4",
+      "product_id": "birch-4",
+      "path": "/benchmark/images/birch-4-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Birch 4 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Birch 4 headphone schematic in gray",
+      "reviewed": false,
+      "sha256": "39296bd172e7f7d0cd95aeed2f98045b81d11f59f6ec04a8ee0f437130b615b3"
+    },
+    {
+      "id": "birch-5-image1",
+      "product_id": "birch-5",
+      "path": "/benchmark/images/birch-5-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Birch 5 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Birch 5 headphone schematic in gold",
+      "reviewed": false,
+      "sha256": "aecda60f62e126c5e997bdb7b798c8ea7785b9e764c2629198ced9be87cb2f02"
+    },
+    {
+      "id": "birch-5-image2",
+      "product_id": "birch-5",
+      "path": "/benchmark/images/birch-5-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Birch 5; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "6601aa66f19e0380804f6b8b281e551d4f247020e422257b230fed6d594d2cf7"
+    },
+    {
+      "id": "birch-5-image3",
+      "product_id": "birch-5",
+      "path": "/benchmark/images/birch-5-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Birch 5 source facts; the accessible name describes opening those facts.",
+      "function": "Open Birch 5 source facts",
+      "destination": "#benchmark-product-birch-5",
+      "expected_alt": "Open Birch 5 source facts",
+      "reviewed": false,
+      "sha256": "78316a957a7e1f7f8eb4f1e465fb66a8239525091ff1e671a2042a84e5d263ea"
+    },
+    {
+      "id": "birch-5-image4",
+      "product_id": "birch-5",
+      "path": "/benchmark/images/birch-5-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Birch 5 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Birch 5 headphone schematic in gold",
+      "reviewed": false,
+      "sha256": "d8e52b02369a55a456815789c3bb6229d4fd91257e436b155656a6d29fa139f2"
+    },
+    {
+      "id": "cobalt-1-image1",
+      "product_id": "cobalt-1",
+      "path": "/benchmark/images/cobalt-1-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Cobalt 1 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Cobalt 1 headphone schematic in blue",
+      "reviewed": false,
+      "sha256": "271c82e27a33103ae9c8f07d0f5e0751e09040d9d67941823eab81739bfcdc9c"
+    },
+    {
+      "id": "cobalt-1-image2",
+      "product_id": "cobalt-1",
+      "path": "/benchmark/images/cobalt-1-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Cobalt 1; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "759d07e8cdad2dd1d886062c20e35a15cd433915f551cd5f5a629304295dd884"
+    },
+    {
+      "id": "cobalt-1-image3",
+      "product_id": "cobalt-1",
+      "path": "/benchmark/images/cobalt-1-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Cobalt 1 source facts; the accessible name describes opening those facts.",
+      "function": "Open Cobalt 1 source facts",
+      "destination": "#benchmark-product-cobalt-1",
+      "expected_alt": "Open Cobalt 1 source facts",
+      "reviewed": false,
+      "sha256": "422c62e87c3e6d3b200e2ff55643b615bd604addcfc87efbca67a93b51459a28"
+    },
+    {
+      "id": "cobalt-1-image4",
+      "product_id": "cobalt-1",
+      "path": "/benchmark/images/cobalt-1-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Cobalt 1 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Cobalt 1 headphone schematic in blue",
+      "reviewed": false,
+      "sha256": "313efcbec26b4c24dfe16ee37329e8477aff94523089f315cfb8cbfd99784a17"
+    },
+    {
+      "id": "cobalt-2-image1",
+      "product_id": "cobalt-2",
+      "path": "/benchmark/images/cobalt-2-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Cobalt 2 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Cobalt 2 headphone schematic in green",
+      "reviewed": false,
+      "sha256": "e249a9704a7675bc409b8ac071c18e8441c1c7b6acc8fdebb03e867b20f40434"
+    },
+    {
+      "id": "cobalt-2-image2",
+      "product_id": "cobalt-2",
+      "path": "/benchmark/images/cobalt-2-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Cobalt 2; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "11e823f315e1ffddaf1702e7f0a1c668e1ce60d3873d13ca6a646f3576d1054a"
+    },
+    {
+      "id": "cobalt-2-image3",
+      "product_id": "cobalt-2",
+      "path": "/benchmark/images/cobalt-2-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Cobalt 2 source facts; the accessible name describes opening those facts.",
+      "function": "Open Cobalt 2 source facts",
+      "destination": "#benchmark-product-cobalt-2",
+      "expected_alt": "Open Cobalt 2 source facts",
+      "reviewed": false,
+      "sha256": "21074b2e829698af930c2ebdf3ddb31da730c6489b91744d5cece801c8a22a47"
+    },
+    {
+      "id": "cobalt-2-image4",
+      "product_id": "cobalt-2",
+      "path": "/benchmark/images/cobalt-2-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Cobalt 2 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Cobalt 2 headphone schematic in green",
+      "reviewed": false,
+      "sha256": "b6ef1c1a8926d6b26c4be0bdc9f24db3f8c42b7ee0c64db7d8b7853afce39a24"
+    },
+    {
+      "id": "cobalt-3-image1",
+      "product_id": "cobalt-3",
+      "path": "/benchmark/images/cobalt-3-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Cobalt 3 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Cobalt 3 headphone schematic in red",
+      "reviewed": false,
+      "sha256": "d282eaa6174c348fcaa618120fc0467423b13401d58958e6690fccce493508b4"
+    },
+    {
+      "id": "cobalt-3-image2",
+      "product_id": "cobalt-3",
+      "path": "/benchmark/images/cobalt-3-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Cobalt 3; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "655a8c103bd2a80225df925db3946bc3088aa93f3d62a3a4cb5efb45eb81070f"
+    },
+    {
+      "id": "cobalt-3-image3",
+      "product_id": "cobalt-3",
+      "path": "/benchmark/images/cobalt-3-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Cobalt 3 source facts; the accessible name describes opening those facts.",
+      "function": "Open Cobalt 3 source facts",
+      "destination": "#benchmark-product-cobalt-3",
+      "expected_alt": "Open Cobalt 3 source facts",
+      "reviewed": false,
+      "sha256": "884578e784ccbb128d64cc7d68ba1bf876e33ccc5bf39f6b5c5444d3d1ee31d6"
+    },
+    {
+      "id": "cobalt-3-image4",
+      "product_id": "cobalt-3",
+      "path": "/benchmark/images/cobalt-3-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Cobalt 3 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Cobalt 3 headphone schematic in red",
+      "reviewed": false,
+      "sha256": "bdbfbc5e38d03556a11ce2b056b8730c057f0cbf93c5137e02174dd36a75ab67"
+    },
+    {
+      "id": "cobalt-4-image1",
+      "product_id": "cobalt-4",
+      "path": "/benchmark/images/cobalt-4-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Cobalt 4 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Cobalt 4 headphone schematic in gray",
+      "reviewed": false,
+      "sha256": "20f3ace6e21ed54614308258155dc2b49de832d2baad8c3d916102af1512e41d"
+    },
+    {
+      "id": "cobalt-4-image2",
+      "product_id": "cobalt-4",
+      "path": "/benchmark/images/cobalt-4-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Cobalt 4; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "59022331e996ed2d42e79b6a249843b1c0b40d1f2e52b0623a72ccb667ab06f2"
+    },
+    {
+      "id": "cobalt-4-image3",
+      "product_id": "cobalt-4",
+      "path": "/benchmark/images/cobalt-4-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Cobalt 4 source facts; the accessible name describes opening those facts.",
+      "function": "Open Cobalt 4 source facts",
+      "destination": "#benchmark-product-cobalt-4",
+      "expected_alt": "Open Cobalt 4 source facts",
+      "reviewed": false,
+      "sha256": "f549dd4ed167e7873cf02227052ad789ecb8b4fa92e2608965fe67b39c9c5b29"
+    },
+    {
+      "id": "cobalt-4-image4",
+      "product_id": "cobalt-4",
+      "path": "/benchmark/images/cobalt-4-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Cobalt 4 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Cobalt 4 headphone schematic in gray",
+      "reviewed": false,
+      "sha256": "0e172e46334885af1698abb129f4252c472d5962c598b7926bf6bf642990bb1e"
+    },
+    {
+      "id": "cobalt-5-image1",
+      "product_id": "cobalt-5",
+      "path": "/benchmark/images/cobalt-5-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Cobalt 5 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Cobalt 5 headphone schematic in gold",
+      "reviewed": false,
+      "sha256": "21e2931955c76f38b9fba6453846afbeb78a11cf3a3054a1a362d881cf0b54e2"
+    },
+    {
+      "id": "cobalt-5-image2",
+      "product_id": "cobalt-5",
+      "path": "/benchmark/images/cobalt-5-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Cobalt 5; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "3e7cd76c205836d0019d273957c3c08b52f437d5c96a7768e0f118afb434d7ad"
+    },
+    {
+      "id": "cobalt-5-image3",
+      "product_id": "cobalt-5",
+      "path": "/benchmark/images/cobalt-5-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Cobalt 5 source facts; the accessible name describes opening those facts.",
+      "function": "Open Cobalt 5 source facts",
+      "destination": "#benchmark-product-cobalt-5",
+      "expected_alt": "Open Cobalt 5 source facts",
+      "reviewed": false,
+      "sha256": "1aa92317e8e7b0cb95334cd737052e6bd9c314a6a7785c1b871079f175b6844b"
+    },
+    {
+      "id": "cobalt-5-image4",
+      "product_id": "cobalt-5",
+      "path": "/benchmark/images/cobalt-5-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Cobalt 5 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Cobalt 5 headphone schematic in gold",
+      "reviewed": false,
+      "sha256": "b3bace9fc549e763401ea248bf6dd7e8b01aff15d2757d9ede6cceb6c4a47cd2"
+    },
+    {
+      "id": "delta-1-image1",
+      "product_id": "delta-1",
+      "path": "/benchmark/images/delta-1-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Delta 1 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Delta 1 headphone schematic in blue",
+      "reviewed": false,
+      "sha256": "7e57742447c1d5cf064a991ee930387ee51b111ab8b427f3a692efa838d15bc9"
+    },
+    {
+      "id": "delta-1-image2",
+      "product_id": "delta-1",
+      "path": "/benchmark/images/delta-1-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Delta 1; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "fd0bc6e877daa4253c5979c9ba799d79b4c94d9aaab7a47be264d9fcf7ec3091"
+    },
+    {
+      "id": "delta-1-image3",
+      "product_id": "delta-1",
+      "path": "/benchmark/images/delta-1-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Delta 1 source facts; the accessible name describes opening those facts.",
+      "function": "Open Delta 1 source facts",
+      "destination": "#benchmark-product-delta-1",
+      "expected_alt": "Open Delta 1 source facts",
+      "reviewed": false,
+      "sha256": "40ca0e57dbb67075c5baa9fa97fb1b3373284ae69c6e500c005932057b9194f4"
+    },
+    {
+      "id": "delta-1-image4",
+      "product_id": "delta-1",
+      "path": "/benchmark/images/delta-1-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Delta 1 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Delta 1 headphone schematic in blue",
+      "reviewed": false,
+      "sha256": "c0add4c21adc1041d801bddc60d55209f88043ce22f546c0f0b0cd143233368a"
+    },
+    {
+      "id": "delta-2-image1",
+      "product_id": "delta-2",
+      "path": "/benchmark/images/delta-2-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Delta 2 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Delta 2 headphone schematic in green",
+      "reviewed": false,
+      "sha256": "f03a4b46b2985294a9d2c872c27a5ff1f3c4a5283b3a60da7e8d97c81e72eb52"
+    },
+    {
+      "id": "delta-2-image2",
+      "product_id": "delta-2",
+      "path": "/benchmark/images/delta-2-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Delta 2; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "af67f8c9290b72bb800c6666018c6ead4b738fc60e94d03a02009fe71324aaf3"
+    },
+    {
+      "id": "delta-2-image3",
+      "product_id": "delta-2",
+      "path": "/benchmark/images/delta-2-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Delta 2 source facts; the accessible name describes opening those facts.",
+      "function": "Open Delta 2 source facts",
+      "destination": "#benchmark-product-delta-2",
+      "expected_alt": "Open Delta 2 source facts",
+      "reviewed": false,
+      "sha256": "a8bc14039a185e701418c54908786080d5fa9f95ea75379e64def678f996e6f1"
+    },
+    {
+      "id": "delta-2-image4",
+      "product_id": "delta-2",
+      "path": "/benchmark/images/delta-2-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Delta 2 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Delta 2 headphone schematic in green",
+      "reviewed": false,
+      "sha256": "3a9e9f33be8989c847051024a289694aeeb9e32d880ea8d407769507236de281"
+    },
+    {
+      "id": "delta-3-image1",
+      "product_id": "delta-3",
+      "path": "/benchmark/images/delta-3-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Delta 3 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Delta 3 headphone schematic in red",
+      "reviewed": false,
+      "sha256": "930f0e2e1736e94ba78534088d881b6e01cce88394fe597199acf1ac41ea4b83"
+    },
+    {
+      "id": "delta-3-image2",
+      "product_id": "delta-3",
+      "path": "/benchmark/images/delta-3-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Delta 3; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "ff2f8d9e3b08c19354c688dc555079be8f9ffa4c6dfea9887c4ce8104ab0a62c"
+    },
+    {
+      "id": "delta-3-image3",
+      "product_id": "delta-3",
+      "path": "/benchmark/images/delta-3-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Delta 3 source facts; the accessible name describes opening those facts.",
+      "function": "Open Delta 3 source facts",
+      "destination": "#benchmark-product-delta-3",
+      "expected_alt": "Open Delta 3 source facts",
+      "reviewed": false,
+      "sha256": "ab6335446fe3c7bc8b1340f1eb7db014ea29294a1db185c6daa274094c78b476"
+    },
+    {
+      "id": "delta-3-image4",
+      "product_id": "delta-3",
+      "path": "/benchmark/images/delta-3-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Delta 3 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Delta 3 headphone schematic in red",
+      "reviewed": false,
+      "sha256": "b2f0e199a05eee25ef39886f206b13b3c2c95ceb926586ff47bef4dad3bbe77f"
+    },
+    {
+      "id": "delta-4-image1",
+      "product_id": "delta-4",
+      "path": "/benchmark/images/delta-4-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Delta 4 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Delta 4 headphone schematic in gray",
+      "reviewed": false,
+      "sha256": "8e3a9255152b19e39f6d29450e8d8a3499199ea5c1b1bc8a17710ed551eaab9c"
+    },
+    {
+      "id": "delta-4-image2",
+      "product_id": "delta-4",
+      "path": "/benchmark/images/delta-4-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Delta 4; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "78b8eabab9ae1b332e104ba5faa884398194c505e7b2936bc5cbdbb98b5f5278"
+    },
+    {
+      "id": "delta-4-image3",
+      "product_id": "delta-4",
+      "path": "/benchmark/images/delta-4-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Delta 4 source facts; the accessible name describes opening those facts.",
+      "function": "Open Delta 4 source facts",
+      "destination": "#benchmark-product-delta-4",
+      "expected_alt": "Open Delta 4 source facts",
+      "reviewed": false,
+      "sha256": "4678e19437a1ceb112578e09c98a6fc0bc83400b6f510105739da56450154a18"
+    },
+    {
+      "id": "delta-4-image4",
+      "product_id": "delta-4",
+      "path": "/benchmark/images/delta-4-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Delta 4 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Delta 4 headphone schematic in gray",
+      "reviewed": false,
+      "sha256": "68e365e302c6d1c8ff7f4fef12dd6ae1374d7cb2b23f97a4e62e60049a67be99"
+    },
+    {
+      "id": "delta-5-image1",
+      "product_id": "delta-5",
+      "path": "/benchmark/images/delta-5-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Delta 5 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Delta 5 headphone schematic in gold",
+      "reviewed": false,
+      "sha256": "d0876beed5f183020f8669ceeabd988200b0cb39148040fff0fe5e79c21f55e3"
+    },
+    {
+      "id": "delta-5-image2",
+      "product_id": "delta-5",
+      "path": "/benchmark/images/delta-5-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Delta 5; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "be59c4bc5209279f3db9c907899c637172b11cb58629d9f9eccbfd1d7e759ffc"
+    },
+    {
+      "id": "delta-5-image3",
+      "product_id": "delta-5",
+      "path": "/benchmark/images/delta-5-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Delta 5 source facts; the accessible name describes opening those facts.",
+      "function": "Open Delta 5 source facts",
+      "destination": "#benchmark-product-delta-5",
+      "expected_alt": "Open Delta 5 source facts",
+      "reviewed": false,
+      "sha256": "cf54172c0463ea01744ccaff31f884fe0ccbabb3970b8c7eb9a7712910da62b8"
+    },
+    {
+      "id": "delta-5-image4",
+      "product_id": "delta-5",
+      "path": "/benchmark/images/delta-5-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Delta 5 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Delta 5 headphone schematic in gold",
+      "reviewed": false,
+      "sha256": "24fa4ec05859e1f4a6696baa38200e4d3f345ee88bc0833d5fc5e40a3c09bcbb"
+    },
+    {
+      "id": "ember-1-image1",
+      "product_id": "ember-1",
+      "path": "/benchmark/images/ember-1-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Ember 1 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Ember 1 headphone schematic in blue",
+      "reviewed": false,
+      "sha256": "58d4375994195dc1284dc88d17ccbdcebbb3f820af96ac4c19332db6b86fef06"
+    },
+    {
+      "id": "ember-1-image2",
+      "product_id": "ember-1",
+      "path": "/benchmark/images/ember-1-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Ember 1; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "be57db06dac460ed3a132031e2f5e9629c3963fc3a6b5ddf88bc64a13f78cc00"
+    },
+    {
+      "id": "ember-1-image3",
+      "product_id": "ember-1",
+      "path": "/benchmark/images/ember-1-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Ember 1 source facts; the accessible name describes opening those facts.",
+      "function": "Open Ember 1 source facts",
+      "destination": "#benchmark-product-ember-1",
+      "expected_alt": "Open Ember 1 source facts",
+      "reviewed": false,
+      "sha256": "fba80961e29b197789480294df2dd5911bd93ea3f30e6d92a7d344ca33688a48"
+    },
+    {
+      "id": "ember-1-image4",
+      "product_id": "ember-1",
+      "path": "/benchmark/images/ember-1-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Ember 1 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Ember 1 headphone schematic in blue",
+      "reviewed": false,
+      "sha256": "294d981cddd86561fe99b9ce6f816310aaafdba947e4020803286a28d0e078ba"
+    },
+    {
+      "id": "ember-2-image1",
+      "product_id": "ember-2",
+      "path": "/benchmark/images/ember-2-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Ember 2 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Ember 2 headphone schematic in green",
+      "reviewed": false,
+      "sha256": "c8ff879e024cefbbdea36235acaba488717bd7e40d6f4f8bb1f23e820df9432e"
+    },
+    {
+      "id": "ember-2-image2",
+      "product_id": "ember-2",
+      "path": "/benchmark/images/ember-2-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Ember 2; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "849253885d8b36c88e8e7b52f699348246e3d34bff2565ea8071c36c6ca9192f"
+    },
+    {
+      "id": "ember-2-image3",
+      "product_id": "ember-2",
+      "path": "/benchmark/images/ember-2-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Ember 2 source facts; the accessible name describes opening those facts.",
+      "function": "Open Ember 2 source facts",
+      "destination": "#benchmark-product-ember-2",
+      "expected_alt": "Open Ember 2 source facts",
+      "reviewed": false,
+      "sha256": "70e7682d375a91f66633832bb44ee426756c3ed3c47fafd1dc648408067f9eb7"
+    },
+    {
+      "id": "ember-2-image4",
+      "product_id": "ember-2",
+      "path": "/benchmark/images/ember-2-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Ember 2 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Ember 2 headphone schematic in green",
+      "reviewed": false,
+      "sha256": "1c4c019fd2f3449cb48c710f2f96a043483c29ee98f2754cc613f8a7dad617e4"
+    },
+    {
+      "id": "ember-3-image1",
+      "product_id": "ember-3",
+      "path": "/benchmark/images/ember-3-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Ember 3 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Ember 3 headphone schematic in red",
+      "reviewed": false,
+      "sha256": "a9b10538a02703f7f677b60dd5ac491fc7055e7bb5847174ce192d986b209dc4"
+    },
+    {
+      "id": "ember-3-image2",
+      "product_id": "ember-3",
+      "path": "/benchmark/images/ember-3-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Ember 3; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "148d3e79e7f7293c56a662ed596a50dedd2904f77e8ab5d54d448a4f08ef8990"
+    },
+    {
+      "id": "ember-3-image3",
+      "product_id": "ember-3",
+      "path": "/benchmark/images/ember-3-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Ember 3 source facts; the accessible name describes opening those facts.",
+      "function": "Open Ember 3 source facts",
+      "destination": "#benchmark-product-ember-3",
+      "expected_alt": "Open Ember 3 source facts",
+      "reviewed": false,
+      "sha256": "a31f009a8fde49965352f68381698175be9cea585e88a1dda7f22e4218c0e48a"
+    },
+    {
+      "id": "ember-3-image4",
+      "product_id": "ember-3",
+      "path": "/benchmark/images/ember-3-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Ember 3 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Ember 3 headphone schematic in red",
+      "reviewed": false,
+      "sha256": "3ae4fb18055f632b756d8f411b1c5edc12e0f9b1266b85e4f4307ad0b9ce861e"
+    },
+    {
+      "id": "ember-4-image1",
+      "product_id": "ember-4",
+      "path": "/benchmark/images/ember-4-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Ember 4 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Ember 4 headphone schematic in gray",
+      "reviewed": false,
+      "sha256": "2452eb22d6cb0087f878fa0f752d386946c0dd55737ce967b7c62209008c842f"
+    },
+    {
+      "id": "ember-4-image2",
+      "product_id": "ember-4",
+      "path": "/benchmark/images/ember-4-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Ember 4; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "301f6530218626f79e5b529d3d0bab0af759527afdaf516d977513c461bdf627"
+    },
+    {
+      "id": "ember-4-image3",
+      "product_id": "ember-4",
+      "path": "/benchmark/images/ember-4-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Ember 4 source facts; the accessible name describes opening those facts.",
+      "function": "Open Ember 4 source facts",
+      "destination": "#benchmark-product-ember-4",
+      "expected_alt": "Open Ember 4 source facts",
+      "reviewed": false,
+      "sha256": "3c41398833052e165eac6fcec8610a995b63e0a651efbe0158151a9cab1b7c75"
+    },
+    {
+      "id": "ember-4-image4",
+      "product_id": "ember-4",
+      "path": "/benchmark/images/ember-4-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Ember 4 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Ember 4 headphone schematic in gray",
+      "reviewed": false,
+      "sha256": "90411b05b7a6ce7e9a59a5abdf23e9ff2cfdafee920c4e405e3fb18dd8e181c6"
+    },
+    {
+      "id": "ember-5-image1",
+      "product_id": "ember-5",
+      "path": "/benchmark/images/ember-5-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Ember 5 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Ember 5 headphone schematic in gold",
+      "reviewed": false,
+      "sha256": "a82a988fd5534ebb11e2f7be30fc788c3caacf25f4d57b4c0138b90016349dbb"
+    },
+    {
+      "id": "ember-5-image2",
+      "product_id": "ember-5",
+      "path": "/benchmark/images/ember-5-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Ember 5; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "da4f5cca5e69965707c6b4df1f0ee9fe908ce3b318281f8b95d2c659a3cfc1d2"
+    },
+    {
+      "id": "ember-5-image3",
+      "product_id": "ember-5",
+      "path": "/benchmark/images/ember-5-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Ember 5 source facts; the accessible name describes opening those facts.",
+      "function": "Open Ember 5 source facts",
+      "destination": "#benchmark-product-ember-5",
+      "expected_alt": "Open Ember 5 source facts",
+      "reviewed": false,
+      "sha256": "e116359571a93f609dd8fc8d40cf4e56fb1002e1eb31151d90f3eaecc47cfeb6"
+    },
+    {
+      "id": "ember-5-image4",
+      "product_id": "ember-5",
+      "path": "/benchmark/images/ember-5-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Ember 5 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Ember 5 headphone schematic in gold",
+      "reviewed": false,
+      "sha256": "73ba199f6dec0ca6248aa4cbdc24c37b2f98c1d4bbad7b361f6f95922d5570a4"
+    },
+    {
+      "id": "flint-1-image1",
+      "product_id": "flint-1",
+      "path": "/benchmark/images/flint-1-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Flint 1 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Flint 1 headphone schematic in blue",
+      "reviewed": false,
+      "sha256": "295f5a459af6d54eca4ecc99de0091181496c8a4655cc31f54357c40a9263480"
+    },
+    {
+      "id": "flint-1-image2",
+      "product_id": "flint-1",
+      "path": "/benchmark/images/flint-1-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Flint 1; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "8f176cd575052ef1a4a3edbd97d5521a344ef2cc239319259a511180e12cb3ed"
+    },
+    {
+      "id": "flint-1-image3",
+      "product_id": "flint-1",
+      "path": "/benchmark/images/flint-1-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Flint 1 source facts; the accessible name describes opening those facts.",
+      "function": "Open Flint 1 source facts",
+      "destination": "#benchmark-product-flint-1",
+      "expected_alt": "Open Flint 1 source facts",
+      "reviewed": false,
+      "sha256": "7052e0ce66e213e9fa22189879b58be11f5e699f6d55ef2c28a1e4789e321f0b"
+    },
+    {
+      "id": "flint-1-image4",
+      "product_id": "flint-1",
+      "path": "/benchmark/images/flint-1-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Flint 1 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Flint 1 headphone schematic in blue",
+      "reviewed": false,
+      "sha256": "d38ec2d74d8fd91411928bd7b2594b1c34647f4ffcd6c47aab107c5182835cd4"
+    },
+    {
+      "id": "flint-2-image1",
+      "product_id": "flint-2",
+      "path": "/benchmark/images/flint-2-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Flint 2 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Flint 2 headphone schematic in green",
+      "reviewed": false,
+      "sha256": "96c62dfc583ef4bb5ec92e78b45b94743c59d00ca4e79913e689630cd0dcfcc6"
+    },
+    {
+      "id": "flint-2-image2",
+      "product_id": "flint-2",
+      "path": "/benchmark/images/flint-2-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Flint 2; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "1c8201058950feffc5fd273e52ece6df5f68f6e665def073d1868401254409a8"
+    },
+    {
+      "id": "flint-2-image3",
+      "product_id": "flint-2",
+      "path": "/benchmark/images/flint-2-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Flint 2 source facts; the accessible name describes opening those facts.",
+      "function": "Open Flint 2 source facts",
+      "destination": "#benchmark-product-flint-2",
+      "expected_alt": "Open Flint 2 source facts",
+      "reviewed": false,
+      "sha256": "5ce9c82c8d1fe0d74ea6d06b83f94a712997b8b94de6e0fc1842230ee9401235"
+    },
+    {
+      "id": "flint-2-image4",
+      "product_id": "flint-2",
+      "path": "/benchmark/images/flint-2-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Flint 2 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Flint 2 headphone schematic in green",
+      "reviewed": false,
+      "sha256": "8e1c5dc5c86017717b0222a7055e0d7e0bcc0211272992cd4df4a2ca8a95bb10"
+    },
+    {
+      "id": "flint-3-image1",
+      "product_id": "flint-3",
+      "path": "/benchmark/images/flint-3-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Flint 3 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Flint 3 headphone schematic in red",
+      "reviewed": false,
+      "sha256": "52287a8759c4f79db302095114811d9e7f755679fa75137f18f3747311dce9d8"
+    },
+    {
+      "id": "flint-3-image2",
+      "product_id": "flint-3",
+      "path": "/benchmark/images/flint-3-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Flint 3; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "acacbb420cef47a9647daf77e980e152f497708790a58e73e28d1d1879751d6e"
+    },
+    {
+      "id": "flint-3-image3",
+      "product_id": "flint-3",
+      "path": "/benchmark/images/flint-3-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Flint 3 source facts; the accessible name describes opening those facts.",
+      "function": "Open Flint 3 source facts",
+      "destination": "#benchmark-product-flint-3",
+      "expected_alt": "Open Flint 3 source facts",
+      "reviewed": false,
+      "sha256": "db715640018425fae5703275bee625007b0015b38ce354aab458e25b8ab4ca30"
+    },
+    {
+      "id": "flint-3-image4",
+      "product_id": "flint-3",
+      "path": "/benchmark/images/flint-3-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Flint 3 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Flint 3 headphone schematic in red",
+      "reviewed": false,
+      "sha256": "a104a7077e5ccb537f921655ad7d88f3d26332a8ccc5057cc0540b0b9a06eaad"
+    },
+    {
+      "id": "flint-4-image1",
+      "product_id": "flint-4",
+      "path": "/benchmark/images/flint-4-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Flint 4 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Flint 4 headphone schematic in gray",
+      "reviewed": false,
+      "sha256": "66fdd2afe5c0cd9c9cd5badf8529a0fa580cdf9ef4983ec87834770c857b4da7"
+    },
+    {
+      "id": "flint-4-image2",
+      "product_id": "flint-4",
+      "path": "/benchmark/images/flint-4-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Flint 4; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "deca7141272db91b2f999d1ce587017fa685987f3762c13bcd552e1bb9608f48"
+    },
+    {
+      "id": "flint-4-image3",
+      "product_id": "flint-4",
+      "path": "/benchmark/images/flint-4-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Flint 4 source facts; the accessible name describes opening those facts.",
+      "function": "Open Flint 4 source facts",
+      "destination": "#benchmark-product-flint-4",
+      "expected_alt": "Open Flint 4 source facts",
+      "reviewed": false,
+      "sha256": "16e42b1870639ac8fb19e317907b3408a61cc9944060ccdf3752aeb2091d5faf"
+    },
+    {
+      "id": "flint-4-image4",
+      "product_id": "flint-4",
+      "path": "/benchmark/images/flint-4-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Flint 4 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Flint 4 headphone schematic in gray",
+      "reviewed": false,
+      "sha256": "21d99cbfad46ccebcc41f0587d09bb0f51497c9ea248a2a4be87c78d882d2f8a"
+    },
+    {
+      "id": "flint-5-image1",
+      "product_id": "flint-5",
+      "path": "/benchmark/images/flint-5-image1.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Flint 5 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Flint 5 headphone schematic in gold",
+      "reviewed": false,
+      "sha256": "01ba8408ad898d7c24cbc0eea2d794f58ed267e31a77d1dd53341c3cbb82490e"
+    },
+    {
+      "id": "flint-5-image2",
+      "product_id": "flint-5",
+      "path": "/benchmark/images/flint-5-image2.svg",
+      "purpose": "decorative",
+      "usage_context": "Decorative separator beside a heading already naming Flint 5; no additional information or action.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "",
+      "reviewed": false,
+      "sha256": "3eea8f843b22a0bb37e0f591e4087d75a41f6ac98422ec085ff952aac0f42f46"
+    },
+    {
+      "id": "flint-5-image3",
+      "product_id": "flint-5",
+      "path": "/benchmark/images/flint-5-image3.svg",
+      "purpose": "functional",
+      "usage_context": "Link to the displayed Flint 5 source facts; the accessible name describes opening those facts.",
+      "function": "Open Flint 5 source facts",
+      "destination": "#benchmark-product-flint-5",
+      "expected_alt": "Open Flint 5 source facts",
+      "reviewed": false,
+      "sha256": "be79a411858bf461b09f259965e7ab5e9552dc14849d0ad8e74e12668695b599"
+    },
+    {
+      "id": "flint-5-image4",
+      "product_id": "flint-5",
+      "path": "/benchmark/images/flint-5-image4.svg",
+      "purpose": "informative",
+      "usage_context": "Catalog illustration identifying the fictional Flint 5 product; schematic only, no technical performance inferred.",
+      "function": "",
+      "destination": "",
+      "expected_alt": "Fictional Flint 5 headphone schematic in gold",
+      "reviewed": false,
+      "sha256": "85ce1f2f3f93737fc439fcbe87a5a3e3aef7cd08b094a3b81c8e998acf257e90"
+    }
+  ],
+  "hash": "cf973e71ad366e84105f52e9529b00a6aade7d6e9c4201dfe60f18e31e43ff11"
+}

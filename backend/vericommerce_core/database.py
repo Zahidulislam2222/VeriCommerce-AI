@@ -13,6 +13,38 @@ from .settings import Settings
 
 Connection = psycopg.Connection[dict[str, Any]]
 
+# Schema identifiers are fixed protocol constants, shared by readiness and recovery.
+TENANT_TABLES = (
+    "products",
+    "sources",
+    "source_revisions",
+    "passages",
+    "drafts",
+    "jobs",
+    "audit_events",
+    "evaluations",
+    "shopify_connections",
+    "shopify_receipts",
+    "shopify_records",
+    "shopify_syncs",
+    "evidence_uploads",
+    "image_reviews",
+    "knowledge_relations",
+    "source_tombstones",
+    "product_tombstones",
+    "benchmark_runs",
+    "benchmark_reviews",
+)
+GLOBAL_TABLES = (
+    "demo_sessions",
+    "rate_limits",
+    "accounts",
+    "memberships",
+    "account_sessions",
+    "shopify_bindings",
+    "shopify_oauth_states",
+)
+
 
 @contextmanager
 def transaction(settings: Settings, tenant_id: str | None = None) -> Iterator[Connection]:

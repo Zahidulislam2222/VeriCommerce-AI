@@ -213,5 +213,8 @@ def test_interrupted_job_is_reclaimed_and_exhausted_job_is_terminal(client: Any,
             "VALUES(%s,%s,'draft','running',%s,%s,now()-interval '1 second')",
             (tenant_id, broken, Jsonb({"product_id": "forma-one"}), settings.worker_max_attempts),
         )
-    process_one(settings)
+    for _ in range(settings.worker_tenant_batch):
+        process_one(settings)
+        if client.get(f"/api/jobs/{broken}").json()["job"]["status"] == "failed":
+            break
     assert client.get(f"/api/jobs/{broken}").json()["job"]["status"] == "failed"

@@ -17,13 +17,15 @@ from fastapi.responses import JSONResponse
 from psycopg.types.json import Jsonb
 from starlette.concurrency import run_in_threadpool
 
-from . import repository
-from .database import check_runtime_role, tenant_lock, transaction
+from . import account_repository as accounts
+from . import account_routes, repository, shopify_routes
+from .database import TENANT_TABLES, check_runtime_role, tenant_lock, transaction
 from .jobs import enqueue, job_output
 from .models import CatalogInput, DraftInput, EmptyBody, SearchInput
 from .retrieval import RetrievalEngine
-from .security import RequestGuards, authenticated_tenant, rate_limit, token_hash
+from .security import RequestGuards, authenticated_tenant, authorized_transaction, rate_limit, token_hash
 from .settings import Settings, get_settings
+from .shopify_protocol import connector_owned_id
 
 Tenant = Annotated[str, Depends(authenticated_tenant)]
 
@@ -48,6 +50,11 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     app.state.settings = config
     app.state.engine = engine
     app.add_middleware(RequestGuards, settings=config)
+    account_routes.install(app, config)
+    shopify_routes.install(app, config)
+    from .phase_routes import router
+
+    app.include_router(router)
 
     @app.exception_handler(psycopg.Error)
     async def database_error(_: Request, __: psycopg.Error) -> JSONResponse:
@@ -57,6 +64,10 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     def health() -> dict[str, str]:
         return {"status": "ok", "service": engine.policy["api_service_name"]}
 
+    @app.get("/api/version")
+    def version() -> dict[str, str]:
+        return {"version": config.api_version, "service": engine.policy["api_service_name"]}
+
     @app.get("/api/readyz")
     def ready() -> dict[str, Any]:
         try:
@@ -64,29 +75,47 @@ def create_app(settings: Settings | None = None) -> FastAPI:
                 check_runtime_role(db)
                 db.execute("SELECT 1 FROM demo_sessions LIMIT 1")
                 protected = db.execute(
-                    "SELECT count(*) AS n FROM pg_class WHERE relname IN "
-                    "('products','source_revisions','sources','passages','drafts',"
-                    "'jobs','audit_events','evaluations') AND relrowsecurity AND relforcerowsecurity"
+                    "SELECT count(*) AS n FROM pg_class WHERE relname=ANY(%s) "
+                    "AND relnamespace='public'::regnamespace AND relrowsecurity AND relforcerowsecurity",
+                    (list(TENANT_TABLES),),
                 ).fetchone()
-                if protected is None or protected["n"] != 8:
+                if protected is None or protected["n"] != len(TENANT_TABLES):
                     raise RuntimeError("Tenant RLS policy readiness failed")
         except Exception as exc:
             raise HTTPException(503, "Database readiness failed: " + type(exc).__name__) from None
         return {"status": "ready", "demo": True, "database": "postgresql_rls", "retrieval": engine.status()}
 
     def session_record(request: Request) -> dict[str, Any] | None:
+        identity = accounts.account_identity(request, required=False)
+        if identity is not None:
+            if not identity["active_tenant_id"] or not identity["role"]:
+                raise HTTPException(403, "Select a current workspace membership")
+            with transaction(config) as db:
+                merchant = db.execute(
+                    "SELECT tenant_id,name FROM demo_sessions WHERE tenant_id=%s AND mode='merchant'",
+                    (identity["active_tenant_id"],),
+                ).fetchone()
+            if merchant:
+                return {
+                    "tenant_id": str(merchant["tenant_id"]),
+                    "expires_at": None,
+                    "demo": False,
+                    "store": merchant["name"],
+                }
+            raise HTTPException(403, "Merchant workspace is unavailable")
         token = request.cookies.get(config.cookie_name, "")
         if not token or len(token) > 128:
             return None
         with transaction(config) as db:
             row = db.execute(
-                "SELECT tenant_id,expires_at FROM demo_sessions WHERE token_hash=%s AND expires_at>now()",
+                "SELECT tenant_id,expires_at FROM demo_sessions WHERE token_hash=%s "
+                "AND expires_at>now() AND mode='demo'",
                 (token_hash(token),),
             ).fetchone()
         return dict(row) if row else None
 
     def session_output(row: dict[str, Any]) -> dict[str, Any]:
-        return {**row, "demo": True, "store": engine.policy["store"]}
+        return {"demo": True, "store": engine.policy["store"], **row}
 
     @app.post("/api/session")
     def start_session(_: EmptyBody, request: Request, response: Response) -> dict[str, Any]:
@@ -99,8 +128,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         catalog = CatalogInput.model_validate_json(config.seed_path.read_text())
         with transaction(config) as db:
             db.execute("SELECT pg_advisory_xact_lock(hashtext('vericommerce-session-quota'))")
-            db.execute("DELETE FROM demo_sessions WHERE expires_at<=now()")
-            count = db.execute("SELECT count(*) AS n FROM demo_sessions").fetchone()
+            db.execute("DELETE FROM demo_sessions WHERE mode='demo' AND expires_at<=now()")
+            count = db.execute("SELECT count(*) AS n FROM demo_sessions WHERE mode='demo'").fetchone()
             if count and count["n"] >= config.max_active_sessions:
                 raise HTTPException(429, "All private workspace slots are currently in use; retry later")
             address = request.client.host if request.client else "unknown"
@@ -138,7 +167,9 @@ def create_app(settings: Settings | None = None) -> FastAPI:
                 "SELECT (SELECT count(*) FROM products) AS products,"
                 "(SELECT count(*) FROM sources) AS sources,"
                 "(SELECT count(*) FROM passages p JOIN sources s ON s.tenant_id=p.tenant_id "
-                "AND s.current_revision_id=p.revision_id) AS passages,"
+                "AND s.current_revision_id=p.revision_id WHERE NOT EXISTS "
+                "(SELECT 1 FROM source_tombstones t WHERE t.tenant_id=s.tenant_id "
+                "AND t.source_id=s.id)) AS passages,"
                 "(SELECT count(*) FROM drafts) AS drafts,"
                 "(SELECT count(*) FROM drafts WHERE status='approved') AS approved_drafts,"
                 "(SELECT count(*) FROM jobs WHERE status IN ('queued','running')) AS queued_jobs"
@@ -166,13 +197,20 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             return engine.answer(db, tenant_id, body)
 
     @app.post("/api/ingestions", status_code=202)
-    def ingestion(body: CatalogInput, tenant_id: Tenant) -> dict[str, Any]:
-        with transaction(config, tenant_id) as db:
+    def ingestion(body: CatalogInput, request: Request, tenant_id: Tenant) -> dict[str, Any]:
+        identifiers = (
+            [product.id for product in body.products]
+            + [product.parent_product_id for product in body.products if product.parent_product_id]
+            + [source.id for source in body.sources]
+        )
+        if any(connector_owned_id(identifier) for identifier in identifiers):
+            raise HTTPException(422, "Manual imports cannot overwrite connector-owned identities")
+        with authorized_transaction(request, tenant_id, "edit") as db:
             return {"job": enqueue(db, tenant_id, "ingest", body.model_dump(mode="json"), config)}
 
     @app.post("/api/drafts", status_code=202)
-    def draft(body: DraftInput, tenant_id: Tenant) -> dict[str, Any]:
-        with transaction(config, tenant_id) as db:
+    def draft(body: DraftInput, request: Request, tenant_id: Tenant) -> dict[str, Any]:
+        with authorized_transaction(request, tenant_id, "edit") as db:
             if (
                 db.execute(
                     "SELECT 1 FROM products WHERE tenant_id=%s AND id=%s", (tenant_id, body.product_id)
@@ -204,8 +242,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             return {"drafts": [repository.draft_output(dict(row)) for row in rows]}
 
     @app.post("/api/drafts/{draft_id}/approve")
-    def approve(draft_id: UUID, _: EmptyBody, tenant_id: Tenant) -> dict[str, Any]:
-        with transaction(config, tenant_id) as db:
+    def approve(draft_id: UUID, _: EmptyBody, request: Request, tenant_id: Tenant) -> dict[str, Any]:
+        with authorized_transaction(request, tenant_id, "approve") as db:
             tenant_lock(db, tenant_id)
             row = repository.draft_by_id(db, tenant_id, str(draft_id), lock=True)
             repository.ensure_current_draft(db, tenant_id, row)
@@ -218,8 +256,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             return {"draft": repository.draft_output(repository.draft_by_id(db, tenant_id, str(draft_id)))}
 
     @app.get("/api/drafts/{draft_id}/export")
-    def export(draft_id: UUID, tenant_id: Tenant) -> JSONResponse:
-        with transaction(config, tenant_id) as db:
+    def export(draft_id: UUID, request: Request, tenant_id: Tenant) -> JSONResponse:
+        with authorized_transaction(request, tenant_id, "read") as db:
             tenant_lock(db, tenant_id)
             row = repository.draft_by_id(db, tenant_id, str(draft_id), lock=True)
             repository.ensure_current_draft(db, tenant_id, row)
@@ -329,9 +367,9 @@ def create_app(settings: Settings | None = None) -> FastAPI:
             }
 
     @app.post("/api/evaluations")
-    def evaluate(_: EmptyBody, tenant_id: Tenant) -> dict[str, Any]:
+    def evaluate(_: EmptyBody, request: Request, tenant_id: Tenant) -> dict[str, Any]:
         dataset = json.loads(config.evaluation_path.read_text())
-        with transaction(config, tenant_id) as db:
+        with authorized_transaction(request, tenant_id, "edit") as db:
             tenant_lock(db, tenant_id)
             count = db.execute(
                 "SELECT count(*) AS n FROM evaluations WHERE tenant_id=%s", (tenant_id,)

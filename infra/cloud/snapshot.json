@@ -1,0 +1,8 @@
+{
+  "classification": "synthetic-public",
+  "documents": [
+    {"id": "sample-headphones", "text": "Fictional headphones have an adjustable headband and a graphite finish."},
+    {"id": "sample-lamp", "text": "Fictional desk lamp has a silver shade and a warm white light."},
+    {"id": "sample-bottle", "text": "Fictional reusable bottle has a green finish and a carrying loop."}
+  ]
+}

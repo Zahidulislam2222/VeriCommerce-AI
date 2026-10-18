@@ -1,0 +1,19 @@
+:root { font-family: system-ui, sans-serif; color: #202923; background: #f2f3ed; }
+body { margin: 0; }
+main { width: min(46rem, calc(100% - 3rem)); margin: 8vh auto; }
+.eyebrow { letter-spacing: .14em; font-size: .75rem; }
+h1 { font-size: clamp(2rem, 6vw, 3.8rem); line-height: 1.05; max-width: 15ch; }
+p { line-height: 1.65; }
+form { margin-top: 2.5rem; }
+label { display: block; margin-bottom: .6rem; font-weight: 600; }
+.search { display: flex; gap: .65rem; }
+input, button { font: inherit; padding: .8rem; border: 1px solid #45584c; border-radius: .3rem; }
+input { flex: 1; min-width: 0; background: white; }
+button { background: #233f30; color: white; cursor: pointer; }
+button:disabled { opacity: .65; cursor: wait; }
+:focus-visible { outline: 3px solid #825b10; outline-offset: 3px; }
+ul { list-style: none; padding: 0; }
+li { border-top: 1px solid #c0c8bc; padding: 1rem 0; line-height: 1.6; }
+strong { display: block; }
+.note { margin-top: 3rem; font-size: .85rem; }
+@media (max-width: 30rem) { .search { flex-direction: column; } }

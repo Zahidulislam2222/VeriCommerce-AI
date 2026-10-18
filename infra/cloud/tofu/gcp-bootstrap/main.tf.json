@@ -1,0 +1,111 @@
+{
+  "provider": {
+    "google": {
+      "project": "${var.project_id}",
+      "region": "${var.region}",
+      "default_labels": {
+        "hub": "${var.hub_identifier}",
+        "project": "${var.project_slug}"
+      }
+    }
+  },
+  "variable": {
+    "project_id": {
+      "type": "string",
+      "nullable": false
+    },
+    "region": {
+      "type": "string",
+      "nullable": false
+    },
+    "hub_identifier": {
+      "type": "string",
+      "nullable": false
+    },
+    "project_slug": {
+      "type": "string",
+      "nullable": false,
+      "validation": {
+        "condition": "${can(regex(\"^[a-z][a-z0-9-]{2,20}$\", var.project_slug))}",
+        "error_message": "Use a stable lowercase project slug."
+      }
+    },
+    "repository_name": {
+      "type": "string",
+      "nullable": false,
+      "validation": {
+        "condition": "${startswith(var.repository_name, \"${var.project_slug}-\") && can(regex(\"^[a-z][a-z0-9-]+$\", var.repository_name))}",
+        "error_message": "Repository must retain the owned project prefix."
+      }
+    },
+    "operator_member": {
+      "type": "string",
+      "nullable": false,
+      "validation": {
+        "condition": "${can(regex(\"^user:[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+$\", var.operator_member))}",
+        "error_message": "Select one exact existing owner user; no public or group principal."
+      }
+    }
+  },
+  "resource": {
+    "google_project_service": {
+      "prerequisites": {
+        "for_each": "${toset([\"iam.googleapis.com\", \"iamcredentials.googleapis.com\", \"run.googleapis.com\", \"artifactregistry.googleapis.com\"])}",
+        "project": "${var.project_id}",
+        "service": "${each.value}",
+        "disable_on_destroy": false
+      }
+    },
+    "google_service_account": {
+      "runtime": {
+        "account_id": "${var.project_slug}-runtime",
+        "project": "${var.project_id}",
+        "depends_on": [
+          "google_project_service.prerequisites"
+        ]
+      },
+      "invoker": {
+        "account_id": "${var.project_slug}-invoker",
+        "project": "${var.project_id}",
+        "depends_on": [
+          "google_project_service.prerequisites"
+        ]
+      }
+    },
+    "google_service_account_iam_member": {
+      "operator_oidc": {
+        "service_account_id": "${google_service_account.invoker.name}",
+        "role": "roles/iam.serviceAccountOpenIdTokenCreator",
+        "member": "${var.operator_member}"
+      }
+    },
+    "google_artifact_registry_repository": {
+      "synthetic": {
+        "repository_id": "${var.repository_name}",
+        "project": "${var.project_id}",
+        "location": "${var.region}",
+        "format": "DOCKER",
+        "mode": "STANDARD_REPOSITORY",
+        "vulnerability_scanning_config": [
+          {
+            "enablement_config": "DISABLED"
+          }
+        ],
+        "depends_on": [
+          "google_project_service.prerequisites"
+        ]
+      }
+    }
+  },
+  "output": {
+    "runtime_service_account": {
+      "value": "${google_service_account.runtime.email}"
+    },
+    "invoker_service_account": {
+      "value": "${google_service_account.invoker.email}"
+    },
+    "repository_id": {
+      "value": "${google_artifact_registry_repository.synthetic.id}"
+    }
+  }
+}

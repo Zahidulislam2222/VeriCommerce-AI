@@ -31,7 +31,7 @@ From `backend/`, create/activate a virtual environment, then:
 ```sh
 python -m pip install --require-hashes -r requirements.lock
 python -m vericommerce_core.migrate
-python -m uvicorn vericommerce_core.main:app --host 127.0.0.1 --port 8081
+python -m uvicorn vericommerce_core.main:app --host 127.0.0.1 --port 8081 --no-access-log
 ```
 
 In a second terminal with the same runtime settings:
@@ -40,7 +40,7 @@ In a second terminal with the same runtime settings:
 python -m vericommerce_core.worker
 ```
 
-The local port above matches the safe example proxy. Change both through environment/start configuration when reserving another port. The worker executes queued ingestion/drafting, recovers leases and cleans expired workspaces. Check `/api/healthz` and `/api/readyz`, then open `/engine`.
+The local port above matches the safe example proxy. Change both through environment/start configuration when reserving another port. The worker executes queued ingestion/upload/drafting, recovers leases and cleans expired temporary workspaces. Account workspaces persist separately. Check `/api/healthz` and `/api/readyz`, then open `/engine`. Keep OAuth callback query strings out of proxy/error logs; the provided deployment uses sanitized site logging.
 
 ## Optional CPU embeddings
 
@@ -75,4 +75,4 @@ python -m pytest
 python -m bandit -r vericommerce_core
 ```
 
-Backend integration tests require protected `VC_TEST_ADMIN_DATABASE_URL` and `VC_TEST_DATABASE_URL` values pointing to a dedicated database with the `_test` suffix. The fixture drops/recreates its public schema; never use a valuable database. The CPU integration case also requires an explicitly prewarmed `VC_TEST_EMBEDDING_CACHE_DIR`. Inspect `tests/backend/` first. Missing database, model, Chrome or security tools are missing gates, not passes. Follow [deployment](DEPLOYMENT-CI.md) for security scans and independent review.
+Backend integration tests require protected `VC_TEST_ADMIN_DATABASE_URL` and `VC_TEST_DATABASE_URL` values pointing to a dedicated database with the `_test` suffix. The fixture drops/recreates its public schema; never use a valuable database. The CPU integration case also requires an explicitly prewarmed `VC_TEST_EMBEDDING_CACHE_DIR`. Install `.github/ci-requirements.txt` for the safe JUnit helper when running `tests/infra/` too. Inspect the tests first. Missing database, model, Chrome or security tools are missing gates, not passes. Follow [deployment](DEPLOYMENT-CI.md) for security scans and independent review.

@@ -1,27 +1,30 @@
 # VeriCommerce AI production engineering build plan
 
-Delivery note (2026-10-15): the owner authorized implementation and deployment of
+Delivery note (2026-10-18): the owner authorized implementation and deployment of
 phases 1–5. The existing frontend and bounded evidence core remain the verified
-baseline. The expansion below is paused; none of these five phases is declared
+baseline. The expanded application is live; remaining phase acceptance below stays explicit. None of these five phases is declared
 complete until its original exit criteria and external acceptance gates pass.
 Shopify publishing and model training belong to later phases.
 See [previous release evidence](RELEASE-VERIFICATION.md).
 
 ## Phases 1–5 execution ledger
 
-Owner priority update: finish the professional public website before resuming
-these implementation lanes. Fourteen public pages are deployed as a verified
-frontend-only release, preserving the previously verified evidence runtime.
-Accounts, ingestion and cloud/store expansion remain paused at saved checkpoints;
-frontend page completion does not mark those engineering phases complete.
+The owner resumed all five phases. Expanded local source now implements accounts,
+bounded uploads, read-only connector, context comparisons and content intelligence.
+Current release `20261018-phase3-01` has 228 matching artifact hashes, eight HTTPS
+routes and four healthy constrained services after populated encrypted recovery
+and rollback/forward. It follows the integrated expansion's 46 passing live
+desktop/mobile checks with unchanged application bytes and separately verified
+real-store flows. Final source passed140backend/infrastructure checks. The five
+phases' application features are integrated; the limits below remain explicit.
 
 | Phase | Verified baseline | Required expansion and acceptance evidence | Current status |
 |---|---|---|---|
-| 1 | Typed API/settings, migrations, PostgreSQL RLS, isolated release, health/readiness and rollback | Accounts, persistent memberships, owner/reviewer/editor/viewer authorization, two-tenant role matrix, Azure Free shell and native cloud/account eligibility inventory | Paused; actual cloud access unverified |
-| 2 | Versioned JSON ingestion, fenced durable jobs, populated restoration | CSV/PDF/image ingestion with isolated bounded parsing, deletion invalidation, revision comparison, retry/dead-letter UX, 30-product/120-image/200-question family-split corpus, encrypted off-server recovery | Paused; independent human dataset review pending |
-| 3 | No Shopify integration | Read-only OAuth, encrypted tokens, HMAC persisted webhook receipts, replay/order/tombstone tests, real permitted development-store sync, deterministic AWS validator | Paused; Shopify access and AWS eligibility unverified |
-| 4 | Local pinned CPU hybrid retrieval and ten curated regression cases | Keyword/dense/hybrid/rerank comparison, explicit constraints, authorized context inspector, versioned snapshot, frozen-family benchmark with measured quality/latency, authenticated GCP benchmark | Paused; GCP eligibility unverified |
-| 5 | Cited extractive drafts, stale-evidence rejection and source relationships | Typed temporal candidate/approved graph, contradictions and impact traversal, deterministic provenance-backed Product JSON-LD, image-observation/attribute separation and purpose-aware alt review | Paused; human accessibility review pending |
+| 1 | Typed API/settings, migrations, PostgreSQL RLS, isolated release, health/readiness and rollback | Accounts, persistent memberships, owner/reviewer/editor/viewer authorization, two-tenant role matrix, Azure Free shell and native cloud/account eligibility inventory | Application live; role/isolation/browser gates pass; exact Azure Free reference deployed |
+| 2 | Versioned JSON ingestion, fenced durable jobs, populated restoration | CSV/PDF/image ingestion with isolated bounded parsing, deletion invalidation, revision comparison, retry/dead-letter UX, 30-product/120-image/200-question family-split corpus, encrypted off-server recovery | Real 1 MiB worker import and oversize rejection pass; encrypted off-server restoration matched all26current tables and RLS; agent review recorded |
+| 3 | Dedicated app configured; local read-only OAuth/sync/webhooks and variant mapping | Encrypted tokens, persisted HMAC receipts, replay/order/tombstones, actual permitted-store sync and deterministic AWS validator | Real read_products sync imported23parents/38variants; SKU/color, cited answer and approval/export pass; eight AWS calls match local. Incremental replay tests pass; actual provider event delivery remains unobserved |
+| 4 | Four-method context inspector, exact variant constraints, snapshots and measured frozen benchmark | Actual Recall@10/nDCG/abstention/latency and authenticated GCP benchmark | Four methods measured on64held-out synthetic questions; keyword selected for this corpus. Three actual GCP smoke checks matched the same local snapshot; temporary resources cleaned up before deadline. Cloud smoke is not held-out quality evaluation |
+| 5 | Temporal relations/impact, normalized conflicts, FAQ, guarded JSON-LD and purpose-aware image review | Full current-provenance checks and accessibility-case review | Application live; actual relationship/FAQ/image approval flows pass; owner-delegated agent review recorded; human validation pending |
 
 Frontend, backend, AI/data and infrastructure advance together against additive
 API contracts. Preserve temporary isolated workspaces separately from durable
@@ -29,7 +32,14 @@ merchant accounts. Each phase retains its own deployment and evidence record;
 an integrated release may contain several candidates but does not erase a missing
 phase deployment or acceptance gate. Cloud fixtures/local emulation and automated
 synthetic labels do not count as actual cloud deployment or independent human
-review. Missing credentials remain external gates while server work continues.
+review. The owner explicitly delegated dataset/accessibility review while busy;
+the recorded substitution is agent review, with human validation still pending.
+Remaining original-plan limits include actual incremental store-event delivery,
+independent human validation and five separately recorded sequential phase
+deployments. Graph-versus-hybrid quality comparison and automatic backup
+scheduling/retention also remain unperformed. The owner authorized agent review instead of the human gate;
+the result remains labeled agent review. Provider invoice totals remain unknown
+until delayed reporting settles; this does not imply zero charges.
 
 The deployed implementation uses psycopg with hash-verified SQL migrations rather
 than adding an ORM solely for the plan. Small-catalog dense vectors are evaluated
@@ -48,6 +58,14 @@ all three clouds for bounded, useful deployments. Keep training separate from
 merchant credentials and publishing privileges.
 
 ## Delivery and cost boundaries
+
+Execution amendment (2026-10-18): after separate conspicuous warnings, the owner
+approved possible AWS charges up to $0.01 and an estimated $0.05 one-time GCP
+experiment with cleanup within30minutes. Retained GCP image exposure was disclosed
+as up to $0.025/month if cleanup fails. These approvals are scoped exceptions to
+the original zero-spend plan below, not provider-enforced hard caps or permission
+for other paid services. Current native targets and supported project tags follow
+the shared Portfolio Hub convention; existing resources are retained in place.
 
 The cash budget for new services is **USD $0**. The existing server and Internet
 connection are existing resources, not free infrastructure. This plan assumes

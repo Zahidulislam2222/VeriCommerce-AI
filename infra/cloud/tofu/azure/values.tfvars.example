@@ -1,0 +1,8 @@
+subscription_id = "00000000-0000-0000-0000-000000000000"
+resource_group_name = "portfolio-hub"
+create_resource_group = false
+location = "westeurope"
+site_name = "vericommerce-synthetic-example"
+
+hub_identifier = "portfolio-hub"
+project_slug = "vericommerce"

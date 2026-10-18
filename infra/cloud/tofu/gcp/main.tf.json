@@ -1,0 +1,145 @@
+{
+  "provider": {
+    "google": {
+      "project": "${var.project_id}",
+      "region": "${var.region}",
+      "default_labels": {
+        "hub": "${var.hub_identifier}",
+        "project": "${var.project_slug}"
+      }
+    }
+  },
+  "variable": {
+    "project_id": {
+      "type": "string",
+      "nullable": false
+    },
+    "region": {
+      "type": "string",
+      "nullable": false
+    },
+    "service_name": {
+      "type": "string",
+      "nullable": false,
+      "validation": {
+        "condition": "${startswith(var.service_name, \"${var.project_slug}-\") && can(regex(\"^[a-z][a-z0-9-]{0,61}[a-z0-9]$\", var.service_name))}",
+        "error_message": "Use an owned project-prefixed Cloud Run service name."
+      }
+    },
+    "runtime_service_account": {
+      "type": "string",
+      "nullable": false
+    },
+    "invoker_service_account": {
+      "type": "string",
+      "nullable": false
+    },
+    "image_digest": {
+      "type": "string",
+      "nullable": false,
+      "validation": [
+        {
+          "condition": "${can(regex(\"@sha256:[a-f0-9]{64}$\", var.image_digest))}",
+          "error_message": "Cloud image must be digest-pinned."
+        }
+      ]
+    },
+    "container_port": {
+      "type": "number",
+      "nullable": false,
+      "validation": [
+        {
+          "condition": "${var.container_port >= 1024 && var.container_port <= 65535 && floor(var.container_port) == var.container_port}",
+          "error_message": "Container port must be an explicit unprivileged integer."
+        }
+      ]
+    },
+    "hub_identifier": {
+      "type": "string",
+      "nullable": false
+    },
+    "project_slug": {
+      "type": "string",
+      "nullable": false,
+      "validation": {
+        "condition": "${can(regex(\"^[a-z][a-z0-9-]{2,20}$\", var.project_slug))}",
+        "error_message": "Use a stable lowercase project slug."
+      }
+    },
+    "allow_experiment_cleanup": {
+      "type": "bool",
+      "default": false,
+      "nullable": false
+    }
+  },
+  "resource": {
+    "google_cloud_run_v2_service": {
+      "benchmark": {
+        "name": "${var.service_name}",
+        "location": "${var.region}",
+        "ingress": "INGRESS_TRAFFIC_ALL",
+        "deletion_protection": "${!var.allow_experiment_cleanup}",
+        "template": [
+          {
+            "service_account": "${var.runtime_service_account}",
+            "max_instance_request_concurrency": 1,
+            "timeout": "5s",
+            "scaling": [
+              {
+                "min_instance_count": 0,
+                "max_instance_count": 1
+              }
+            ],
+            "containers": [
+              {
+                "image": "${var.image_digest}",
+                "resources": [
+                  {
+                    "limits": {
+                      "cpu": "1",
+                      "memory": "256Mi"
+                    },
+                    "cpu_idle": true,
+                    "startup_cpu_boost": false
+                  }
+                ],
+                "ports": [
+                  {
+                    "container_port": "${var.container_port}"
+                  }
+                ],
+                "command": [
+                  "python",
+                  "-m",
+                  "uvicorn"
+                ],
+                "args": [
+                  "infra.cloud.benchmark:app",
+                  "--host",
+                  "0.0.0.0",
+                  "--port",
+                  "${tostring(var.container_port)}",
+                  "--no-access-log"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "google_cloud_run_v2_service_iam_member": {
+      "invoker": {
+        "project": "${var.project_id}",
+        "location": "${var.region}",
+        "name": "${google_cloud_run_v2_service.benchmark.name}",
+        "role": "roles/run.invoker",
+        "member": "serviceAccount:${var.invoker_service_account}"
+      }
+    }
+  },
+  "output": {
+    "uri": {
+      "value": "${google_cloud_run_v2_service.benchmark.uri}"
+    }
+  }
+}

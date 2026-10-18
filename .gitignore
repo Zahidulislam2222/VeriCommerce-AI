@@ -48,7 +48,14 @@ node_modules/
 /test-results/
 /playwright-report/
 /.playwright-mcp/
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+*.tfvars
+!*.tfvars.example
 *.tsbuildinfo
 *.log
 .DS_Store
 Thumbs.db
+/study/

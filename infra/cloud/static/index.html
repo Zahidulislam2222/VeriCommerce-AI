@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="no-referrer">
+    <title>VeriCommerce — synthetic evidence reference</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main data-config="config.json">
+      <p class="eyebrow">VERICOMMERCE / ENGINEERING REFERENCE</p>
+      <h1>Find the source behind a product fact.</h1>
+      <p>This standalone reference contains fictional products only. Search runs
+        in this browser against a frozen public snapshot.</p>
+      <form>
+        <label for="query">Search fictional evidence</label>
+        <div class="search"><input id="query" name="query" type="search" required disabled>
+          <button type="submit" disabled>Search</button></div>
+      </form>
+      <p role="status" aria-live="polite" id="status">Loading the public snapshot…</p>
+      <ul id="results" aria-label="Source quotations"></ul>
+      <p class="note">No merchant accounts, credentials, live store connection,
+        uploads or publishing actions are available in this reference.</p>
+    </main>
+  </body>
+</html>

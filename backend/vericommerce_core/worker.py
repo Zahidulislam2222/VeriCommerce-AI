@@ -30,7 +30,7 @@ def run() -> None:
         try:
             worked = process_one(settings)
             with transaction(settings) as db:
-                db.execute("DELETE FROM demo_sessions WHERE expires_at<=now()")
+                db.execute("DELETE FROM demo_sessions WHERE mode='demo' AND expires_at<=now()")
             descriptor = os.open(heartbeat, os.O_WRONLY | os.O_CREAT | os.O_TRUNC | os.O_NOFOLLOW, 0o600)
             with os.fdopen(descriptor, "w") as stream:
                 stream.write(str(time.time()))

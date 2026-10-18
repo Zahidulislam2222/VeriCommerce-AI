@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from datetime import date
-from typing import Annotated
+from typing import Annotated, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, StringConstraints, model_validator
 
@@ -41,6 +41,7 @@ class ClaimInput(StrictModel):
 
 class ProductInput(StrictModel):
     id: CatalogId
+    parent_product_id: CatalogId | None = None
     name: ShortText
     category: str = Field(default="", max_length=100)
     subtitle: str = Field(default="", max_length=200)
@@ -87,3 +88,4 @@ class SearchInput(StrictModel):
 
 class DraftInput(StrictModel):
     product_id: CatalogId
+    kind: Literal["description", "faq"] = "description"

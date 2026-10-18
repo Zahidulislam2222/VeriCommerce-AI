@@ -75,8 +75,8 @@ jobs:
           npm run lint -- --max-warnings 0
           npm test
           npm run build
-          python -m ruff check --config backend/pyproject.toml backend tests/backend infra/ci tests/infra
-          python -m mypy --config-file backend/pyproject.toml backend/vericommerce_core infra/ci
+          python -m ruff check --config backend/pyproject.toml backend tests/backend infra/ci infra/cloud tests/infra
+          python -m mypy --config-file backend/pyproject.toml backend/vericommerce_core infra/ci infra/cloud
           python infra/ci/checks.py locks
       - name: Prepare explicit free CPU model cache
         run: |

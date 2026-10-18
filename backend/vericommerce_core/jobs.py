@@ -16,7 +16,11 @@ from .settings import Settings
 
 
 def job_output(row: dict[str, Any]) -> dict[str, Any]:
-    return {key: value for key, value in row.items() if key not in {"tenant_id", "payload", "lease_until"}}
+    return {
+        key: value
+        for key, value in row.items()
+        if key not in {"tenant_id", "payload", "lease_until", "source_generations"}
+    }
 
 
 def enqueue(
@@ -25,11 +29,19 @@ def enqueue(
     tenant_lock(db, tenant_id)
     count = db.execute("SELECT count(*) AS n FROM jobs WHERE tenant_id=%s", (tenant_id,)).fetchone()
     if count and count["n"] >= settings.max_jobs:
-        raise HTTPException(429, "Workspace job quota reached; wait for session expiry")
+        raise HTTPException(429, "Workspace job retention quota reached; contact its owner")
     identity = str(uuid4())
+    generations = {}
+    if kind == "ingest":
+        for source in payload["sources"]:
+            current = db.execute(
+                "SELECT generation FROM sources WHERE tenant_id=%s AND id=%s", (tenant_id, source["id"])
+            ).fetchone()
+            generations[source["id"]] = current["generation"] if current else 0
     row = db.execute(
-        "INSERT INTO jobs(tenant_id,id,kind,status,payload) VALUES(%s,%s,%s,'queued',%s) RETURNING *",
-        (tenant_id, identity, kind, Jsonb(payload)),
+        "INSERT INTO jobs(tenant_id,id,kind,status,payload,source_generations) "
+        "VALUES(%s,%s,%s,'queued',%s,%s) RETURNING *",
+        (tenant_id, identity, kind, Jsonb(payload), Jsonb(generations)),
     ).fetchone()
     audit(db, tenant_id, "job.queued", identity, settings)
     if row is None:
@@ -37,7 +49,9 @@ def enqueue(
     return job_output(dict(row))
 
 
-def create_draft(db: Connection, tenant_id: str, product_id: str, settings: Settings) -> dict[str, str]:
+def create_draft(
+    db: Connection, tenant_id: str, product_id: str, settings: Settings, kind: str | None = None
+) -> dict[str, str]:
     tenant_lock(db, tenant_id)
     count = db.execute("SELECT count(*) AS n FROM drafts WHERE tenant_id=%s", (tenant_id,)).fetchone()
     if count and count["n"] >= settings.max_drafts:
@@ -45,9 +59,24 @@ def create_draft(db: Connection, tenant_id: str, product_id: str, settings: Sett
     passages = current_passages(db, tenant_id, product_id)
     if not passages:
         raise ValueError("No current evidence for that product")
+    from .intelligence import inspect_claims
+
+    inspection = inspect_claims(passages, settings)
+    if inspection["contradictions"] or inspection["blocked_claims"]:
+        raise ValueError("Conflicting or critical unsupported claims require human reconciliation")
     policy = json.loads(settings.policy_path.read_text())
-    text = passages[0]["product_name"] + "\n" + policy["draft_heading"] + "\n\n"
-    text += "\n\n".join(p["text"] for p in passages)
+    from .uploads import policy as intelligence_policy
+
+    formats = intelligence_policy(settings)["draft_formats"]
+    selected_kind = kind or formats["default"]
+    if selected_kind == "faq":
+        text = passages[0]["product_name"] + "\n" + formats["faq_heading"] + "\n\n"
+        text += "\n\n".join(
+            formats["faq_question"].format(label=p["label"]) + "\n" + p["text"] for p in passages
+        )
+    else:
+        text = passages[0]["product_name"] + "\n" + policy["draft_heading"] + "\n\n"
+        text += "\n\n".join(p["text"] for p in passages)
     identity = str(uuid4())
     db.execute(
         "INSERT INTO drafts(tenant_id,id,product_id,text,citations,source_fingerprint,method,status) "
@@ -69,12 +98,19 @@ def create_draft(db: Connection, tenant_id: str, product_id: str, settings: Sett
 def process_one(settings: Settings) -> bool:
     with transaction(settings) as db:
         tenants = db.execute(
-            "SELECT tenant_id FROM demo_sessions WHERE expires_at>now() ORDER BY created_at LIMIT %s",
+            "SELECT tenant_id FROM demo_sessions WHERE expires_at>now() "
+            "ORDER BY last_worker_scan_at NULLS FIRST,created_at,tenant_id LIMIT %s",
             (settings.worker_tenant_batch,),
         ).fetchall()
     for tenant in tenants:
         tenant_id = str(tenant["tenant_id"])
         with transaction(settings, tenant_id) as db:
+            # Stamp only tenants actually visited: a busy early tenant cannot starve
+            # the unvisited tail of a bounded registry batch.
+            db.execute(
+                "UPDATE demo_sessions SET last_worker_scan_at=clock_timestamp() WHERE tenant_id=%s",
+                (tenant_id,),
+            )
             db.execute(
                 "UPDATE jobs SET status='failed',error='Retry budget exhausted after interrupted work',"
                 "lease_until=NULL WHERE tenant_id=%s AND status='running' "
@@ -106,11 +142,25 @@ def process_one(settings: Settings) -> bool:
                 if owned is None or owned["status"] != "running" or owned["attempts"] != expected_attempt:
                     return True
                 if job["kind"] == "ingest":
+                    tenant_lock(db, tenant_id)
+                    for source_id, generation in job["source_generations"].items():
+                        current = db.execute(
+                            "SELECT generation FROM sources WHERE tenant_id=%s AND id=%s",
+                            (tenant_id, source_id),
+                        ).fetchone()
+                        if (current["generation"] if current else 0) != generation:
+                            raise ValueError("Source changed after job submission; reimport explicitly")
                     result: dict[str, Any] = ingest(
                         db, tenant_id, CatalogInput.model_validate(job["payload"]), settings
                     )
+                elif job["kind"] == "upload":
+                    from .uploads import process_upload
+
+                    result = process_upload(db, tenant_id, job["payload"]["upload_id"], settings)
                 else:
-                    result = create_draft(db, tenant_id, job["payload"]["product_id"], settings)
+                    result = create_draft(
+                        db, tenant_id, job["payload"]["product_id"], settings, job["payload"].get("kind")
+                    )
                 db.execute(
                     "UPDATE jobs SET status='succeeded',result=%s,error=NULL,lease_until=NULL "
                     "WHERE tenant_id=%s AND id=%s AND status='running' AND attempts=%s",

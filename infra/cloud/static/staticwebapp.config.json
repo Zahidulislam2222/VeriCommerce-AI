@@ -1,0 +1,11 @@
+{
+  "globalHeaders": {
+    "Content-Security-Policy": "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; object-src 'none'",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "no-referrer",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+    "Strict-Transport-Security": "max-age=31536000"
+  },
+  "routes": [{"route": "/api/*", "statusCode": 404}],
+  "mimeTypes": {".sha256": "text/plain"}
+}

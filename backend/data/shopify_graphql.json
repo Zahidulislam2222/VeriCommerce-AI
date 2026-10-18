@@ -1,0 +1,4 @@
+{
+  "identity": "query VeriCommerceShop { shop { id myshopifyDomain } }",
+  "products": "query VeriCommerceProducts($first:Int!,$after:String) { products(first:$first,after:$after,sortKey:ID) { nodes { id title description productType updatedAt variants(first:20) { nodes { id sku title selectedOptions { name value } } pageInfo { hasNextPage } } media(first:20) { nodes { id alt mediaContentType } pageInfo { hasNextPage } } } pageInfo { hasNextPage endCursor } } }"
+}

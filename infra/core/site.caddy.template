@@ -1,4 +1,12 @@
 {hostname} {
+    log {
+        output discard
+    }
+    header Referrer-Policy no-referrer
+    handle_errors {
+        header Referrer-Policy no-referrer
+        respond "Upstream unavailable" {err.status_code}
+    }
     reverse_proxy 127.0.0.1:{loopback_port} {
         header_up X-VeriCommerce-Edge-IP {remote_host}
     }

@@ -1,0 +1,23 @@
+{
+  "version": "2026-10-18.1",
+  "schema_context": "https://schema.org",
+  "schema_availability": ["InStock", "OutOfStock", "PreOrder", "Discontinued"],
+  "offer_labels": ["price", "currency", "availability", "sku"],
+  "non_scalar_labels": ["Document passage", "Description", "Features", "Catalog variant", "Unverified media metadata"],
+  "relation_labels": {"compatible_with": "compatible with", "has_variant": "has variant", "supported_by": "supported by", "documented_by": "documented by"},
+  "draft_formats": {"default": "description", "faq_heading": "Questions answered by current sources", "faq_question": "What do the sources state about {label}?"},
+  "unsafe_claim_terms": ["cures", "treats disease", "clinically proven", "fda approved", "certified", "guaranteed safe"],
+  "unit_aliases": {"millimeters": "mm", "millimeter": "mm", "centimeters": "cm", "centimeter": "cm", "hours": "h", "hour": "h", "grams": "g", "gram": "g"},
+  "unit_factors": {"mm": ["length", 1], "cm": ["length", 10], "m": ["length", 1000], "g": ["mass", 1], "kg": ["mass", 1000], "h": ["time", 1], "min": ["time", 0.016666666666666666]},
+  "csv_columns": ["product_id", "name", "sku", "category", "source_id", "source_name", "version", "date", "label", "value", "passage", "page"],
+  "media_types": ["application/json", "text/csv", "application/pdf", "image/png", "image/jpeg", "image/webp"],
+  "image_observation_notice": "Human-supplied visual observation; not a verified technical product attribute.",
+  "benchmark_notice": "Original fictional benchmark, machine-generated and rule-checked. Independent human review is recorded separately; results do not establish real merchant performance.",
+  "reranker": {"name": "deterministic_label_coverage_v1", "label_weight": 2, "text_weight": 1},
+  "context": {
+    "authority": "current_versioned_source",
+    "token_estimate_chars": 4,
+    "selection_method": "keyword",
+    "selection_basis": "On the frozen 64-case synthetic test split, all methods achieved Recall@10 and nDCG@10 of 1.0. Keyword, hybrid and rerank had abstention accuracy 1.0; dense had 0.9375. Keyword had the lowest measured p95 latency. This supports a keyword recommendation for this corpus only; no general hybrid quality improvement or independent human validation is claimed."
+  }
+}

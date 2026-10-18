@@ -1,0 +1,343 @@
+{
+  "navigation": [
+    {
+      "id": "compare",
+      "label": "Retrieval inspector",
+      "icon": "compare"
+    },
+    {
+      "id": "review",
+      "label": "Content review",
+      "icon": "review"
+    },
+    {
+      "id": "connections",
+      "label": "Store connections",
+      "icon": "connections"
+    },
+    {
+      "id": "account",
+      "label": "Account & team",
+      "icon": "account"
+    }
+  ],
+  "titles": {
+    "compare": "Inspect every retrieval decision.",
+    "review": "The detail, before the draft.",
+    "connections": "Connected, on your terms.",
+    "account": "A workspace with boundaries."
+  },
+  "descriptions": {
+    "compare": "Choose a retrieval method, apply explicit constraints and compare attributed evidence. Inspect why each passage entered or left the context.",
+    "review": "Inspect claims, conflicting values and affected drafts. Image observations are separate from verified source attributes. Review alt text in context and inspect deterministic structured data.",
+    "connections": "A read-only Shopify connection, with visible scopes, synchronization history and delivery health. No catalog publishing takes place here.",
+    "account": "Use an account for membership-based access. The anonymous sandbox remains a separate, temporary demonstration."
+  },
+  "common": {
+    "pending": "This capability is not available from the current server. Refresh after the service is configured.",
+    "loading": "Loading current server records\u2026",
+    "save": "Save review",
+    "saved": "The server recorded your review.",
+    "refresh": "Refresh records",
+    "empty": "No records yet.",
+    "error": "The service could not complete this action. Try again.",
+    "cancel": "Cancel",
+    "current": "Current",
+    "revision": "Revision",
+    "product": "Product",
+    "source": "Source",
+    "version": "Version",
+    "inspect": "Inspect",
+    "remove": "Delete source",
+    "deleteWarning": "Deleting this source removes its current evidence and invalidates dependent content. Historical retention follows the server policy.",
+    "confirmDelete": "Delete this source and invalidate its dependent content",
+    "deleted": "The source was deleted on the server.",
+    "permission": "Your current role does not authorize this action.",
+    "select": "Choose a record",
+    "workspaceChanged": "The active workspace changed. Reload before continuing."
+  },
+  "account": {
+    "open": "Account & team",
+    "signin": "Sign in",
+    "signup": "Create account",
+    "logout": "Sign out",
+    "email": "Email address",
+    "password": "Password",
+    "passwordHint": "Use a unique password with at least 12 characters. Account recovery is not configured; keep your password safely.",
+    "tenantName": "Workspace name",
+    "createTenant": "Create workspace",
+    "selectTenant": "Active workspace",
+    "role": "Role",
+    "members": "Workspace members",
+    "addMember": "Add existing account",
+    "memberHint": "Add an already registered account by email. This does not send an invitation or email.",
+    "anonymous": "Anonymous sandbox",
+    "anonymousNote": "No account is signed in. Your current fictional catalog is isolated by a temporary browser cookie.",
+    "registered": "Account created. Your workspace is ready.",
+    "signedIn": "Signed in to your account workspace.",
+    "signedOut": "Signed out. Returning to the anonymous sandbox.",
+    "workspaceCreated": "Workspace created.",
+    "switched": "Active workspace changed. Previous workspace data was cleared from this view.",
+    "memberSaved": "Workspace membership updated.",
+    "registrationDisabled": "Account registration is disabled on this server.",
+    "security": "Access cookies are HttpOnly. Passwords are never saved in this browser's local storage.",
+    "roles": [
+      {
+        "id": "owner",
+        "label": "Owner"
+      },
+      {
+        "id": "reviewer",
+        "label": "Reviewer"
+      },
+      {
+        "id": "editor",
+        "label": "Editor"
+      },
+      {
+        "id": "viewer",
+        "label": "Viewer"
+      }
+    ],
+    "removeMember": "Remove member",
+    "banner": "Signed-in workspace \u00b7 membership permissions checked on the server \u00b7 evidence revisions retained \u00b7 read-only store integration",
+    "noWorkspace": "No active workspace membership. Open Account & team to select or create a workspace.",
+    "noSession": "No temporary workspace available",
+    "noSessionNote": "Sign in to an existing membership workspace or create an account. Temporary workspace capacity does not determine account access."
+  },
+  "upload": {
+    "title": "Bring the source, too.",
+    "description": "Upload a bounded JSON/CSV catalog, a PDF manual or a product image. The server validates content and creates a durable job. Images remain observations, not verified product facts.",
+    "file": "Catalog or source file",
+    "product": "Related product",
+    "sourceId": "Stable source ID",
+    "version": "Source revision",
+    "submit": "Upload and process",
+    "choose": "Choose a supported file first.",
+    "limit": "Maximum file bytes",
+    "types": "Accepted media types",
+    "tooLarge": "This file exceeds the server's upload limit.",
+    "unsupported": "The server does not accept this file type.",
+    "processed": "Upload processed. Evidence and job records have been refreshed.",
+    "unconfigured": "Upload limits are unavailable. Uploading is disabled until the server provides them.",
+    "csvHint": "CSV names and column order must match the server schema below. Use only material you own or have permission to process.",
+    "columns": "Accepted CSV columns",
+    "readError": "The browser could not read this file. Choose it again.",
+    "records": "Stored uploads",
+    "catalogScope": "Catalog import \u00b7 no existing product required"
+  },
+  "jobs": {
+    "title": "Work, with a paper trail.",
+    "description": "Server-persisted ingestion and drafting jobs. Retrying requests a bounded retry; it does not discard the original record.",
+    "retry": "Retry failed job",
+    "retried": "Retry requested. Current job state was refreshed.",
+    "attempts": "Attempts",
+    "status": "Status",
+    "kind": "Operation",
+    "empty": "No durable jobs in this workspace.",
+    "result": "Operation result"
+  },
+  "versions": {
+    "title": "Every revision has context.",
+    "description": "Inspect source passages and compare immutable versions. Current product evidence and old draft citations stay distinct.",
+    "load": "Inspect source history",
+    "before": "Previous version",
+    "after": "Compare with",
+    "passages": "Supporting passages",
+    "unchanged": "Unchanged",
+    "changed": "Changed",
+    "added": "Added",
+    "removed": "Removed",
+    "empty": "No source versions are available.",
+    "changeTitle": "Passage changes",
+    "created": "Recorded",
+    "impact": "Inspect source change impact"
+  },
+  "search": {
+    "method": "Retrieval method",
+    "methods": [
+      {
+        "id": "keyword",
+        "label": "Keyword"
+      },
+      {
+        "id": "dense",
+        "label": "Dense"
+      },
+      {
+        "id": "hybrid",
+        "label": "Hybrid"
+      },
+      {
+        "id": "rerank",
+        "label": "Reranked"
+      }
+    ],
+    "inspect": "Include context trace",
+    "trace": "Why this evidence entered the context",
+    "selected": "Selected evidence",
+    "excluded": "Excluded evidence",
+    "budget": "Context character budget",
+    "used": "Characters used",
+    "diagnostics": "Retrieval diagnostics",
+    "noTrace": "No context trace returned. This response does not prove that an inspector ran.",
+    "comparison": "Comparison question or constraints",
+    "select": "Choose products to compare",
+    "submit": "Compare current evidence",
+    "minimum": "Select at least two products.",
+    "empty": "Run a comparison to inspect current evidence.",
+    "result": "Comparison evidence",
+    "title": "Inspect the retrieval decision.",
+    "description": "Compare retrieval methods and constraints against current authorized evidence. Unavailable methods remain visible. Context traces record included evidence, exclusions and a snapshot hash.",
+    "query": "Question or constraints",
+    "sku": "Exact SKU",
+    "color": "Color filter",
+    "category": "Category filter",
+    "run": "Inspect context",
+    "snapshot": "Create versioned snapshot",
+    "snapshotResult": "Versioned evidence snapshot",
+    "unavailable": "This method is unavailable. No substitute result was claimed.",
+    "first": "First product",
+    "second": "Second product",
+    "compare": "Compare attributed evidence",
+    "constraints": "Explicit evidence constraints"
+  },
+  "review": {
+    "select": "Product to inspect",
+    "load": "Inspect current evidence",
+    "claims": "Current source attributes",
+    "contradictions": "Potential contradictions",
+    "noConflicts": "No conflicting values were returned by the current checks.",
+    "relations": "Evidence relationships",
+    "affected": "Affected content",
+    "emptyAffected": "No affected draft records returned.",
+    "images": "Image observations and accessibility review",
+    "observationNotice": "Recorded observations describe an image. Approval reviews this record; it does not verify technical product properties from appearance.",
+    "purpose": "Image purpose",
+    "purposes": [
+      {
+        "id": "informative",
+        "label": "Informative"
+      },
+      {
+        "id": "decorative",
+        "label": "Decorative"
+      },
+      {
+        "id": "functional",
+        "label": "Functional"
+      }
+    ],
+    "observations": "Visible image observations",
+    "function": "Function or destination",
+    "alt": "Proposed alt text",
+    "approve": "Approve accessibility review",
+    "decorative": "Decorative images use an empty alt attribute. Essential information belongs in visible content.",
+    "functional": "Describe the action or destination, not just the image's appearance.",
+    "jsonld": "Product structured data",
+    "generate": "Validate Product JSON-LD",
+    "jsonldHint": "Structured data is generated from current authoritative fields. Missing price, currency, availability or variant data is reported rather than invented.",
+    "provenance": "Field provenance",
+    "errors": "Validation issues",
+    "approved": "Reviewed",
+    "candidate": "Needs review",
+    "noClaims": "No verified source attributes returned.",
+    "draft": "Draft",
+    "status": "State",
+    "upload": "Uploaded image",
+    "selectUpload": "Load image uploads",
+    "newReview": "Record image observations",
+    "relationTitle": "Propose a typed relationship",
+    "subject": "Subject identifier",
+    "object": "Related identifier",
+    "revision": "Evidence revision identifier",
+    "predicate": "Relationship",
+    "propose": "Propose relationship",
+    "approveRelation": "Approve relationship",
+    "validity": "Validity interval",
+    "blocked": "Blocked source claims",
+    "jsonldUnavailable": "Product JSON-LD is blocked until the required current authoritative fields are available.",
+    "signin": "Sign in as a reviewer or owner to approve image reviews and relationships.",
+    "scopeMismatch": "The returned evidence belongs to a different product. Refresh before reviewing."
+  },
+  "shopify": {
+    "status": "Connection status",
+    "unconfigured": "Shopify application credentials are not configured. Connection and sync are disabled; no store is connected by this interface.",
+    "signin": "Sign in with connector-management permission to manage a store.",
+    "shop": "Shop domain",
+    "shopPlaceholder": "your-store.myshopify.com",
+    "connect": "Connect read-only store",
+    "sync": "Synchronize catalog",
+    "disconnect": "Disconnect store",
+    "export": "Export connector data",
+    "delete": "Retire imported evidence",
+    "deleteConfirm": "Retire imported evidence from active retrieval and delete connector credentials/cache. Historical source revisions, audit records and backups retain provenance.",
+    "scopes": "Granted scopes",
+    "health": "Webhook delivery health",
+    "receipts": "Recorded receipts",
+    "history": "Synchronization history",
+    "disconnected": "Store disconnected.",
+    "deleted": "Local connector data deleted.",
+    "synchronized": "Synchronization completed.",
+    "connected": "Connected",
+    "notConnected": "Not connected",
+    "readOnly": "Read-only integration. These controls do not publish product changes.",
+    "unsafeRedirect": "The server returned an invalid authorization destination."
+  },
+  "benchmark": {
+    "title": "Measure methods against the frozen corpus.",
+    "description": "Results describe this versioned corpus. Synthetic expected labels require independent human review before they qualify as accepted quality evidence.",
+    "run": "Run benchmark",
+    "records": "Load measured benchmarks",
+    "dataset": "Inspect the review dataset",
+    "questions": "Question labels",
+    "images": "Image labels and purpose",
+    "review": "Record human review",
+    "notes": "Review notes and corrections",
+    "decision": "Review decision",
+    "approved": "Approved labels",
+    "changes": "Needs changes",
+    "confirmation": "I inspected every selected question and image label, including expected source, abstention, image purpose and alt text, and recorded corrections below.",
+    "signin": "A signed-in reviewer or owner is required to record human review.",
+    "emptySelection": "Select the exact labels you inspected.",
+    "recorded": "Human review record saved. Dataset acceptance still depends on the recorded coverage and decision.",
+    "notImage": "Image artifact unavailable at an allowed local path. Inspect the identified source artifact before reviewing.",
+    "columns": [
+      "Method",
+      "Available",
+      "Questions",
+      "Recall @ 10",
+      "NDCG @ 10",
+      "Abstention",
+      "p50 ms",
+      "p95 ms"
+    ],
+    "products": "Product family and split assignments",
+    "expectedSource": "Expected source",
+    "expectedAbstain": "Expected abstention",
+    "reviews": "Recorded human reviews",
+    "catalog": "Frozen source catalog and passages",
+    "evidence": "Inspect the corresponding frozen evidence",
+    "expectedLabel": "Expected attribute",
+    "expectedValue": "Expected supported value",
+    "caseResults": "Full measured report and question outcomes",
+    "agentReview": "AI review state",
+    "humanReview": "Human review state",
+    "pending": "Pending",
+    "productFacts": "Displayed frozen product facts",
+    "missingContext": "No usage context was supplied. Purpose requires contextual review."
+  },
+  "draft": {
+    "kind": "Draft format",
+    "formats": [
+      {
+        "id": "description",
+        "label": "Product description"
+      },
+      {
+        "id": "faq",
+        "label": "Product FAQ"
+      }
+    ]
+  }
+}

@@ -10,7 +10,7 @@ import numpy as np
 
 from .database import Connection
 from .models import EvidencePolicy, SearchInput
-from .repository import citation, current_passages
+from .repository import citation, current_passages, eligible_products
 from .settings import Settings
 
 
@@ -79,7 +79,8 @@ class RetrievalEngine:
 
     def search(self, db: Connection, tenant_id: str, request: SearchInput) -> dict[str, Any]:
         limit = min(request.limit or self.settings.search_limit, self.settings.max_search_limit)
-        passages = current_passages(db, tenant_id, request.product_id)
+        eligible = set(eligible_products(db, tenant_id, request.query, request.product_id))
+        passages = [p for p in current_passages(db, tenant_id) if p["product_id"] in eligible]
         if not passages:
             return {"method": self.status()["method"], "results": [], "retrieval": self.status()}
         tokens = self.tokens(request.query, [p["product_name"] for p in passages])
@@ -89,14 +90,19 @@ class RetrievalEngine:
         ranks = db.execute(
             "SELECT p.id,ts_rank_cd(p.search_vector,to_tsquery('english',%s)) AS score FROM passages p "
             "JOIN sources s ON s.tenant_id=p.tenant_id AND s.current_revision_id=p.revision_id "
-            "WHERE p.tenant_id=%s AND (%s::text IS NULL OR p.product_id=%s) "
+            "WHERE p.tenant_id=%s AND p.product_id=ANY(%s) "
+            "AND NOT EXISTS (SELECT 1 FROM source_tombstones t WHERE t.tenant_id=s.tenant_id "
+            "AND t.source_id=s.id) "
+            "AND NOT EXISTS (SELECT 1 FROM product_tombstones t WHERE t.tenant_id=p.tenant_id "
+            "AND t.product_id=p.product_id) "
             "AND p.search_vector @@ to_tsquery('english',%s) ORDER BY score DESC,p.id",
-            (tsquery, tenant_id, request.product_id, request.product_id, tsquery),
+            (tsquery, tenant_id, list(eligible), tsquery),
         ).fetchall()
+        eligible_passages = {str(p["passage_id"]) for p in passages}
         lexical = [
             (str(row["id"]), float(row["score"]))
             for row in ranks
-            if row["score"] >= self.settings.lexical_min_score
+            if row["score"] >= self.settings.lexical_min_score and str(row["id"]) in eligible_passages
         ]
         # A dense similarity alone is insufficient evidence of a documented answer.
         # Only passages with independently matching lexical subject matter are eligible.

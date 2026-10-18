@@ -25,6 +25,7 @@ x-app: &app
     VC_WORKER_HEARTBEAT_PATH: /tmp/worker.ready
     VC_WORKER_HEARTBEAT_TIMEOUT_SECONDS: ${HEARTBEAT_TIMEOUT_SECONDS:?Set heartbeat timeout}
     VC_SESSION_CREATIONS_PER_HOUR: ${SESSION_CREATIONS_PER_HOUR:?Set session rate limit}
+    VC_MAX_PRODUCTS: ${MAX_PRODUCTS:?Set product quota}
     FORWARDED_ALLOW_IPS: ${TRUSTED_WEB_IP:?Set trusted web IP}
   volumes:
     - model_cache:/var/cache/vericommerce
@@ -87,7 +88,7 @@ services:
       __POSTGRES_SERVICE__: {condition: service_healthy}
   api:
     <<: *app
-    command: [python, -m, uvicorn, "vericommerce_core.main:app", --host, "0.0.0.0", --port, "${API_PORT:?Set API port}", --proxy-headers]
+    command: [python, -m, uvicorn, "vericommerce_core.main:app", --host, "0.0.0.0", --port, "${API_PORT:?Set API port}", --proxy-headers, --no-access-log]
     depends_on:
       __POSTGRES_SERVICE__: {condition: service_healthy}
     healthcheck:

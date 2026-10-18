@@ -1,0 +1,89 @@
+{
+  "provider": {
+    "azurerm": {
+      "features": [
+        {}
+      ],
+      "resource_provider_registrations": "none",
+      "subscription_id": "${var.subscription_id}"
+    }
+  },
+  "variable": {
+    "subscription_id": {
+      "type": "string",
+      "nullable": false
+    },
+    "resource_group_name": {
+      "type": "string",
+      "nullable": false,
+      "validation": {
+        "condition": "${var.resource_group_name == var.hub_identifier || can(regex(\"^vericommerce-[a-z0-9-]+$\", var.resource_group_name))}",
+        "error_message": "Use shared hub group or preserve an existing legacy VeriCommerce-owned group; never migrate resources just for naming."
+      }
+    },
+    "create_resource_group": {
+      "type": "bool",
+      "default": false,
+      "nullable": false
+    },
+    "location": {
+      "type": "string",
+      "nullable": false
+    },
+    "site_name": {
+      "type": "string",
+      "nullable": false,
+      "validation": {
+        "condition": "${startswith(var.site_name, \"${var.project_slug}-\")}",
+        "error_message": "Use an owned project-prefixed site name."
+      }
+    },
+    "hub_identifier": {
+      "type": "string",
+      "nullable": false
+    },
+    "project_slug": {
+      "type": "string",
+      "nullable": false,
+      "validation": {
+        "condition": "${can(regex(\"^[a-z][a-z0-9-]{2,20}$\", var.project_slug))}",
+        "error_message": "Use a stable lowercase project slug."
+      }
+    }
+  },
+  "resource": {
+    "azurerm_resource_group": {
+      "owned": {
+        "count": "${var.create_resource_group ? 1 : 0}",
+        "name": "${var.resource_group_name}",
+        "location": "${var.location}",
+        "tags": {
+          "application": "vericommerce-synthetic",
+          "data_classification": "synthetic-public",
+          "Hub": "${var.hub_identifier}",
+          "Project": "${var.project_slug}"
+        }
+      }
+    },
+    "azurerm_static_web_app": {
+      "shell": {
+        "name": "${var.site_name}",
+        "resource_group_name": "${var.create_resource_group ? azurerm_resource_group.owned[0].name : var.resource_group_name}",
+        "location": "${var.location}",
+        "sku_tier": "Free",
+        "sku_size": "Free",
+        "tags": {
+          "application": "vericommerce-synthetic",
+          "data_classification": "synthetic-public",
+          "Hub": "${var.hub_identifier}",
+          "Project": "${var.project_slug}"
+        }
+      }
+    }
+  },
+  "output": {
+    "hostname": {
+      "value": "${azurerm_static_web_app.shell.default_host_name}"
+    }
+  }
+}

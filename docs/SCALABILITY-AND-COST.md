@@ -2,6 +2,13 @@
 
 **Design target: support 1M+ simultaneously active users after staged engineering and validation. This is not current measured capacity.** The current server has bounded workspaces and no large-scale load result. A million-user service cannot be promised on free tiers or one small host.
 
+The current persistent database, durable worker and resident CPU model reuse an
+existing fixed-capacity server. This is the simplest verified initial deployment;
+it does not automatically scale or stop its costs when traffic falls. Public
+static delivery and isolated on-demand validators can scale independently. A
+future request-based service can reduce idle compute, while storage, backups and
+other dependencies retain their own charges. [Cloud Run autoscaling](https://docs.cloud.google.com/run/docs/about-instance-autoscaling).
+
 ## Define the workload before sizing
 
 Active users, open connections, requests/second and model jobs are different quantities. An active user may read cached pages without hitting the API. HTTP multiplexing means browser sessions do not map one-to-one to connections. A queued AI task may outlive the request that submitted it.
@@ -20,6 +27,14 @@ Measure geographic mix, active/idle ratio, device reconnects, request distributi
 | Assumed 2-second end-to-end job latency | About 2,000 jobs in the system by L = arrival rate × latency |
 
 These are derived from stated planning assumptions, not benchmark results. Real inference may be much slower; measured model service time must replace 0.25 seconds. Current draft jobs are extractive templates, so future generative jobs require an independent capacity model.
+
+Before growth, a proposed normal test is 1,000 simultaneously active users at six
+requests/minute each, or100requests/s, followed by a10×five-minute spike and a
+recovery interval. These tests have not run. First agree the read/write/upload
+mix, admission limits, payload sizes and latency/error targets; approve any paid
+load separately. Even500–1,000-user capacity is currently unmeasured. Database
+connections, model CPU time, queue age, scaling speed and provider quotas must be
+measured alongside web throughput.
 
 For a separate edge-memory example, assume 1.2 million live connections and 32 KiB of state each: roughly 36.6 GiB before TLS buffers, operating-system overhead and redundancy. This does not establish that one node can hold those connections. At 100,000 requests/s and 10 kB average delivered content, sustained traffic is about 1 GB/s or 2.59 PB per 30 days. Edge-cache hits still incur delivery traffic.
 
@@ -59,7 +74,9 @@ Current execution reuses an existing server and local CPU model; the server, sto
 
 Estimate compute-hours, memory, DB/replica storage and IOPS, connection pools, model accelerators, queues, CDN/egress, object storage, backups/keys, logs/traces, DNS/TLS operations, CI/artifacts and support. Show steady load, bursts, failover headroom and retention. Cost per accepted output needs accepted outputs as its denominator.
 
-Proposed independent cloud roles remain Azure public static content, AWS deterministic manifest validation, and GCP immutable-snapshot retrieval benchmarking. None is claimed deployed. Verify native inventory, account eligibility, billing status, regional SKUs, allowance expiry and associated build/log/network costs before execution. Budget alerts are not a universal hard spend cap.
+Independent cloud roles are Azure public static content, AWS deterministic manifest validation, and GCP immutable-snapshot retrieval benchmarking. The synthetic Azure reference is deployed on exact Free/Free hosting, with no paid linked services. The private AWS validator passed actual authenticated calls within verified free allowance, under an explicit $0.01 possible-charge approval. Its paid account has no enforced spending cap. A separately approved estimated $0.05 GCP experiment passed three authenticated health/retrieval/abstention checks against a three-document snapshot. Owned compute, registry and service accounts were removed before the original 30-minute deadline; 135 pre-existing resource payloads were preserved. Final charges remain unverified because billing reports lag. This smoke test does not measure held-out model quality. Verify shared account usage and billable dependencies before any future run; budget alerts are not a universal hard spend cap.
+
+Personal cloud resources follow the shared Portfolio Hub convention with project-prefixed names and supported hub/project tags. The AWS function joins the existing regional tag-based resource group. Azure's earlier site remains in its original group, tagged in place; moving an existing resource solely for naming consistency requires separate authorization. Creating more groups or projects does not create additional free allowances.
 
 Official programs change: [AWS Free Tier](https://aws.amazon.com/free/), [GCP free program](https://docs.cloud.google.com/free/docs/free-cloud-features), [Azure free services](https://azure.microsoft.com/en-us/pricing/free-services). Free credits expire; quotas, billing-account requirements and exclusions vary. Do not upgrade, activate billable services or remove a spending limit to complete architecture validation. Obtain explicit cost authorization and preserve a tested shutdown/export path.
 

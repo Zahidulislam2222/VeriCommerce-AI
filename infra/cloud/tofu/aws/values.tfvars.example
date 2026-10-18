@@ -1,0 +1,9 @@
+region = "us-east-1"
+function_name = "vericommerce-example-validator"
+artifact_zip = "/tmp/reviewed-synthetic-validator.zip"
+invoker_principal_arn = "arn:aws:iam::000000000000:role/test-only-invoker"
+account_concurrency_limit = 1000
+allow_unreserved_low_quota = false
+
+hub_identifier = "portfolio-hub"
+project_slug = "vericommerce"

@@ -1,0 +1,114 @@
+{
+  "provider": {
+    "aws": {
+      "region": "${var.region}",
+      "default_tags": [
+        {
+          "tags": {
+            "application": "vericommerce-synthetic",
+            "data_classification": "synthetic-public",
+            "Hub": "${var.hub_identifier}",
+            "Project": "${var.project_slug}"
+          }
+        }
+      ]
+    }
+  },
+  "variable": {
+    "region": {
+      "type": "string",
+      "nullable": false
+    },
+    "function_name": {
+      "type": "string",
+      "nullable": false,
+      "validation": {
+        "condition": "${startswith(var.function_name, \"${var.project_slug}-\") && can(regex(\"^vericommerce-[a-z0-9-]+$\", var.function_name))}",
+        "error_message": "Use a separately named VeriCommerce-owned function and role."
+      }
+    },
+    "artifact_zip": {
+      "type": "string",
+      "nullable": false
+    },
+    "invoker_principal_arn": {
+      "type": "string",
+      "nullable": false,
+      "validation": {
+        "condition": "${can(regex(\"^arn:aws:iam::[0-9]{12}:(user|role)/[A-Za-z0-9+=,.@_/-]+$\", var.invoker_principal_arn))}",
+        "error_message": "Select one exact IAM user or role; no account-root, wildcard or public principal."
+      }
+    },
+    "account_concurrency_limit": {
+      "type": "number",
+      "nullable": false,
+      "validation": {
+        "condition": "${var.account_concurrency_limit >= 1 && floor(var.account_concurrency_limit) == var.account_concurrency_limit}",
+        "error_message": "Supply the freshly observed native account concurrency limit."
+      }
+    },
+    "allow_unreserved_low_quota": {
+      "type": "bool",
+      "default": false,
+      "nullable": false
+    },
+    "hub_identifier": {
+      "type": "string",
+      "nullable": false
+    },
+    "project_slug": {
+      "type": "string",
+      "nullable": false,
+      "validation": {
+        "condition": "${can(regex(\"^[a-z][a-z0-9-]{2,20}$\", var.project_slug))}",
+        "error_message": "Use a stable lowercase project slug."
+      }
+    }
+  },
+  "resource": {
+    "aws_iam_role": {
+      "validator": {
+        "name": "${var.function_name}",
+        "assume_role_policy": "${jsonencode({Version=\"2012-10-17\", Statement=[{Effect=\"Allow\", Principal={Service=\"lambda.amazonaws.com\"}, Action=\"sts:AssumeRole\"}]})}"
+      }
+    },
+    "aws_lambda_function": {
+      "validator": {
+        "function_name": "${var.function_name}",
+        "role": "${aws_iam_role.validator.arn}",
+        "filename": "${var.artifact_zip}",
+        "source_code_hash": "${filebase64sha256(var.artifact_zip)}",
+        "handler": "infra.cloud.validator.handler",
+        "runtime": "python3.12",
+        "architectures": [
+          "x86_64"
+        ],
+        "timeout": 3,
+        "memory_size": 128,
+        "reserved_concurrent_executions": "${var.allow_unreserved_low_quota && var.account_concurrency_limit <= 10 ? -1 : 1}",
+        "publish": true,
+        "lifecycle": {
+          "precondition": [
+            {
+              "condition": "${!var.allow_unreserved_low_quota || var.account_concurrency_limit <= 10}",
+              "error_message": "Unreserved mode requires explicitly verified account concurrency at most10."
+            }
+          ]
+        }
+      }
+    },
+    "aws_lambda_permission": {
+      "invoker": {
+        "statement_id": "TrustedHarnessOnly",
+        "action": "lambda:InvokeFunction",
+        "function_name": "${aws_lambda_function.validator.function_name}",
+        "principal": "${var.invoker_principal_arn}"
+      }
+    }
+  },
+  "output": {
+    "function_arn": {
+      "value": "${aws_lambda_function.validator.arn}"
+    }
+  }
+}

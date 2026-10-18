@@ -1,0 +1,10 @@
+project_id = "your-verified-project-id"
+region = "us-central1"
+service_name = "vericommerce-synthetic-benchmark"
+runtime_service_account = "vericommerce-runtime@your-verified-project-id.iam.gserviceaccount.com"
+invoker_service_account = "vericommerce-invoker@your-verified-project-id.iam.gserviceaccount.com"
+image_digest = "us-central1-docker.pkg.dev/your-verified-project-id/vericommerce-synthetic/benchmark@sha256:0000000000000000000000000000000000000000000000000000000000000000"
+container_port = 18183
+
+hub_identifier = "portfolio-hub"
+project_slug = "vericommerce"

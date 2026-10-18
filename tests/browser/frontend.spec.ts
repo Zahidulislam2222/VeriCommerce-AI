@@ -11,7 +11,7 @@ test('landing, evidence, FAQ and research navigation work', async ({ page }) => 
   await page.getByRole('button', { name: /Finish Chalk/ }).click();
   await expect(page.locator('.passage-card')).toContainText('Do not describe the full product as plastic-free.');
   await page.getByRole('button', { name: 'What can I do with VeriCommerce AI?' }).click();
-  await expect(page.locator('#faq-0')).toContainText('records work on the server');
+  await expect(page.locator('#faq-0')).toContainText('Account workspaces add persistent memberships and roles.');
   await page.getByRole('button', { name: 'Explore the research roadmap' }).click();
   await expect(page).toHaveURL(/\/workspace#lab$/);
   await expect(page.getByRole('heading', { level: 1 })).toContainText('A place to question');

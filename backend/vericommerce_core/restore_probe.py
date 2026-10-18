@@ -13,19 +13,10 @@ from psycopg import sql
 from psycopg.conninfo import make_conninfo
 from pydantic import SecretStr
 
-from .database import check_runtime_role, transaction
+from .database import GLOBAL_TABLES, TENANT_TABLES, check_runtime_role, transaction
 from .settings import Settings, get_settings
 
-PROTECTED_TABLES = (
-    "products",
-    "sources",
-    "source_revisions",
-    "passages",
-    "drafts",
-    "jobs",
-    "audit_events",
-    "evaluations",
-)
+PROTECTED_TABLES = TENANT_TABLES
 
 
 def hash_rows(rows: list[dict[str, Any]]) -> str:
@@ -51,15 +42,25 @@ def probe(settings: Settings, database: str | None = None, allow_empty: bool = F
         if visibility is None or visibility["n"] != 0:
             raise RuntimeError("RLS without a tenant context exposed product rows")
         global_rows = {
-            table: db.execute(sql.SQL("SELECT * FROM {}").format(sql.Identifier(table))).fetchall()
-            for table in ("demo_sessions", "rate_limits")
+            table: [
+                row["payload"]
+                for row in db.execute(
+                    sql.SQL("SELECT to_jsonb(t) AS payload FROM {} t").format(sql.Identifier(table))
+                ).fetchall()
+            ]
+            for table in GLOBAL_TABLES
         }
     records: dict[str, list[dict[str, Any]]] = {table: [] for table in PROTECTED_TABLES}
     denied = 0
     for tenant_id in tenants:
         with transaction(settings, tenant_id) as db:
             for table in PROTECTED_TABLES:
-                rows = db.execute(sql.SQL("SELECT * FROM {}").format(sql.Identifier(table))).fetchall()
+                rows = [
+                    row["payload"]
+                    for row in db.execute(
+                        sql.SQL("SELECT to_jsonb(t) AS payload FROM {} t").format(sql.Identifier(table))
+                    ).fetchall()
+                ]
                 if any(str(row["tenant_id"]) != tenant_id for row in rows):
                     raise RuntimeError("Cross-tenant row exposed by restored RLS")
                 records[table].extend(dict(row) for row in rows)

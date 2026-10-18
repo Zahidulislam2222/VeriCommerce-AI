@@ -8,6 +8,7 @@ import psycopg
 from psycopg import sql
 from psycopg.conninfo import conninfo_to_dict
 
+from .database import GLOBAL_TABLES, TENANT_TABLES
 from .settings import Settings, get_settings
 
 
@@ -55,18 +56,7 @@ def migrate(settings: Settings) -> None:
             db.execute(content)
             db.execute("INSERT INTO schema_migrations(name,sha256) VALUES(%s,%s)", (path.name, digest))
         db.execute(sql.SQL("GRANT USAGE ON SCHEMA public TO {}").format(sql.Identifier(username)))
-        for table in (
-            "demo_sessions",
-            "rate_limits",
-            "products",
-            "source_revisions",
-            "sources",
-            "passages",
-            "drafts",
-            "jobs",
-            "audit_events",
-            "evaluations",
-        ):
+        for table in (*GLOBAL_TABLES, *TENANT_TABLES):
             db.execute(
                 sql.SQL("GRANT SELECT, INSERT, UPDATE, DELETE ON {} TO {}").format(
                     sql.Identifier(table), sql.Identifier(username)

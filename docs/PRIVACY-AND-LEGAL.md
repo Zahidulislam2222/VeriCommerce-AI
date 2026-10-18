@@ -4,11 +4,18 @@ Operator: **Zahidul Islam**. Contact [muhammadzahidulislam2222@gmail.com](mailto
 
 ## Current data handling
 
+The expanded live application includes the account, upload and read-only connector
+handling below. External integration, recovery and release-specific checks are
+recorded separately in [release evidence](RELEASE-VERIFICATION.md).
+
 | Data | Purpose / current treatment |
 |---|---|
 | Opaque access cookie and server token hash | Select temporary isolated workspace; configured12h expiry |
+| Account email, scrypt password hash, memberships and opaque session hash | Persistent workspace access with owner/reviewer/editor/viewer permissions; no email verification or password-reset service |
 | Product/source/passages/revisions | Ingestion, current-evidence retrieval, lineage and changed-source invalidation |
 | Drafts, citations, job/evaluation state | Durable work, approval/export and measured regression |
+| Private uploaded bytes and parsed document text | Bounded CSV/JSON/PDF/static-raster processing; validated images served only to the authorized workspace |
+| Shopify app credentials and encrypted store token | Read-products-only authorization; no customer/order access or publishing permission |
 | Audit metadata | Action/entity/time; application audit excludes raw source/query text and cookie tokens |
 | Rate-limit keys | Abuse bounds; hashed identifiers do not automatically become anonymous data |
 | Browser storage | Browser workspace approvals; clearing it does not clear server state |
@@ -16,9 +23,19 @@ Operator: **Zahidul Islam**. Contact [muhammadzahidulislam2222@gmail.com](mailto
 
 Search questions are processed to retrieve passages and are not stored as query text in application audit records. Source/imported text and resulting drafts are stored until cleanup. Technical edge/hosting logs may contain addresses and request metadata. The application has no configured advertising or behavioral-analytics integration; infrastructure-provider practices require their own review.
 
-The worker purges expired workspace records and dependent live data. Expiry is not an immediate erasure guarantee across logs/backups. Log/backup retention periods, encryption-at-rest coverage and automated deletion across restored backups are not fully verified. Do not claim end-to-end encryption, fixed backup erasure deadlines or indefinite durable storage.
+The worker purges expired temporary workspace records and dependent live data. Persistent account data remains after session expiry/logout. Source deletion purges its original uploaded bytes, retains historical extracted revisions, and tombstones current evidence while invalidating dependent approvals. Historical text and backups are not automatically erased by a source deletion. Expiry is not an immediate erasure guarantee across logs/backups. Log/backup retention periods and automated deletion across restored backups are not fully verified. Do not claim end-to-end encryption, fixed backup erasure deadlines or indefinite durable storage.
 
-Use generated or explicitly permitted non-sensitive inputs. Do not upload customer records, health data, payment details, credentials or confidential merchant material. Current browser access offers no account recovery; loss of the cookie can prevent retrieval. Export needed content before expiry.
+Use generated or explicitly permitted non-sensitive inputs. Do not upload customer records, health data, payment details, credentials or confidential merchant material. Temporary access has no recovery; loss of the cookie can prevent retrieval. Account access has no password-reset service. Export needed content separately.
+
+The current permitted-store connection imports product catalog data only. Account
+email and access metadata remain personal data even when product examples are
+synthetic. Before real merchant use, establish user/processing/support locations,
+controller/processor roles, vendor agreements and subprocessors, transfer basis,
+retention and rights-request procedures. These contractual and operational checks
+are pending. Application administrator MFA is absent; provider-account MFA and
+disk encryption have not been verified. Encrypted tokens and tested encrypted
+backups do not establish encryption of every stored record or complete legal
+compliance. [EDPB small-business guidance](https://www.edpb.europa.eu/sme_en).
 
 ## Permissions, rights and takedown
 

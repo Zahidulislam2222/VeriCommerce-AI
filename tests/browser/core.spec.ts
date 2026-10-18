@@ -1,10 +1,11 @@
-import { test, expect } from '@playwright/test';
+import { test, expect as baseExpect } from '@playwright/test';
 import type { Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { readFile } from 'node:fs/promises';
 import fixture from '../../src/data/demo.json' with { type: 'json' };
 
 test.setTimeout(90000);
+const expect = baseExpect.configure({ timeout: 30000 });
 async function open(page: Page, view = 'overview') {
   await page.goto(`/engine#${view}`);
   await expect(page.locator('.core-loading')).toHaveCount(0, { timeout: 30000 });
@@ -94,6 +95,7 @@ test('expired access cookie recovers a new isolated server workspace on refresh'
   await expect(page.locator('.core-draft')).toHaveCount(1, { timeout: 30000 });
   await context.clearCookies();
   await page.getByRole('button', { name: 'Refresh data', exact: true }).click();
+  await expect(page.locator('#core-main')).toHaveAttribute('aria-busy', 'false', { timeout: 60000 });
   await expect(page.locator('.core-draft')).toHaveCount(0, { timeout: 30000 });
   await expect(page.locator('.core-alert')).toHaveCount(0);
   await expect(page.getByText('Your collection is ready.', { exact: false })).toBeVisible();

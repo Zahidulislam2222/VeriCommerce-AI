@@ -1,0 +1,6 @@
+project_id = "your-verified-existing-project"
+region = "your-verified-region"
+hub_identifier = "portfolio-hub"
+project_slug = "vericommerce"
+repository_name = "vericommerce-synthetic"
+operator_member = "user:owner@example.test"

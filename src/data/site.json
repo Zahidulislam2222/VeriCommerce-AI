@@ -152,7 +152,7 @@
     "items": [
       {
         "question": "What can I do with VeriCommerce AI?",
-        "answer": "Import a permitted JSON catalog, retrieve current source passages, create evidence-backed drafts, review and approve them, and export approved content. The evidence engine records work on the server; the collection workspace stores its approval choices in this browser."
+        "answer": "Import a permitted JSON or CSV catalog, attach bounded PDF/static-image inputs, retrieve current source passages, and review source-backed drafts and exports. Account workspaces add persistent memberships and roles. The collection workspace stores its approval choices in this browser."
       },
       {
         "question": "What makes the platform evidence-led?",
@@ -160,11 +160,11 @@
       },
       {
         "question": "Will this work with Shopify?",
-        "answer": "Shopify is the first planned merchant integration. Read-only catalog synchronization, approved publishing, verification and conflict-aware rollback have explicit implementation gates in the roadmap. No Shopify store is connected in the current release."
+        "answer": "The read-only connector supports an explicitly configured Shopify app and permitted store. Connection status, granted scopes and sync history are visible in the workspace. Product publishing and store mutations remain later phases; a configured connector is not proof of a completed store connection."
       },
       {
         "question": "What is running in the research layer?",
-        "answer": "The evidence engine supports a pinned local CPU embedding model and keyword retrieval. Ten curated regression questions provide repeatable checks. Fine-tuning, larger independent benchmarks and agent-training experiments remain planned work."
+        "answer": "The engine compares keyword, dense, hybrid and deterministic reranking with explicit context traces. A frozen synthetic corpus has 200 questions and a 64-question test split; its owner-delegated AI review is not independent human validation. Fine-tuning and agent training remain planned work."
       }
     ]
   },
@@ -208,7 +208,7 @@
     "resetNotice": "Browser workspace approvals have been reset.",
     "workspaceDescription": "Your collection, with the context it deserves.",
     "demoNotice": "Collection workspace · approvals stay in this browser · use the evidence engine for server-persisted work.",
-    "aboutText": "VeriCommerce AI connects product information to versioned evidence and human-reviewed content. This collection workspace stores approvals in your browser. The evidence engine provides server persistence and retrieval. Shopify synchronization, merchant accounts and model training are roadmap capabilities."
+    "aboutText": "VeriCommerce AI connects product information to versioned evidence and explicit content review. This collection workspace stores approvals in your browser. The evidence engine provides account workspaces, bounded ingestion, retrieval and review controls. A read-only Shopify connection requires configuration; model training and publishing remain later phases."
   },
   "labels": {
     "app01": "Skip to content",

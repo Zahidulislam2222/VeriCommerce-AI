@@ -1,4 +1,5 @@
 """Release-boundary, applied migration and configurable metadata regressions."""
+
 from __future__ import annotations
 
 import ast
@@ -57,11 +58,45 @@ def test_boundary_guard_rejects_reintroduced_settings_and_fake_credentials() -> 
 
 
 def test_only_accepted_backend_and_applied_migration_ship() -> None:
-    accepted = {"__init__", "database", "jobs", "main", "migrate", "models", "repository",
-                "restore_probe", "retrieval", "security", "settings", "warmup", "worker"}
+    accepted = {
+        "__init__",
+        "database",
+        "jobs",
+        "main",
+        "migrate",
+        "models",
+        "repository",
+        "restore_probe",
+        "retrieval",
+        "security",
+        "settings",
+        "warmup",
+        "worker",
+        "account_repository",
+        "account_routes",
+        "shopify_protocol",
+        "shopify_client",
+        "shopify_repository",
+        "shopify_routes",
+        "phase_models",
+        "phase_repository",
+        "phase_routes",
+        "uploads",
+        "document_parser",
+        "context",
+        "intelligence",
+        "benchmark",
+    }
     assert {p.stem for p in PACKAGE.glob("*.py")} == accepted
     migrations = ROOT / "backend/migrations"
-    assert {p.name for p in migrations.glob("*.sql")} == {"001_evidence_core.sql"}
+    assert {p.name for p in migrations.glob("*.sql")} == {
+        "001_evidence_core.sql",
+        "002_identity.sql",
+        "003_content_intelligence.sql",
+        "004_worker_fairness.sql",
+        "005_initial_catalog_upload.sql",
+        "006_product_retirement.sql",
+    }
     # Applied-schema bytes are a release compatibility invariant, never rewritten.
     expected = "5c95f26d721215903d4b9e2ef2c41df3e3c785c3a7fe0216ef9cc7ff03483dac"
     assert hashlib.sha256((migrations / "001_evidence_core.sql").read_bytes()).hexdigest() == expected
@@ -89,8 +124,13 @@ def test_openapi_health_branding_and_version_change_through_configuration(
         assert description["info"]["title"] == "Configured workspace API"
         assert description["info"]["version"] == "9.8.7"
         assert client.get("/api/healthz").json()["service"] == "configured-workspace"
-        assert not any(route.startswith(("/api/auth/", "/api/shopify/", "/api/uploads"))
-                       for route in description["paths"])
+        assert {
+            "/api/auth/me",
+            "/api/shopify",
+            "/api/uploads",
+            "/api/context",
+            "/api/benchmark-dataset",
+        }.issubset(description["paths"])
 
 
 def test_typed_environment_overrides_version_without_source_changes(monkeypatch: Any) -> None:

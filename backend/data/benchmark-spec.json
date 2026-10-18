@@ -1,0 +1,39 @@
+{
+  "version": "2026-10-18.1",
+  "license": "CC0-1.0; original fictional products, schematic SVG assets and rule-generated questions. No real merchant records.",
+  "date": "2026-10-18",
+  "families": [
+    {"name": "Atlas", "split": "train"},
+    {"name": "Birch", "split": "train"},
+    {"name": "Cobalt", "split": "train"},
+    {"name": "Delta", "split": "validation"},
+    {"name": "Ember", "split": "test"},
+    {"name": "Flint", "split": "test"}
+  ],
+  "products_per_family": 5,
+  "colors": ["blue", "green", "red", "gray", "gold"],
+  "swatches": ["#315c91", "#43714e", "#94443f", "#555b64", "#997521"],
+  "category": "Fictional portable audio",
+  "image_purposes": ["informative", "decorative", "functional", "informative"],
+  "image_contexts": {
+    "informative": "Catalog illustration identifying the fictional {name} product; schematic only, no technical performance inferred.",
+    "decorative": "Decorative separator beside a heading already naming {name}; no additional information or action.",
+    "functional": "Link to the displayed {name} source facts; the accessible name describes opening those facts."
+  },
+  "image_function_template": "Open {name} source facts",
+  "image_destination_prefix": "#benchmark-product-",
+  "image_dimensions": [240, 180],
+  "question_templates": [
+    {"label": "battery", "query": "What is the battery life of {name}?"},
+    {"label": "weight", "query": "What is the weight of {name}?"},
+    {"label": "length", "query": "What is the length of {name}?"},
+    {"label": "price", "query": "What is the price of {name}?"},
+    {"label": "color", "query": "What color is {name}?"},
+    {"label": "sku", "query": "What is the SKU of {name}?"}
+  ],
+  "abstention_templates": [
+    "Does {name} cure diabetes?",
+    "What is the undocumented warranty coverage of {name}?"
+  ],
+  "review_notice": "Machine generated labels. An identified human must review the exact frozen items before this corpus is called independently reviewed. Synthetic results do not establish real-world model quality."
+}

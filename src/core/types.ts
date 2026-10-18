@@ -1,4 +1,4 @@
-export type CoreView = 'overview' | 'ask' | 'evidence' | 'drafts' | 'import' | 'lab' | 'activity';
+export type CoreView = 'overview' | 'ask' | 'evidence' | 'drafts' | 'import' | 'lab' | 'activity' | 'compare' | 'review' | 'connections' | 'account';
 export interface Evidence {
   passage_id: string; product_id: string; product_name: string; source_id: string;
   source_name: string; source_version: string; page: string; text: string; score?: number;

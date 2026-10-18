@@ -1,5 +1,5 @@
 {
-  "updated": "October 15, 2026",
+  "updated": "October 18, 2026",
   "contact": {
     "email": "muhammadzahidulislam2222@gmail.com",
     "operator": "Zahidul Islam",
@@ -103,7 +103,7 @@
           ]
         }
       ],
-      "note": "Current capabilities: versioned evidence, local retrieval, source quotations, drafts, approval and export. Merchant accounts, Shopify connectivity, advanced document intelligence and model training have explicit roadmap gates."
+      "note": "The engineering expansion adds accounts and roles, bounded catalog/document/image ingestion, retrieval inspection, temporal evidence relationships and read-only Shopify connection controls. Store configuration and cloud deployment have separate acceptance gates. Shopify publishing and model training remain later phases."
     },
     {
       "path": "/pricing",
@@ -159,7 +159,7 @@
           "id": "limits",
           "title": "A small space to explore.",
           "body": [
-            "Current workspaces are temporary and subject to storage, request and job limits. Access expires after the configured period, currently 12 hours. Export useful drafts and keep confidential or personal information out of this public service."
+            "Temporary workspace access expires after the configured period, currently 12 hours. Account workspaces persist after login sessions expire. Storage, request and job limits apply to both. Export useful drafts and keep confidential or personal information out of this public service."
           ]
         }
       ]
@@ -249,7 +249,7 @@
           "id": "start",
           "title": "01 / Open a product evidence workspace.",
           "body": [
-            "Choose Open workspace to enter the evidence engine. An isolated temporary workspace is created for your browser. The separate collection workspace stores its approvals locally; it is not a merchant administration connection."
+            "Choose Open workspace to enter the evidence engine. Start with a temporary isolated workspace, or create an account for a persistent workspace with owner, reviewer, editor and viewer permissions. The separate collection workspace stores its approvals locally."
           ]
         },
         {
@@ -272,16 +272,17 @@
           "id": "import",
           "title": "04 / Explore an evidence update.",
           "body": [
-            "The working core accepts the documented JSON catalog structure. Keep imported information generated or explicitly permitted and within the displayed limits. Uploads of manuals, images and live-store synchronization are later milestones."
+            "Import the documented JSON or CSV catalog format, including into an empty account workspace. PDF and static raster uploads attach to an existing product and run through bounded isolated parsing. Scanned pages and image content remain unverified observations; an OCR-required status does not mean text was extracted.",
+            "Inspect source history and affected drafts before replacing or retiring evidence. Keep imported information generated or explicitly permitted and within the displayed limits. Shopify controls support a separately configured read-only connection; they do not publish content."
           ]
         },
         {
           "id": "limits",
           "title": "Know the boundaries.",
           "items": [
-            "Temporary workspace access is tied to this browser’s session cookie.",
+            "Temporary access is tied to this browser’s session cookie; account sessions provide access to persistent workspaces.",
             "Do not upload customer records, credentials or confidential business data.",
-            "The research roadmap contains planned work; the evidence engine reports ten curated retrieval regression checks.",
+            "The engine retains ten regression checks and adds a frozen 200-question synthetic corpus with 64 test questions. Owner-delegated AI review is recorded separately from independent human validation.",
             "No Shopify publishing, paid model inference or commercial service guarantee is included."
           ]
         }
@@ -312,9 +313,10 @@
         },
         {
           "id": "next",
-          "title": "Next / The first five engineering phases",
+          "title": "Engineering / The first five phases",
           "body": [
-            "Accounts and roles, document ingestion, read-only Shopify integration, richer retrieval evaluation and graph-backed content intelligence are under development. Actual cloud deployments depend on verified free-tier account eligibility. These capabilities are not advertised as available today."
+            "The candidate includes accounts and roles, bounded file ingestion, a read-only Shopify connector, explicit retrieval comparisons and source-backed content review. Local checks and provider deployment are distinct: store connection, recovery, release parity and actual cloud acceptance are recorded separately.",
+            "The synthetic corpus was reviewed by an independent AI agent under the owner's delegation. This is not independent human validation or a measurement of general merchant performance. Publishing to Shopify and model training remain later work."
           ]
         }
       ]
@@ -393,7 +395,7 @@
           "id": "operator",
           "title": "1. Operator and scope",
           "body": [
-            "Zahidul Islam operates VeriCommerce AI. Contact muhammadzahidulislam2222@gmail.com with privacy questions. This notice covers the public website and current generated evidence workspace; future merchant services will require an updated notice."
+            "Zahidul Islam operates VeriCommerce AI. Contact muhammadzahidulislam2222@gmail.com with privacy questions. This notice covers the public website, temporary evidence workspaces, account workspaces and the configured read-only catalog connection."
           ]
         },
         {
@@ -401,7 +403,9 @@
           "title": "2. Information processed",
           "items": [
             "Technical request information, such as IP address, browser/request metadata and security logs, may be processed by hosting and delivery infrastructure.",
-            "The evidence engine processes questions and stores an opaque session identifier, catalog inputs, drafts, approvals and job records needed for the workspace workflow.",
+            "The evidence engine processes questions and stores opaque session identifiers, catalog inputs, source revisions, drafts, approvals, review decisions and job records needed for the workspace workflow.",
+            "Account workspaces store an email address, a salted memory-hard password hash, workspace memberships and roles. The current release does not provide automated email verification or password recovery.",
+            "Permitted uploads can include CSV/JSON catalogs, PDF documents and static images. The configured Shopify connector reads catalog records and stores encrypted provider credentials; it does not request product publishing or customer/order access.",
             "The collection workspace stores catalog approval choices in this browser’s local storage.",
             "If you email the operator, your email address and message are handled through the email service."
           ]
@@ -426,7 +430,8 @@
           "id": "retention",
           "title": "5. Retention and deletion",
           "body": [
-            "Workspace access expires after the configured session period, currently 12 hours. Expired workspace data is eligible for cleanup by the running worker. The expiry period is not a promise that all backup or infrastructure-log copies are erased at the same instant.",
+            "Temporary workspace access expires after the configured period, currently 12 hours, and expired temporary data is eligible for worker cleanup. Account login sessions expire separately; persistent account workspace data is retained after logout or session expiry.",
+            "Retiring a source excludes it from current retrieval and invalidates dependent approvals. Uploaded original bytes for that source are removed from active upload storage, while extracted historical revisions, provenance and backup copies may remain. Retiring imported Shopify evidence or disconnecting a store does not promise complete historical erasure; contact the operator for a deletion request.",
             "Catalog local approvals remain until you clear them or clear this site’s browser storage. Operational backups and logs have separate retention; this implementation does not publish a fixed maximum for every infrastructure copy. Ask the operator about a specific deletion request, including any available session context without sharing access credentials."
           ]
         },
@@ -508,7 +513,7 @@
           "id": "availability",
           "title": "5. Availability and responsibility",
           "body": [
-            "The workspace is provided as available, subject to applicable law. Workspaces are temporary; features may change or be suspended. Do not rely on the workspace as your only copy of business information.",
+            "The workspace is provided as available, subject to applicable law. Temporary workspace access expires; account workspaces persist separately. Features may change or be suspended. Keep your own copy of business information.",
             "To the extent permitted by applicable law, no warranty of uninterrupted availability, completeness or fitness for a particular purpose is offered. Nothing in these terms excludes rights, duties or liability that cannot lawfully be excluded."
           ]
         },
@@ -537,6 +542,18 @@
           "duration": "Configured session lifetime; currently 12 hours."
         },
         {
+          "name": "vc_account",
+          "type": "First-party HttpOnly cookie",
+          "purpose": "Authenticates an account session and its workspace memberships.",
+          "duration": "Configured login session lifetime; currently 12 hours, or until logout."
+        },
+        {
+          "name": "vc_shopify_state",
+          "type": "First-party HttpOnly cookie",
+          "purpose": "Binds a user-initiated Shopify authorization callback to its originating browser.",
+          "duration": "Configured authorization lifetime; currently 10 minutes, or until callback."
+        },
+        {
           "name": "vericommerce.demo.approvals.v1",
           "type": "First-party local storage",
           "purpose": "Remembers catalog approvals in the collection workspace.",
@@ -556,7 +573,7 @@
           "title": "Your browser, your controls.",
           "body": [
             "The button below clears only the collection workspace’s catalog approvals from this browser. It does not delete server-side catalog records, backups or an HttpOnly session cookie.",
-            "To remove the session cookie, use your browser’s site-data controls. Clearing site data can remove your ability to access the current workspace. For server-side requests, contact the operator."
+            "Account logout revokes the current login session and clears its cookie. Browser site-data controls remove local cookies and storage; clearing temporary access can prevent you from reopening that workspace. For server-side data requests, contact the operator."
           ]
         },
         {

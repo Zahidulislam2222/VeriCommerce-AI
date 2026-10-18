@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 from typing import Any
 from uuid import uuid4
 
@@ -56,6 +57,12 @@ def ingest(db: Connection, tenant_id: str, catalog: CatalogInput, settings: Sett
     }
     for product in catalog.products:
         fields = product.model_dump(exclude={"claims", "draft", "status", "id"})
+        if fields.get("parent_product_id") is None:
+            fields.pop("parent_product_id", None)
+        db.execute(
+            "DELETE FROM product_tombstones WHERE tenant_id=%s AND product_id=%s",
+            (tenant_id, product.id),
+        )
         if product.id in present_fields and present_fields[product.id] == fields:
             continue
         if product.id in present_fields:
@@ -89,7 +96,11 @@ def ingest(db: Connection, tenant_id: str, catalog: CatalogInput, settings: Sett
             "ON r.tenant_id=s.tenant_id AND r.id=s.current_revision_id WHERE s.tenant_id=%s AND s.id=%s",
             (tenant_id, source.id),
         ).fetchone()
-        if current and current["content_hash"] == content_hash:
+        tombstone = db.execute(
+            "SELECT 1 FROM source_tombstones WHERE tenant_id=%s AND source_id=%s",
+            (tenant_id, source.id),
+        ).fetchone()
+        if current and current["content_hash"] == content_hash and not tombstone:
             counts["sources_unchanged"] += 1
             continue
         revision_count = db.execute(
@@ -132,8 +143,12 @@ def ingest(db: Connection, tenant_id: str, catalog: CatalogInput, settings: Sett
                 )
         db.execute(
             "INSERT INTO sources(tenant_id,id,current_revision_id) VALUES(%s,%s,%s) "
-            "ON CONFLICT(tenant_id,id) DO UPDATE SET current_revision_id=EXCLUDED.current_revision_id",
+            "ON CONFLICT(tenant_id,id) DO UPDATE SET current_revision_id=EXCLUDED.current_revision_id,"
+            "generation=sources.generation+1",
             (tenant_id, source.id, revision_id),
+        )
+        db.execute(
+            "DELETE FROM source_tombstones WHERE tenant_id=%s AND source_id=%s", (tenant_id, source.id)
         )
         if old_revision:
             invalidated = db.execute(
@@ -142,11 +157,23 @@ def ingest(db: Connection, tenant_id: str, catalog: CatalogInput, settings: Sett
                 (tenant_id, Jsonb([{"revision_id": old_revision}])),
             ).fetchall()
             counts["stale_drafts"] += len(invalidated)
+            db.execute(
+                "UPDATE knowledge_relations SET status='stale',valid_to=now() "
+                "WHERE tenant_id=%s AND revision_id=%s AND status!='stale'",
+                (tenant_id, old_revision),
+            )
+        db.execute(
+            "UPDATE image_reviews SET approved=false,approved_by=NULL,approved_at=NULL "
+            "WHERE tenant_id=%s AND upload_id IN (SELECT id FROM evidence_uploads "
+            "WHERE tenant_id=%s AND source_id=%s)",
+            (tenant_id, tenant_id, source.id),
+        )
         counts["sources_changed"] += 1
         audit(db, tenant_id, "source.revision_created", source.id, settings)
     live_count = db.execute(
         "SELECT count(*) AS n FROM passages p JOIN sources s ON p.tenant_id=s.tenant_id "
-        "AND p.revision_id=s.current_revision_id WHERE p.tenant_id=%s",
+        "AND p.revision_id=s.current_revision_id WHERE p.tenant_id=%s AND NOT EXISTS "
+        "(SELECT 1 FROM source_tombstones t WHERE t.tenant_id=s.tenant_id AND t.source_id=s.id)",
         (tenant_id,),
     ).fetchone()
     if live_count and live_count["n"] > settings.max_passages:
@@ -166,6 +193,10 @@ def current_passages(db: Connection, tenant_id: str, product_id: str | None = No
             "JOIN source_revisions r ON r.tenant_id=p.tenant_id AND r.id=p.revision_id "
             "JOIN products pr ON pr.tenant_id=p.tenant_id AND pr.id=p.product_id "
             "WHERE p.tenant_id=%s AND (%s::text IS NULL OR p.product_id=%s) "
+            "AND NOT EXISTS (SELECT 1 FROM source_tombstones t WHERE t.tenant_id=s.tenant_id "
+            "AND t.source_id=s.id) "
+            "AND NOT EXISTS (SELECT 1 FROM product_tombstones t WHERE t.tenant_id=p.tenant_id "
+            "AND t.product_id=p.product_id) "
             "ORDER BY p.product_id,p.position,p.id",
             (tenant_id, product_id, product_id),
         ).fetchall()
@@ -193,7 +224,10 @@ def source_fingerprint(passages: list[dict[str, Any]]) -> str:
 
 def products(db: Connection, tenant_id: str) -> list[dict[str, Any]]:
     rows = db.execute(
-        "SELECT id,fields FROM products WHERE tenant_id=%s ORDER BY id", (tenant_id,)
+        "SELECT id,fields FROM products p WHERE tenant_id=%s AND NOT EXISTS "
+        "(SELECT 1 FROM product_tombstones t WHERE t.tenant_id=p.tenant_id "
+        "AND t.product_id=p.id) ORDER BY id",
+        (tenant_id,),
     ).fetchall()
     evidence = current_passages(db, tenant_id)
     return [
@@ -218,12 +252,61 @@ def products(db: Connection, tenant_id: str) -> list[dict[str, Any]]:
     ]
 
 
+def eligible_products(
+    db: Connection,
+    tenant_id: str,
+    query: str,
+    product_id: str | None = None,
+    sku: str | None = None,
+    color: str | None = None,
+    category: str | None = None,
+) -> list[str]:
+    """Apply current product and variant constraints before retrieval/model work."""
+    rows = db.execute(
+        "SELECT id,fields FROM products p WHERE tenant_id=%s AND NOT EXISTS "
+        "(SELECT 1 FROM product_tombstones t WHERE t.tenant_id=p.tenant_id "
+        "AND t.product_id=p.id)",
+        (tenant_id,),
+    ).fetchall()
+    query_tokens = set(re.findall(r"[a-z0-9_-]+", query.casefold()))
+    # Query SKU entities take precedence over an accompanying parent name.
+    sku_entities = {
+        row["id"]
+        for row in rows
+        if row["fields"].get("sku") and str(row["fields"]["sku"]).casefold() in query_tokens
+    }
+    matching = []
+    for row in rows:
+        identity, fields = row["id"], row["fields"]
+        if (
+            product_id
+            and identity != product_id
+            and not ((sku or color or sku_entities) and fields.get("parent_product_id") == product_id)
+        ):
+            continue
+        if any(
+            value is not None and str(fields.get(key, "")).casefold() != value.casefold()
+            for key, value in (("sku", sku), ("color", color), ("category", category))
+        ):
+            continue
+        matching.append(row)
+    if sku_entities:
+        return [row["id"] for row in matching if row["id"] in sku_entities]
+    named = [
+        row["id"]
+        for row in matching
+        if row["fields"].get("name") and str(row["fields"]["name"]).casefold() in query.casefold()
+    ]
+    return named or [row["id"] for row in matching]
+
+
 def sources(db: Connection, tenant_id: str) -> list[dict[str, Any]]:
     rows = db.execute(
         "SELECT r.id AS revision_id,r.metadata,r.content_hash,(SELECT count(*) FROM passages p "
         "WHERE p.tenant_id=r.tenant_id AND p.revision_id=r.id) AS passage_count FROM sources s "
         "JOIN source_revisions r ON r.tenant_id=s.tenant_id AND r.id=s.current_revision_id "
-        "WHERE s.tenant_id=%s ORDER BY s.id",
+        "WHERE s.tenant_id=%s AND NOT EXISTS (SELECT 1 FROM source_tombstones t "
+        "WHERE t.tenant_id=s.tenant_id AND t.source_id=s.id) ORDER BY s.id",
         (tenant_id,),
     ).fetchall()
     return [
