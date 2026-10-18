@@ -127,7 +127,7 @@ test('real account, first CSV import, context, source graph, image review and is
   await navigate(page, 'Account & team');
   await page.getByRole('button', { name: 'Sign out', exact: true }).click();
   await settled(page);
-  await expect(page.getByRole('heading', { name: 'Anonymous sandbox', exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Temporary workspace', exact: true })).toBeVisible();
   const products = await (await page.request.get('/api/products')).json();
   expect(products.products.some((product: { id: string }) => product.id === productId)).toBe(false);
   await page.getByLabel('Email address', { exact: true }).fill(email);

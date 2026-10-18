@@ -18,9 +18,13 @@ Use [the repository](https://github.com/Zahidulislam2222/VeriCommerce-AI) for no
 
 Frontend: `npm test`, `npm run typecheck`, `npm run lint`, `npm run build`, and browser tests against API/worker. Backend: real PostgreSQL/CPU tests, Ruff, Mypy and Bandit. Release scans include Gitleaks and Semgrep. See [setup](docs/SETUP.md) and [deployment](docs/DEPLOYMENT-CI.md).
 
+Release browser checks serve the built production artifact, matching deployment semantics. Keep React StrictMode enabled for development; its intentional effect replay is a different environment from production request-count contracts. Never change an expected request count merely to accommodate that difference, suppress an authorization failure, or add retries to disguise a race. The quality workflow owns the serving command and API proxy configuration.
+
 Use unmistakably generated local test data and reserved hosts. Never commit credentials, real customer records, database dumps, private operator state or workstation-specific paths. Do not upload private test artifacts to CI. Dependencies must exist in the real registry and be version/license-reviewed.
 
 Changes affecting tenant context, evidence revision, approval, jobs, model/cache, proxy trust or migrations need targeted failure/recovery tests. UI changes retain keyboard/focus, mobile overflow and live reduced-motion behavior. A hosted green badge does not replace independent review or real release validation.
+
+Document capacity and model results with workload/dataset revision, hardware, warm/cold state, denominator and observed failures. Synthetic cases are not customer evidence. New data types, vendors, regions, generated decisions or external actions require the relevant privacy/security/cost assessment; public documentation must distinguish implemented controls from future targets.
 
 ## Publication and permissions
 

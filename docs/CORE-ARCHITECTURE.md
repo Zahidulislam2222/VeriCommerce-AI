@@ -80,3 +80,17 @@ Current deployment pre/post-migration restoration reproduced all 26 table counts
 ## Extension boundaries
 
 The [roadmap](BUILD-PLAN.md) retains phase-specific external acceptance gates, followed by guarded publishing and training. The sanitized Azure Static Web Apps Free reference is actually published: nine desktop/mobile checks passed and six served assets matched local hashes. The authenticated AWS deterministic validator passed four initial and four final-source invocations; all verdicts matched local execution, with final ZIP/native parity verified. The IAM-authenticated GCP lexical smoke ran three successful health/retrieve/abstain cases against three synthetic documents, matching the local image. Its temporary service, image repository and service account were removed before the approved deadline, with 135 baseline resource payloads unchanged. Initial failed attempts remain recorded; final billing is not established. None of these bounded runs measures held-out cloud model quality or continuous backup/RPO compliance. [Cloud packages and cost boundaries](../infra/cloud/README.md) remain outside the primary critical path. Future large-scale design is specified separately in [scalability](SCALABILITY-AND-COST.md).
+
+## Source map and evolution gates
+
+| Concern | Source boundary / next engineering gate |
+|---|---|
+| Browser orchestration | `src/CoreWorkspace.tsx`, `src/core/`: scope-bound snapshots, native forms and explicit review states |
+| Configuration and maintained content | `src/config.ts`, backend `settings.py`, validated `src/data/` and `backend/data/` |
+| Identity and provider operations | Backend account/Shopify routes and repositories: keep membership, tokens and remote transport outside model authority |
+| Evidence/currentness | Backend repository, phase repository and migrations: revision/tombstone/approval invariants across every new query |
+| Worker/parser | Durable job fencing and disposable bounded parsing; future worker pools need contention and fairness evidence |
+| Serving persistence | Connection-per-transaction today; a future pool must reset tenant context and reserve recovery capacity |
+| Future cells | Separate tenant write authority, persistence, queues, object storage and keys; measured routing/migration/failover precedes expansion |
+
+The current store is optimized for bounded catalogs, not an unbounded search corpus. API replicas alone do not remove model locking, transaction/connection pressure, index maintenance or storage retention. The [capacity plan](SCALABILITY-AND-COST.md) defines the workload and migration gates; [operations](OPERATIONS.md) assigns the future SLO/incident policy and [data governance](PRIVACY-AND-LEGAL.md) constrains regions and retention.

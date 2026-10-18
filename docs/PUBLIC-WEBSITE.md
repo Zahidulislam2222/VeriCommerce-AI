@@ -15,4 +15,6 @@ Pricing explains available free access and separate project discussions; there i
 
 Exact routes support direct navigation/reload. Unknown routes return HTTP404 with branded recovery content; private source paths remain blocked. Accessibility combines reduced-motion, keyboard/focus and automated checks; full independent certification is not asserted.
 
-The dated [release report](RELEASE-VERIFICATION.md) records the observed public-page deployment:44 live browser checks,32 local checks,84 artifacts and preservation of the accepted backend. Subsequent release changes require their own evidence.
+The current site describes persistent accounts, permitted catalog/document ingestion, four-method context inspection, reviewed drafts/structured data and the read-only connector. Pricing, privacy and legal pages retain the actual limits and storage/operating boundaries; no checkout, automatic subscription or publishing permission is implied.
+
+The [release report](RELEASE-VERIFICATION.md) separates the earlier public-page deployment (44 live browser checks, 84 artifacts, preserved backend) from the expanded release (228 artifacts, accounts/uploads/content/connector and separately scoped live/hosted checks). Every later copy or feature release needs its own build, route, accessibility, review and publication evidence.

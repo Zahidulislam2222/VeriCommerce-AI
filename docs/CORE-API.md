@@ -11,13 +11,18 @@ POST, PUT, PATCH and DELETE require an exact configured Origin; mutations use JS
 From an authorized same-origin browser:
 
 ```js
-await fetch('/api/session', {
+const sessionResponse = await fetch('/api/session', {
   method: 'POST',
   credentials: 'include',
   headers: { 'Content-Type': 'application/json' },
   body: '{}'
 });
-const response = await fetch('/api/products', { credentials: 'include' });
+if (!sessionResponse.ok) throw new Error('Workspace access failed');
+const { tenant_id } = await sessionResponse.json();
+const response = await fetch('/api/products', {
+  credentials: 'include',
+  headers: { 'X-Workspace-ID': tenant_id }
+});
 if (!response.ok) throw new Error('Product request failed');
 const { products } = await response.json();
 ```
@@ -48,6 +53,8 @@ Passwords contain 12–128 characters and use salted scrypt hashes. Registration
 | viewer | Read |
 
 Temporary workspaces retain read/edit/draft-approval capabilities. Image, relationship and benchmark review approvals require an identified account as well as approval permission. Protected mutations recheck membership inside the tenant transaction.
+
+Bind each group of protected requests to the selected workspace, require the verified response scope and clear old private UI state when identity/scope changes. A workspace-change409 has structured `detail.code:workspace_changed`; other409 responses can describe stale evidence. Reload identity/current evidence before making another decision. Do not automatically replay an approval, upload, connector request or another mutation after a timeout or scope change; first reconcile its actual outcome.
 
 ## Reading contracts
 

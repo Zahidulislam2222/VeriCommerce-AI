@@ -13,13 +13,15 @@ The interface targets WCAG 2.2 AA as an engineering objective. Automated and key
 - Responsive checks include narrow widths and maximum schema-valid imported text.
 - Action errors and asynchronous status use readable text and appropriate live status.
 
-Public-page checks scan every named route for serious/critical axe findings; the core suite checks all seven views. Keyboard journeys include navigation, dialog entry/escape/return and approval conflict. These checks passed in the verified release; see [release evidence](RELEASE-VERIFICATION.md).
+Public-page checks scan every named route for serious/critical axe findings. Core and expanded account/import/context/review/connection workflows retain desktop/mobile checks, including delayed responses and role-dependent actions. Keyboard journeys include navigation, dialog entry/escape/return and approval conflict. These checks passed in the verified release; see [release evidence](RELEASE-VERIFICATION.md).
 
 ## Images and content
 
 Alt text depends on purpose. Informative images convey essential visible information; decorative images use empty alternatives; functional images describe the action. Long technical details belong in visible content. An image cannot establish wavelength, certification, medical suitability or other hidden product properties. [W3C image guidance](https://www.w3.org/WAI/tutorials/images/).
 
 Complex evidence diagrams also need readable relationships or a textual equivalent. Error content should explain a recovery action. Do not rely on color or motion alone for status.
+
+The frozen schematic cases carry explicit purpose and usage context. Functional images link to a real named facts region and open/focus it without leaving the evaluation route; decorative images have an empty alternative beside visible context. Purpose is chosen from the use in the page, never inferred solely from the picture. Image observation and alt review do not authorize hidden product attributes.
 
 ## Release review still required
 

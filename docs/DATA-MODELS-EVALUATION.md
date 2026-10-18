@@ -54,6 +54,12 @@ These questions are simple synthetic attribute lookups, often with product ident
 
 The optional GCP lexical adapter uses a much smaller immutable sanitized three-document smoke fixture. Three actual IAM-authenticated Cloud Run cases passed health, retrieval and abstention contracts and matched the local image. The temporary service, image repository and service account were removed before the approved deadline; 135 baseline resource payloads were unchanged. Initial failures remain in the operational evidence, and final billing is unverified. This smoke is separate from the 64-question held-out evaluation. The authenticated AWS validator passed four initial and four final-source invocations, with all verdicts matching local execution and final ZIP/native parity verified. It verifies deterministic manifest/quotation consistency, not semantic truth or publishing authorization. The actual Azure Free reference serves sanitized smoke data and passed nine browser checks; its final republish matched six served asset hashes and verified the consumed platform configuration; it is not this held-out model benchmark. See [cloud boundaries](../infra/cloud/README.md).
 
+## Next evaluation contract
+
+Before changing the default retrieval or adding graph/model generation, freeze a permitted external catalog, split by product family/source lineage, independently review representative labels and report agreement/disagreements. Add ambiguous variants, conflicting revisions, multilingual units, missing offer fields, hostile documents and explicit unsupported questions. Use paired method comparisons with the same eligibility constraints and include per-case failures, latency/memory/cost and confidence intervals where the sample supports them.
+
+Measure retrieval coverage, answer support/completeness, abstention, structured-data correctness and accessibility separately. A relevant passage does not prove a complete answer, and an approved image record does not prove technical specifications. Graph-versus-hybrid quality and independent human review remain open gates in [the roadmap](BUILD-PLAN.md); the three-document cloud smoke cannot substitute for them.
+
 ## Media and software attribution
 
 The product PNGs were generated with the built-in image tool. Rendered WebPs are derivatives; the silent hero film is an FFmpeg animation of the headphone image. It is not a Seedance-generated film. No paid video output was used.

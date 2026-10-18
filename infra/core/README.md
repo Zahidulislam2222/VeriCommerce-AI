@@ -19,6 +19,8 @@ Prepare whitelisted source/build artifacts, checksum manifest and archive locall
 
 A frontend-only release preserves the accepted backend/image and data. Runtime rollback preserves volumes; it cannot reverse an incompatible SQL migration. Restore into a separate database and verify grants, all-table payload hashes and RLS before any data promotion. Empty-schema validation does not prove populated recovery.
 
-Future cloud deployments must pass actual eligibility/cost checks and remain independent from the synchronous evidence path. Full procedures: [deployment](../../docs/DEPLOYMENT-CI.md), [operations](../../docs/OPERATIONS.md).
+The current 26-table restoration and compatible rollback results are recorded in [release evidence](../../docs/RELEASE-VERIFICATION.md). A successful snapshot restore does not establish a backup schedule; operational owners must set retention, deletion replay, alert delivery and recovery targets before relying on continuous protection.
+
+Independent cloud adapters have their own [execution and cost boundaries](../cloud/README.md). Future application scaling keeps public-edge delivery, private API transactions and queued CPU work separate; increasing replicas requires a measured database connection budget and worker contention checks. Full procedures: [deployment](../../docs/DEPLOYMENT-CI.md), [operations](../../docs/OPERATIONS.md), [capacity plan](../../docs/SCALABILITY-AND-COST.md).
 
 References: [Compose services](https://docs.docker.com/reference/compose-file/services/), [FastAPI containers](https://fastapi.tiangolo.com/deployment/docker/), [PostgreSQL restore](https://www.postgresql.org/docs/17/app-pgrestore.html), [Nginx proxy](https://nginx.org/en/docs/http/ngx_http_proxy_module.html), [Caddy proxy](https://caddyserver.com/docs/caddyfile/directives/reverse_proxy).

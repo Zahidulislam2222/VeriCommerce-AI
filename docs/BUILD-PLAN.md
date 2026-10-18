@@ -585,4 +585,6 @@ of frameworks included.
 
 ## Future scale and availability targets
 
-The [scale and cost design](SCALABILITY-AND-COST.md) defines a future 1M+active-user objective with explicit connection/RPS/CPU-job assumptions and staged cells/sharding/multi-region validation. The [operations policy](OPERATIONS.md) proposes99%availability over rolling 30 days and RPO≤24h/RTO≤4h. These are targets, not measured results or a contractual SLA. They do not remove any phase deployment, evidence, cost or safety gate above.
+The [scale and cost design](SCALABILITY-AND-COST.md) targets 1M+ **simultaneously active users**, with an explicit six-request/minute workload, public/private mix, database connection and worker-backlog arithmetic, viral bursts, staged cells and regional validation. Start with the separately measured 500–1,000-user envelope before increasing demand. A registered-user or monthly-user count is not a concurrency result.
+
+The [operations policy](OPERATIONS.md) proposes 99% availability over rolling 30 days, separate latency/job/freshness indicators, error-budget actions and RPO≤24h/RTO≤4h. Measurement activates only after telemetry, alert ownership and workload acceptance. These targets do not remove any phase-specific deployment or evidence gate. [Data governance](PRIVACY-AND-LEGAL.md) adds retention, rights, vendor/region and applicable US/EU decisions before new data or regional replicas are introduced; [the threat model](THREAT-MODEL.md) tracks isolation, administrator access and abuse controls as capacity grows.

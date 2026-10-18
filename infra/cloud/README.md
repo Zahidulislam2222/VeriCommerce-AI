@@ -55,7 +55,7 @@ a conspicuous warning and fresh owner approval. Billing activation is excluded.
 The separate GCP bootstrap makes its prerequisite API/resource changes explicit;
 review it separately from the image-pinned service plan. A missing prerequisite is a gate.
 
-Future personal demo resources share the verified Portfolio Hub account/project/
+Future project resources share the verified Portfolio Hub account/project/
 subscription and supported hub/project tags. Names retain the owning project
 prefix. Azure defaults to the existing `portfolio-hub` resource group; the earlier
 deployed project group is retained without migration. The displayed GCP project
@@ -143,3 +143,7 @@ Official references: [AWS Free Tier metadata](https://docs.aws.amazon.com/us_en/
 [Cloud Run pricing](https://cloud.google.com/run/pricing),
 [Cloud Run authentication](https://cloud.google.com/run/docs/authenticating/service-to-service),
 [AES-GCM nonce requirements](https://cryptography.io/en/stable/hazmat/primitives/aead/).
+
+For the complete application, see [architecture](../../docs/CORE-ARCHITECTURE.md), [release evidence](../../docs/RELEASE-VERIFICATION.md) and [capacity/cost planning](../../docs/SCALABILITY-AND-COST.md). These small independent contracts do not establish million-user serving capacity. Scaling or replicating them requires a new workload, allowance, dependency-cost and residency assessment; retained storage and logs can continue charging after compute scales down.
+
+Future architecture gives suitable AWS/GCP/Azure services priority within verified shared allowances, while assessing a hybrid boundary before paid expansion. Keep heavy model execution or persistent workloads on existing capacity when that is the measured economical choice. A cloud placement record must identify the component, location, reason, dependencies, quota/cost limits and removal/export procedure. The current separate contracts are evidence for their own workloads; they do not authorize a production-data migration or a new provider deployment.

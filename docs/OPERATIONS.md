@@ -47,8 +47,10 @@ The subsequent public-page release preserved the existing API/worker/database id
 |---|---|---|
 | Interactive availability | Good eligible requests / all eligible requests, over rolling 30 days | At least 99% |
 | Interactive latency | Eligible non-model requests completed within 1 second / eligible requests | At least 95%, after workload validation |
+| Interactive tail latency | Eligible non-model requests completed within 2 seconds / eligible requests | At least 99%, after workload validation |
 | Job acceptance | Valid requests durably acknowledged within 2 seconds / eligible submissions | At least 99%, measured separately |
 | Job outcome | Accepted jobs reaching a usable terminal result within the agreed class deadline / accepted jobs | Define per workload after CPU benchmarks; failures/cancellations reported separately |
+| Evidence freshness | Accepted, valid source changes visible to current-evidence reads within 60 seconds / accepted valid changes | At least 99%, subject to ingestion workload validation |
 
 Eligible interactive traffic is well-formed in-scope product/evidence/search/draft-read/approval traffic from admitted workspaces. Good responses have the expected success schema, no server failure and complete within the proposed 5-second interactive deadline. This deadline still requires implementation, cancellation and workload validation before SLO measurement starts. Invalid input, expired credentials and genuinely over-quota clients are counted separately. Capacity-driven rejection or unexpected429 for an otherwise admitted eligible request is a bad event; excluding overload would hide failure. Missing telemetry is reported as unknown coverage and cannot be silently called success.
 
@@ -57,6 +59,23 @@ Measure website delivery and working API separately; a healthy static page must 
 The request error budget is **1% of eligible requests** in the rolling window. At one million eligible requests that permits 10,000 bad events. A time-based equivalent at continuously observed full outage is 432 minutes in 30 days (7 hours 12 minutes); it is not interchangeable with a traffic-weighted request budget. A 4-hour full outage would consume about 56% of that time-equivalent allowance.
 
 Proposed actions: record budget consumption daily; pause nonessential releases when the window is exhausted; permit recovery/security fixes; investigate sustained burn above 1× and page the operator for a validated fast-burn alert. Choose multiwindow thresholds from actual traffic and incident simulations to avoid paging on one sparse request. Publish window, numerator, denominator, coverage and burn—not a bare uptime percentage. Google distinguishes SLIs, SLOs and contractual SLAs: [SRE definitions](https://sre.google/sre-book/service-level-objectives/), [SLO implementation](https://sre.google/workbook/implementing-slos/).
+
+### Measurement activation and ownership
+
+Zahidul Islam owns the initial service and release decision. Before activating the SLO, assign a reachable incident responder and recovery substitute, validate alert delivery, record coverage gaps and accept the workload/cost envelope. The current service has no staffed continuous on-call rota.
+
+Measure API availability at the user-facing gateway plus application outcome, using bounded route templates/status/deadline labels. Count a 200 response with an invalid success schema or unusable result as a failed journey where that contract applies. Measure upload acceptance separately from successful terminal processing; an accepted202 must not hide a failed job. Keep source freshness separate from the invariant that retired or superseded evidence cannot be used for a new approval. Cross-tenant disclosure and approval-integrity failures trigger an incident regardless of the availability budget.
+
+Use synthetic journeys for login → import → current search → citation inspection → approval/export and separately monitor public page delivery. Correlate a random request ID, job ID and release ID through gateway/API/worker without logging credentials, raw questions or source content. Do not use email, tenant IDs or product IDs as unbounded metric labels. Proposed sparse-traffic fallback is a synthetic result with its own denominator; never combine it with user-request counts as though they were the same population.
+
+| Proposed trigger | Action / owner |
+|---|---|
+| 14.4× burn over both 1 hour and 5 minutes | Notify incident responder; inspect recent releases, dependency errors and admission pressure |
+| 6× burn over both 6 hours and 30 minutes | Escalate sustained failure, contain the affected workload/cell and prepare compatible rollback |
+| Budget exhausted or telemetry coverage lost | Release owner pauses nonessential changes; allow reviewed recovery/security work and restore trustworthy measurement |
+| Queue age/freshness deadline breach | Worker owner reduces admission, exposes delay and reconciles accepted work before retrying |
+
+These are proposed alert starting points, to be calibrated with a minimum useful event volume and fault exercises. Record false positives, missed incidents and delivery failures before enabling paging. Maintain a daily budget report and a monthly review of eligibility, latency classes, retention, cost and unresolved operational risk. No 30-day success percentage is published until the entire window and measurement coverage are available.
 
 ## Proposed backup and restoration policy
 

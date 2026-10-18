@@ -14,9 +14,9 @@ and pip compatibility checks passed. An earlier hosted installation failed on a
 direct Pillow 13 pin versus locked 12.3; the correction retains the deployed 12.3
 runtime and adds an actual-repository regression. Earlier 140 local checks used a
 different Pillow environment and are superseded by this clean run.
-Final hosted [quality](https://github.com/Zahidulislam2222/VeriCommerce-AI/actions/runs/39085575603)
-and [security](https://github.com/Zahidulislam2222/VeriCommerce-AI/actions/runs/39085577739)
-passed on source `f960239df0210616ebee065e86e1c975bd3d1e54`: 142 backend/infrastructure,
+Final hosted [quality](https://github.com/Zahidulislam2222/VeriCommerce-AI/actions/runs/39086404612)
+and [security](https://github.com/Zahidulislam2222/VeriCommerce-AI/actions/runs/39086404587)
+passed on source `1497c060a0f73a6ff9e7528b4d048da1e266b809`: 142 backend/infrastructure,
 11 domain and 80 desktop/mobile browser checks, with zero skipped tests and zero browser retries. The backend reported two warnings. The browser workflow serves
 the built production artifact; a regression guards that boundary. Earlier failed
 installation/development-artifact runs remain historical failures.
@@ -175,3 +175,5 @@ fine-tuning remain future work. Runtime retrieval uses existing-server CPU
 without paid model API calls.
 
 For new releases, record candidate-specific tests, public behavior, review, parity and recovery scope after they actually run. See [deployment](DEPLOYMENT-CI.md), [operations](OPERATIONS.md) and [roadmap](BUILD-PLAN.md).
+
+The 2026-10-18 public documentation refresh corrects component summaries, makes temporary/persistent access language consistent and expands the future workload/SLO/data-governance plan. Preparation of that refresh does not establish a new deployment, hosted run or document-export result; add its own evidence after those operations complete.

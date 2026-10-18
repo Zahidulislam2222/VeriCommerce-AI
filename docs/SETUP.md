@@ -66,7 +66,15 @@ npm run build
 npm run test:browser
 ```
 
-The full browser suite needs API/worker and uses isolated generated data. Do not run capacity tests against the public origin. Development tools are in `backend/requirements-dev.txt`; install them in the development environment, then from `backend/`:
+The full browser suite needs API/worker and uses isolated generated data. Do not run capacity tests against the public origin. In a separate terminal, after building, serve the artifact using the same command as [the quality workflow](../.github/workflows/ci.yml):
+
+```sh
+npm run preview -- --host 127.0.0.1 --port 5178 --strictPort
+```
+
+Set `DEV_API_TARGET` before that server starts, and set `TEST_BASE_URL` to its exact allowed origin. The port above matches the safe test example; change the origin/allowlist together if it is occupied. Vite inherits the API proxy for the production artifact server. Keep the API and worker alive for the entire suite. Development React StrictMode replays effects, so development request counts are not the production acceptance environment. `npm run dev` remains the interactive development command.
+
+Development tools are in `backend/requirements-dev.txt`; install them in the development environment, then from `backend/`:
 
 ```sh
 python -m ruff check vericommerce_core
@@ -76,3 +84,23 @@ python -m bandit -r vericommerce_core
 ```
 
 Backend integration tests require protected `VC_TEST_ADMIN_DATABASE_URL` and `VC_TEST_DATABASE_URL` values pointing to a dedicated database with the `_test` suffix. The fixture drops/recreates its public schema; never use a valuable database. The CPU integration case also requires an explicitly prewarmed `VC_TEST_EMBEDDING_CACHE_DIR`. Install `.github/ci-requirements.txt` for the safe JUnit helper when running `tests/infra/` too. Inspect the tests first. Missing database, model, Chrome or security tools are missing gates, not passes. Follow [deployment](DEPLOYMENT-CI.md) for security scans and independent review.
+
+### Full repository test suite
+
+The copied `backend/.env.example` uses paths relative to `backend/`. Infrastructure adapter tests also resolve repository-relative files. Run the complete suite from the repository root with all eight maintained backend-data paths rebased; neither an unmodified root invocation nor moving the full suite into `backend/` supplies both sets of paths correctly.
+
+With the development environment activated and the protected test database/cache settings configured, run from the repository root in a POSIX shell:
+
+```sh
+export VC_SEED_PATH="$PWD/backend/data/demo.json"
+export VC_POLICY_PATH="$PWD/backend/data/policy.json"
+export VC_EVALUATION_PATH="$PWD/backend/data/heldout.json"
+export VC_MIGRATIONS_PATH="$PWD/backend/migrations"
+export VC_INTELLIGENCE_POLICY_PATH="$PWD/backend/data/intelligence.json"
+export VC_BENCHMARK_PATH="$PWD/backend/data/benchmark.json"
+export VC_BENCHMARK_AGENT_REVIEW_PATH="$PWD/backend/data/benchmark-agent-review.json"
+export VC_SHOPIFY_QUERY_PATH="$PWD/backend/data/shopify_graphql.json"
+python -m pytest -q tests/backend tests/infra
+```
+
+These exports override the copied relative data paths for that shell. A protected test settings file can instead contain the same eight absolute paths. Keep the database URLs and model-cache location private and point them to the dedicated test environment. The shorter backend-directory commands above cover that component, not all infrastructure tests. Install the reviewed production hash lock and development tools together; a passing suite in a different installed dependency environment is not package-identical release evidence.

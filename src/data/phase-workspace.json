@@ -31,7 +31,7 @@
     "compare": "Choose a retrieval method, apply explicit constraints and compare attributed evidence. Inspect why each passage entered or left the context.",
     "review": "Inspect claims, conflicting values and affected drafts. Image observations are separate from verified source attributes. Review alt text in context and inspect deterministic structured data.",
     "connections": "A read-only Shopify connection, with visible scopes, synchronization history and delivery health. No catalog publishing takes place here.",
-    "account": "Use an account for membership-based access. The anonymous sandbox remains a separate, temporary demonstration."
+    "account": "Use an account for membership-based access. Temporary browser workspaces remain separate from account workspaces."
   },
   "common": {
     "pending": "This capability is not available from the current server. Refresh after the service is configured.",
@@ -71,11 +71,11 @@
     "members": "Workspace members",
     "addMember": "Add existing account",
     "memberHint": "Add an already registered account by email. This does not send an invitation or email.",
-    "anonymous": "Anonymous sandbox",
-    "anonymousNote": "No account is signed in. Your current fictional catalog is isolated by a temporary browser cookie.",
+    "anonymous": "Temporary workspace",
+    "anonymousNote": "No account is signed in. The generated catalog is isolated by a temporary browser cookie.",
     "registered": "Account created. Your workspace is ready.",
     "signedIn": "Signed in to your account workspace.",
-    "signedOut": "Signed out. Returning to the anonymous sandbox.",
+    "signedOut": "Signed out. Returning to the temporary workspace.",
     "workspaceCreated": "Workspace created.",
     "switched": "Active workspace changed. Previous workspace data was cleared from this view.",
     "memberSaved": "Workspace membership updated.",

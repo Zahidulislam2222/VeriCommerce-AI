@@ -25,6 +25,19 @@ Search questions are processed to retrieve passages and are not stored as query 
 
 The worker purges expired temporary workspace records and dependent live data. Persistent account data remains after session expiry/logout. Source deletion purges its original uploaded bytes, retains historical extracted revisions, and tombstones current evidence while invalidating dependent approvals. Historical text and backups are not automatically erased by a source deletion. Expiry is not an immediate erasure guarantee across logs/backups. Log/backup retention periods and automated deletion across restored backups are not fully verified. Do not claim end-to-end encryption, fixed backup erasure deadlines or indefinite durable storage.
 
+### Retention and deletion decisions
+
+| Data class | Current lifecycle | Operational decision still needed |
+|---|---|---|
+| Temporary workspace | Configured 12-hour access expiry; worker purges expired workspace data | Verify cleanup timeliness and all external log/backup copies |
+| Account and persistent workspace | Session expiry/logout ends access without deleting stored work | Document account closure, authority checks, retention period and legal holds |
+| Source/upload | Source deletion removes original bytes and current eligibility; extracted revision history remains | Separate evidence retirement from an applicable erasure request and reconcile dependent records |
+| Shopify connection/import | Disconnect removes local credentials; imported evidence retirement excludes active records while historical provenance may remain | Review remote app removal, vendor retention and the applicable distribution/compliance path |
+| Exports and backups | Exported files can leave operator control; dated encrypted recovery copies are retained | Set expiry, key recovery, restore-time deletion replay and recipient responsibilities |
+| Logs, rate keys and audit | Security/operational metadata; raw audit question/source text is excluded | Set purpose-specific duration, access review, deletion checks and incident evidence holds |
+
+Maintain a private processing register with purpose, controller/processor role, data categories, users/recipients, processing and support regions, vendor/subprocessor terms, lawful basis where required, retention trigger, deletion owner and proof. Review it before accepting a new data class, adding a region/vendor, enabling optional tracking, or changing model use. Restoration must reapply accepted deletion records before exposing data; keeping every historical source forever is not a default answer to a valid erasure obligation.
+
 Use generated or explicitly permitted non-sensitive inputs. Do not upload customer records, health data, payment details, credentials or confidential merchant material. Temporary access has no recovery; loss of the cookie can prevent retrieval. Account access has no password-reset service. Export needed content separately.
 
 The current permitted-store connection imports product catalog data only. Account
@@ -61,11 +74,15 @@ The US has federal sector-specific and state privacy/security rules, not one uni
 
 California obligations depend on applicable business definitions/thresholds and processing, not merely a website being reachable there. Assess rights/notices, sale/sharing and sensitive information against the current law; other states require separate analysis. Do not claim all US privacy requirements are met because the application has a privacy page. [California Attorney General CCPA guidance](https://oag.ca.gov/privacy/ccpa).
 
+HIPAA assessment is relevant only if the service's actual role and data bring it into covered-entity/business-associate processing. Health-related product copy alone does not establish that classification. The current application is not approved for protected health information. A future regulated workflow needs an eligible service configuration, applicable business-associate agreements, subcontractor/region review, risk analysis and operational safeguards before data is sent; encryption or a cloud provider's certificate is insufficient. [HHS cloud-computing guidance](https://www.hhs.gov/hipaa/for-professionals/special-topics/health-information-technology/cloud-computing/index.html).
+
 Assess children's-data rules if a service is directed to children or has relevant actual knowledge. The current interface is intended for business/product information and does not provide a children's-data consent system. [FTC COPPA guidance](https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions).
 
 ## Release requirements before handling merchant/customer personal data
 
 Complete a data map and retention schedule, contractual role/DPA and subprocessor review, rights/takedown workflow, transfer assessment, credential encryption/key management, incident notification process and independently tested deletion/restoration controls. Publish accurate operator disclosures where legally required; do not invent an office, registration, certification or governing jurisdiction.
+
+The accountable operator should approve a readiness record for the actual countries, data and business model, supported by qualified legal review for unresolved applicability. Record a decision for access/correction/deletion/objection requests, applicable opt-out signals, children/sensitive data, breach notification, advertising claims and accessibility obligations. Technical changes and legal/contractual acceptance are separate checklist items; a clean scanner result cannot close the latter.
 
 The current source-grounded design supports provenance and human approval, but those controls alone do not establish privacy, advertising, accessibility or AI-regulatory compliance. Reassess obligations as generative models, recommendations, profiling, advertising or automated decisions are introduced.
 

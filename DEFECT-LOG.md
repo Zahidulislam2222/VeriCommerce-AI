@@ -2,6 +2,13 @@
 
 Record each defect found after a completion claim. Never remove historical rows.
 
+Public release refresh, 2026-10-18:
+
+| Date | What escaped | Gate that should have caught it | Gate added or improved? |
+|---|---|---|---|
+| 2026-10-18 | New account-panel copy used outdated product-positioning language after the public wording policy had been checked. | The maintained-copy check enumerated four older JSON files and omitted the new account-panel content. | The existing check now discovers every maintained JSON file; it reproduced the failure before the copy correction. Exact cookie/storage protocol identifiers retain their compatibility exception. |
+| 2026-10-18 | Some component READMEs still described accounts, uploads, store integration and cloud deployment as absent after those features were delivered. | Cross-document capability reconciliation against current source, release receipts and every tracked README. | The documentation audit now includes the cloud README and checks all six tracked READMEs against the current capability boundary; release-specific evidence remains dated. |
+
 | Date | What escaped | Gate that should have caught it | Gate added or improved? |
 |---|---|---|---|
 | 2026-10-18 | Hosted browser request-count contracts ran against development React while local/live acceptance used the production build, causing four failures from StrictMode's extra development effects. | Explicit CI artifact/mode parity and the same focused tests in both modes. | The unchanged four tests reproduced all four failures in an isolated development bundle and passed in production preview; verified the real API proxy. CI now serves its existing production build, with original assertions, StrictMode source, zero retries and no skips retained; added a workflow regression. |

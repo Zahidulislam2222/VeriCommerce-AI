@@ -61,3 +61,11 @@ Optional cloud adapters use their own typed JSON owner because they package inde
 Deployment reserves a loopback port and nonoverlapping network from actual inventory. Its dynamic pool excludes the fixed trusted proxy address. Cache and Nginx temporary paths must be writable under the actual nonroot UIDs/read-only filesystem. Examples do not authorize shared-service mutation.
 
 Every configuration change updates its example, validation, regression coverage and release evidence. Audit public artifacts for credentials, private addresses, workstation paths and unintended environment output.
+
+## Change and audit checklist
+
+Before changing a quota, timeout, provider or region, identify the typed owner and every dependent bound. In particular, binary/base64 transport, reverse-proxy body size, parser storage/memory/result size and worker deadline must agree. Password CPU limits, model threads and database connection timeouts protect different resources; raising one quota is not a capacity validation.
+
+Public `VITE_` values are compiled into the browser; never place credentials there. `DEV_API_TARGET` is a local build-tool proxy input, inherited by production-artifact serving for integration checks. Browser requests retain same-origin `/api`. Production deployment uses the reviewed reverse-proxy configuration rather than embedding a private API address into JavaScript.
+
+Release verification inventories intended public files through Git, scans obvious secret patterns and privately compares configured secret values without printing them. Protected settings, credentials, keys, database archives, provider state and project records stay ignored and outside release allowlists/history. Stable HTTP paths, signed-provider syntax and schema identifiers remain protocol constants; provider/model/limit choices remain configuration. Regression checks enforce settings/example coverage, lock consistency, maintained-copy discovery and production-artifact CI serving.

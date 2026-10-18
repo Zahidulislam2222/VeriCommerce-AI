@@ -22,4 +22,10 @@ The five-second silent hero film is a local FFmpeg animation of the generated he
 
 The browser workspace supports local collection filtering, source inspection, review/approval and JSON export in browser storage. The `/engine` interface uses server-persisted evidence, real asynchronous jobs, version checks and measured regression results. UI copy distinguishes local storage from server records; clearing local approvals does not erase server data.
 
-Roadmap comparisons are labeled planned, with no fabricated measured quality/latency chart. Current evaluation results apply only to the curated generated set. No customer logo, endorsement, store connection or external publication is implied by the visual presentation.
+The public research roadmap describes future model work. The engine's measured comparison displays actual available methods and frozen-corpus results with separate agent/human review states. Those numbers apply to that synthetic set. Product studies are generated visual assets; actual permitted-store connection and workflow evidence are recorded separately in [release verification](RELEASE-VERIFICATION.md).
+
+## Workspace transitions and honest state
+
+Changing identity/workspace clears prior private data, answers and dialogs before loading the new scope. Expected-workspace headers and response identity checks reject late responses; product/source request generations prevent a delayed result appearing under a different selection. Readiness, errors, unavailable methods, configured-but-disconnected stores and blocked structured data remain explicit UI states. A closed approval dialog does not itself mean the refreshed approval state has arrived.
+
+Copy and labels live in maintained JSON; route/limit/protocol ownership is centralized in typed configuration. A maintained-copy regression discovers all JSON data files so new panels do not silently escape language checks. Responsive gates include narrow layouts, maximum schema-valid text, native controls and long evidence identifiers.

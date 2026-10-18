@@ -48,7 +48,11 @@ Current release `20261018-phase5-02` has 228 matching deployment artifacts, four
 
 The earlier verified public-page release passed 44 live desktop/mobile browser checks, 8 domain checks, type/lint/build/security gates and independent review. Its 84 artifact hashes matched; the existing backend remained unchanged. The release report states recovery scope and limitations.
 
-The [ten-phase roadmap](docs/BUILD-PLAN.md) expands this foundation. A future 99% availability objective and architecture for 1M+ active users are engineering targets, not current uptime or capacity measurements. Assumptions, validation and cost boundaries are in [operations](docs/OPERATIONS.md) and [scalability](docs/SCALABILITY-AND-COST.md).
+The [ten-phase roadmap](docs/BUILD-PLAN.md) expands this foundation. The future design targets **1M+ simultaneously active users** with a **99% rolling-30-day availability SLO**, subject to workload, quotas, paid capacity and staged validation. The current single-host deployment has no measured 500–1,000-user or million-user capacity result. The [capacity plan](docs/SCALABILITY-AND-COST.md) defines request mix, connection/database/queue budgets, viral bursts, regional cells and cost equations; [operations](docs/OPERATIONS.md) defines eligible requests, error budgets, recovery and measurement activation.
+
+For an engineering walkthrough, follow account → import → inspect context → prepare draft → inspect citations → approve → export. Import permitted non-sensitive product material only. Read [data and evaluation](docs/DATA-MODELS-EVALUATION.md) for synthetic-corpus limits and [privacy/data governance](docs/PRIVACY-AND-LEGAL.md) for retention, rights requests and US/EU assessment before expanding the data scope.
+
+Future infrastructure prioritizes appropriate AWS, GCP and Azure services within verified allowances, alongside a measured hybrid use of existing capacity for persistent or heavy CPU workloads. The capacity plan records component placement and dependent costs; this direction does not imply automatic migration or free operation at large scale.
 
 Contact: [muhammadzahidulislam2222@gmail.com](mailto:muhammadzahidulislam2222@gmail.com).
 

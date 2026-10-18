@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { URL } from 'node:url';
 import ts from 'typescript';
 
-const files = ['site.json', 'core.json', 'public-navigation.json', 'public-pages.json'];
+const files = readdirSync(new URL('../src/data/', import.meta.url)).filter((name) => name.endsWith('.json'));
 const storageIdentifiers = new Set(['vc_demo', 'vericommerce.demo.approvals.v1']);
 const prohibited = /\b(?:demo|demonstration|preview|pilot|prototype|sandbox|fictional|sample|illustrative)\b/i;
 

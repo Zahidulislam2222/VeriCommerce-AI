@@ -2,6 +2,20 @@
 
 Dates describe recorded engineering work. Deployment and publication claims require the linked evidence; future roadmap items are not completed features.
 
+## 2026-10-18 — account, evidence and read-only catalog expansion
+
+- Persistent accounts and four workspace roles, separate temporary access, expected-workspace request binding and transaction-time authorization.
+- Bounded CSV/JSON/PDF/static-raster ingestion, isolated parsing, immutable revision history, retry/dead-letter controls and current-evidence retirement.
+- Keyword/dense/hybrid/deterministic-rerank context comparisons, exact variant constraints, selected/excluded traces and versioned snapshots.
+- Description/FAQ drafts, temporal relationships and impact, normalized claim conflicts, image-purpose review and provenance-checked Product/ProductGroup structured data.
+- Read-only Shopify OAuth/sync, encrypted refreshed tokens, durable HMAC receipts and parent/variant mapping. Actual permitted-store import and changed-source approval blocking passed; application publishing remains outside the connector.
+- Frozen 30-product/120-image/200-question family-split evaluation with separate agent/human review states; 64 test questions compared across four methods. Keyword led this synthetic corpus; no general method superiority is inferred.
+- Azure Free static delivery, bounded private AWS validation and a temporary authenticated GCP retrieval contract were exercised independently; temporary GCP resources were removed within the approved window.
+- Current release `20261018-phase5-02`: 228 matching artifacts, eight HTTPS routes and four healthy constrained services. Current 26-table restoration and compatible rollback preserved approved drafts; dated encrypted off-server recovery retains its original snapshot scope.
+- Hosted quality/security at source `1497c06` passed 142 backend/infrastructure, 11 domain and 80 browser checks. Earlier 46 live browser checks belong to the integrated expansion; real store checks are recorded separately. [Evidence and remaining gates](docs/RELEASE-VERIFICATION.md).
+
+The current documentation refresh corrects stale component summaries and expands the future simultaneous-user workload, SLO/incident ownership, cost equations, retention and US/EU governance requirements. Its new deployment and publication results will be recorded only after verification.
+
 ## 0.2.0 — engineering release, 2026-10-15
 
 - Public engineering documentation: setup, configuration, API, architecture, security/threat model, privacy/US/EU applicability, accessibility, data/model/evaluation licenses, release/CI, incidents/recovery and future scaling/cost.
