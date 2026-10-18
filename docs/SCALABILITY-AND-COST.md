@@ -29,7 +29,7 @@ Measure geographic mix, active/idle ratio, device reconnects, request distributi
 These are derived from stated planning assumptions, not benchmark results. Real inference may be much slower; measured model service time must replace 0.25 seconds. Current draft jobs are extractive templates, so future generative jobs require an independent capacity model.
 
 Before growth, a proposed normal test is 1,000 simultaneously active users at six
-requests/minute each, or100requests/s, followed by a10×five-minute spike and a
+requests/minute each, or 100 requests/s, followed by a 10× five-minute spike and a
 recovery interval. These tests have not run. First agree the read/write/upload
 mix, admission limits, payload sizes and latency/error targets; approve any paid
 load separately. Even500–1,000-user capacity is currently unmeasured. Database

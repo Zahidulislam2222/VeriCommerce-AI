@@ -1,6 +1,6 @@
 # Evidence API
 
-API version **0.2.0**. The current release is `20261018-phase3-01`, following the integrated expansion `20261018-phase1-01` and the verified 2026-10-15 evidence release. Its 228 artifact hashes, eight HTTPS checks and four healthy services passed verification. The preceding expansion passed 46 live browser checks; current development-store API flows were checked separately. These integrated releases carry phases 1–5 features; they are not five separately demonstrated phase deployments. An actual populated encrypted recovery matched all 26 tables, and rollback/forward preserved three approved drafts and persistent volumes. Separate Azure, AWS and GCP smoke contracts are documented with their limited scope in [release evidence](RELEASE-VERIFICATION.md).
+API version **0.2.0**. The current release is `20261018-phase5-02`, following quota release `20261018-phase3-01`, the integrated expansion `20261018-phase1-01` and the verified 2026-10-15 evidence release. Its 228 artifact hashes, eight HTTPS checks and four healthy services passed verification. The preceding expansion passed 46 live browser checks; current development-store API flows were checked separately. These integrated releases carry phases 1–5 features; they are not five separately demonstrated phase deployments. The current deployment passed populated pre/post-migration restoration across 26 tables. An earlier authenticated encrypted recovery belongs to the dated `phase3-01` snapshot. Actual current-release rollback/forward preserved three approved drafts and persistent volumes, followed by 228-artifact parity and eight HTTPS checks. Separate Azure, AWS and GCP smoke contracts are documented with their limited scope in [release evidence](RELEASE-VERIFICATION.md).
 
 All routes use same-origin `/api`; the machine-readable schema is `/api/openapi.json`. Interactive Swagger assets are disabled to retain the self-hosted CSP. The application supports temporary isolated browser workspaces and persistent membership-based account workspaces.
 
@@ -132,9 +132,9 @@ The additive review API exposes `GET /api/intelligence/{product_id}` for normali
 
 ## Read-only Shopify connector
 
-These routes require an owner account and explicit provider configuration. Real OAuth installation with exactly `read_products` and a successful development-store sync were verified: 23 parent products and 38 variants became 61 current product records, with 23 sources and 206 passages. Actual parent/SKU/color constraints selected the intended child evidence and returned a cited answer. This verifies initial synchronization; registration of webhook topics alone does not establish actual incremental provider delivery.
+These routes require an owner account and explicit provider configuration. Real OAuth installation with exactly `read_products` and a successful development-store sync were verified: 23 parent products and 38 variants became 61 current product records, with 23 sources and 206 passages. Actual parent/SKU/color constraints selected the intended child evidence and returned a cited answer. Two subsequently received real `products/update` events passed HMAC verification and were durably applied. An explicitly approved temporary title change and restoration through Shopify Admin updated and restored parent/child records; a following full sync matched every canonical product record, with no duplicates.
 
-In the observed store flow, a three-citation FAQ returned 409 for export before approval, then approval and export returned 200 with unchanged draft text and `published:false`. The owner-delegated agent inspected and approved this test draft; no independent human validation or Shopify product write is claimed.
+In the observed store flow, a three-citation FAQ returned 409 for export before approval, then approval and export returned 200 with unchanged draft text and `published:false`. The owner-delegated agent inspected and approved this test draft; no independent human validation or application publishing is claimed. The separate webhook test made two owner-approved title saves through Shopify Admin, restored the original title, and made zero application product-write calls. A draft based on the earlier revision then returned 409 on export.
 
 | Route | Behavior |
 |---|---|
@@ -147,7 +147,7 @@ In the observed store flow, a three-citation FAQ returned 409 for export before 
 | `DELETE /api/shopify/data` | Retires imported current evidence; historical records may remain |
 | `POST /api/shopify/webhook` | Raw-body HMAC, durable duplicate-safe receipts and ordered updates/deletes/uninstall |
 
-Only `read_products` is permitted. Tokens are encrypted and bound to workspace/shop, with expiry/refresh handling. Stable child products carry variant SKU and authoritative Color options; removed variants are retired. Disconnect is a local credential action, not a claim that remote installation/scopes were revoked. No product mutations or publishing routes exist.
+Only `read_products` is permitted. Tokens are encrypted and bound to workspace/shop, with expiry/refresh handling. An actual expired-token refresh retained exactly `read_products`; rotated credentials were saved in protected private recovery storage. Stable child products carry variant SKU and authoritative Color options; removed variants are retired. Disconnect is a local credential action, not a claim that remote installation/scopes were revoked. No product mutations or publishing routes exist.
 
 ## Errors and operational endpoints
 

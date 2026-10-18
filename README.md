@@ -8,9 +8,10 @@ VeriCommerce AI connects product information to the sources that support it. It 
 
 ## Current release
 
-The expanded application is live as `20261018-phase3-01`. Its final source passed
-140 backend/infrastructure checks. The preceding expansion passed 80 local and
-46 live browser checks; current store flows were verified separately. Remaining
+The expanded application is live as `20261018-phase5-02`. Its final source passed
+142 backend/infrastructure, 11 domain and 80 browser checks in hosted CI. The
+preceding expansion passed 46 live browser checks; current store flows were
+verified separately. Remaining
 phase acceptance limits are recorded in the release report.
 
 The application combines an editorial React interface with FastAPI, PostgreSQL tenant isolation, durable fenced workers and pinned ONNX CPU retrieval. Dedicated product, company, documentation, accessibility, security and US/EU information pages use self-hosted fonts and media.
@@ -23,7 +24,7 @@ The application combines an editorial React interface with FastAPI, PostgreSQL t
 | Keyword, dense, hybrid and deterministic rerank comparison | Exact SKU/color constraints apply before embedding; unavailable methods are reported |
 | Answers with revision/page citations | Quotations; relevance does not establish complete question entailment |
 | Persisted jobs, description/FAQ drafts, approval and JSON export | Export does not write to Shopify; retry stays within the original attempt budget |
-| Read-only Shopify connector | Actual `read_products` installation and sync verified: 23 parent products and 38 variants; no store writes |
+| Read-only Shopify connector | Actual `read_products` installation and sync verified: 23 parent products and 38 variants; app product-write calls remain zero |
 | Product/ProductGroup JSON-LD and image-purpose review | Missing offer evidence blocks output; critical claims require separate verification |
 | Frozen synthetic retrieval comparison | 30 products, 120 original schematics, 200 questions, 64 held-out test cases; agent review is not human validation |
 | Responsive navigation, dialogs and reduced motion | Automated and keyboard checks; no independent certification |
@@ -43,7 +44,7 @@ Read [contributing](CONTRIBUTING.md), [security reporting](SECURITY.md) and [con
 
 ## Evidence and future targets
 
-Current release `20261018-phase3-01` has 228 matching deployment artifacts, four healthy constrained services and eight verified HTTPS routes. Types, lint, build, security scans and independent source review passed. A real 1 MiB catalog upload completed through the worker and produced a cited answer; one additional byte was rejected. An encrypted off-server backup restored all 26 current database tables with exact payload hashes and tenant-access checks. Earlier hosted CI and browser results retain their original release scope. [Release evidence](docs/RELEASE-VERIFICATION.md) records each release and its limits.
+Current release `20261018-phase5-02` has 228 matching deployment artifacts, four healthy constrained services and eight verified HTTPS routes. Types, lint, build, security scans and independent source review passed. A real 1 MiB catalog upload completed through the worker and produced a cited answer; one additional byte was rejected. An encrypted off-server backup restored all 26 current database tables with exact payload hashes and tenant-access checks. Final source passed hosted quality and security; earlier live browser results retain their original release scope. [Release evidence](docs/RELEASE-VERIFICATION.md) records each release and its limits.
 
 The earlier verified public-page release passed 44 live desktop/mobile browser checks, 8 domain checks, type/lint/build/security gates and independent review. Its 84 artifact hashes matched; the existing backend remained unchanged. The release report states recovery scope and limitations.
 

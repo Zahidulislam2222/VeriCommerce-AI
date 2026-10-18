@@ -4,25 +4,29 @@ This document separates existing recovery evidence from proposed operating targe
 
 ## Observed operational evidence
 
-Current release `20261018-phase3-01` passed 228 artifact hashes, eight HTTPS routes
-and four healthy constrained services after recovery. Its application bytes match
+Current release `20261018-phase5-02` passed 228 artifact hashes, eight HTTPS routes
+and four healthy constrained services after recovery. Its application code and frontend assets match
 the preceding expansion, which passed 46 live desktop/mobile checks; current
 Shopify import, cited answer and draft approval/export were exercised separately.
 Account workspaces persist beyond session expiry; the worker expires temporary
 workspaces only. See [release evidence](RELEASE-VERIFICATION.md).
 
-An actual populated backup was transferred off-server, encrypted with AES-256-GCM,
+Current release pre/post-migration restoration matched all 26 table payloads and
+counts: 36 workspaces, 251 source revisions and 16 drafts, with restricted-role,
+absent-context and 36 cross-tenant denial checks.
+
+An earlier phase3 populated snapshot was transferred off-server, encrypted with AES-256-GCM,
 authenticated-decrypted and restored into a separate rehearsal database. All 26
 table counts and payload hashes matched: 36 generated/account workspaces, 249
-source revisions and 15 drafts. Restricted-role, absent-context and36cross-tenant
+source revisions and 15 drafts. Restricted-role, absent-context and 36 cross-tenant
 denial checks passed; the primary database stayed unchanged. Original, encrypted
 and decrypted archives were retained with the key recorded separately in private
 recovery storage. This establishes the tested snapshot, not a backup schedule.
 
 Actual rollback to the preceding configuration release and forward recovery both
-served readiness200. All three persistent approved drafts retained their exact
+served readiness 200. All three persistent approved drafts retained their exact
 combined payload hash, database mount identities stayed unchanged and final228
-artifact parity passed. Both releases use identical application bytes: this
+artifact parity passed. Both releases use identical application code: this
 rehearsal does not prove rollback to the older pre-account schema/runtime.
 
 Prior release `20261015-release-01` (version 0.2.0) passed populated restoration into a separate database: 29 generated test workspaces, 206 source revisions and 13 drafts. All 11 table payload counts/hashes matched; restricted-role, absent-context and cross-tenant RLS probes passed. Actual application rollback exposed API 0.1.0, then forward recovery restored API 0.2.0 and the original approved draft's exact hash; persistent volumes were preserved.

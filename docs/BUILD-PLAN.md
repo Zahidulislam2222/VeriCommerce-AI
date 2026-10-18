@@ -11,19 +11,27 @@ See [previous release evidence](RELEASE-VERIFICATION.md).
 
 The owner resumed all five phases. Expanded local source now implements accounts,
 bounded uploads, read-only connector, context comparisons and content intelligence.
-Current release `20261018-phase3-01` has 228 matching artifact hashes, eight HTTPS
-routes and four healthy constrained services after populated encrypted recovery
-and rollback/forward. It follows the integrated expansion's 46 passing live
-desktop/mobile checks with unchanged application bytes and separately verified
-real-store flows. Final source passed140backend/infrastructure checks. The five
+Current release `20261018-phase5-02` has 228 matching artifact hashes, eight HTTPS
+routes and four healthy constrained services after current populated restoration
+and rollback/forward; earlier encrypted off-server recovery retains its dated snapshot scope.
+It follows the integrated expansion's 46 passing live
+desktop/mobile checks with unchanged application code and separately verified
+real-store flows. Final hosted source passed 142 backend/infrastructure, 11 domain
+and 80 browser checks; quality and security both passed. The five
 phases' application features are integrated; the limits below remain explicit.
+
+The exact exit-clause audit records 33 met and one covered by the owner's
+delegated agent review, out of 34 clauses. The two temporary manual store-title
+saves were separately authorized verification exceptions; the app retains
+read_products and makes no product-write calls. These counts do not erase the
+original deployment-sequence and operational limits below.
 
 | Phase | Verified baseline | Required expansion and acceptance evidence | Current status |
 |---|---|---|---|
 | 1 | Typed API/settings, migrations, PostgreSQL RLS, isolated release, health/readiness and rollback | Accounts, persistent memberships, owner/reviewer/editor/viewer authorization, two-tenant role matrix, Azure Free shell and native cloud/account eligibility inventory | Application live; role/isolation/browser gates pass; exact Azure Free reference deployed |
-| 2 | Versioned JSON ingestion, fenced durable jobs, populated restoration | CSV/PDF/image ingestion with isolated bounded parsing, deletion invalidation, revision comparison, retry/dead-letter UX, 30-product/120-image/200-question family-split corpus, encrypted off-server recovery | Real 1 MiB worker import and oversize rejection pass; encrypted off-server restoration matched all26current tables and RLS; agent review recorded |
-| 3 | Dedicated app configured; local read-only OAuth/sync/webhooks and variant mapping | Encrypted tokens, persisted HMAC receipts, replay/order/tombstones, actual permitted-store sync and deterministic AWS validator | Real read_products sync imported23parents/38variants; SKU/color, cited answer and approval/export pass; eight AWS calls match local. Incremental replay tests pass; actual provider event delivery remains unobserved |
-| 4 | Four-method context inspector, exact variant constraints, snapshots and measured frozen benchmark | Actual Recall@10/nDCG/abstention/latency and authenticated GCP benchmark | Four methods measured on64held-out synthetic questions; keyword selected for this corpus. Three actual GCP smoke checks matched the same local snapshot; temporary resources cleaned up before deadline. Cloud smoke is not held-out quality evaluation |
+| 2 | Versioned JSON ingestion, fenced durable jobs, populated restoration | CSV/PDF/image ingestion with isolated bounded parsing, deletion invalidation, revision comparison, retry/dead-letter UX, 30-product/120-image/200-question family-split corpus, encrypted off-server recovery | Real 1 MiB worker import and oversize rejection pass; encrypted off-server restoration matched all26 current tables and RLS; agent review recorded |
+| 3 | Dedicated app configured; local read-only OAuth/sync/webhooks and variant mapping | Encrypted tokens, persisted HMAC receipts, replay/order/tombstones, actual permitted-store sync and deterministic AWS validator | Real read_products sync imported 23 parents/38 variants; two actual HMAC-verified update events and subsequent full sync agree. Two temporary Admin title saves were separately approved and restored; app product-write calls remain zero. Eight AWS calls match local; replay/order/delete coverage also passes |
+| 4 | Four-method context inspector, exact variant constraints, snapshots and measured frozen benchmark | Actual Recall@10/nDCG/abstention/latency and authenticated GCP benchmark | Four methods measured on 64 held-out synthetic questions; keyword selected for this corpus. Three actual GCP smoke checks matched the same local snapshot; temporary resources cleaned up before deadline. Cloud smoke is not held-out quality evaluation |
 | 5 | Temporal relations/impact, normalized conflicts, FAQ, guarded JSON-LD and purpose-aware image review | Full current-provenance checks and accessibility-case review | Application live; actual relationship/FAQ/image approval flows pass; owner-delegated agent review recorded; human validation pending |
 
 Frontend, backend, AI/data and infrastructure advance together against additive
@@ -34,8 +42,7 @@ phase deployment or acceptance gate. Cloud fixtures/local emulation and automate
 synthetic labels do not count as actual cloud deployment or independent human
 review. The owner explicitly delegated dataset/accessibility review while busy;
 the recorded substitution is agent review, with human validation still pending.
-Remaining original-plan limits include actual incremental store-event delivery,
-independent human validation and five separately recorded sequential phase
+Remaining original-plan limits include independent human validation and five separately recorded sequential phase
 deployments. Graph-versus-hybrid quality comparison and automatic backup
 scheduling/retention also remain unperformed. The owner authorized agent review instead of the human gate;
 the result remains labeled agent review. Provider invoice totals remain unknown

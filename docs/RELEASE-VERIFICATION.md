@@ -6,40 +6,68 @@ This report records observed checks through **2026-10-18**. Counts are checks/ar
 
 ## Expanded application release — 2026-10-18
 
-Current release `20261018-phase3-01` follows the integrated expansion
-`20261018-phase1-01`. Final source passed140/140backend/infrastructure checks with
+Current release `20261018-phase5-02` follows the integrated expansion
+`20261018-phase1-01`. Final source passed 142/142 backend/infrastructure checks in a clean locked environment with
 real PostgreSQL and pinned CPU retrieval, with zero failures, errors or skips.
-Earlier frontend checks passed11/11domain and80/80localChrome cases; the preceding
-expansion passed46/46live desktop/mobile cases with zero skipped, flaky or failed.
-The current release changes deployment quota configuration with identical
-application bytes; current real-store flows were checked separately.
+The 45-package production lock and direct requirements agree; clean installation
+and pip compatibility checks passed. An earlier hosted installation failed on a
+direct Pillow 13 pin versus locked 12.3; the correction retains the deployed 12.3
+runtime and adds an actual-repository regression. Earlier 140 local checks used a
+different Pillow environment and are superseded by this clean run.
+Final hosted [quality](https://github.com/Zahidulislam2222/VeriCommerce-AI/actions/runs/39085575603)
+and [security](https://github.com/Zahidulislam2222/VeriCommerce-AI/actions/runs/39085577739)
+passed on source `f960239df0210616ebee065e86e1c975bd3d1e54`: 142 backend/infrastructure,
+11 domain and 80 desktop/mobile browser checks, with zero skipped tests and zero browser retries. The backend reported two warnings. The browser workflow serves
+the built production artifact; a regression guards that boundary. Earlier failed
+installation/development-artifact runs remain historical failures.
+
+Earlier frontend checks passed 11/11 domain and 80/80 local Chrome cases; the preceding
+expansion passed 46/46 live desktop/mobile cases with zero skipped, flaky or failed.
+The follow-up releases configured the catalog quota and aligned direct
+requirements with the deployed lock. Application code and frontend assets are
+unchanged; current real-store flows were checked separately.
 
 Types, lint, Bandit, Gitleaks, official Semgrep audit rules, production build and
-independent source review passed. A336-file public-source inventory is hash-bound;
-Semgrep ran120official rules across296targets with zero findings/errors. Private
-provider state remains ignored. All228server artifact hashes match; eight HTTPS
+independent source review passed. A 336-file public-source inventory is hash-bound.
+The original full Semgrep scan ran 120 official rules across 296 targets with zero
+findings/errors; scoped supplements covered the dependency/workflow corrections
+and final prose. Private
+provider state remains ignored. All 228 server artifact hashes match; eight HTTPS
 routes and four healthy constrained services passed after recovery. A real
 1,048,576-byte catalog upload returned202, completed in the worker and produced a
-cited answer; a1,048,577-byte upload returned413.
+cited answer; a 1,048,577-byte upload returned413.
 
-Actual populated off-server AES-256-GCM recovery reproduced all26table counts and
-payload hashes, including249source revisions and15drafts in36workspaces.
-Restricted-role, absent-context and36cross-tenant denial checks passed; the
+Current release pre/post-migration populated restoration reproduced all 26 table
+counts and payload hashes: 36 workspaces, 251 source revisions and 16 drafts, with
+restricted-role, absent-context and 36 cross-tenant denial checks.
+
+The earlier phase3 off-server AES-256-GCM snapshot separately reproduced all 26
+table counts and payload hashes, including 249 source revisions and 15 drafts in
+36 workspaces. That dated snapshot precedes the two webhook events and new draft.
+Restricted-role, absent-context and 36 cross-tenant denial checks passed; the
 primary database stayed unchanged. Original/encrypted/decrypted archives were
 retained with a separately recorded private key. Actual rollback to the preceding
-configuration release and forward recovery returned readiness200, preserved all
+configuration release and forward recovery returned readiness 200, preserved all
 three persistent approved drafts and database mount identities, then passed exact
-228artifact parity. Identical application bytes mean this does not prove rollback
+228 artifact parity. Unchanged application code means this does not prove rollback
 to the older pre-account schema/runtime. No automated backup cadence is claimed.
 
 The dedicated Shopify app was installed through the real OAuth flow with exactly
 `read_products`. Four product/uninstall webhook topics are registered. Actual
-catalog sync imported23parents and38variants,23sources and206passages. Exact SKU
+catalog sync imported 23 parents and 38 variants, 23 sources and 206 passages. Exact SKU
 and color constraints selected the correct child before retrieval; a cited
 answer resolved the current passage. An agent inspected three current citations
-in an FAQ draft; export returned409before approval, then approval/export200with
-unchanged text and no publishing. Configuration and fake-provider replay tests
-do not establish actual Shopify event delivery, which remains unobserved.
+in an FAQ draft; export returned 409 before approval, then approval/export 200 with
+unchanged text and no publishing. Following fresh owner approval, two temporary
+Admin title saves generated real HMAC-verified product-update events. Parent and
+child records changed and restored; the old draft correctly returned 409. A
+subsequent full sync produced identical product records to the incremental state,
+with 61 products/23 sources and zero duplicates. The original title was restored.
+The connector retains read_products and made zero product-write calls; the two
+manual verification writes are separate from app publishing. A fresh three-citation
+FAQ was then reviewed, approved and exported successfully against current evidence.
+After token expiry, another actual sync refreshed authorization successfully and
+completed with the same read_products scope.
 
 The AWS validator was deployed from the independently reviewed three-resource
 plan. Four initial and four final-source bounded authenticated synchronous calls
@@ -67,24 +95,26 @@ Independent agent review was performed at the owner's request; human validation
 remains pending. Measured quality/latency and corpus limitations are in
 [data/models/evaluation](DATA-MODELS-EVALUATION.md).
 
-The owner separately approved an estimated$0.05one-time GCP experiment because
+The owner separately approved an estimated $0.05 one-time GCP experiment because
 existing registry storage exceeded the shared free allowance. Actual IAM-protected
-Cloud Run health, retrieval and abstention returned200and matched the same local
+Cloud Run health, retrieval and abstention returned 200 and matched the same local
 image/snapshot. The entire experiment was bounded to at most eight requests,
 including failed attempts, without automatic retries. Its three public synthetic
-documents establish a contract smoke test, not the64-question/four-method quality
+documents establish a contract smoke test, not the 64-question/four-method quality
 evaluation. All owned temporary Run, repository and service accounts were removed
-at00:32:35UTC before the original00:35:05deadline; native inventory confirmed all
-135baseline resource payloads unchanged. Free API metadata remains enabled as
+at 00:32:35 UTC before the original 00:35:05 deadline; native inventory confirmed all
+135 baseline resource payloads unchanged. Free API metadata remains enabled as
 planned. Final charges remain unverified due to delayed billing reports.
 
-The application features for phases1–5 were delivered together and followed by a
+The application features for phases 1–5 were delivered together and followed by a
 quota configuration release. This is not five separately evidenced sequential
 phase deployments. The owner delegated dataset/accessibility review to an agent;
-human validation and actual incremental Shopify event delivery remain distinct
-original acceptance limits. Graph-versus-hybrid quality comparison and automatic
+human validation remains an original acceptance limit. Graph-versus-hybrid quality comparison and automatic
 backup scheduling/retention are also unperformed plan items. No human-review or
 full original-plan completion claim is made.
+
+The exit-clause audit records 33 met and one owner-delegated agent review out of
+34, with the separately approved two manual title saves explicitly disclosed.
 
 ## Prior engineering release 0.2.0 — 2026-10-15
 
